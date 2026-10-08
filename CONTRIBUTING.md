@@ -4,7 +4,7 @@
 
 * [Contributing to OrbitX](#contributing-to-orbitx)
   * [Translations](#translations)
-  * [Reporting Issues & Bugs](#reporting-issues--bugs)
+  * [Reporting Issues & Bugs](#reporting-issues-bugs)
   * [Feature Proposals](#feature-proposals)
   * [Etiquette](#etiquette)
   * [Developer Onboarding](#developer-onboarding)
@@ -14,9 +14,6 @@
   * [Strings](#strings)
   * [Kotlin Standards](#kotlin-standards)
   * [Code Quality](#code-quality)
-    * [detekt](#detekt)
-    * [ktlint](#ktlint)
-    * [lint](#lint)
   * [Testing](#testing)
   * [Accessibility](#accessibility)
   * [Jetpack Compose](#jetpack-compose)
