@@ -39,6 +39,36 @@ enum class CropAspectRatio(val displayName: String, val ratio: Float?) {
     Story("9:16", 9f / 16f),
 }
 
+enum class EditorToolMode {
+    Crop,
+    Filter,
+    Draw,
+    Sticker,
+}
+
+@Immutable
+data class DrawPoint(
+    val x: Float, // 0f..1f normalized relative to displayed image
+    val y: Float, // 0f..1f normalized relative to displayed image
+)
+
+@Immutable
+data class DrawStroke(
+    val points: List<DrawPoint>,
+    val colorHex: Long, // 0xAARRGGBB
+    val strokeWidth: Float, // relative to reference width
+)
+
+@Immutable
+data class StickerItem(
+    val id: String = java.util.UUID.randomUUID().toString(),
+    val text: String,
+    val x: Float, // 0f..1f normalized center x
+    val y: Float, // 0f..1f normalized center y
+    val scale: Float = 1f,
+    val rotationDegrees: Float = 0f,
+)
+
 @Immutable
 data class AttachmentImageEdits(
     val cropRect: NormalizedCropRect = NormalizedCropRect.default(),
@@ -46,6 +76,8 @@ data class AttachmentImageEdits(
     val isFlippedHorizontally: Boolean = false,
     val isFlippedVertically: Boolean = false,
     val filter: ImageFilter = ImageFilter.None,
+    val drawStrokes: List<DrawStroke> = emptyList(),
+    val stickers: List<StickerItem> = emptyList(),
 ) {
     val normalizedRotationQuarterTurns: Int
         get() = rotationQuarterTurns % 4
@@ -58,29 +90,68 @@ data class AttachmentImageEdits(
             normalizedRotationQuarterTurns != 0 ||
             isFlippedHorizontally ||
             isFlippedVertically ||
-            filter != ImageFilter.None
+            filter != ImageFilter.None ||
+            drawStrokes.isNotEmpty() ||
+            stickers.isNotEmpty()
 
     fun rotateAntiClockwise(): AttachmentImageEdits {
         return copy(
             rotationQuarterTurns = (normalizedRotationQuarterTurns + 3) % 4,
-            // Also update the crop rect to keep the same selected area
-            cropRect = cropRect.rotateAntiClockwise()
+            cropRect = cropRect.rotateAntiClockwise(),
+            drawStrokes = drawStrokes.map { stroke ->
+                stroke.copy(
+                    points = stroke.points.map { pt ->
+                        DrawPoint(x = pt.y, y = 1f - pt.x)
+                    }
+                )
+            },
+            stickers = stickers.map { sticker ->
+                sticker.copy(
+                    x = sticker.y,
+                    y = 1f - sticker.x,
+                    rotationDegrees = (sticker.rotationDegrees - 90f)
+                )
+            }
         )
     }
 
     fun flipHorizontally(): AttachmentImageEdits {
         return copy(
             isFlippedHorizontally = !isFlippedHorizontally,
-            // Also update the crop rect to keep the same selected area
             cropRect = cropRect.flipHorizontally(),
+            drawStrokes = drawStrokes.map { stroke ->
+                stroke.copy(
+                    points = stroke.points.map { pt ->
+                        DrawPoint(x = 1f - pt.x, y = pt.y)
+                    }
+                )
+            },
+            stickers = stickers.map { sticker ->
+                sticker.copy(
+                    x = 1f - sticker.x,
+                    rotationDegrees = -sticker.rotationDegrees
+                )
+            }
         )
     }
 
     fun flipVertically(): AttachmentImageEdits {
         return copy(
             isFlippedVertically = !isFlippedVertically,
-            // Also update the crop rect to keep the same selected area
             cropRect = cropRect.flipVertically(),
+            drawStrokes = drawStrokes.map { stroke ->
+                stroke.copy(
+                    points = stroke.points.map { pt ->
+                        DrawPoint(x = pt.x, y = 1f - pt.y)
+                    }
+                )
+            },
+            stickers = stickers.map { sticker ->
+                sticker.copy(
+                    y = 1f - sticker.y,
+                    rotationDegrees = -sticker.rotationDegrees
+                )
+            }
         )
     }
 }

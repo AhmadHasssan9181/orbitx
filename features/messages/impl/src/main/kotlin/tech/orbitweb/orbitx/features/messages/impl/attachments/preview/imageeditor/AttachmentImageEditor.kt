@@ -56,7 +56,7 @@ class DefaultAttachmentImageEditor(
             ?.takeIf { it.isEditableStillImageMimeType() }
             ?.let { return@withContext true }
 
-        val decodedMimeType = context.contentResolver.openInputStream(localMedia.uri)?.use { input ->
+        val decodedMimeType = context.openInputStreamSafe(localMedia.uri)?.use { input ->
             val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
             BitmapFactory.decodeStream(input, null, options)
             options.outMimeType
@@ -72,13 +72,13 @@ class DefaultAttachmentImageEditor(
         runCatchingExceptions {
             val sourceMimeType = localMedia.info.resolvedImageMimeType() ?: localMedia.info.mimeType
             val exportedMimeType = exportedMimeTypeFor(sourceMimeType)
-            val exifOrientation = context.contentResolver.openInputStream(localMedia.uri)?.let { input ->
+            val exifOrientation = context.openInputStreamSafe(localMedia.uri)?.let { input ->
                 input.use {
                     ExifInterface(it).getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
                 }
             } ?: ExifInterface.ORIENTATION_UNDEFINED
 
-            val decodedBitmap = context.contentResolver.openInputStream(localMedia.uri)?.use { input ->
+            val decodedBitmap = context.openInputStreamSafe(localMedia.uri)?.use { input ->
                 BitmapFactory.decodeStream(input)
             } ?: error("Unable to decode image from ${localMedia.uri}")
 
@@ -133,6 +133,40 @@ class DefaultAttachmentImageEditor(
     }
 }
 
+private fun Context.openInputStreamSafe(uri: Uri): java.io.InputStream? {
+    if (uri.scheme == android.content.ContentResolver.SCHEME_FILE) {
+        val path = uri.path
+        if (path != null) {
+            val file = File(path)
+            if (file.exists() && file.canRead()) {
+                return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(file) }
+            }
+        }
+    }
+    val streamFromResolver = tech.orbitweb.orbitx.libraries.core.data.tryOrNull { contentResolver.openInputStream(uri) }
+    if (streamFromResolver != null) return streamFromResolver
+
+    val path = uri.path
+    if (path != null) {
+        val directFile = File(path)
+        if (directFile.exists() && directFile.canRead()) {
+            return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(directFile) }
+        }
+        if (path.startsWith("/cache/")) {
+            val cacheFile = File(cacheDir, path.removePrefix("/cache/"))
+            if (cacheFile.exists() && cacheFile.canRead()) {
+                return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(cacheFile) }
+            }
+        } else if (path.startsWith("/files/")) {
+            val appFile = File(filesDir, path.removePrefix("/files/"))
+            if (appFile.exists() && appFile.canRead()) {
+                return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(appFile) }
+            }
+        }
+    }
+    return null
+}
+
 internal fun exportedMimeTypeFor(sourceMimeType: String?): String {
     return if (sourceMimeType == MimeTypes.Png) {
         MimeTypes.Png
@@ -165,7 +199,65 @@ private fun Bitmap.applyEdits(edits: AttachmentImageEdits): Bitmap {
     if (filtered !== transformed && transformed !== this) {
         transformed.recycle()
     }
-    return filtered
+
+    if (edits.drawStrokes.isEmpty() && edits.stickers.isEmpty()) {
+        return filtered
+    }
+
+    val resultBitmap = filtered.copy(Bitmap.Config.ARGB_8888, true)
+    if (filtered !== this && filtered !== transformed) {
+        filtered.recycle()
+    }
+
+    val canvas = android.graphics.Canvas(resultBitmap)
+    val bmpWidth = resultBitmap.width.toFloat()
+    val bmpHeight = resultBitmap.height.toFloat()
+
+    // 1. Draw strokes
+    val strokePaint = android.graphics.Paint().apply {
+        isAntiAlias = true
+        style = android.graphics.Paint.Style.STROKE
+        strokeCap = android.graphics.Paint.Cap.ROUND
+        strokeJoin = android.graphics.Paint.Join.ROUND
+    }
+
+    for (stroke in edits.drawStrokes) {
+        if (stroke.points.size < 2) continue
+        strokePaint.color = stroke.colorHex.toInt()
+        val strokeWidthPx = (stroke.strokeWidth / 360f) * bmpWidth
+        strokePaint.strokeWidth = strokeWidthPx.coerceAtLeast(3f)
+
+        val path = android.graphics.Path()
+        val first = stroke.points.first()
+        path.moveTo(first.x * bmpWidth, first.y * bmpHeight)
+        for (i in 1 until stroke.points.size) {
+            val pt = stroke.points[i]
+            path.lineTo(pt.x * bmpWidth, pt.y * bmpHeight)
+        }
+        canvas.drawPath(path, strokePaint)
+    }
+
+    // 2. Draw stickers
+    val textPaint = android.graphics.Paint().apply {
+        isAntiAlias = true
+        textAlign = android.graphics.Paint.Align.CENTER
+    }
+
+    for (sticker in edits.stickers) {
+        val baseSize = bmpWidth * 0.16f * sticker.scale
+        textPaint.textSize = baseSize
+        val xPx = sticker.x * bmpWidth
+        val yPx = sticker.y * bmpHeight
+
+        canvas.save()
+        canvas.rotate(sticker.rotationDegrees, xPx, yPx)
+        val fontMetrics = textPaint.fontMetrics
+        val baseline = yPx - (fontMetrics.ascent + fontMetrics.descent) / 2f
+        canvas.drawText(sticker.text, xPx, baseline, textPaint)
+        canvas.restore()
+    }
+
+    return resultBitmap
 }
 
 private fun Bitmap.applyFilter(filter: ImageFilter): Bitmap {

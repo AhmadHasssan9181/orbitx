@@ -62,6 +62,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.draw.clip
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
@@ -73,18 +74,36 @@ fun TimelineItemVoiceView(
     onContentLayoutChange: (ContentAvoidingLayoutData) -> Unit,
     modifier: Modifier = Modifier,
     eventSink: ((tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent.TimelineItemEvent) -> Unit)? = null,
+    isMine: Boolean = false,
 ) {
     val isViewOnce = content.caption?.contains("View-Once", ignoreCase = true) == true ||
         content.filename.contains("orbit_vo_", ignoreCase = true) ||
         content.filename.contains("viewonce", ignoreCase = true) ||
         content.filename.contains("orbit_view_once_", ignoreCase = true) ||
         content.filename.endsWith(".ephemeral", ignoreCase = true)
-    val isDestroyed = isViewOnce && tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.isDestroyed(content.eventId?.value)
+    val destroyedEventIds by tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.destroyedEventIdsFlow.collectAsState()
+    val isDestroyed = isViewOnce && content.eventId?.value != null && destroyedEventIds.contains(content.eventId.value)
     val context = androidx.compose.ui.platform.LocalContext.current
+
+    if (isViewOnce && isMine) {
+        ViewOnceMediaBubble(
+            mediaType = "Voice message",
+            isMine = true,
+            isDestroyed = isDestroyed,
+            onContentClick = {
+                android.widget.Toast.makeText(context, "You sent this as a view-once voice message. It cannot be reopened.", android.widget.Toast.LENGTH_SHORT).show()
+            },
+            onLongClick = null,
+            onContentLayoutChange = onContentLayoutChange,
+            modifier = modifier,
+        )
+        return
+    }
 
     if (isViewOnce && isDestroyed) {
         ViewOnceMediaBubble(
             mediaType = "Voice message",
+            isMine = isMine,
             isDestroyed = true,
             onContentClick = {
                 android.widget.Toast.makeText(context, "This voice message has already been played and destroyed", android.widget.Toast.LENGTH_SHORT).show()
@@ -103,8 +122,10 @@ fun TimelineItemVoiceView(
     if (isViewOnce && !hasStartedPlayback && state.buttonType != VoiceMessageState.ButtonType.Pause && state.buttonType != VoiceMessageState.ButtonType.Downloading) {
         ViewOnceMediaBubble(
             mediaType = "Voice message",
+            isMine = false,
             isDestroyed = false,
             onContentClick = {
+                content.eventId?.value?.let { tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(it) }
                 hasStartedPlayback = true
                 state.eventSink(VoiceMessageEvent.PlayPause)
             },

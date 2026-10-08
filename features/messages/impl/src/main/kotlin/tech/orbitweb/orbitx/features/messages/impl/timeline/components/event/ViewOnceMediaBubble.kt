@@ -40,6 +40,7 @@ fun ViewOnceMediaBubble(
     onLongClick: (() -> Unit)?,
     onContentLayoutChange: (ContentAvoidingLayoutData) -> Unit,
     isDestroyed: Boolean = false,
+    isMine: Boolean = false,
     modifier: Modifier = Modifier,
 ) {
     val borderColor = if (isDestroyed) {
@@ -105,8 +106,13 @@ fun ViewOnceMediaBubble(
                     fontSize = 15.sp
                 )
                 Spacer(modifier = Modifier.height(2.dp))
+                val subtitle = when {
+                    isDestroyed -> "Self-destructed • No longer available"
+                    isMine -> "View-once sent • Cannot be opened"
+                    else -> "Tap to view • Self-destructs after opening"
+                }
                 Text(
-                    text = if (isDestroyed) "Self-destructed • No longer available" else "Tap to view • Self-destructs after opening",
+                    text = subtitle,
                     color = if (isDestroyed) Color(0xFF6B7280) else Color(0xFFA78BFA),
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Medium

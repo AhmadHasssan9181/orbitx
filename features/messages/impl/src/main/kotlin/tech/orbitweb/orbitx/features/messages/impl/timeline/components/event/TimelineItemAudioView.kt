@@ -7,7 +7,9 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.event
 
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
@@ -24,6 +26,7 @@ fun TimelineItemAudioView(
     onContentClick: (() -> Unit)? = null,
     onLongClick: (() -> Unit)? = null,
     eventId: tech.orbitweb.orbitx.libraries.matrix.api.core.EventId? = null,
+    isMine: Boolean = false,
 ) {
     val isViewOnce = content.caption?.contains("View-Once", ignoreCase = true) == true ||
         content.filename.contains("orbit_view_once_", ignoreCase = true) ||
@@ -32,11 +35,15 @@ fun TimelineItemAudioView(
         content.filename.endsWith(".ephemeral", ignoreCase = true)
 
     if (isViewOnce) {
-        val isDestroyed = tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.isDestroyed(eventId?.value)
+        val destroyedEventIds by tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.destroyedEventIdsFlow.collectAsState()
+        val isDestroyed = eventId?.value != null && destroyedEventIds.contains(eventId.value)
         val context = androidx.compose.ui.platform.LocalContext.current
         ViewOnceMediaBubble(
             mediaType = "Audio",
-            onContentClick = if (isDestroyed) {
+            isMine = isMine,
+            onContentClick = if (isMine) {
+                { android.widget.Toast.makeText(context, "You sent this as a view-once audio. It cannot be reopened.", android.widget.Toast.LENGTH_SHORT).show() }
+            } else if (isDestroyed) {
                 { android.widget.Toast.makeText(context, "This audio has already been played and destroyed", android.widget.Toast.LENGTH_SHORT).show() }
             } else {
                 onContentClick

@@ -75,7 +75,9 @@ fun TimelineItemStateEventRow(
                     onContentClick = null,
                     onGalleryItemClick = {},
                     onLongClick = null,
-                    modifier = Modifier.defaultTimelineContentPadding()
+                    modifier = Modifier.defaultTimelineContentPadding(),
+                    eventId = event.eventId,
+                    isMine = event.isMine,
                 )
             }
         }

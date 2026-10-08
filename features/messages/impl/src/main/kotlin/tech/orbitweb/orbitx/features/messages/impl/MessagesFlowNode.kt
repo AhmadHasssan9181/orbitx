@@ -385,17 +385,25 @@ class MessagesFlowNode(
                     navTarget.mediaInfo.filename.contains("viewonce", ignoreCase = true) ||
                     navTarget.mediaInfo.filename.endsWith(".ephemeral", ignoreCase = true)
 
+                if (isViewOnce && navTarget.eventId != null) {
+                    tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(navTarget.eventId.value)
+                }
+
+                val cleanupViewOnce = {
+                    if (isViewOnce && navTarget.eventId != null) {
+                        tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(navTarget.eventId.value)
+                        lifecycleScope.launch {
+                            timelineController.invokeOnCurrentTimeline {
+                                redactEvent(navTarget.eventId.toEventOrTransactionId(), "View-once media destroyed")
+                            }
+                        }
+                        tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.cleanupDecryptedTempFiles()
+                    }
+                }
+
                 val callback = object : MediaViewerEntryPoint.Callback {
                     override fun onDone() {
-                        if (isViewOnce && navTarget.eventId != null) {
-                            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(navTarget.eventId.value)
-                            lifecycleScope.launch {
-                                timelineController.invokeOnCurrentTimeline {
-                                    redactEvent(navTarget.eventId.toEventOrTransactionId(), "View-once media destroyed")
-                                }
-                            }
-                            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.cleanupDecryptedTempFiles()
-                        }
+                        cleanupViewOnce()
                         if (navTarget.canUseOverlay) {
                             overlay.hide()
                         } else {
@@ -412,12 +420,20 @@ class MessagesFlowNode(
                         callback.forwardEvent(eventId, fromPinnedEvents)
                     }
                 }
-                mediaViewerEntryPoint.createNode(
+                val node = mediaViewerEntryPoint.createNode(
                     parentNode = this,
                     buildContext = buildContext,
                     params = params,
                     callback = callback
                 )
+                if (isViewOnce) {
+                    node.lifecycle.subscribe(
+                        onDestroy = {
+                            cleanupViewOnce()
+                        }
+                    )
+                }
+                node
             }
             is NavTarget.GalleryViewer -> {
                 val params = MediaViewerEntryPoint.Params.EventGallery(
@@ -428,17 +444,25 @@ class MessagesFlowNode(
                 )
                 val isViewOnce = navTarget.galleryInfo.caption?.contains("View-Once", ignoreCase = true) == true
 
+                if (isViewOnce && navTarget.eventId != null) {
+                    tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(navTarget.eventId.value)
+                }
+
+                val cleanupViewOnce = {
+                    if (isViewOnce && navTarget.eventId != null) {
+                        tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(navTarget.eventId.value)
+                        lifecycleScope.launch {
+                            timelineController.invokeOnCurrentTimeline {
+                                redactEvent(navTarget.eventId.toEventOrTransactionId(), "View-once media destroyed")
+                            }
+                        }
+                        tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.cleanupDecryptedTempFiles()
+                    }
+                }
+
                 val callback = object : MediaViewerEntryPoint.Callback {
                     override fun onDone() {
-                        if (isViewOnce && navTarget.eventId != null) {
-                            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(navTarget.eventId.value)
-                            lifecycleScope.launch {
-                                timelineController.invokeOnCurrentTimeline {
-                                    redactEvent(navTarget.eventId.toEventOrTransactionId(), "View-once media destroyed")
-                                }
-                            }
-                            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.cleanupDecryptedTempFiles()
-                        }
+                        cleanupViewOnce()
                         if (navTarget.canUseOverlay) {
                             overlay.hide()
                         } else {
@@ -455,12 +479,20 @@ class MessagesFlowNode(
                         callback.forwardEvent(eventId, fromPinnedEvents)
                     }
                 }
-                mediaViewerEntryPoint.createNode(
+                val node = mediaViewerEntryPoint.createNode(
                     parentNode = this,
                     buildContext = buildContext,
                     params = params,
                     callback = callback
                 )
+                if (isViewOnce) {
+                    node.lifecycle.subscribe(
+                        onDestroy = {
+                            cleanupViewOnce()
+                        }
+                    )
+                }
+                node
             }
             is NavTarget.AttachmentPreview -> {
                 val inputs = AttachmentsPreviewNode.Inputs(
@@ -753,10 +785,14 @@ class MessagesFlowNode(
             attachment?.filename?.contains("orbit_view_once_", ignoreCase = true) == true ||
             attachment?.filename?.endsWith(".ephemeral", ignoreCase = true) == true
         if (isViewOnce) {
+            if (event.isMine) {
+                return false
+            }
             val eventIdStr = event.eventId?.value
             if (tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.isDestroyed(eventIdStr)) {
                 return false
             }
+            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(eventIdStr)
         }
         val navTarget = when (event.content) {
             is TimelineItemImageContent -> {
@@ -845,10 +881,14 @@ class MessagesFlowNode(
     ): Boolean {
         val isViewOnce = (event.content as? tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemGalleryContent)?.caption?.contains("View-Once", ignoreCase = true) == true
         if (isViewOnce) {
+            if (event.isMine) {
+                return false
+            }
             val eventIdStr = event.eventId?.value
             if (tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.isDestroyed(eventIdStr)) {
                 return false
             }
+            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(eventIdStr)
         }
         val navTarget = when (event.content) {
             is TimelineItemGalleryContent -> {

@@ -242,6 +242,9 @@ object OrbitEphemeralCrypto {
 
 object OrbitEphemeralTracker {
     private val destroyedEventIds = java.util.concurrent.ConcurrentHashMap.newKeySet<String>()
+    private val _destroyedEventIdsFlow = kotlinx.coroutines.flow.MutableStateFlow<Set<String>>(emptySet())
+    val destroyedEventIdsFlow: kotlinx.coroutines.flow.StateFlow<Set<String>> = _destroyedEventIdsFlow
+
     @Volatile
     private var storageDir: File? = null
     @Volatile
@@ -256,6 +259,7 @@ object OrbitEphemeralTracker {
                 file.readLines().forEach { line ->
                     if (line.isNotBlank()) destroyedEventIds.add(line.trim())
                 }
+                _destroyedEventIdsFlow.value = java.util.Collections.unmodifiableSet(HashSet(destroyedEventIds))
             }
         } catch (_: Exception) {
         }
@@ -268,13 +272,16 @@ object OrbitEphemeralTracker {
 
     fun markDestroyed(eventId: String?) {
         if (!eventId.isNullOrBlank()) {
-            destroyedEventIds.add(eventId)
-            try {
-                storageDir?.let { dir ->
-                    val file = File(dir, "orbit_destroyed_events.txt")
-                    file.appendText("$eventId\n")
+            val wasAdded = destroyedEventIds.add(eventId)
+            if (wasAdded) {
+                _destroyedEventIdsFlow.value = java.util.Collections.unmodifiableSet(HashSet(destroyedEventIds))
+                try {
+                    storageDir?.let { dir ->
+                        val file = File(dir, "orbit_destroyed_events.txt")
+                        file.appendText("$eventId\n")
+                    }
+                } catch (_: Exception) {
                 }
-            } catch (_: Exception) {
             }
         }
     }

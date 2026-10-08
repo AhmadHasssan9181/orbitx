@@ -8,13 +8,12 @@
 package tech.orbitweb.orbitx.appconfig
 
 object AuthenticationConfig {
-    const val ORBIT_HOMESERVER_URL = "https://orbitweb.tech"
-    const val MATRIX_ORG_URL = "https://orbitweb.tech"
+    const val MATRIX_ORG_URL = "https://matrix.org"
 
     /**
      * URL with some docs that explain what's sliding sync and how to add it to your home server.
      */
-    const val SLIDING_SYNC_READ_MORE_URL = "https://orbitweb.tech/help#sliding-sync"
+    const val SLIDING_SYNC_READ_MORE_URL = "https://github.com/matrix-org/sliding-sync/blob/main/docs/Landing.md"
 
     /**
      * Force a sliding sync proxy url, if not null, the proxy url in the .well-known file will be ignored.

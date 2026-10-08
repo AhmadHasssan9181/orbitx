@@ -299,7 +299,9 @@ private fun TimelineItemEventContentViewWrapper(
             modifier = modifier,
             onContentClick = onContentClick,
             onLongClick = onLongClick,
-            onContentLayoutChange = onContentLayoutChange
+            onContentLayoutChange = onContentLayoutChange,
+            eventId = event.eventId,
+            isMine = event.isMine,
         )
     }
 }

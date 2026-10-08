@@ -26,4 +26,10 @@ sealed interface AttachmentsPreviewEvent {
     data object ToggleViewOnce : AttachmentsPreviewEvent
     data class SelectImageFilter(val filter: tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.ImageFilter) : AttachmentsPreviewEvent
     data object ToggleVideoMute : AttachmentsPreviewEvent
+    data class AddDrawStroke(val stroke: tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.DrawStroke) : AttachmentsPreviewEvent
+    data object UndoLastDrawStroke : AttachmentsPreviewEvent
+    data object ClearDrawStrokes : AttachmentsPreviewEvent
+    data class AddSticker(val sticker: tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.StickerItem) : AttachmentsPreviewEvent
+    data class UpdateSticker(val sticker: tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.StickerItem) : AttachmentsPreviewEvent
+    data class RemoveSticker(val stickerId: String) : AttachmentsPreviewEvent
 }

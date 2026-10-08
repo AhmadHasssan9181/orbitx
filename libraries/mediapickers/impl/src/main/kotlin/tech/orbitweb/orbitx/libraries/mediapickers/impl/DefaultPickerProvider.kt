@@ -144,7 +144,7 @@ class DefaultPickerProvider(
         return if (LocalInspectionMode.current) {
             NoOpPickerLauncher { onResult(null) }
         } else {
-            val tmpFile = remember { getTemporaryFile("photo.jpg") }
+            val tmpFile = remember { getTemporaryFile("photo_${System.currentTimeMillis()}_${(1000..9999).random()}.jpg") }
             val tmpFileUri = remember(tmpFile) { getTemporaryUri(tmpFile) }
             rememberPickerLauncher(type = PickerType.Camera.Photo(tmpFileUri)) { success ->
                 onResult(if (success) tmpFileUri else null)
@@ -161,7 +161,7 @@ class DefaultPickerProvider(
         return if (LocalInspectionMode.current) {
             NoOpPickerLauncher { onResult(null) }
         } else {
-            val tmpFile = remember { getTemporaryFile("video.mp4") }
+            val tmpFile = remember { getTemporaryFile("video_${System.currentTimeMillis()}_${(1000..9999).random()}.mp4") }
             val tmpFileUri = remember(tmpFile) { getTemporaryUri(tmpFile) }
             rememberPickerLauncher(type = PickerType.Camera.Video(tmpFileUri)) { success ->
                 // Execute callback

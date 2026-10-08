@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -70,6 +71,7 @@ fun TimelineItemImageView(
     onContentLayoutChange: (ContentAvoidingLayoutData) -> Unit,
     modifier: Modifier = Modifier,
     eventId: tech.orbitweb.orbitx.libraries.matrix.api.core.EventId? = null,
+    isMine: Boolean = false,
 ) {
     val isViewOnce = content.caption?.contains("View-Once", ignoreCase = true) == true ||
         content.filename.contains("orbit_view_once_", ignoreCase = true) ||
@@ -77,11 +79,15 @@ fun TimelineItemImageView(
         content.filename.contains("viewonce", ignoreCase = true) ||
         content.filename.endsWith(".ephemeral", ignoreCase = true)
     if (isViewOnce) {
-        val isDestroyed = tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.isDestroyed(eventId?.value)
+        val destroyedEventIds by tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.destroyedEventIdsFlow.collectAsState()
+        val isDestroyed = eventId?.value != null && destroyedEventIds.contains(eventId.value)
         val context = androidx.compose.ui.platform.LocalContext.current
         ViewOnceMediaBubble(
             mediaType = "Photo",
-            onContentClick = if (isDestroyed) {
+            isMine = isMine,
+            onContentClick = if (isMine) {
+                { android.widget.Toast.makeText(context, "You sent this as a view-once photo. It cannot be reopened.", android.widget.Toast.LENGTH_SHORT).show() }
+            } else if (isDestroyed) {
                 { android.widget.Toast.makeText(context, "This photo has already been viewed and destroyed", android.widget.Toast.LENGTH_SHORT).show() }
             } else {
                 onContentClick

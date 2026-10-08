@@ -70,7 +70,9 @@ fun TimelineItemGroupedEventsRow(
                 onContentClick = null,
                 onGalleryItemClick = {},
                 onLongClick = null,
-                onContentLayoutChange = onContentLayoutChange
+                onContentLayoutChange = onContentLayoutChange,
+                eventId = event.eventId,
+                isMine = event.isMine,
             )
         },
 ) {
@@ -142,7 +144,9 @@ private fun TimelineItemGroupedEventsRowContent(
                 onContentClick = null,
                 onGalleryItemClick = {},
                 onLongClick = null,
-                onContentLayoutChange = onContentLayoutChange
+                onContentLayoutChange = onContentLayoutChange,
+                eventId = event.eventId,
+                isMine = event.isMine,
             )
         },
 ) {

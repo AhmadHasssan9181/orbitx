@@ -87,6 +87,8 @@ internal fun TimelineItemRow(
                 eventSink = eventSink,
                 modifier = contentModifier,
                 onContentLayoutChange = onContentLayoutChange,
+                eventId = event.eventId,
+                isMine = event.isMine,
             )
         },
 ) {

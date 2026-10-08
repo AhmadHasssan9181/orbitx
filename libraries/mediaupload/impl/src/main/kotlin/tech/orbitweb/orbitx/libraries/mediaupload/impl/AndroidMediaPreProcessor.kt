@@ -95,12 +95,13 @@ class AndroidMediaPreProcessor(
                 else -> processFile(uri, mimeType)
             }
             if (deleteOriginal) {
-                tryOrNull {
+                val deleted = tryOrNull {
                     Timber.w("Deleting original uri $uri")
-                    contentResolver.delete(uri, null, null)
+                    contentResolver.delete(uri, null, null) > 0
+                } ?: false
+                if (!deleted) {
+                    temporaryUriDeleter.delete(uri)
                 }
-            } else {
-                temporaryUriDeleter.delete(uri)
             }
             result.postProcess(uri)
         }
@@ -142,18 +143,54 @@ class AndroidMediaPreProcessor(
         return MediaUploadInfo.AnyFile(file, info)
     }
 
+    private fun openInputStreamForUri(uri: Uri): InputStream? {
+        if (uri.scheme == android.content.ContentResolver.SCHEME_FILE) {
+            val path = uri.path
+            if (path != null) {
+                val file = File(path)
+                if (file.exists() && file.canRead()) {
+                    return tryOrNull { java.io.FileInputStream(file) }
+                }
+            }
+        }
+        val streamFromResolver = tryOrNull { contentResolver.openInputStream(uri) }
+        if (streamFromResolver != null) return streamFromResolver
+
+        val path = uri.path
+        if (path != null) {
+            val directFile = File(path)
+            if (directFile.exists() && directFile.canRead()) {
+                return tryOrNull { java.io.FileInputStream(directFile) }
+            }
+            if (path.startsWith("/cache/")) {
+                val cacheFile = File(context.cacheDir, path.removePrefix("/cache/"))
+                if (cacheFile.exists() && cacheFile.canRead()) {
+                    return tryOrNull { java.io.FileInputStream(cacheFile) }
+                }
+            } else if (path.startsWith("/files/")) {
+                val appFile = File(context.filesDir, path.removePrefix("/files/"))
+                if (appFile.exists() && appFile.canRead()) {
+                    return tryOrNull { java.io.FileInputStream(appFile) }
+                }
+            }
+        }
+        return null
+    }
+
     private fun MediaUploadInfo.postProcess(uri: Uri): MediaUploadInfo {
         Timber.d("Finished processing, post-processing ${uri.path.orEmpty().hash()}")
         val name = context.getFileName(uri) ?: return this
-        val renamedFile = File(context.cacheDir, name).also {
-            file.safeRenameTo(it)
+        val renamedFile = File(context.cacheDir, name)
+        if (file.absolutePath != renamedFile.absolutePath) {
+            file.safeRenameTo(renamedFile)
         }
+        val finalFile = if (renamedFile.exists()) renamedFile else file
         return when (this) {
-            is MediaUploadInfo.AnyFile -> copy(file = renamedFile)
-            is MediaUploadInfo.Audio -> copy(file = renamedFile)
-            is MediaUploadInfo.Image -> copy(file = renamedFile)
-            is MediaUploadInfo.Video -> copy(file = renamedFile)
-            is MediaUploadInfo.VoiceMessage -> copy(file = renamedFile)
+            is MediaUploadInfo.AnyFile -> copy(file = finalFile)
+            is MediaUploadInfo.Audio -> copy(file = finalFile)
+            is MediaUploadInfo.Image -> copy(file = finalFile)
+            is MediaUploadInfo.Video -> copy(file = finalFile)
+            is MediaUploadInfo.VoiceMessage -> copy(file = finalFile)
         }
     }
 
@@ -161,13 +198,13 @@ class AndroidMediaPreProcessor(
         Timber.d("Processing image ${uri.path.orEmpty().hash()}")
         suspend fun processImageWithCompression(): MediaUploadInfo {
             // Read the orientation metadata from its own stream. Trying to reuse this stream for compression will fail.
-            val orientation = contentResolver.openInputStream(uri).use { input ->
-                val exifInterface = input?.let { ExifInterface(it) }
-                exifInterface?.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
+            val orientation = openInputStreamForUri(uri)?.use { input ->
+                val exifInterface = ExifInterface(input)
+                exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
             } ?: ExifInterface.ORIENTATION_UNDEFINED
 
             val compressionResult = imageCompressor.compressToTmpFile(
-                inputStreamProvider = { contentResolver.openInputStream(uri)!! },
+                inputStreamProvider = { openInputStreamForUri(uri) ?: error("Cannot open input stream for $uri") },
                 resizeMode = ResizeMode.Approximate(IMAGE_SCALE_REF_SIZE, IMAGE_SCALE_REF_SIZE),
                 mimeType = mimeType,
                 orientation = orientation,
@@ -348,7 +385,7 @@ class AndroidMediaPreProcessor(
         }
 
     private suspend fun copyToTmpFile(uri: Uri): File {
-        return contentResolver.openInputStream(uri)?.use { createTmpFileWithInput(it) }
+        return openInputStreamForUri(uri)?.use { createTmpFileWithInput(it) }
             ?: error("Could not copy the contents of $uri to a temporary file")
     }
 

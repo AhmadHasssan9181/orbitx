@@ -50,6 +50,7 @@ fun TimelineItemEventContentView(
     modifier: Modifier = Modifier,
     onContentLayoutChange: (ContentAvoidingLayoutData) -> Unit = {},
     eventId: tech.orbitweb.orbitx.libraries.matrix.api.core.EventId? = null,
+    isMine: Boolean = false,
 ) {
     val presenterFactories = LocalTimelineItemPresenterFactories.current
     when (content) {
@@ -71,6 +72,7 @@ fun TimelineItemEventContentView(
             onContentLayoutChange = onContentLayoutChange,
             eventId = eventId,
             eventSink = eventSink,
+            isMine = isMine,
         )
         is TimelineItemUnknownContent -> TimelineItemUnknownView(
             content = content,
@@ -95,6 +97,7 @@ fun TimelineItemEventContentView(
             onContentLayoutChange = onContentLayoutChange,
             modifier = modifier,
             eventId = eventId,
+            isMine = isMine,
         )
         is TimelineItemGalleryContent -> TimelineItemGalleryView(
             content = content,
@@ -132,6 +135,7 @@ fun TimelineItemEventContentView(
             onContentLayoutChange = onContentLayoutChange,
             modifier = modifier,
             eventId = eventId,
+            isMine = isMine,
         )
         is TimelineItemFileContent -> TimelineItemFileView(
             content = content,
@@ -145,6 +149,7 @@ fun TimelineItemEventContentView(
             onContentLayoutChange = onContentLayoutChange,
             modifier = modifier,
             eventId = eventId,
+            isMine = isMine,
         )
         is TimelineItemLegacyCallInviteContent -> TimelineItemLegacyCallInviteView(modifier = modifier)
         is TimelineItemStateContent -> TimelineItemStateView(
@@ -164,6 +169,7 @@ fun TimelineItemEventContentView(
                 onContentLayoutChange = onContentLayoutChange,
                 modifier = modifier,
                 eventSink = eventSink,
+                isMine = isMine,
             )
         }
         is TimelineItemRtcNotificationContent -> error("This shouldn't be rendered as the content of a bubble")

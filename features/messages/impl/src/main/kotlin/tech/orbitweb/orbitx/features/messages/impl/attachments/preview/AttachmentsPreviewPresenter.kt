@@ -345,6 +345,8 @@ class AttachmentsPreviewPresenter(
                         it.cancel()
                         ongoingSendAttachmentJob.value = null
                     }
+                    preprocessMediaJob?.cancel()
+                    preprocessMediaJob = null
 
                     val mediaUploadInfoList = sendActionState.value.mediaUploadInfoList()
                     sendActionState.value = if (mediaUploadInfoList != null) {
@@ -404,10 +406,10 @@ class AttachmentsPreviewPresenter(
                     if (!pendingState.edits.hasChanges) {
                         editedTempFiles[currentIndex]?.safeDelete()
                         editedTempFiles = editedTempFiles - currentIndex
-                        val currentAttachment = attachmentsAndEdits[currentIndex].attachment
+                        val originalAttachment = attachments[currentIndex]
                         attachmentsAndEdits = attachmentsAndEdits.toMutableList().also {
                             it[currentIndex] = AttachmentAndEdits(
-                                currentAttachment,
+                                originalAttachment,
                                 pendingState.edits,
                             )
                         }.toImmutableList()
@@ -463,6 +465,56 @@ class AttachmentsPreviewPresenter(
                 }
                 AttachmentsPreviewEvent.ToggleVideoMute -> {
                     isVideoMuted = !isVideoMuted
+                }
+                is AttachmentsPreviewEvent.AddDrawStroke -> {
+                    val pendingState = imageEditorState ?: return
+                    imageEditorState = pendingState.copy(
+                        edits = pendingState.edits.copy(
+                            drawStrokes = pendingState.edits.drawStrokes + event.stroke
+                        )
+                    )
+                }
+                AttachmentsPreviewEvent.UndoLastDrawStroke -> {
+                    val pendingState = imageEditorState ?: return
+                    if (pendingState.edits.drawStrokes.isNotEmpty()) {
+                        imageEditorState = pendingState.copy(
+                            edits = pendingState.edits.copy(
+                                drawStrokes = pendingState.edits.drawStrokes.dropLast(1)
+                            )
+                        )
+                    }
+                }
+                AttachmentsPreviewEvent.ClearDrawStrokes -> {
+                    val pendingState = imageEditorState ?: return
+                    imageEditorState = pendingState.copy(
+                        edits = pendingState.edits.copy(drawStrokes = emptyList())
+                    )
+                }
+                is AttachmentsPreviewEvent.AddSticker -> {
+                    val pendingState = imageEditorState ?: return
+                    imageEditorState = pendingState.copy(
+                        edits = pendingState.edits.copy(
+                            stickers = pendingState.edits.stickers + event.sticker
+                        )
+                    )
+                }
+                is AttachmentsPreviewEvent.UpdateSticker -> {
+                    val pendingState = imageEditorState ?: return
+                    imageEditorState = pendingState.copy(
+                        edits = pendingState.edits.copy(
+                            stickers = pendingState.edits.stickers.map {
+                                if (it.id == event.sticker.id) event.sticker else it
+                            }
+                        )
+                    )
+                }
+                is AttachmentsPreviewEvent.RemoveSticker -> {
+                    val pendingState = imageEditorState ?: return
+                    imageEditorState = pendingState.copy(
+                        edits = pendingState.edits.copy(
+                            stickers = pendingState.edits.stickers.filterNot { it.id == event.stickerId }
+                        )
+                    )
                 }
             }
         }
@@ -535,7 +587,11 @@ class AttachmentsPreviewPresenter(
                             if (it is CancellationException) {
                                 throw it
                             } else {
-                                sendActionState.value = SendActionState.Failure(it, emptyList())
+                                if (displayProgress) {
+                                    sendActionState.value = SendActionState.Failure(it, emptyList())
+                                } else {
+                                    sendActionState.value = SendActionState.Idle
+                                }
                                 return
                             }
                         }

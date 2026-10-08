@@ -23,15 +23,18 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
@@ -46,10 +49,12 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.ColorMatrix
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.boundsInParent
@@ -64,11 +69,13 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import coil3.compose.AsyncImagePainter
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
@@ -90,9 +97,6 @@ import kotlin.math.min
 private val minHandleTouchRadius = 16.dp
 private val maxHandleTouchRadius = 56.dp
 
-/**
- * Ref: https://www.figma.com/design/zftpgS6LjiczobJZ1GUNpt/Updates-to-Media---File-Upload?node-id=51-3539
- */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AttachmentImageEditorView(
@@ -106,6 +110,12 @@ fun AttachmentImageEditorView(
     onDoneClick: () -> Unit,
     modifier: Modifier = Modifier,
     onFilterChange: (ImageFilter) -> Unit = {},
+    onAddDrawStroke: (DrawStroke) -> Unit = {},
+    onUndoDrawStroke: () -> Unit = {},
+    onClearDrawStrokes: () -> Unit = {},
+    onAddSticker: (StickerItem) -> Unit = {},
+    onUpdateSticker: (StickerItem) -> Unit = {},
+    onRemoveSticker: (String) -> Unit = {},
 ) {
     val rotateContentDescription = stringResource(R.string.screen_image_edition_a11y_rotate_to_the_left)
     val rotationStateDescription = pluralStringResource(
@@ -125,8 +135,15 @@ fun AttachmentImageEditorView(
     } else {
         stringResource(R.string.screen_image_edition_a11y_flip_image_vertically_state_original)
     }
+
+    var currentToolMode by remember { mutableStateOf(EditorToolMode.Crop) }
     var imageSize by remember(state.localMedia.uri) { mutableStateOf(IntSize.Zero) }
     var selectedAspectRatio by remember { mutableStateOf(CropAspectRatio.Free) }
+    var selectedColorHex by remember { mutableStateOf(0xFFFF2D55L) }
+    var selectedStrokeWidth by remember { mutableStateOf(8f) }
+    var selectedStickerId by remember { mutableStateOf<String?>(null) }
+
+    val canUndo = state.edits.drawStrokes.isNotEmpty() || state.edits.stickers.isNotEmpty()
 
     Scaffold(
         modifier = modifier.fillMaxSize(),
@@ -146,6 +163,66 @@ fun AttachmentImageEditorView(
                         text = stringResource(R.string.screen_image_edition_title),
                     )
                 },
+                actions = {
+                    // Crop Tool
+                    IconButton(
+                        onClick = { currentToolMode = EditorToolMode.Crop }
+                    ) {
+                        Icon(
+                            imageVector = CompoundIcons.Crop(),
+                            contentDescription = "Crop",
+                            tint = if (currentToolMode == EditorToolMode.Crop) Color(0xFFA78BFA) else ElementTheme.colors.iconSecondary,
+                        )
+                    }
+                    // Filter Tool
+                    IconButton(
+                        onClick = { currentToolMode = EditorToolMode.Filter }
+                    ) {
+                        Icon(
+                            imageVector = CompoundIcons.Theme(),
+                            contentDescription = "Filters",
+                            tint = if (currentToolMode == EditorToolMode.Filter) Color(0xFFA78BFA) else ElementTheme.colors.iconSecondary,
+                        )
+                    }
+                    // Draw Tool
+                    IconButton(
+                        onClick = { currentToolMode = EditorToolMode.Draw }
+                    ) {
+                        Icon(
+                            imageVector = CompoundIcons.Edit(),
+                            contentDescription = "Draw",
+                            tint = if (currentToolMode == EditorToolMode.Draw) Color(0xFFA78BFA) else ElementTheme.colors.iconSecondary,
+                        )
+                    }
+                    // Sticker Tool
+                    IconButton(
+                        onClick = { currentToolMode = EditorToolMode.Sticker }
+                    ) {
+                        Icon(
+                            imageVector = CompoundIcons.Sticker(),
+                            contentDescription = "Stickers",
+                            tint = if (currentToolMode == EditorToolMode.Sticker) Color(0xFFA78BFA) else ElementTheme.colors.iconSecondary,
+                        )
+                    }
+                    // Undo Button
+                    IconButton(
+                        onClick = {
+                            if (state.edits.drawStrokes.isNotEmpty()) {
+                                onUndoDrawStroke()
+                            } else if (state.edits.stickers.isNotEmpty()) {
+                                val last = state.edits.stickers.lastOrNull()
+                                if (last != null) onRemoveSticker(last.id)
+                            }
+                        },
+                        enabled = canUndo,
+                    ) {
+                        Icon(
+                            imageVector = CompoundIcons.Reply(),
+                            contentDescription = "Undo",
+                            tint = if (canUndo) ElementTheme.colors.iconPrimary else ElementTheme.colors.iconDisabled,
+                        )
+                    }
+                }
             )
         }
     ) { paddingValues ->
@@ -161,34 +238,74 @@ fun AttachmentImageEditorView(
             ) {
                 CropEditorCanvas(
                     state = state,
+                    currentToolMode = currentToolMode,
+                    selectedColorHex = selectedColorHex,
+                    selectedStrokeWidth = selectedStrokeWidth,
+                    selectedStickerId = selectedStickerId,
+                    onSelectSticker = { selectedStickerId = it },
+                    onAddDrawStroke = onAddDrawStroke,
+                    onUpdateSticker = onUpdateSticker,
+                    onRemoveSticker = onRemoveSticker,
                     onCropRectChange = onCropRectChange,
                     onImageSizeChanged = { imageSize = it },
                     onDragStarted = { selectedAspectRatio = CropAspectRatio.Free },
                 )
             }
-            AspectRatioSelectorRow(
-                selectedAspectRatio = selectedAspectRatio,
-                onAspectRatioSelected = { ratio ->
-                    selectedAspectRatio = ratio
-                    val newCrop = NormalizedCropRect.forAspectRatio(
-                        ratio = ratio.ratio,
-                        imageWidth = imageSize.width,
-                        imageHeight = imageSize.height,
-                        rotationQuarterTurns = state.edits.normalizedRotationQuarterTurns,
+
+            when (currentToolMode) {
+                EditorToolMode.Crop -> {
+                    AspectRatioSelectorRow(
+                        selectedAspectRatio = selectedAspectRatio,
+                        onAspectRatioSelected = { ratio ->
+                            selectedAspectRatio = ratio
+                            val newCrop = NormalizedCropRect.forAspectRatio(
+                                ratio = ratio.ratio,
+                                imageWidth = imageSize.width,
+                                imageHeight = imageSize.height,
+                                rotationQuarterTurns = state.edits.normalizedRotationQuarterTurns,
+                            )
+                            onCropRectChange(newCrop)
+                        },
                     )
-                    onCropRectChange(newCrop)
-                },
-            )
-            FilterSelectorRow(
-                selectedFilter = state.edits.filter,
-                onFilterSelected = onFilterChange,
-            )
+                }
+                EditorToolMode.Filter -> {
+                    FilterSelectorRow(
+                        selectedFilter = state.edits.filter,
+                        onFilterSelected = onFilterChange,
+                    )
+                }
+                EditorToolMode.Draw -> {
+                    DrawPaletteRow(
+                        selectedColorHex = selectedColorHex,
+                        selectedStrokeWidth = selectedStrokeWidth,
+                        onColorSelected = { selectedColorHex = it },
+                        onStrokeWidthSelected = { selectedStrokeWidth = it },
+                        onClearAll = onClearDrawStrokes,
+                        hasStrokes = state.edits.drawStrokes.isNotEmpty(),
+                    )
+                }
+                EditorToolMode.Sticker -> {
+                    StickerPickerRow(
+                        onStickerSelected = { emoji ->
+                            val newSticker = StickerItem(
+                                text = emoji,
+                                x = 0.5f,
+                                y = 0.5f,
+                                scale = 1f,
+                            )
+                            onAddSticker(newSticker)
+                            selectedStickerId = newSticker.id
+                        }
+                    )
+                }
+            }
+
             Row(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .widthIn(max = 360.dp)
                     .navigationBarsPadding()
-                    .padding(start = 20.dp, top = 18.dp, end = 20.dp, bottom = 18.dp),
+                    .padding(start = 20.dp, top = 14.dp, end = 20.dp, bottom = 14.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
             ) {
@@ -201,13 +318,13 @@ fun AttachmentImageEditorView(
                         destructive = true,
                         onClick = {
                             selectedAspectRatio = CropAspectRatio.Free
+                            selectedStickerId = null
                             onResetClick()
                         },
                     )
                 }
                 Row(
                     modifier = Modifier.weight(2f),
-                    // Center the content horizontally
                     horizontalArrangement = Arrangement.Center,
                 ) {
                     IconButton(
@@ -267,6 +384,14 @@ fun AttachmentImageEditorView(
 @Composable
 private fun BoxScope.CropEditorCanvas(
     state: AttachmentImageEditorState,
+    currentToolMode: EditorToolMode,
+    selectedColorHex: Long,
+    selectedStrokeWidth: Float,
+    selectedStickerId: String?,
+    onSelectSticker: (String) -> Unit,
+    onAddDrawStroke: (DrawStroke) -> Unit,
+    onUpdateSticker: (StickerItem) -> Unit,
+    onRemoveSticker: (String) -> Unit,
     onCropRectChange: (NormalizedCropRect) -> Unit,
     onImageSizeChanged: (IntSize) -> Unit = {},
     onDragStarted: () -> Unit = {},
@@ -277,11 +402,12 @@ private fun BoxScope.CropEditorCanvas(
     val flipScaleY = if (state.edits.isFlippedVertically) -1f else 1f
 
     var imageRect by remember { mutableStateOf(Rect.Zero) }
+    var inProgressStrokePoints by remember { mutableStateOf<List<DrawPoint>>(emptyList()) }
 
     BoxWithConstraints(
         modifier = Modifier
             .fillMaxSize()
-            .padding(20.dp),
+            .padding(16.dp),
     ) {
         val displayedSize = remember(maxWidth, maxHeight, imageSize, rotationQuarterTurns) {
             val sourceWidth = imageSize.width.takeIf { it > 0 } ?: 1
@@ -362,66 +488,418 @@ private fun BoxScope.CropEditorCanvas(
                     }
                 )
             }
+
+            // Layer 1: Freehand Drawing Strokes
+            Canvas(modifier = Modifier.fillMaxSize()) {
+                val canvasW = size.width
+                val canvasH = size.height
+
+                for (stroke in state.edits.drawStrokes) {
+                    if (stroke.points.size < 2) continue
+                    val path = Path()
+                    val first = stroke.points.first()
+                    path.moveTo(first.x * canvasW, first.y * canvasH)
+                    for (i in 1 until stroke.points.size) {
+                        val pt = stroke.points[i]
+                        path.lineTo(pt.x * canvasW, pt.y * canvasH)
+                    }
+                    val strokeWidthPx = (stroke.strokeWidth / 360f) * canvasW
+                    drawPath(
+                        path = path,
+                        color = Color(stroke.colorHex),
+                        style = Stroke(
+                            width = strokeWidthPx.coerceAtLeast(3f),
+                            cap = StrokeCap.Round,
+                            join = StrokeJoin.Round,
+                        )
+                    )
+                }
+
+                if (inProgressStrokePoints.size >= 2) {
+                    val path = Path()
+                    val first = inProgressStrokePoints.first()
+                    path.moveTo(first.x * canvasW, first.y * canvasH)
+                    for (i in 1 until inProgressStrokePoints.size) {
+                        val pt = inProgressStrokePoints[i]
+                        path.lineTo(pt.x * canvasW, pt.y * canvasH)
+                    }
+                    val strokeWidthPx = (selectedStrokeWidth / 360f) * canvasW
+                    drawPath(
+                        path = path,
+                        color = Color(selectedColorHex),
+                        style = Stroke(
+                            width = strokeWidthPx.coerceAtLeast(3f),
+                            cap = StrokeCap.Round,
+                            join = StrokeJoin.Round,
+                        )
+                    )
+                }
+            }
+
+            // Layer 2: Stickers / Emojis
+            for (sticker in state.edits.stickers) {
+                key(sticker.id) {
+                    StickerOverlayView(
+                        sticker = sticker,
+                        canvasSize = displayedSize,
+                        isSelected = selectedStickerId == sticker.id,
+                        onSelect = { onSelectSticker(sticker.id) },
+                        onUpdate = onUpdateSticker,
+                        onRemove = { onRemoveSticker(sticker.id) },
+                    )
+                }
+            }
+
+            // Layer 3: Interactive drawing surface when Draw mode is active
+            if (currentToolMode == EditorToolMode.Draw) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .pointerInput(selectedColorHex, selectedStrokeWidth, displayedSize) {
+                            detectDragGestures(
+                                onDragStart = { offset ->
+                                    val canvasW = displayedSize.width.takeIf { it > 0f } ?: 1f
+                                    val canvasH = displayedSize.height.takeIf { it > 0f } ?: 1f
+                                    val normX = (offset.x / canvasW).coerceIn(0f, 1f)
+                                    val normY = (offset.y / canvasH).coerceIn(0f, 1f)
+                                    inProgressStrokePoints = listOf(DrawPoint(normX, normY))
+                                },
+                                onDrag = { change, _ ->
+                                    change.consume()
+                                    val canvasW = displayedSize.width.takeIf { it > 0f } ?: 1f
+                                    val canvasH = displayedSize.height.takeIf { it > 0f } ?: 1f
+                                    val normX = (change.position.x / canvasW).coerceIn(0f, 1f)
+                                    val normY = (change.position.y / canvasH).coerceIn(0f, 1f)
+                                    inProgressStrokePoints = inProgressStrokePoints + DrawPoint(normX, normY)
+                                },
+                                onDragEnd = {
+                                    if (inProgressStrokePoints.size >= 2) {
+                                        onAddDrawStroke(
+                                            DrawStroke(
+                                                points = inProgressStrokePoints,
+                                                colorHex = selectedColorHex,
+                                                strokeWidth = selectedStrokeWidth,
+                                            )
+                                        )
+                                    }
+                                    inProgressStrokePoints = emptyList()
+                                },
+                                onDragCancel = {
+                                    inProgressStrokePoints = emptyList()
+                                }
+                            )
+                        }
+                )
+            }
         }
-        val minHandleTouchRadiusPx = minHandleTouchRadius.toPx()
-        val maxHandleTouchRadiusPx = maxHandleTouchRadius.toPx()
-        val touchRadiusPx by rememberUpdatedState(
-            (min(
-                state.edits.cropRect.width * imageRect.width,
-                state.edits.cropRect.height * imageRect.height,
-            ) / 4f).coerceIn(
-                minHandleTouchRadiusPx,
-                maxHandleTouchRadiusPx,
+
+        // Layer 4: Crop Overlay & Gestures when Crop mode is active
+        if (currentToolMode == EditorToolMode.Crop) {
+            val minHandleTouchRadiusPx = minHandleTouchRadius.toPx()
+            val maxHandleTouchRadiusPx = maxHandleTouchRadius.toPx()
+            val touchRadiusPx by rememberUpdatedState(
+                (min(
+                    state.edits.cropRect.width * imageRect.width,
+                    state.edits.cropRect.height * imageRect.height,
+                ) / 4f).coerceIn(
+                    minHandleTouchRadiusPx,
+                    maxHandleTouchRadiusPx,
+                )
             )
-        )
-        var dragTarget by remember { mutableStateOf<CropDragTarget?>(null) }
-        val latestCropRect by rememberUpdatedState(state.edits.cropRect)
-        val drawGuidelines = dragTarget == CropDragTarget.Move || state.previewDebug
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .pointerInput(Unit) {
-                    detectDragGestures(
-                        onDragStart = { offset ->
-                            onDragStarted()
-                            dragTarget = detectDragTarget(
-                                touchPoint = offset,
-                                imageOffset = imageRect.topLeft,
-                                cropRect = latestCropRect,
-                                canvasSize = Size(imageRect.width, imageRect.height),
-                                handleTouchRadius = touchRadiusPx,
+            var dragTarget by remember { mutableStateOf<CropDragTarget?>(null) }
+            val latestCropRect by rememberUpdatedState(state.edits.cropRect)
+            val drawGuidelines = dragTarget == CropDragTarget.Move || state.previewDebug
+
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .pointerInput(Unit) {
+                        detectDragGestures(
+                            onDragStart = { offset ->
+                                onDragStarted()
+                                dragTarget = detectDragTarget(
+                                    touchPoint = offset,
+                                    imageOffset = imageRect.topLeft,
+                                    cropRect = latestCropRect,
+                                    canvasSize = Size(imageRect.width, imageRect.height),
+                                    handleTouchRadius = touchRadiusPx,
+                                )
+                            },
+                            onDragCancel = {
+                                dragTarget = null
+                            },
+                            onDragEnd = {
+                                dragTarget = null
+                            },
+                        ) { change, dragAmount ->
+                            val activeTarget = dragTarget ?: return@detectDragGestures
+                            change.consume()
+                            val gestureAreaWidth = imageRect.width.takeIf { it > 0f } ?: size.width.toFloat()
+                            val gestureAreaHeight = imageRect.height.takeIf { it > 0f } ?: size.height.toFloat()
+                            onCropRectChange(
+                                latestCropRect.applyChange(
+                                    dragTarget = activeTarget,
+                                    deltaX = dragAmount.x / gestureAreaWidth,
+                                    deltaY = dragAmount.y / gestureAreaHeight,
+                                )
                             )
-                        },
-                        onDragCancel = {
-                            dragTarget = null
-                        },
-                        onDragEnd = {
-                            dragTarget = null
-                        },
-                    ) { change, dragAmount ->
-                        val activeTarget = dragTarget ?: return@detectDragGestures
+                        }
+                    },
+                contentAlignment = Alignment.Center,
+            ) {
+                CropOverlay(
+                    imageSize = DpSize(displayedWidthDp, displayedHeightDp),
+                    cropRect = state.edits.cropRect,
+                    drawGuidelines = drawGuidelines,
+                    previewDebug = state.previewDebug,
+                    touchRadiusPx = touchRadiusPx,
+                    dragTarget = dragTarget,
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun StickerOverlayView(
+    sticker: StickerItem,
+    canvasSize: Size,
+    isSelected: Boolean,
+    onSelect: () -> Unit,
+    onUpdate: (StickerItem) -> Unit,
+    onRemove: () -> Unit,
+) {
+    val density = LocalDensity.current
+    val canvasW = canvasSize.width.takeIf { it > 0f } ?: 1f
+    val canvasH = canvasSize.height.takeIf { it > 0f } ?: 1f
+    val xDp = with(density) { (sticker.x * canvasW).toDp() }
+    val yDp = with(density) { (sticker.y * canvasH).toDp() }
+
+    Box(
+        modifier = Modifier
+            .offset(x = xDp - (24.dp * sticker.scale), y = yDp - (24.dp * sticker.scale))
+            .graphicsLayer {
+                rotationZ = sticker.rotationDegrees
+            }
+            .pointerInput(sticker.id, canvasSize) {
+                detectDragGestures(
+                    onDragStart = { onSelect() },
+                    onDrag = { change, dragAmount ->
                         change.consume()
-                        val gestureAreaWidth = imageRect.width.takeIf { it > 0f } ?: size.width.toFloat()
-                        val gestureAreaHeight = imageRect.height.takeIf { it > 0f } ?: size.height.toFloat()
-                        onCropRectChange(
-                            latestCropRect.applyChange(
-                                dragTarget = activeTarget,
-                                deltaX = dragAmount.x / gestureAreaWidth,
-                                deltaY = dragAmount.y / gestureAreaHeight,
+                        val newX = ((sticker.x * canvasW + dragAmount.x) / canvasW).coerceIn(0.05f, 0.95f)
+                        val newY = ((sticker.y * canvasH + dragAmount.y) / canvasH).coerceIn(0.05f, 0.95f)
+                        onUpdate(sticker.copy(x = newX, y = newY))
+                    }
+                )
+            }
+            .clickable { onSelect() }
+            .then(
+                if (isSelected) {
+                    Modifier
+                        .border(1.5.dp, Color(0xFFA78BFA), RoundedCornerShape(8.dp))
+                        .padding(4.dp)
+                } else {
+                    Modifier.padding(4.dp)
+                }
+            )
+    ) {
+        Text(
+            text = sticker.text,
+            style = ElementTheme.typography.fontBodyLgRegular.copy(fontSize = (34 * sticker.scale).sp),
+        )
+        if (isSelected) {
+            // Delete button at top right
+            Box(
+                modifier = Modifier
+                    .align(Alignment.TopEnd)
+                    .offset(x = 8.dp, y = (-8).dp)
+                    .size(20.dp)
+                    .clip(CircleShape)
+                    .background(Color(0xFFEF4444))
+                    .clickable { onRemove() },
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    text = "×",
+                    color = Color.White,
+                    style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 14.sp, fontWeight = FontWeight.Bold),
+                )
+            }
+            // Scale toggle button at bottom right
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .offset(x = 8.dp, y = 8.dp)
+                    .size(20.dp)
+                    .clip(CircleShape)
+                    .background(Color(0xFF8B5CF6))
+                    .clickable {
+                        val nextScale = when {
+                            sticker.scale < 1.3f -> sticker.scale + 0.35f
+                            sticker.scale < 2.0f -> sticker.scale + 0.35f
+                            else -> 0.8f
+                        }
+                        onUpdate(sticker.copy(scale = nextScale))
+                    },
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    text = "⤢",
+                    color = Color.White,
+                    style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 12.sp, fontWeight = FontWeight.Bold),
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun DrawPaletteRow(
+    selectedColorHex: Long,
+    selectedStrokeWidth: Float,
+    onColorSelected: (Long) -> Unit,
+    onStrokeWidthSelected: (Float) -> Unit,
+    onClearAll: () -> Unit,
+    hasStrokes: Boolean,
+    modifier: Modifier = Modifier,
+) {
+    val colors = listOf(
+        0xFFFFFFFFL, // White
+        0xFF1A1A1AL, // Black
+        0xFFFF2D55L, // Red
+        0xFFFF9500L, // Orange
+        0xFFFFCC00L, // Yellow
+        0xFF34C759L, // Green
+        0xFF32ADE6L, // Cyan
+        0xFF007AFFL, // Blue
+        0xFFAF52DEL, // Purple
+    )
+    val strokeWidths = listOf(
+        4f to "Fine",
+        8f to "Medium",
+        14f to "Bold",
+    )
+
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 4.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .horizontalScroll(rememberScrollState()),
+            horizontalArrangement = Arrangement.spacedBy(10.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            colors.forEach { colorHex ->
+                val isSelected = colorHex == selectedColorHex
+                Box(
+                    modifier = Modifier
+                        .size(30.dp)
+                        .clip(CircleShape)
+                        .background(Color(colorHex))
+                        .border(
+                            width = if (isSelected) 3.dp else 1.dp,
+                            color = if (isSelected) Color(0xFFC4B5FD) else Color(0x66FFFFFF),
+                            shape = CircleShape,
+                        )
+                        .clickable { onColorSelected(colorHex) }
+                )
+            }
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                strokeWidths.forEach { (width, label) ->
+                    val isSelected = width == selectedStrokeWidth
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(12.dp))
+                            .background(
+                                if (isSelected) Color(0xFF8B5CF6) else Color(0xFF1F1D2B)
                             )
+                            .border(
+                                width = 1.dp,
+                                color = if (isSelected) Color(0xFFC4B5FD) else Color(0xFF2E2B45),
+                                shape = RoundedCornerShape(12.dp),
+                            )
+                            .clickable { onStrokeWidthSelected(width) }
+                            .padding(horizontal = 12.dp, vertical = 4.dp)
+                    ) {
+                        Text(
+                            text = label,
+                            style = ElementTheme.typography.fontBodySmMedium,
+                            color = if (isSelected) Color.White else ElementTheme.colors.textSecondary,
                         )
                     }
-                },
-            contentAlignment = Alignment.Center,
+                }
+            }
+
+            if (hasStrokes) {
+                TextButton(
+                    text = "Clear drawing",
+                    destructive = true,
+                    onClick = onClearAll,
+                )
+            }
+        }
+    }
+}
+
+private val emojiStickers = listOf(
+    "😀", "😂", "🤣", "😍", "🥰", "😎", "🤩", "🥳", "😜", "🤫",
+    "🤔", "😴", "🤯", "😇", "🤠", "🤖", "👻", "🔥", "✨", "💯",
+    "❤️", "💖", "💔", "🎉", "🎊", "👍", "👎", "👏", "🙌", "🤝",
+    "✌️", "🤞", "💪", "🐶", "🐱", "🐼", "🦊", "🦁", "🦄", "🍕",
+    "🍔", "🍦", "🍩", "🎂", "🚗", "🚀", "👑", "🎯", "⭐", "💡"
+)
+
+@Composable
+private fun StickerPickerRow(
+    onStickerSelected: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 4.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+    ) {
+        Text(
+            text = "Tap sticker to place on image",
+            style = ElementTheme.typography.fontBodySmRegular,
+            color = ElementTheme.colors.textSecondary,
+            modifier = Modifier.padding(start = 4.dp, bottom = 2.dp),
+        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .horizontalScroll(rememberScrollState()),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically,
         ) {
-            CropOverlay(
-                imageSize = DpSize(displayedWidthDp, displayedHeightDp),
-                cropRect = state.edits.cropRect,
-                drawGuidelines = drawGuidelines,
-                previewDebug = state.previewDebug,
-                touchRadiusPx = touchRadiusPx,
-                dragTarget = dragTarget,
-            )
+            emojiStickers.forEach { emoji ->
+                Box(
+                    modifier = Modifier
+                        .size(44.dp)
+                        .clip(RoundedCornerShape(12.dp))
+                        .background(Color(0xFF1F1D2B))
+                        .border(1.dp, Color(0xFF2E2B45), RoundedCornerShape(12.dp))
+                        .clickable { onStickerSelected(emoji) },
+                    contentAlignment = Alignment.Center,
+                ) {
+                    Text(
+                        text = emoji,
+                        style = ElementTheme.typography.fontBodyLgRegular.copy(fontSize = 24.sp),
+                    )
+                }
+            }
         }
     }
 }
@@ -445,63 +923,66 @@ private fun CropOverlay(
         val cropTop = cropRect.top * size.height
         val cropRight = cropRect.right * size.width
         val cropBottom = cropRect.bottom * size.height
-        // Hardcoded black: the crop overlay must always darken the image regardless of theme.
-        // No semantic token exists for this use case in the Compound design system.
         val overlayColor = Color.Black.copy(alpha = 0.48f)
-        // Overlay above the crop area
+
+        // Top dark overlay
         drawRect(
             color = overlayColor,
-            topLeft = Offset.Zero,
-            size = Size(width = size.width, height = cropTop),
+            topLeft = Offset(0f, 0f),
+            size = Size(size.width, cropTop),
         )
-        // Overlay on the left of the crop area
+        // Left dark overlay
         drawRect(
             color = overlayColor,
             topLeft = Offset(0f, cropTop),
-            size = Size(width = cropLeft, height = cropBottom - cropTop),
+            size = Size(cropLeft, cropBottom - cropTop),
         )
-        // Overlay on the right of the crop area
+        // Right dark overlay
         drawRect(
             color = overlayColor,
             topLeft = Offset(cropRight, cropTop),
-            size = Size(width = size.width - cropRight, height = cropBottom - cropTop),
+            size = Size(size.width - cropRight, cropBottom - cropTop),
         )
-        // Overlay below the crop area
+        // Bottom dark overlay
         drawRect(
             color = overlayColor,
             topLeft = Offset(0f, cropBottom),
-            size = Size(width = size.width, height = size.height - cropBottom),
+            size = Size(size.width, size.height - cropBottom),
         )
-        // Main frame of the crop area
+
+        // Border around crop
         drawRect(
             color = borderColor,
             topLeft = Offset(cropLeft, cropTop),
-            size = Size(width = cropRight - cropLeft, height = cropBottom - cropTop),
+            size = Size(cropRight - cropLeft, cropBottom - cropTop),
             style = Stroke(width = 1.dp.toPx()),
         )
-        // Guidelines dividing the crop area into 9 equal parts
+
         if (drawGuidelines) {
-            val thirdWidth = (cropRight - cropLeft) / 3f
-            val thirdHeight = (cropBottom - cropTop) / 3f
-            for (index in 1..2) {
-                val offsetX = cropLeft + thirdWidth * index
-                val offsetY = cropTop + thirdHeight * index
-                // Vertical guide line
+            val cropWidth = cropRight - cropLeft
+            val cropHeight = cropBottom - cropTop
+            // Vertical guidelines (rule of thirds)
+            for (i in 1..2) {
+                val offsetX = cropLeft + cropWidth * (i / 3f)
                 drawLine(
-                    color = guideColor,
+                    color = guideColor.copy(alpha = 0.5f),
                     start = Offset(offsetX, cropTop),
                     end = Offset(offsetX, cropBottom),
                     strokeWidth = 1.dp.toPx(),
                 )
-                // Horizontal guide line
+            }
+            // Horizontal guidelines (rule of thirds)
+            for (i in 1..2) {
+                val offsetY = cropTop + cropHeight * (i / 3f)
                 drawLine(
-                    color = guideColor,
+                    color = guideColor.copy(alpha = 0.5f),
                     start = Offset(cropLeft, offsetY),
                     end = Offset(cropRight, offsetY),
                     strokeWidth = 1.dp.toPx(),
                 )
             }
         }
+
         // Corner handles
         val handleLength = 18.dp.toPx()
         val handleOffset = 2.dp.toPx()
@@ -537,6 +1018,7 @@ private fun CropOverlay(
             color = borderColor,
             position = CropDragTarget.Corner.BottomRight,
         )
+
         val handleColor = borderColor
         // Top handle
         drawEdgeHandle(
@@ -568,7 +1050,6 @@ private fun CropOverlay(
         )
 
         if (previewDebug) {
-            // Draw disk around touchable area
             listOf(
                 CropDragTarget.Edge.Top,
                 CropDragTarget.Edge.Right,
@@ -584,7 +1065,7 @@ private fun CropOverlay(
                     is CropDragTarget.Move -> Color.Red
                     is CropDragTarget.Corner -> Color.Blue
                     is CropDragTarget.Edge -> Color.Green
-                }.copy(alpha = if (dragTarget == target) 9f else 0.5f)
+                }.copy(alpha = if (dragTarget == target) 0.9f else 0.5f)
                 drawCircle(
                     color = color,
                     radius = touchRadiusPx,
@@ -615,8 +1096,6 @@ private fun detectDragTarget(
     canvasSize: Size,
     handleTouchRadius: Float,
 ): CropDragTarget? {
-    // Give priority on Move (extra detection of the center of crop area)
-    // to ensure that user can move a small crop, then to corners and at last to edges.
     val handlesArea = mapOf(
         CropDragTarget.Move to computeOffset(CropDragTarget.Move, cropRect, canvasSize),
         CropDragTarget.Corner.TopLeft to computeOffset(CropDragTarget.Corner.TopLeft, cropRect, canvasSize),
@@ -660,7 +1139,6 @@ private fun computeOffset(
     CropDragTarget.Edge.Left -> Offset(cropRect.left * canvasSize.width, (cropRect.top + cropRect.bottom) * canvasSize.height / 2f)
 }
 
-// x and y are the coordinates of the corner
 private fun DrawScope.drawCornerHandle(
     x: Float,
     y: Float,
@@ -717,7 +1195,6 @@ private fun DrawScope.drawEdgeHandle(
     )
 }
 
-// Only preview in dark, dark theme is forced on the Node.
 @Preview
 @Composable
 internal fun AttachmentImageEditorViewPreview(
@@ -881,4 +1358,3 @@ private fun ImageFilter.toComposeColorFilter(): ColorFilter? = when (this) {
         )
     )
 }
-

@@ -166,6 +166,24 @@ fun AttachmentsPreviewView(
             onFilterChange = { filter ->
                 state.eventSink(AttachmentsPreviewEvent.SelectImageFilter(filter))
             },
+            onAddDrawStroke = { stroke ->
+                state.eventSink(AttachmentsPreviewEvent.AddDrawStroke(stroke))
+            },
+            onUndoDrawStroke = {
+                state.eventSink(AttachmentsPreviewEvent.UndoLastDrawStroke)
+            },
+            onClearDrawStrokes = {
+                state.eventSink(AttachmentsPreviewEvent.ClearDrawStrokes)
+            },
+            onAddSticker = { sticker ->
+                state.eventSink(AttachmentsPreviewEvent.AddSticker(sticker))
+            },
+            onUpdateSticker = { sticker ->
+                state.eventSink(AttachmentsPreviewEvent.UpdateSticker(sticker))
+            },
+            onRemoveSticker = { stickerId ->
+                state.eventSink(AttachmentsPreviewEvent.RemoveSticker(stickerId))
+            },
             modifier = modifier,
         )
     } else {

@@ -18,9 +18,9 @@ class DefaultLoginIntentResolver : LoginIntentResolver {
     override fun parse(uriString: String): LoginParams? {
         val uri = uriString.toUri()
         val host = uri.host ?: return null
-        if (host != "mobile.orbitweb.tech" && host != "mobile.orbit.chat") return null
+        if (host != "mobile.orbitweb.tech" && host != "mobile.orbit.chat" && host != "mobile.element.io") return null
         val path = uri.path.orEmpty()
-        if (!path.startsWith("/orbit")) return null
+        if (!path.startsWith("/orbit") && !path.startsWith("/element")) return null
         val accountProvider = uri.getQueryParameter("account_provider") ?: return null
         val loginHint = uri.getQueryParameter("login_hint")
         return LoginParams(

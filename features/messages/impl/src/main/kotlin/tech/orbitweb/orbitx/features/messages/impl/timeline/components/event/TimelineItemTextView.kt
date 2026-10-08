@@ -25,6 +25,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
@@ -75,9 +76,11 @@ fun TimelineItemTextView(
     onContentLayoutChange: (ContentAvoidingLayoutData) -> Unit = {},
     eventId: tech.orbitweb.orbitx.libraries.matrix.api.core.EventId? = null,
     eventSink: ((tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent.TimelineItemEvent) -> Unit)? = null,
+    isMine: Boolean = false,
 ) {
     if (content.body.startsWith("🔒 View-Once Message")) {
-        val isDestroyed = OrbitEphemeralTracker.isDestroyed(eventId?.value)
+        val destroyedEventIds by OrbitEphemeralTracker.destroyedEventIdsFlow.collectAsState()
+        val isDestroyed = eventId?.value != null && destroyedEventIds.contains(eventId.value)
         val context = LocalContext.current
         var showRevealDialog by remember { mutableStateOf(false) }
 
@@ -91,10 +94,16 @@ fun TimelineItemTextView(
 
         ViewOnceMediaBubble(
             mediaType = "Message",
-            onContentClick = if (isDestroyed) {
+            isMine = isMine,
+            onContentClick = if (isMine) {
+                { Toast.makeText(context, "You sent this as a view-once message. It cannot be reopened.", Toast.LENGTH_SHORT).show() }
+            } else if (isDestroyed) {
                 { Toast.makeText(context, "This message has already been viewed and destroyed", Toast.LENGTH_SHORT).show() }
             } else {
                 {
+                    if (eventId != null) {
+                        OrbitEphemeralTracker.markDestroyed(eventId.value)
+                    }
                     showRevealDialog = true
                 }
             },
