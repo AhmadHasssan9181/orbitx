@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.permissions.api
+
+import kotlinx.coroutines.flow.Flow
+
+interface PermissionsStore {
+    suspend fun setPermissionDenied(permission: String, value: Boolean)
+    fun isPermissionDenied(permission: String): Flow<Boolean>
+
+    suspend fun setPermissionAsked(permission: String, value: Boolean)
+    fun isPermissionAsked(permission: String): Flow<Boolean>
+
+    suspend fun resetPermission(permission: String)
+
+    // To debug
+    suspend fun resetStore()
+}

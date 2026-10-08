@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.designsystem.components.avatar.internal
+
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.Dp
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarType
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.avatarShape
+
+@Composable
+internal fun UserAvatar(
+    avatarData: AvatarData,
+    modifier: Modifier = Modifier,
+    contentDescription: String? = null,
+    forcedAvatarSize: Dp? = null,
+    hideImage: Boolean = false,
+) {
+    InitialOrImageAvatar(
+        avatarData = avatarData,
+        hideAvatarImage = hideImage,
+        avatarShape = AvatarType.User.avatarShape(),
+        modifier = modifier,
+        contentDescription = contentDescription,
+        forcedAvatarSize = forcedAvatarSize,
+    )
+}

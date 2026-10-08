@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.rageshake.api.logs
+
+import java.io.File
+
+interface LogFilesRemover {
+    /**
+     * Perform the log files removal.
+     * @param predicate a predicate to filter the files to remove. By default, all files are removed.
+     */
+    suspend fun perform(predicate: (File) -> Boolean = { true })
+}

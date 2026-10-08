@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.mediaviewer.impl.local.pdf
+
+import android.content.Context
+import android.net.Uri
+import android.os.ParcelFileDescriptor
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import java.io.File
+
+class ParcelFileDescriptorFactory(private val context: Context) {
+    fun create(model: Any?) = runCatchingExceptions {
+        when (model) {
+            is File -> ParcelFileDescriptor.open(model, ParcelFileDescriptor.MODE_READ_ONLY)
+            is Uri -> context.contentResolver.openFileDescriptor(model, "r")!!
+            else -> error(RuntimeException("Can't handle this model"))
+        }
+    }
+}

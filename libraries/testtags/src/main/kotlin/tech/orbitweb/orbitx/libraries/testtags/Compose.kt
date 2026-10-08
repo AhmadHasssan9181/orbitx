@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.testtags
+
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
+import androidx.compose.ui.semantics.testTagsAsResourceId
+
+/**
+ * Add a testTag to a Modifier, to be used by external tool, like TrafficLight for instance.
+ */
+fun Modifier.testTag(id: TestTag) = semantics {
+    testTag = id.value
+    testTagsAsResourceId = true
+}

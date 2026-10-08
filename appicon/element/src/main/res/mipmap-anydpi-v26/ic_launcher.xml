@@ -1,0 +1,11 @@
+<!--
+  ~ Copyright (c) 2026 Orbit Team / Orbit Commercial Ltd.
+  ~
+  ~ SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+  ~ Please see LICENSE files in the repository root for full details.
+  -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background"/>
+    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+    <monochrome android:drawable="@mipmap/ic_launcher_monochrome"/>
+</adaptive-icon>

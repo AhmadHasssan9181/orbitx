@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.designsystem.preview
+
+import androidx.compose.ui.tooling.preview.Preview
+
+/**
+ * Our Paparazzi tests will check components with non-null `heightDp` and use a custom rendering for them,
+ * adding extra vertical space so long scrolling components can be displayed. This is a helper for that functionality.
+ */
+@Preview(heightDp = 1000)
+annotation class PreviewWithLargeHeight
+
+@Preview(heightDp = 1600)
+annotation class PreviewWithExtraLargeHeight

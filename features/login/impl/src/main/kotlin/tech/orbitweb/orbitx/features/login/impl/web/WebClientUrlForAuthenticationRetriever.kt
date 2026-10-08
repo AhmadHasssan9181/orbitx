@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.login.impl.web
+
+import androidx.core.net.toUri
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
+import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
+import tech.orbitweb.orbitx.features.login.impl.screens.createaccount.AccountCreationNotSupported
+import tech.orbitweb.orbitx.libraries.wellknown.api.WellknownRetriever
+import timber.log.Timber
+
+interface WebClientUrlForAuthenticationRetriever {
+    suspend fun retrieve(homeServerUrl: String): String
+}
+
+@ContributesBinding(AppScope::class)
+class DefaultWebClientUrlForAuthenticationRetriever(
+    private val wellknownRetriever: WellknownRetriever,
+) : WebClientUrlForAuthenticationRetriever {
+    override suspend fun retrieve(homeServerUrl: String): String {
+        if (homeServerUrl != AuthenticationConfig.MATRIX_ORG_URL) {
+            Timber.w("Temporary account creation flow is only supported on matrix.org")
+            throw AccountCreationNotSupported()
+        }
+        val wellknown = wellknownRetriever.getElementWellKnown(homeServerUrl).dataOrNull()
+            ?: throw AccountCreationNotSupported()
+        val registrationHelperUrl = wellknown.registrationHelperUrl
+        return if (registrationHelperUrl != null) {
+            registrationHelperUrl.toUri()
+                .buildUpon()
+                .appendQueryParameter("hs_url", homeServerUrl)
+                .build()
+                .toString()
+        } else {
+            throw AccountCreationNotSupported()
+        }
+    }
+}

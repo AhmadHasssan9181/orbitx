@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.matrix.impl.util
+
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionData
+import org.matrix.rustcomponents.sdk.Session
+import java.security.MessageDigest
+
+private val sha256 by lazy { MessageDigest.getInstance("SHA-256") }
+
+@OptIn(ExperimentalStdlibApi::class)
+private fun anonymizeToken(token: String): String {
+    // Only keep the first 32 chars (16 bytes) of the hashed token to avoid displaying too much information.
+    return sha256.digest(token.toByteArray()).toHexString().take(32)
+}
+
+fun SessionData?.anonymizedTokens(): Pair<String?, String?> {
+    if (this == null) return null to null
+    return anonymizeToken(accessToken) to refreshToken?.let { anonymizeToken(it) }
+}
+
+fun Session?.anonymizedTokens(): Pair<String?, String?> {
+    if (this == null) return null to null
+    return anonymizeToken(accessToken) to refreshToken?.let { anonymizeToken(it) }
+}

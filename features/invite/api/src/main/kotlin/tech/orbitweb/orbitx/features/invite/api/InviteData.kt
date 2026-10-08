@@ -1,0 +1,46 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.invite.api
+
+import android.os.Parcelable
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
+import tech.orbitweb.orbitx.libraries.matrix.api.room.preview.RoomPreviewInfo
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class InviteData(
+    val roomId: RoomId,
+    val roomName: String,
+    val isDm: Boolean,
+) : Parcelable
+
+fun RoomPreviewInfo.toInviteData(): InviteData {
+    return InviteData(
+        roomId = roomId,
+        roomName = name ?: roomId.value,
+        isDm = false,
+    )
+}
+
+fun RoomInfo.toInviteData(): InviteData {
+    return InviteData(
+        roomId = id,
+        roomName = name ?: id.value,
+        isDm = isDm,
+    )
+}
+
+fun SpaceRoom.toInviteData(): InviteData {
+    return InviteData(
+        roomId = roomId,
+        roomName = displayName,
+        isDm = false,
+    )
+}

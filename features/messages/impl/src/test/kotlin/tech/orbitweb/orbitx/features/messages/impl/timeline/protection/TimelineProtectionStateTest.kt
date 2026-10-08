@@ -1,0 +1,59 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.messages.impl.timeline.protection
+
+import com.google.common.truth.Truth.assertThat
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID_2
+import kotlinx.collections.immutable.persistentSetOf
+import org.junit.Test
+
+class TimelineProtectionStateTest {
+    @Test
+    fun `when protectionState is RenderAll, hideMediaContent always return null`() {
+        val sut = aTimelineProtectionState(
+            protectionState = ProtectionState.RenderAll
+        )
+        assertThat(sut.hideMediaContent(null)).isFalse()
+        assertThat(sut.hideMediaContent(AN_EVENT_ID)).isFalse()
+    }
+
+    @Test
+    fun `when protectionState is RenderOnly with empty set, hideMediaContent always return true`() {
+        val sut = aTimelineProtectionState(
+            protectionState = ProtectionState.RenderOnly(persistentSetOf())
+        )
+        assertThat(sut.hideMediaContent(null)).isTrue()
+        assertThat(sut.hideMediaContent(AN_EVENT_ID)).isTrue()
+    }
+
+    @Test
+    fun `when protectionState is RenderOnly with an Event, hideMediaContent can return true or false`() {
+        val sut = aTimelineProtectionState(
+            protectionState = ProtectionState.RenderOnly(persistentSetOf(AN_EVENT_ID))
+        )
+        assertThat(sut.hideMediaContent(null)).isTrue()
+        assertThat(sut.hideMediaContent(AN_EVENT_ID)).isFalse()
+        assertThat(sut.hideMediaContent(AN_EVENT_ID_2)).isTrue()
+    }
+
+    @Test
+    fun `when isMine is true, hideMediaContent always returns false regardless of state`() {
+        val sutRenderAll = aTimelineProtectionState(
+            protectionState = ProtectionState.RenderAll
+        )
+        assertThat(sutRenderAll.hideMediaContent(null, isMine = true)).isFalse()
+        assertThat(sutRenderAll.hideMediaContent(AN_EVENT_ID, isMine = true)).isFalse()
+
+        val sutRenderOnly = aTimelineProtectionState(
+            protectionState = ProtectionState.RenderOnly(persistentSetOf())
+        )
+        assertThat(sutRenderOnly.hideMediaContent(null, isMine = true)).isFalse()
+        assertThat(sutRenderOnly.hideMediaContent(AN_EVENT_ID, isMine = true)).isFalse()
+    }
+}

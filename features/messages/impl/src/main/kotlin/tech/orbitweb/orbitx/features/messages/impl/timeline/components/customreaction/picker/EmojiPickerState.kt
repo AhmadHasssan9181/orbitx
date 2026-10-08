@@ -1,0 +1,36 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction.picker
+
+import androidx.annotation.StringRes
+import androidx.compose.foundation.text.input.TextFieldState
+import androidx.compose.runtime.Immutable
+import io.element.android.emojibasebindings.Emoji
+import tech.orbitweb.orbitx.libraries.designsystem.theme.components.IconSource
+import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
+import kotlinx.collections.immutable.ImmutableList
+
+// Emoji is unstable (because from an external library?), so we annotate with @Immutable
+@Immutable
+data class EmojiPickerState(
+    val categories: ImmutableList<EmojiCategory>,
+    val allEmojis: ImmutableList<Emoji>,
+    val searchQuery: TextFieldState,
+    val isSearchActive: Boolean,
+    val searchResults: SearchBarResultState<ImmutableList<Emoji>>,
+    val eventSink: (EmojiPickerEvent) -> Unit,
+)
+
+/**
+ * Represents a category of emojis with a title id, icon, and the list of associated emojis.
+ */
+data class EmojiCategory(
+    @StringRes val titleId: Int,
+    val icon: IconSource,
+    val emojis: ImmutableList<Emoji>,
+)

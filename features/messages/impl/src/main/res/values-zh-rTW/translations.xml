@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="crypto_event_authenticity_mismatched_sender">"äº‹ä»¶çš„å‚³é€è€…èˆ‡å‚³é€è©²äº‹ä»¶çš„è£ç½®æ“æœ‰è€…ä¸ç›¸ç¬¦ã€‚"</string>
+  <string name="crypto_event_authenticity_not_guaranteed">"ç„¡æ³•åœ¨æ­¤è£ç½®ä¸Šä¿è­‰æ­¤åŠ å¯†è¨Šæ¯çš„çœŸå¯¦æ€§ã€‚"</string>
+  <string name="crypto_event_authenticity_previously_verified">"ç”±å…ˆå‰é©—è­‰çš„ä½¿ç”¨è€…åŠ å¯†ã€‚"</string>
+  <string name="crypto_event_authenticity_sent_in_clear">"æœªåŠ å¯†ã€‚"</string>
+  <string name="crypto_event_authenticity_unknown_device">"ç”±æœªçŸ¥æˆ–å·²åˆªé™¤çš„è£ç½®åŠ å¯†ã€‚"</string>
+  <string name="crypto_event_authenticity_unsigned_device">"ç”±æœªç¶“å…¶æ“æœ‰è€…é©—è­‰çš„è£ç½®åŠ å¯†ã€‚"</string>
+  <string name="crypto_event_authenticity_unverified_identity">"ç”±æœªç¶“é©—è­‰çš„ä½¿ç”¨è€…åŠ å¯†ã€‚"</string>
+  <string name="emoji_picker_category_activity">"æ´»å‹•"</string>
+  <string name="emoji_picker_category_flags">"æ——å¹Ÿ"</string>
+  <string name="emoji_picker_category_foods">"é£Ÿç‰©èˆ‡é£²æ–™"</string>
+  <string name="emoji_picker_category_nature">"å‹•ç‰©èˆ‡å¤§è‡ªç„¶"</string>
+  <string name="emoji_picker_category_objects">"ç‰©å“"</string>
+  <string name="emoji_picker_category_people">"è¡¨æƒ…èˆ‡äººç‰©"</string>
+  <string name="emoji_picker_category_places">"æ—…è¡Œèˆ‡æ™¯é»ž"</string>
+  <string name="emoji_picker_category_recent">"æœ€è¿‘ä½¿ç”¨çš„è¡¨æƒ…ç¬¦è™Ÿ"</string>
+  <string name="emoji_picker_category_symbols">"æ¨™èªŒ"</string>
+  <string name="screen_media_upload_preview_caption_warning">"ä½¿ç”¨èˆŠæ‡‰ç”¨ç¨‹å¼çš„ä½¿ç”¨è€…å¯èƒ½çœ‹ä¸åˆ°æ¨™é¡Œã€‚"</string>
+  <string name="screen_media_upload_preview_change_video_quality_prompt">"è¼•é»žå³å¯è®Šæ›´å½±ç‰‡ä¸Šå‚³å“è³ª"</string>
+  <string name="screen_media_upload_preview_error_could_not_be_uploaded">"ç„¡æ³•ä¸Šå‚³æª”æ¡ˆã€‚"</string>
+  <string name="screen_media_upload_preview_error_failed_processing">"ç„¡æ³•è™•ç†è¦ä¸Šå‚³çš„åª’é«”ï¼Œè«‹å†è©¦ä¸€æ¬¡ã€‚"</string>
+  <string name="screen_media_upload_preview_error_failed_sending">"ç„¡æ³•ä¸Šå‚³åª’é«”æª”æ¡ˆï¼Œè«‹ç¨å¾Œå†è©¦ã€‚"</string>
+  <string name="screen_media_upload_preview_error_too_large_message">"å…è¨±çš„æœ€å¤§æª”æ¡ˆå¤§å°ç‚º %1$sã€‚"</string>
+  <string name="screen_media_upload_preview_error_too_large_title">"æª”æ¡ˆå¤ªå¤§ï¼Œç„¡æ³•ä¸Šå‚³"</string>
+  <string name="screen_media_upload_preview_item_count">"ç¬¬ %1$d å€‹é …ç›®ï¼Œå…± %2$d å€‹"</string>
+  <string name="screen_media_upload_preview_optimize_image_quality_title">"æœ€ä½³åŒ–å½±åƒå“è³ª"</string>
+  <string name="screen_media_upload_preview_processing">"æ­£åœ¨è™•ç†â€¦â€¦"</string>
+  <string name="screen_report_content_block_user">"å°éŽ–ä½¿ç”¨è€…"</string>
+  <string name="screen_report_content_block_user_hint">"æª¢æŸ¥æ‚¨æ˜¯å¦è¦éš±è—æ‰€æœ‰ä¾†è‡ªæ­¤ä½¿ç”¨è€…çš„ç›®å‰åŠæœªä¾†çš„è¨Šæ¯"</string>
+  <string name="screen_report_content_explanation">"æ­¤è¨Šæ¯å°‡æœƒå›žå ±çµ¦æ‚¨çš„å®¶ä¼ºæœå™¨ç®¡ç†å“¡ã€‚ä»–å€‘å°‡ç„¡æ³•è®€å–ä»»ä½•å·²åŠ å¯†çš„è¨Šæ¯ã€‚"</string>
+  <string name="screen_report_content_hint">"æª¢èˆ‰é€™å€‹å…§å®¹çš„åŽŸå› "</string>
+  <string name="screen_room_attachment_source_camera">"ç…§ç›¸æ©Ÿ"</string>
+  <string name="screen_room_attachment_source_camera_photo">"æ‹ç…§"</string>
+  <string name="screen_room_attachment_source_camera_video">"éŒ„å½±"</string>
+  <string name="screen_room_attachment_source_files">"é™„ä»¶"</string>
+  <string name="screen_room_attachment_source_gallery">"ç…§ç‰‡èˆ‡å½±ç‰‡åº«"</string>
+  <string name="screen_room_attachment_source_location">"åˆ†äº«ä½ç½®"</string>
+  <string name="screen_room_attachment_source_poll">"æŠ•ç¥¨"</string>
+  <string name="screen_room_attachment_text_formatting">"æ ¼å¼åŒ–æ–‡å­—"</string>
+  <string name="screen_room_encrypted_history_banner">"ç›®å‰ç„¡æ³•æª¢è¦–è¨Šæ¯æ­·å²ç´€éŒ„ã€‚"</string>
+  <string name="screen_room_encrypted_history_banner_unverified">"ç„¡æ³•æª¢è¦–æ­¤èŠå¤©å®¤çš„è¨Šæ¯æ­·å²ç´€éŒ„ã€‚é©—è­‰æ­¤è£ç½®ä»¥æª¢è¦–æ‚¨çš„è¨Šæ¯ç´€éŒ„ã€‚"</string>
+  <string name="screen_room_invite_again_alert_message">"æ‚¨æƒ³è¦é‚€è«‹ä»–å€‘å›žä¾†å—Žï¼Ÿ"</string>
+  <string name="screen_room_invite_again_alert_title">"æ­¤èŠå¤©å®¤åªæœ‰æ‚¨ä¸€å€‹äºº"</string>
+  <string name="screen_room_mentions_at_room_subtitle">"é€šçŸ¥æ•´å€‹èŠå¤©å®¤"</string>
+  <string name="screen_room_mentions_at_room_title">"æ‰€æœ‰äºº"</string>
+  <string name="screen_room_retry_send_menu_send_again_action">"é‡å‚³"</string>
+  <string name="screen_room_retry_send_menu_title">"ç„¡æ³•å‚³é€æ‚¨çš„è¨Šæ¯"</string>
+  <string name="screen_room_timeline_add_reaction">"æ–°å¢žè¡¨æƒ…ç¬¦è™Ÿ"</string>
+  <string name="screen_room_timeline_beginning_of_room">"é€™æ˜¯ %1$s çš„é–‹é ­ã€‚"</string>
+  <string name="screen_room_timeline_beginning_of_room_no_name">"é€™æ˜¯æ­¤å°è©±çš„é–‹é ­ã€‚"</string>
+  <string name="screen_room_timeline_legacy_call">"ä¸æ”¯æ´çš„é€šè©±ã€‚è©¢å•é€šè©±è€…æ˜¯å¦å¯ä»¥ä½¿ç”¨æ–°çš„ ORBIT Chat æ‡‰ç”¨ç¨‹å¼ã€‚"</string>
+  <string name="screen_room_timeline_less_reactions">"è¼ƒå°‘"</string>
+  <string name="screen_room_timeline_message_copied">"è¨Šæ¯å·²è¤‡è£½"</string>
+  <string name="screen_room_timeline_no_permission_to_post">"æ‚¨æ²’æœ‰æ¬Šé™åœ¨æ­¤èŠå¤©å®¤å‚³é€è¨Šæ¯"</string>
+  <plurals name="screen_room_timeline_reaction_a11y">
+    <item quantity="other">"%1$d å€‹æˆå“¡æœ‰ %2$s å€‹åæ‡‰"</item>
+  </plurals>
+  <plurals name="screen_room_timeline_reaction_including_you_a11y">
+    <item quantity="other">"æ‚¨èˆ‡ %1$d å€‹æˆå“¡æœ‰ %2$s çš„åæ‡‰"</item>
+  </plurals>
+  <string name="screen_room_timeline_reaction_you_a11y">"æ‚¨åæ‡‰äº† %1$s"</string>
+  <string name="screen_room_timeline_reactions_show_less">"è¼ƒå°‘"</string>
+  <string name="screen_room_timeline_reactions_show_more">"æ›´å¤š"</string>
+  <string name="screen_room_timeline_reactions_show_reactions_summary">"é¡¯ç¤ºåæ‡‰æ‘˜è¦"</string>
+  <string name="screen_room_timeline_read_marker_title">"æ–°è¨Šæ¯"</string>
+  <plurals name="screen_room_timeline_state_changes">
+    <item quantity="other">"%1$d å€‹èŠå¤©å®¤è®Šæ›´"</item>
+  </plurals>
+  <string name="screen_room_timeline_tombstoned_room_action">"è·³åˆ°æ–°èŠå¤©å®¤"</string>
+  <string name="screen_room_timeline_tombstoned_room_message">"æ­¤èŠå¤©å®¤å·²è¢«å–ä»£ï¼Œä¸å†æ´»èº"</string>
+  <string name="screen_room_timeline_upgraded_room_action">"æª¢è¦–èˆŠè¨Šæ¯"</string>
+  <string name="screen_room_timeline_upgraded_room_message">"æ­¤èŠå¤©å®¤ç‚ºå¦ä¸€å€‹èŠå¤©æ˜¯çš„å»¶çºŒ"</string>
+  <plurals name="screen_room_typing_many_members">
+    <item quantity="other">"%1$sã€%2$s å’Œå…¶ä»– %3$d å€‹äºº"</item>
+  </plurals>
+  <plurals name="screen_room_typing_notification">
+    <item quantity="other">"%1$s æ­£åœ¨æ‰“å­—"</item>
+  </plurals>
+  <string name="screen_room_typing_two_members">"%1$s å’Œ %2$s"</string>
+</resources>

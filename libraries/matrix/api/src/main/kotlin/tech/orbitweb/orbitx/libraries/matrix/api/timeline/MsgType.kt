@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.matrix.api.timeline
+
+enum class MsgType {
+    MSG_TYPE_TEXT,
+    MSG_TYPE_EMOTE,
+
+    // For future support
+    MSG_TYPE_SNOW,
+
+    // For future support
+    MSG_TYPE_CONFETTI,
+}

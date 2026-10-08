@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.preferences.impl.about
+
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
+
+open class AboutStateProvider : PreviewParameterProvider<AboutState> {
+    override val values: Sequence<AboutState>
+        get() = sequenceOf(
+            anAboutState(),
+        )
+}
+
+fun anAboutState(
+    elementLegals: List<ElementLegal> = getAllLegals(),
+) = AboutState(
+    elementLegals = elementLegals.toImmutableList(),
+)

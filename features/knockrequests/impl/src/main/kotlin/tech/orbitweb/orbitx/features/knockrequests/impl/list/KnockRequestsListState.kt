@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.knockrequests.impl.list
+
+import androidx.compose.runtime.Immutable
+import tech.orbitweb.orbitx.features.knockrequests.api.KnockRequestPermissions
+import tech.orbitweb.orbitx.features.knockrequests.impl.data.KnockRequestPresentable
+import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import kotlinx.collections.immutable.ImmutableList
+
+data class KnockRequestsListState(
+    val knockRequests: AsyncData<ImmutableList<KnockRequestPresentable>>,
+    val currentAction: KnockRequestsAction,
+    val asyncAction: AsyncAction<Unit>,
+    val permissions: KnockRequestPermissions,
+    val eventSink: (KnockRequestsListEvents) -> Unit,
+) {
+    val canAcceptAll = permissions.canAccept && knockRequests is AsyncData.Success && knockRequests.data.size > 1
+}
+
+@Immutable
+sealed interface KnockRequestsAction {
+    data object None : KnockRequestsAction
+    data class Accept(val knockRequest: KnockRequestPresentable) : KnockRequestsAction
+    data class Decline(val knockRequest: KnockRequestPresentable) : KnockRequestsAction
+    data class DeclineAndBan(val knockRequest: KnockRequestPresentable) : KnockRequestsAction
+    data object AcceptAll : KnockRequestsAction
+}

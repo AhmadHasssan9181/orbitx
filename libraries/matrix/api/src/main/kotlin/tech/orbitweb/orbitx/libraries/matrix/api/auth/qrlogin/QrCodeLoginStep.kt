@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin
+
+sealed interface QrCodeLoginStep {
+    data object Uninitialized : QrCodeLoginStep
+    data class EstablishingSecureChannel(val checkCode: String) : QrCodeLoginStep
+    data object Starting : QrCodeLoginStep
+    data class WaitingForToken(val userCode: String) : QrCodeLoginStep
+    data object SyncingSecrets : QrCodeLoginStep
+    data class Failed(val error: QrLoginException) : QrCodeLoginStep
+    data object Finished : QrCodeLoginStep
+}

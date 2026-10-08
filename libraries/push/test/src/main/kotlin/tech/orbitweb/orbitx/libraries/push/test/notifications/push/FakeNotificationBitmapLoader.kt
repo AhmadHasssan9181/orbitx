@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.push.test.notifications.push
+
+import android.graphics.Bitmap
+import androidx.core.graphics.drawable.IconCompat
+import coil3.ImageLoader
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
+import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationBitmapLoader
+
+class FakeNotificationBitmapLoader(
+    var getRoomBitmapResult: (AvatarData, ImageLoader, Long) -> Bitmap? = { _, _, _ -> null },
+    var getUserIconResult: (AvatarData, ImageLoader) -> IconCompat? = { _, _ -> null },
+) : NotificationBitmapLoader {
+    override suspend fun getRoomBitmap(avatarData: AvatarData, imageLoader: ImageLoader, targetSize: Long): Bitmap? {
+        return getRoomBitmapResult(avatarData, imageLoader, targetSize)
+    }
+
+    override suspend fun getUserIcon(avatarData: AvatarData, imageLoader: ImageLoader): IconCompat? {
+        return getUserIconResult(avatarData, imageLoader)
+    }
+}

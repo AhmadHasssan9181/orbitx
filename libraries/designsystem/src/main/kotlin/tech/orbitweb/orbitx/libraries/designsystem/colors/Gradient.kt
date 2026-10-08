@@ -1,0 +1,47 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.designsystem.colors
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.ui.graphics.Color
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
+
+@Composable
+@ReadOnlyComposable
+fun gradientActionColors(): List<Color> = listOf(
+    ElementTheme.colors.gradientActionStop1,
+    ElementTheme.colors.gradientActionStop2,
+    ElementTheme.colors.gradientActionStop3,
+    ElementTheme.colors.gradientActionStop4,
+)
+
+@Composable
+@ReadOnlyComposable
+fun gradientSubtleColors(): List<Color> = listOf(
+    ElementTheme.colors.gradientSubtleStop1,
+    ElementTheme.colors.gradientSubtleStop2,
+    ElementTheme.colors.gradientSubtleStop3,
+    ElementTheme.colors.gradientSubtleStop4,
+    ElementTheme.colors.gradientSubtleStop5,
+    ElementTheme.colors.gradientSubtleStop6,
+)
+
+@Composable
+@ReadOnlyComposable
+fun gradientInfoColors(): List<Color> = listOf(
+    ElementTheme.colors.gradientInfoStop1,
+    ElementTheme.colors.gradientInfoStop2,
+)
+
+@Composable
+@ReadOnlyComposable
+fun gradientCriticalColors(): List<Color> = listOf(
+    ElementTheme.colors.gradientCriticalStop1,
+    ElementTheme.colors.gradientCriticalStop2,
+)

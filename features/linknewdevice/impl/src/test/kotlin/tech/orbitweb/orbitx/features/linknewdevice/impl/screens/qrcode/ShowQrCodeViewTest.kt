@@ -1,0 +1,43 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+@file:OptIn(ExperimentalTestApi::class)
+
+package tech.orbitweb.orbitx.features.linknewdevice.impl.screens.qrcode
+
+import androidx.activity.ComponentActivity
+import androidx.compose.ui.test.AndroidComposeUiTest
+import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import tech.orbitweb.orbitx.tests.testutils.EnsureNeverCalled
+import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
+import tech.orbitweb.orbitx.tests.testutils.pressBackKey
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
+import org.junit.Test
+
+class ShowQrCodeViewTest : RobolectricTest() {
+    @Test
+    fun `on back pressed - calls the expected callback`() = runAndroidComposeUiTest {
+        ensureCalledOnce { callback ->
+            setView(
+                onBackClick = callback
+            )
+            pressBackKey()
+        }
+    }
+
+    private fun AndroidComposeUiTest<ComponentActivity>.setView(
+        onBackClick: () -> Unit = EnsureNeverCalled(),
+    ) {
+        setContent {
+            ShowQrCodeView(
+                state = aShowQrCodeState(),
+                onBackClick = onBackClick,
+            )
+        }
+    }
+}

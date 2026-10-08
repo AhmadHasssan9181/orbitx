@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.designsystem.components.tooltip
+
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.TooltipDefaults
+import androidx.compose.material3.TooltipScope
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
+import androidx.compose.material3.PlainTooltip as M3PlainTooltip
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TooltipScope.PlainTooltip(
+    modifier: Modifier = Modifier,
+    contentColor: Color = ElementTheme.colors.textOnSolidPrimary,
+    containerColor: Color = ElementTheme.colors.bgActionPrimaryRest,
+    shape: Shape = TooltipDefaults.plainTooltipContainerShape,
+    content: @Composable () -> Unit,
+) = M3PlainTooltip(
+    modifier = modifier,
+    contentColor = contentColor,
+    containerColor = containerColor,
+    shape = shape,
+    content = content,
+)

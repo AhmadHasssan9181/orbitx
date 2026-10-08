@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.messages.impl
+
+import com.bumble.appyx.core.modality.BuildContext
+import com.bumble.appyx.core.node.Node
+import dev.zacsweers.metro.ContributesBinding
+import tech.orbitweb.orbitx.features.messages.api.MessagesEntryPoint
+import tech.orbitweb.orbitx.libraries.architecture.createNode
+import tech.orbitweb.orbitx.libraries.di.SessionScope
+
+@ContributesBinding(SessionScope::class)
+class DefaultMessagesEntryPoint : MessagesEntryPoint {
+    override fun createNode(
+        parentNode: Node,
+        buildContext: BuildContext,
+        params: MessagesEntryPoint.Params,
+        callback: MessagesEntryPoint.Callback,
+    ): Node {
+        return parentNode.createNode<MessagesFlowNode>(buildContext, listOf(params, callback))
+    }
+}
+
+internal fun MessagesEntryPoint.InitialTarget.toNavTarget() = when (this) {
+    is MessagesEntryPoint.InitialTarget.Messages -> MessagesFlowNode.NavTarget.Messages(focusedEventId)
+    MessagesEntryPoint.InitialTarget.PinnedMessages -> MessagesFlowNode.NavTarget.PinnedMessagesList
+}

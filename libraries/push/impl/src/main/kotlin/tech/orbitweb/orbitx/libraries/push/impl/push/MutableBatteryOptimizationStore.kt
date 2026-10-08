@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.push.impl.push
+
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
+import tech.orbitweb.orbitx.libraries.push.impl.store.DefaultPushDataStore
+
+interface MutableBatteryOptimizationStore {
+    suspend fun showBatteryOptimizationBanner()
+    suspend fun onOptimizationBannerDismissed()
+    suspend fun reset()
+}
+
+@ContributesBinding(AppScope::class)
+class DefaultMutableBatteryOptimizationStore(
+    private val defaultPushDataStore: DefaultPushDataStore,
+) : MutableBatteryOptimizationStore {
+    override suspend fun showBatteryOptimizationBanner() {
+        defaultPushDataStore.setBatteryOptimizationBannerState(DefaultPushDataStore.BATTERY_OPTIMIZATION_BANNER_STATE_SHOW)
+    }
+
+    override suspend fun onOptimizationBannerDismissed() {
+        defaultPushDataStore.setBatteryOptimizationBannerState(DefaultPushDataStore.BATTERY_OPTIMIZATION_BANNER_STATE_DISMISSED)
+    }
+
+    override suspend fun reset() {
+        defaultPushDataStore.setBatteryOptimizationBannerState(DefaultPushDataStore.BATTERY_OPTIMIZATION_BANNER_STATE_INIT)
+    }
+}

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="crypto_event_authenticity_mismatched_sender">"O remetente deste evento nÃ£o Ã© o dono do dispositivo que o enviou."</string>
+  <string name="crypto_event_authenticity_not_guaranteed">"A autenticidade desta mensagem cifrada nÃ£o pode ser garantida neste dispositivo."</string>
+  <string name="crypto_event_authenticity_previously_verified">"Criptografado por um usuÃ¡rio verificado anteriormente."</string>
+  <string name="crypto_event_authenticity_sent_in_clear">"NÃ£o cifrado."</string>
+  <string name="crypto_event_authenticity_unknown_device">"Cifragem com origem num dispositivo eliminado ou desconhecido."</string>
+  <string name="crypto_event_authenticity_unsigned_device">"Cifragem com origem num dispositivo nÃ£o verificado pelo seu dono."</string>
+  <string name="crypto_event_authenticity_unverified_identity">"Cifragem com origem num utilizador nÃ£o verificado."</string>
+  <string name="emoji_picker_category_activity">"Atividades"</string>
+  <string name="emoji_picker_category_flags">"Bandeiras"</string>
+  <string name="emoji_picker_category_foods">"Comidas e Bebidas"</string>
+  <string name="emoji_picker_category_nature">"Animais e Natureza"</string>
+  <string name="emoji_picker_category_objects">"Objetos"</string>
+  <string name="emoji_picker_category_people">"Caras e Pessoas"</string>
+  <string name="emoji_picker_category_places">"Viagens e Lugares"</string>
+  <string name="emoji_picker_category_recent">"Emojis recentes"</string>
+  <string name="emoji_picker_category_symbols">"SÃ­mbolos"</string>
+  <string name="screen_media_upload_preview_caption_warning">"As legendas poderÃ£o nÃ£o ser visÃ­veis em versÃµes mais antigas da aplicaÃ§Ã£o."</string>
+  <string name="screen_media_upload_preview_change_video_quality_prompt">"Toca para alterar a qualidade de carregamento do vÃ­deo"</string>
+  <string name="screen_media_upload_preview_error_could_not_be_uploaded">"NÃ£o foi possÃ­vel enviar o ficheiro"</string>
+  <string name="screen_media_upload_preview_error_failed_processing">"Falha ao processar multimÃ©dia para carregamento, por favor tente novamente."</string>
+  <string name="screen_media_upload_preview_error_failed_sending">"Falhar ao carregar multimÃ©dia, por favor tente novamente."</string>
+  <string name="screen_media_upload_preview_error_too_large_message">"O tamanho mÃ¡ximo permitido Ã© %1$s."</string>
+  <string name="screen_media_upload_preview_error_too_large_title">"O ficheiro Ã© demasiado grande para enviar"</string>
+  <string name="screen_media_upload_preview_item_count">"Item %1$d de %2$d"</string>
+  <string name="screen_media_upload_preview_optimize_image_quality_title">"Optimiza a qualidade da imagem"</string>
+  <string name="screen_media_upload_preview_processing">"A processarâ€¦"</string>
+  <string name="screen_report_content_block_user">"Bloquear utilizador"</string>
+  <string name="screen_report_content_block_user_hint">"Ativar para ocultar todas as atuais e futuras mensagens deste utilizador"</string>
+  <string name="screen_report_content_explanation">"Esta mensagem serÃ¡ denunciada ao administrador do teu servidor. PorÃ©m, nÃ£o lhe serÃ¡ possÃ­vel ler quaisquer mensagens cifradas."</string>
+  <string name="screen_report_content_hint">"RazÃ£o de denÃºncia"</string>
+  <string name="screen_room_attachment_source_camera">"CÃ¢mara"</string>
+  <string name="screen_room_attachment_source_camera_photo">"Tirar foto"</string>
+  <string name="screen_room_attachment_source_camera_video">"Gravar vÃ­deo"</string>
+  <string name="screen_room_attachment_source_files">"Anexo"</string>
+  <string name="screen_room_attachment_source_gallery">"Biblioteca de fotos e vÃ­deos"</string>
+  <string name="screen_room_attachment_source_location">"Partilhar localizaÃ§Ã£o"</string>
+  <string name="screen_room_attachment_source_poll">"Sondagem"</string>
+  <string name="screen_room_attachment_text_formatting">"FormataÃ§Ã£o de texto"</string>
+  <string name="screen_room_encrypted_history_banner">"De momento, o histÃ³rico de mensagens estÃ¡ indisponÃ­vel."</string>
+  <string name="screen_room_encrypted_history_banner_unverified">"O histÃ³rico de mensagens nÃ£o estÃ¡ disponÃ­vel nesta sala. Verifica este dispositivo para veres o histÃ³rico."</string>
+  <string name="screen_room_invite_again_alert_message">"Gostarias de convidÃ¡-lo de volta?"</string>
+  <string name="screen_room_invite_again_alert_title">"EstÃ¡s sozinho nesta conversa"</string>
+  <string name="screen_room_mentions_at_room_subtitle">"Notificar toda a sala"</string>
+  <string name="screen_room_mentions_at_room_title">"Toda a gente"</string>
+  <string name="screen_room_retry_send_menu_send_again_action">"Enviar novamente"</string>
+  <string name="screen_room_retry_send_menu_title">"Falha ao enviar a tua mensagem"</string>
+  <string name="screen_room_timeline_add_reaction">"Adicionar emoji"</string>
+  <string name="screen_room_timeline_beginning_of_room">"%1$s comeÃ§ou aqui."</string>
+  <string name="screen_room_timeline_beginning_of_room_no_name">"Esta conversa comeÃ§ou aqui."</string>
+  <string name="screen_room_timeline_legacy_call">"Chamada nÃ£o suportada. Pergunta se Ã© possÃ­vel utilizar a nova aplicaÃ§Ã£o ORBIT Chat."</string>
+  <string name="screen_room_timeline_less_reactions">"Mostrar menos"</string>
+  <string name="screen_room_timeline_message_copied">"Mensagem copiada"</string>
+  <string name="screen_room_timeline_no_permission_to_post">"NÃ£o tens permissÃ£o para publicar nesta sala"</string>
+  <plurals name="screen_room_timeline_reaction_a11y">
+    <item quantity="one">"%1$d membro reagiu com %2$s"</item>
+    <item quantity="other">"%1$d membros reagiram com %2$s"</item>
+  </plurals>
+  <plurals name="screen_room_timeline_reaction_including_you_a11y">
+    <item quantity="one">"Tu e %1$d membro reagiram com %2$s"</item>
+    <item quantity="other">"Tu e %1$d membros reagiram com %2$s"</item>
+  </plurals>
+  <string name="screen_room_timeline_reaction_you_a11y">"Reagiste com %1$s"</string>
+  <string name="screen_room_timeline_reactions_show_less">"Mostrar menos"</string>
+  <string name="screen_room_timeline_reactions_show_more">"Mostrar mais"</string>
+  <string name="screen_room_timeline_reactions_show_reactions_summary">"Mostrar sumÃ¡rio de reaÃ§Ãµes"</string>
+  <string name="screen_room_timeline_read_marker_title">"Novas"</string>
+  <plurals name="screen_room_timeline_state_changes">
+    <item quantity="one">"%1$d alteraÃ§Ã£o Ã  sala"</item>
+    <item quantity="other">"%1$d alteraÃ§Ãµes Ã  sala"</item>
+  </plurals>
+  <string name="screen_room_timeline_tombstoned_room_action">"Ir para a nova sala"</string>
+  <string name="screen_room_timeline_tombstoned_room_message">"Esta sala foi substituÃ­da e jÃ¡ nÃ£o se encontra ativa"</string>
+  <string name="screen_room_timeline_upgraded_room_action">"Ver mensagens antigas"</string>
+  <string name="screen_room_timeline_upgraded_room_message">"Esta sala Ã© a continuaÃ§Ã£o de uma outra"</string>
+  <plurals name="screen_room_typing_many_members">
+    <item quantity="one">"%1$s, %2$s e %3$d outro"</item>
+    <item quantity="other">"%1$s, %2$s e %3$d outros"</item>
+  </plurals>
+  <plurals name="screen_room_typing_notification">
+    <item quantity="one">"%1$s estÃ¡ a escrever"</item>
+    <item quantity="other">"%1$s estÃ£o a escrever"</item>
+  </plurals>
+  <string name="screen_room_typing_two_members">"%1$s e %2$s"</string>
+</resources>

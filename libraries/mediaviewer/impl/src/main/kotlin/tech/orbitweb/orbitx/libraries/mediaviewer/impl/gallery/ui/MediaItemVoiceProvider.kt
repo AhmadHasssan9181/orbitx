@@ -1,0 +1,30 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.mediaviewer.impl.gallery.ui
+
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import tech.orbitweb.orbitx.libraries.core.preview.loremIpsum
+import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
+import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemVoice
+
+class MediaItemVoiceProvider : PreviewParameterProvider<MediaItem.Voice> {
+    override val values: Sequence<MediaItem.Voice>
+        get() = sequenceOf(
+            aMediaItemVoice(),
+            aMediaItemVoice(
+                filename = "A long filename that should be truncated.ogg",
+                caption = "A caption",
+            ),
+            aMediaItemVoice(
+                caption = loremIpsum,
+            ),
+            aMediaItemVoice(
+                waveform = emptyList(),
+            ),
+        )
+}

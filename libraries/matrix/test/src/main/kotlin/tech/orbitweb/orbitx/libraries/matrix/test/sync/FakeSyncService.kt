@@ -1,0 +1,38 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.matrix.test.sync
+
+import tech.orbitweb.orbitx.libraries.core.coroutine.mapState
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+
+class FakeSyncService(
+    initialSyncState: SyncState = SyncState.Idle,
+) : SyncService {
+    private val syncStateFlow: MutableStateFlow<SyncState> = MutableStateFlow(initialSyncState)
+
+    var startSyncLambda: () -> Result<Unit> = { Result.success(Unit) }
+    override suspend fun startSync(): Result<Unit> {
+        return startSyncLambda()
+    }
+
+    var stopSyncLambda: () -> Result<Unit> = { Result.success(Unit) }
+    override suspend fun stopSync(): Result<Unit> {
+        return stopSyncLambda()
+    }
+
+    override val syncState: StateFlow<SyncState> = syncStateFlow
+
+    override val isOnline: StateFlow<Boolean> = syncState.mapState { it != SyncState.Offline }
+
+    suspend fun emitSyncState(syncState: SyncState) {
+        syncStateFlow.emit(syncState)
+    }
+}

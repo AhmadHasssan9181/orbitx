@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2026 Orbit Team.
+  ~
+  ~ SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+  ~ Please see LICENSE files in the repository root for full details.
+  -->
+<resources>
+    <style name="Theme.Orbit.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splashscreen_bg_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.Orbit</item>
+        <item name="android:windowBackground">@color/splashscreen_bg_dark</item>
+        <item name="android:statusBarColor">@color/splashscreen_bg_dark</item>
+        <item name="android:navigationBarColor">@color/splashscreen_bg_dark</item>
+    </style>
+
+    <style name="Theme.Orbit" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@color/splashscreen_bg_dark</item>
+        <item name="android:statusBarColor">@color/splashscreen_bg_dark</item>
+        <item name="android:navigationBarColor">@color/splashscreen_bg_dark</item>
+    </style>
+
+    <style name="Theme.ElementX.Splash" parent="Theme.Orbit.Splash" />
+    <style name="Theme.ElementX" parent="Theme.Orbit" />
+</resources>

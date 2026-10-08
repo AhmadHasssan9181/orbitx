@@ -1,0 +1,28 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.push.impl.notifications
+
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
+
+/**
+ * Data class to hold information about a group of notifications for a room.
+ */
+data class RoomEventGroupInfo(
+    val sessionId: SessionId,
+    val roomId: RoomId,
+    val roomDisplayName: String,
+    val isDm: Boolean = false,
+    // An event in the list has not yet been display
+    val hasNewEvent: Boolean = false,
+    // true if at least one on the not yet displayed event is noisy
+    val shouldBing: Boolean = false,
+    val customSound: String? = null,
+    val hasSmartReplyError: Boolean = false,
+    val isUpdated: Boolean = false,
+)

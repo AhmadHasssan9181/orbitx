@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.linknewdevice.impl.screens.number
+
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import com.bumble.appyx.core.modality.BuildContext
+import com.bumble.appyx.core.node.Node
+import com.bumble.appyx.core.plugin.Plugin
+import dev.zacsweers.metro.Assisted
+import dev.zacsweers.metro.AssistedInject
+import tech.orbitweb.orbitx.annotations.ContributesNode
+import tech.orbitweb.orbitx.libraries.architecture.callback
+import tech.orbitweb.orbitx.libraries.di.SessionScope
+
+interface EnterNumberNavigator {
+    fun navigateToWrongNumberError()
+}
+
+@ContributesNode(SessionScope::class)
+@AssistedInject
+class EnterNumberNode(
+    @Assisted buildContext: BuildContext,
+    @Assisted plugins: List<Plugin>,
+    presenterFactory: EnterNumberPresenter.Factory,
+) : Node(buildContext, plugins = plugins), EnterNumberNavigator {
+    private val presenter = presenterFactory.create(this)
+
+    interface Callback : Plugin {
+        fun navigateToWrongNumberError()
+        fun navigateBack()
+    }
+
+    private val callback: Callback = callback()
+
+    @Composable
+    override fun View(modifier: Modifier) {
+        val state = presenter.present()
+        EnterNumberView(
+            state = state,
+            modifier = modifier,
+            onBackClick = callback::navigateBack,
+        )
+    }
+
+    override fun navigateToWrongNumberError() {
+        callback.navigateToWrongNumberError()
+    }
+}

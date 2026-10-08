@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.pushproviders.firebase
+
+import dev.zacsweers.metro.Inject
+import tech.orbitweb.orbitx.libraries.pushproviders.api.PushData
+
+@Inject
+class FirebasePushParser {
+    fun parse(message: Map<String, String?>): PushData? {
+        val pushDataFirebase = PushDataFirebase(
+            eventId = message["event_id"],
+            roomId = message["room_id"],
+            unread = message["unread"]?.toIntOrNull(),
+            clientSecret = message["cs"],
+        )
+        return pushDataFirebase.toPushData()
+    }
+}

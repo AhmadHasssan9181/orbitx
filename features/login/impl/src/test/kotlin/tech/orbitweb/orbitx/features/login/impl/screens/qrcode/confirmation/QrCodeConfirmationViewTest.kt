@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+@file:OptIn(ExperimentalTestApi::class)
+
+package tech.orbitweb.orbitx.features.login.impl.screens.qrcode.confirmation
+
+import androidx.activity.ComponentActivity
+import androidx.compose.ui.test.AndroidComposeUiTest
+import androidx.compose.ui.test.ExperimentalTestApi
+import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
+import tech.orbitweb.orbitx.tests.testutils.clickOn
+import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
+import tech.orbitweb.orbitx.tests.testutils.pressBackKey
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
+import org.junit.Test
+
+class QrCodeConfirmationViewTest : RobolectricTest() {
+    @Test
+    fun `on back pressed - calls the expected callback`() = runAndroidComposeUiTest {
+        ensureCalledOnce { callback ->
+            setQrCodeConfirmationView(
+                step = QrCodeConfirmationStep.DisplayCheckCode("12"),
+                onCancel = callback
+            )
+            pressBackKey()
+        }
+    }
+
+    @Test
+    fun `on Cancel button clicked - calls the expected callback`() = runAndroidComposeUiTest {
+        ensureCalledOnce { callback ->
+            setQrCodeConfirmationView(
+                step = QrCodeConfirmationStep.DisplayVerificationCode("123456"),
+                onCancel = callback
+            )
+            clickOn(CommonStrings.action_cancel)
+        }
+    }
+
+    private fun AndroidComposeUiTest<ComponentActivity>.setQrCodeConfirmationView(
+        step: QrCodeConfirmationStep,
+        onCancel: () -> Unit
+    ) {
+        setContent {
+            QrCodeConfirmationView(
+                step = step,
+                onCancel = onCancel
+            )
+        }
+    }
+}

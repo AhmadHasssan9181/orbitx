@@ -1,0 +1,58 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.announcement.impl.store
+
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
+import tech.orbitweb.orbitx.features.announcement.api.Announcement
+import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
+
+private val spaceAnnouncementKey = intPreferencesKey("spaceAnnouncement")
+private val newNotificationSoundKey = intPreferencesKey("newNotificationSound")
+
+@ContributesBinding(AppScope::class)
+class DefaultAnnouncementStore(
+    preferenceDataStoreFactory: PreferenceDataStoreFactory,
+) : AnnouncementStore {
+    private val store = preferenceDataStoreFactory.create("elementx_announcement")
+
+    override suspend fun setAnnouncementStatus(announcement: Announcement, status: AnnouncementStatus) {
+        val key = announcement.toKey()
+        store.edit { prefs ->
+            prefs[key] = status.ordinal
+        }
+    }
+
+    override fun announcementStatusFlow(announcement: Announcement): Flow<AnnouncementStatus> {
+        val key = announcement.toKey()
+        // Default-status convention: Shown for one-shot intro/feature announcements that should
+        // NOT replay on first launch (Fullscreen.Space is disabled; NewNotificationSound is opted
+        // in by AppMigration08).
+        val defaultStatus = when (announcement) {
+            Announcement.Fullscreen.Space -> AnnouncementStatus.Shown
+            Announcement.NewNotificationSound -> AnnouncementStatus.Shown
+        }
+        return store.data.map { prefs ->
+            val ordinal = prefs[key] ?: defaultStatus.ordinal
+            AnnouncementStatus.entries.getOrElse(ordinal) { defaultStatus }
+        }
+    }
+
+    override suspend fun reset() {
+        store.edit { it.clear() }
+    }
+}
+
+private fun Announcement.toKey() = when (this) {
+    Announcement.Fullscreen.Space -> spaceAnnouncementKey
+    Announcement.NewNotificationSound -> newNotificationSoundKey
+}

@@ -1,0 +1,50 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.services.appnavstate.test
+
+import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
+import kotlinx.coroutines.flow.MutableStateFlow
+
+class FakeAppForegroundStateService(
+    initialForegroundValue: Boolean = true,
+    initialIsInCallValue: Boolean = false,
+    initialIsSyncingNotificationEventValue: Boolean = false,
+    initialHasRingingCall: Boolean = false,
+    initialIsSharingLiveLocation: Boolean = false,
+) : AppForegroundStateService {
+    override val isInForeground = MutableStateFlow(initialForegroundValue)
+    override val isInCall = MutableStateFlow(initialIsInCallValue)
+    override val isSyncingNotificationEvent = MutableStateFlow(initialIsSyncingNotificationEventValue)
+    override val hasRingingCall = MutableStateFlow(initialHasRingingCall)
+
+    override val isSharingLiveLocation = MutableStateFlow<Boolean>(initialIsSharingLiveLocation)
+
+    override fun startObservingForeground() {
+        // No-op
+    }
+
+    fun givenIsInForeground(isInForeground: Boolean) {
+        this.isInForeground.value = isInForeground
+    }
+
+    override fun updateIsInCallState(isInCall: Boolean) {
+        this.isInCall.value = isInCall
+    }
+
+    override fun updateIsSyncingNotificationEvent(isSyncingNotificationEvent: Boolean) {
+        this.isSyncingNotificationEvent.value = isSyncingNotificationEvent
+    }
+
+    override fun updateHasRingingCall(hasRingingCall: Boolean) {
+        this.hasRingingCall.value = hasRingingCall
+    }
+
+    override fun updateIsSharingLiveLocation(isSharingLiveLocation: Boolean) {
+        this.isSharingLiveLocation.value = isSharingLiveLocation
+    }
+}

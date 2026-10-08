@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.migration.impl.migrations
+
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesIntoSet
+
+/**
+ * This performs the same operation as [AppMigration01], since we need to clear the local logs again.
+ */
+@ContributesIntoSet(AppScope::class)
+class AppMigration03(
+    private val migration01: AppMigration01,
+) : AppMigration {
+    override val order: Int = 3
+
+    override suspend fun migrate(isFreshInstall: Boolean) {
+        migration01.migrate(isFreshInstall)
+    }
+}

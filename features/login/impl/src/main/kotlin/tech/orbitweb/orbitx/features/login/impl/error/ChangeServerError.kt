@@ -1,0 +1,57 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.login.impl.error
+
+import tech.orbitweb.orbitx.features.login.impl.changeserver.AccountProviderAccessException
+import tech.orbitweb.orbitx.libraries.matrix.api.auth.AuthenticationException
+
+sealed class ChangeServerError : Exception() {
+    data class Error(
+        val messageStr: String? = null,
+    ) : ChangeServerError()
+
+    data class NeedElementPro(
+        val unauthorisedAccountProviderTitle: String,
+        val applicationId: String,
+    ) : ChangeServerError()
+
+    data class UnauthorizedAccountProvider(
+        val unauthorisedAccountProviderTitle: String,
+        val authorisedAccountProviderTitles: List<String>,
+    ) : ChangeServerError()
+
+    data object SlidingSyncAlert : ChangeServerError()
+    data object InvalidServer : ChangeServerError()
+    data object UnsupportedServer : ChangeServerError()
+
+    companion object {
+        fun from(error: Throwable): ChangeServerError = when (error) {
+            is ChangeServerError -> error
+            is AuthenticationException -> {
+                when (error) {
+                    is AuthenticationException.SlidingSyncVersion -> SlidingSyncAlert
+                    is AuthenticationException.InvalidServerName,
+                    is AuthenticationException.ServerUnreachable -> InvalidServer
+                    // AccountAlreadyLoggedIn error should not happen at this point
+                    is AuthenticationException.AccountAlreadyLoggedIn -> Error(messageStr = error.message)
+                    is AuthenticationException.Generic -> Error(messageStr = error.message)
+                    is AuthenticationException.OAuth -> Error(messageStr = error.message)
+                }
+            }
+            is AccountProviderAccessException.NeedElementProException -> NeedElementPro(
+                unauthorisedAccountProviderTitle = error.unauthorisedAccountProviderTitle,
+                applicationId = error.applicationId,
+            )
+            is AccountProviderAccessException.UnauthorizedAccountProviderException -> UnauthorizedAccountProvider(
+                unauthorisedAccountProviderTitle = error.unauthorisedAccountProviderTitle,
+                authorisedAccountProviderTitles = error.authorisedAccountProviderTitles,
+            )
+            else -> Error(messageStr = error.message)
+        }
+    }
+}

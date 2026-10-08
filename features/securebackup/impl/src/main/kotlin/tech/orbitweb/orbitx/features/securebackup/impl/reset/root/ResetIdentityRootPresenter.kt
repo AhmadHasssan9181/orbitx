@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.securebackup.impl.reset.root
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
+
+class ResetIdentityRootPresenter : Presenter<ResetIdentityRootState> {
+    @Composable
+    override fun present(): ResetIdentityRootState {
+        var displayConfirmDialog by remember { mutableStateOf(false) }
+
+        fun handleEvent(event: ResetIdentityRootEvent) {
+            displayConfirmDialog = when (event) {
+                ResetIdentityRootEvent.Continue -> true
+                ResetIdentityRootEvent.DismissDialog -> false
+            }
+        }
+
+        return ResetIdentityRootState(
+            displayConfirmationDialog = displayConfirmDialog,
+            eventSink = ::handleEvent,
+        )
+    }
+}

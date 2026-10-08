@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.login.impl.accountprovider
+
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
+
+open class AccountProviderProvider : PreviewParameterProvider<AccountProvider> {
+    override val values: Sequence<AccountProvider>
+        get() = sequenceOf(
+            anAccountProvider(),
+            anAccountProvider().copy(subtitle = null),
+            anAccountProvider().copy(subtitle = null, title = "invalid"),
+            anAccountProvider().copy(subtitle = null, title = "Other", isPublic = false, isMatrixOrg = false),
+            // Add other state here
+        )
+}
+
+fun anAccountProvider(
+    url: String = AuthenticationConfig.MATRIX_ORG_URL,
+    subtitle: String? = "Matrix.org is an open network for secure, decentralized communication.",
+    isPublic: Boolean = true,
+    isMatrixOrg: Boolean = true,
+) = AccountProvider(
+    url = url,
+    subtitle = subtitle,
+    isPublic = isPublic,
+    isMatrixOrg = isMatrixOrg,
+)

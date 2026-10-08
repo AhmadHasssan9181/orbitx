@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.features.location.impl.common.userlocation
+
+import tech.orbitweb.orbitx.features.location.api.Location
+import org.maplibre.compose.location.PositionWithAccuracy
+import org.maplibre.spatialk.geojson.Position
+import org.maplibre.spatialk.units.extensions.meters
+import kotlin.time.TimeSource
+import org.maplibre.compose.location.Location as MapLibreLocation
+
+fun Location.asMapLibreLocation(): MapLibreLocation {
+    return MapLibreLocation(
+        position = PositionWithAccuracy(
+            value = Position(latitude = lat, longitude = lon),
+            accuracy = accuracy?.toDouble()?.meters
+        ),
+        // Not relevant as not used
+        timestamp = TimeSource.Monotonic.markNow(),
+    )
+}

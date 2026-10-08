@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="crypto_event_authenticity_mismatched_sender">"NgÆ°á»i gá»­i sá»± kiá»‡n khÃ´ng khá»›p vá»›i chá»§ sá»Ÿ há»¯u cá»§a thiáº¿t bá»‹ Ä‘Ã£ gá»­i nÃ³."</string>
+  <string name="crypto_event_authenticity_not_guaranteed">"Tin nháº¯n mÃ£ hÃ³a nÃ y khÃ´ng thá»ƒ Ä‘Æ°á»£c xÃ¡c thá»±c trÃªn thiáº¿t bá»‹ nÃ y."</string>
+  <string name="crypto_event_authenticity_previously_verified">"ÄÆ°á»£c mÃ£ hÃ³a bá»Ÿi má»™t ngÆ°á»i dÃ¹ng Ä‘Ã£ tá»«ng Ä‘Æ°á»£c xÃ¡c minh."</string>
+  <string name="crypto_event_authenticity_sent_in_clear">"KhÃ´ng Ä‘Æ°á»£c mÃ£ hÃ³a"</string>
+  <string name="crypto_event_authenticity_unknown_device">"ÄÆ°á»£c mÃ£ hÃ³a bá»Ÿi má»™t thiáº¿t bá»‹ khÃ´ng xÃ¡c Ä‘á»‹nh hoáº·c Ä‘Ã£ bá»‹ xÃ³a."</string>
+  <string name="crypto_event_authenticity_unsigned_device">"ÄÆ°á»£c mÃ£ hÃ³a bá»Ÿi má»™t thiáº¿t bá»‹ chÆ°a Ä‘Æ°á»£c chá»§ sá»Ÿ há»¯u xÃ¡c minh."</string>
+  <string name="crypto_event_authenticity_unverified_identity">"ÄÆ°á»£c mÃ£ hÃ³a bá»Ÿi má»™t ngÆ°á»i dÃ¹ng chÆ°a Ä‘Æ°á»£c xÃ¡c minh."</string>
+  <string name="emoji_picker_category_activity">"Hoáº¡t Ä‘á»™ng"</string>
+  <string name="emoji_picker_category_flags">"Cá»"</string>
+  <string name="emoji_picker_category_foods">"Thá»±c pháº©m vÃ  Ä‘á»“ uá»‘ng"</string>
+  <string name="emoji_picker_category_nature">"Äá»™ng váº­t vÃ  thiÃªn nhiÃªn"</string>
+  <string name="emoji_picker_category_objects">"Äá»“ váº­t"</string>
+  <string name="emoji_picker_category_people">"Máº·t cÆ°á»i &amp; má»i ngÆ°á»i"</string>
+  <string name="emoji_picker_category_places">"Du lá»‹ch vÃ  Ä‘á»‹a danh"</string>
+  <string name="emoji_picker_category_recent">"Biá»ƒu tÆ°á»£ng cáº£m xÃºc gáº§n Ä‘Ã¢y"</string>
+  <string name="emoji_picker_category_symbols">"Biá»ƒu tÆ°á»£ng"</string>
+  <string name="screen_media_upload_preview_error_failed_processing">"Xá»­ lÃ½ phÆ°Æ¡ng tiá»‡n táº£i lÃªn khÃ´ng thÃ nh cÃ´ng, vui lÃ²ng thá»­ láº¡i."</string>
+  <string name="screen_media_upload_preview_error_failed_sending">"KhÃ´ng thá»ƒ táº£i lÃªn tá»‡p phÆ°Æ¡ng tiá»‡n. Vui lÃ²ng thá»­ láº¡i."</string>
+  <string name="screen_report_content_block_user">"Cháº·n ngÆ°á»i dÃ¹ng"</string>
+  <string name="screen_report_content_block_user_hint">"Chá»n tÃ¹y chá»n nÃ y náº¿u báº¡n muá»‘n áº©n táº¥t cáº£ tin nháº¯n hiá»‡n táº¡i vÃ  tÆ°Æ¡ng lai tá»« ngÆ°á»i dÃ¹ng nÃ y."</string>
+  <string name="screen_report_content_explanation">"Tin nháº¯n nÃ y sáº½ Ä‘Æ°á»£c bÃ¡o cÃ¡o cho quáº£n trá»‹ viÃªn mÃ¡y chá»§ cá»§a báº¡n. Há» sáº½ khÃ´ng thá»ƒ Ä‘á»c báº¥t ká»³ tin nháº¯n Ä‘Æ°á»£c mÃ£ hÃ³a nÃ o."</string>
+  <string name="screen_report_content_hint">"LÃ½ do bÃ¡o cÃ¡o ná»™i dung nÃ y"</string>
+  <string name="screen_room_attachment_source_camera">"MÃ¡y áº£nh"</string>
+  <string name="screen_room_attachment_source_camera_photo">"Chá»¥p áº£nh"</string>
+  <string name="screen_room_attachment_source_camera_video">"Quay video"</string>
+  <string name="screen_room_attachment_source_files">"Tá»‡p Ä‘Ã­nh kÃ¨m"</string>
+  <string name="screen_room_attachment_source_gallery">"ThÆ° viá»‡n áº£nh vÃ  video"</string>
+  <string name="screen_room_attachment_source_location">"Chia sáº» vá»‹ trÃ­"</string>
+  <string name="screen_room_attachment_source_poll">"Bá» phiáº¿u"</string>
+  <string name="screen_room_attachment_text_formatting">"Äá»‹nh dáº¡ng vÄƒn báº£n"</string>
+  <string name="screen_room_encrypted_history_banner">"Lá»‹ch sá»­ tin nháº¯n hiá»‡n khÃ´ng kháº£ dá»¥ng."</string>
+  <string name="screen_room_encrypted_history_banner_unverified">"Lá»‹ch sá»­ tin nháº¯n khÃ´ng kháº£ dá»¥ng trong phÃ²ng nÃ y. Vui lÃ²ng xÃ¡c minh thiáº¿t bá»‹ nÃ y Ä‘á»ƒ xem lá»‹ch sá»­ tin nháº¯n cá»§a báº¡n."</string>
+  <string name="screen_room_invite_again_alert_message">"Báº¡n cÃ³ muá»‘n má»i há» quay láº¡i khÃ´ng?"</string>
+  <string name="screen_room_invite_again_alert_title">"Báº¡n Ä‘ang má»™t mÃ¬nh trong cuá»™c trÃ² chuyá»‡n nÃ y"</string>
+  <string name="screen_room_mentions_at_room_subtitle">"ThÃ´ng bÃ¡o cho cáº£ phÃ²ng"</string>
+  <string name="screen_room_mentions_at_room_title">"Má»i ngÆ°á»i"</string>
+  <string name="screen_room_retry_send_menu_send_again_action">"Gá»­i láº¡i"</string>
+  <string name="screen_room_retry_send_menu_title">"Gá»­i tin nháº¯n khÃ´ng thÃ nh cÃ´ng"</string>
+  <string name="screen_room_timeline_add_reaction">"ThÃªm biá»ƒu cáº£m"</string>
+  <string name="screen_room_timeline_beginning_of_room">"ÄÃ¢y lÃ  sá»± kiá»‡n khá»Ÿi Ä‘áº§u cá»§a phÃ²ng %1$s ."</string>
+  <string name="screen_room_timeline_beginning_of_room_no_name">"ÄÃ¢y lÃ  khá»Ÿi Ä‘áº§u cá»§a cuá»™c trÃ² chuyá»‡n nÃ y."</string>
+  <string name="screen_room_timeline_legacy_call">"Cuá»™c gá»i khÃ´ng Ä‘Æ°á»£c há»— trá»£. HÃ£y há»i xem ngÆ°á»i gá»i cÃ³ thá»ƒ sá»­ dá»¥ng á»©ng dá»¥ng ORBIT Chat má»›i hay khÃ´ng."</string>
+  <string name="screen_room_timeline_less_reactions">"Thu gá»n"</string>
+  <string name="screen_room_timeline_message_copied">"ÄÃ£ sao chÃ©p tin nháº¯n"</string>
+  <string name="screen_room_timeline_no_permission_to_post">"Báº¡n khÃ´ng cÃ³ quyá»n gá»­i tin nháº¯n trong phÃ²ng nÃ y"</string>
+  <plurals name="screen_room_timeline_reaction_a11y">
+    <item quantity="other">"%1$d thÃ nh viÃªn Ä‘Ã£ pháº£n á»©ng vá»›i %2$s"</item>
+  </plurals>
+  <plurals name="screen_room_timeline_reaction_including_you_a11y">
+    <item quantity="other">"Báº¡n vÃ  thÃ nh viÃªn %1$d Ä‘Ã£ pháº£n á»©ng vá»›i%2$s"</item>
+  </plurals>
+  <string name="screen_room_timeline_reactions_show_less">"Thu gá»n"</string>
+  <string name="screen_room_timeline_reactions_show_more">"Xem thÃªm"</string>
+  <string name="screen_room_timeline_read_marker_title">"Má»›i"</string>
+  <plurals name="screen_room_timeline_state_changes">
+    <item quantity="other">"%1$d sá»‘ lÆ°á»£ng phÃ²ng thay Ä‘á»•i"</item>
+  </plurals>
+  <plurals name="screen_room_typing_many_members">
+    <item quantity="other">"%1$s,%2$s vÃ  %3$d ngÆ°á»i khÃ¡c"</item>
+  </plurals>
+  <plurals name="screen_room_typing_notification">
+    <item quantity="other">"%1$s Ä‘ang gÃµ"</item>
+  </plurals>
+  <string name="screen_room_typing_two_members">"%1$s vÃ  %2$s"</string>
+</resources>

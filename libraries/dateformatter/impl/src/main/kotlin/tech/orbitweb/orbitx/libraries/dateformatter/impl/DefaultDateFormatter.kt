@@ -1,0 +1,47 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.dateformatter.impl
+
+import dev.zacsweers.metro.AppScope
+import dev.zacsweers.metro.ContributesBinding
+import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatter
+import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatterMode
+
+@ContributesBinding(AppScope::class)
+class DefaultDateFormatter(
+    private val dateFormatterFull: DateFormatterFull,
+    private val dateFormatterMonth: DateFormatterMonth,
+    private val dateFormatterDay: DateFormatterDay,
+    private val dateFormatterTime: DateFormatterTime,
+    private val dateFormatterTimeOnly: DateFormatterTimeOnly,
+) : DateFormatter {
+    override fun format(
+        timestamp: Long?,
+        mode: DateFormatterMode,
+        useRelative: Boolean,
+    ): String {
+        timestamp ?: return ""
+        return when (mode) {
+            DateFormatterMode.Full -> {
+                dateFormatterFull.format(timestamp, useRelative)
+            }
+            DateFormatterMode.Month -> {
+                dateFormatterMonth.format(timestamp, useRelative)
+            }
+            DateFormatterMode.Day -> {
+                dateFormatterDay.format(timestamp, useRelative)
+            }
+            DateFormatterMode.TimeOrDate -> {
+                dateFormatterTime.format(timestamp, useRelative)
+            }
+            DateFormatterMode.TimeOnly -> {
+                dateFormatterTimeOnly.format(timestamp)
+            }
+        }
+    }
+}

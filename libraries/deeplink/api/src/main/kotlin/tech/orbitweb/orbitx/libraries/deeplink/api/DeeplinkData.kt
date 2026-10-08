@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.libraries.deeplink.api
+
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
+
+sealed interface DeeplinkData {
+    /** Session id is common for all deep links. */
+    val sessionId: SessionId
+
+    /** The target is the root of the app, with the given [sessionId]. */
+    data class Root(override val sessionId: SessionId) : DeeplinkData
+
+    /** The target is a room, with the given [sessionId], [roomId] and optionally a [threadId] and [eventId]. */
+    data class Room(override val sessionId: SessionId, val roomId: RoomId, val threadId: ThreadId?, val eventId: EventId?) : DeeplinkData
+}

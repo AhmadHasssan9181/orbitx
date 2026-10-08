@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2026 Orbit Team.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package tech.orbitweb.orbitx.appconfig
+
+import tech.orbitweb.orbitx.libraries.matrix.api.room.StateEventType
+
+object TimelineConfig {
+    const val MAX_READ_RECEIPT_TO_DISPLAY = 3
+
+    /**
+     * Event types that will be filtered out from the timeline (i.e. not displayed).
+     */
+    val excludedEvents = listOf(
+        StateEventType.CallMember,
+        StateEventType.RoomCanonicalAlias,
+        StateEventType.RoomGuestAccess,
+        StateEventType.RoomHistoryVisibility,
+        StateEventType.RoomJoinRules,
+        StateEventType.RoomPowerLevels,
+        StateEventType.RoomServerAcl,
+        StateEventType.RoomTombstone,
+        StateEventType.SpaceChild,
+        StateEventType.SpaceParent,
+        StateEventType.PolicyRuleRoom,
+        StateEventType.PolicyRuleServer,
+        StateEventType.PolicyRuleUser,
+    )
+}
