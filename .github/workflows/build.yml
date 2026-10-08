@@ -48,6 +48,9 @@ jobs:
       - name: Configure Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
       - name: Assemble Debug APKs
         run: ./gradlew :app:assembleGplayDebug :app:assembleFdroidDebug $CI_GRADLE_ARG_PROPERTIES
 

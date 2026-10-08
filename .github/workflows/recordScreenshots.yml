@@ -42,17 +42,17 @@ jobs:
         uses: actions-ecosystem/action-remove-labels@2ce5d41b4b6aa8503e285553f75ed56e0a40bae0 # v1.3.0
         with:
           labels: Record-Screenshots
-      - name: ⏬ Checkout with LFS (PR)
+      - name: Checkout with LFS (PR)
         if: github.event.label.name == 'Record-Screenshots'
-        uses: nschloe/action-cached-lfs-checkout@385a8ecc719e50b8c71af6ab01a624b486b7c3bc # v1.2.5
+        uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          lfs: true
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || github.ref }}
-      - name: ⏬ Checkout with LFS (Branch)
+      - name: Checkout with LFS (Branch)
         if: github.event_name == 'workflow_dispatch'
-        uses: nschloe/action-cached-lfs-checkout@385a8ecc719e50b8c71af6ab01a624b486b7c3bc # v1.2.5
+        uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          lfs: true
       - name: ☕️ Use JDK 21
         uses: actions/setup-java@ad2b38190b15e4d6bdf0c97fb4fca8412226d287 # v5.3.0
         with:

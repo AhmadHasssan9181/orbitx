@@ -42,8 +42,9 @@ jobs:
           sudo swapon --show
 
       - name: Checkout with LFS
-        uses: nschloe/action-cached-lfs-checkout@385a8ecc719e50b8c71af6ab01a624b486b7c3bc # v1.2.5
+        uses: actions/checkout@v4
         with:
+          lfs: true
           ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.ref }}
 
       - name: Use JDK 21
@@ -54,6 +55,9 @@ jobs:
 
       - name: Configure gradle
         uses: gradle/actions/setup-gradle@v4
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
 
       - name: Check unit tests
         run: ./gradlew testDebugUnitTest $CI_GRADLE_ARG_PROPERTIES
