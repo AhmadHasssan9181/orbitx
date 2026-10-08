@@ -51,6 +51,13 @@ class KonsistComposableTest {
                 "DebugNavStateNodeHost",
                 "OrbitLogoAtom",
                 "OrbitMascotAtom",
+                "ForcedDarkElementTheme",
+                "ElementTheme",
+                "ElementLogoAtom",
+                "ElementPreviewBlack",
+                "ElementPreviewDark",
+                "ElementPreviewLight",
+                "ElementThemeApp",
             )
             .assertTrue(
                 additionalMessage =

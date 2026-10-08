@@ -13,6 +13,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.detectTransformGestures
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -61,6 +63,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.boundsInParent
 import androidx.compose.ui.layout.onPlaced
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
@@ -75,9 +78,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.DpSize
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlin.math.roundToInt
 import coil3.compose.AsyncImage
 import coil3.compose.AsyncImagePainter
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
@@ -447,6 +452,13 @@ private fun BoxScope.CropEditorCanvas(
                 .align(Alignment.Center)
                 .onPlaced {
                     imageRect = it.boundsInParent()
+                }
+                .pointerInput(currentToolMode) {
+                    if (currentToolMode == EditorToolMode.Sticker) {
+                        detectTapGestures {
+                            onSelectSticker("")
+                        }
+                    }
                 },
             contentAlignment = Alignment.Center,
         ) {
@@ -671,30 +683,46 @@ private fun StickerOverlayView(
     onUpdate: (StickerItem) -> Unit,
     onRemove: () -> Unit,
 ) {
-    val density = LocalDensity.current
+    val currentSticker by rememberUpdatedState(sticker)
     val canvasW = canvasSize.width.takeIf { it > 0f } ?: 1f
     val canvasH = canvasSize.height.takeIf { it > 0f } ?: 1f
-    val xDp = with(density) { (sticker.x * canvasW).toDp() }
-    val yDp = with(density) { (sticker.y * canvasH).toDp() }
+    var stickerLayoutSize by remember { mutableStateOf(IntSize.Zero) }
 
     Box(
         modifier = Modifier
-            .offset(x = xDp - 24.dp * sticker.scale, y = yDp - 24.dp * sticker.scale)
-            .graphicsLayer {
-                rotationZ = sticker.rotationDegrees
-            }
-            .pointerInput(sticker.id, canvasSize) {
-                detectDragGestures(
-                    onDragStart = { onSelect() },
-                    onDrag = { change, dragAmount ->
-                        change.consume()
-                        val newX = ((sticker.x * canvasW + dragAmount.x) / canvasW).coerceIn(0.05f, 0.95f)
-                        val newY = ((sticker.y * canvasH + dragAmount.y) / canvasH).coerceIn(0.05f, 0.95f)
-                        onUpdate(sticker.copy(x = newX, y = newY))
-                    }
+            .onSizeChanged { stickerLayoutSize = it }
+            .offset {
+                IntOffset(
+                    x = (currentSticker.x * canvasW - stickerLayoutSize.width / 2f).roundToInt(),
+                    y = (currentSticker.y * canvasH - stickerLayoutSize.height / 2f).roundToInt(),
                 )
             }
-            .clickable { onSelect() }
+            .graphicsLayer {
+                rotationZ = currentSticker.rotationDegrees
+            }
+            .pointerInput(sticker.id) {
+                detectTapGestures(
+                    onTap = { onSelect() }
+                )
+            }
+            .pointerInput(sticker.id, canvasW, canvasH) {
+                detectTransformGestures(panZoomLock = false) { _, pan, zoom, rotation ->
+                    onSelect()
+                    val current = currentSticker
+                    val newX = ((current.x * canvasW + pan.x) / canvasW).coerceIn(0.02f, 0.98f)
+                    val newY = ((current.y * canvasH + pan.y) / canvasH).coerceIn(0.02f, 0.98f)
+                    val newScale = (current.scale * zoom).coerceIn(0.5f, 4.0f)
+                    val newRotation = (current.rotationDegrees + rotation) % 360f
+                    onUpdate(
+                        current.copy(
+                            x = newX,
+                            y = newY,
+                            scale = newScale,
+                            rotationDegrees = newRotation,
+                        )
+                    )
+                }
+            }
             .then(
                 if (isSelected) {
                     Modifier
@@ -714,8 +742,8 @@ private fun StickerOverlayView(
             Box(
                 modifier = Modifier
                     .align(Alignment.TopEnd)
-                    .offset(x = 8.dp, y = (-8).dp)
-                    .size(20.dp)
+                    .offset(x = 10.dp, y = (-10).dp)
+                    .size(28.dp)
                     .clip(CircleShape)
                     .background(Color(0xFFEF4444))
                     .clickable { onRemove() },
@@ -724,22 +752,23 @@ private fun StickerOverlayView(
                 Text(
                     text = "×",
                     color = Color.White,
-                    style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 14.sp, fontWeight = FontWeight.Bold),
+                    style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 16.sp, fontWeight = FontWeight.Bold),
                 )
             }
             // Scale toggle button at bottom right
             Box(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
-                    .offset(x = 8.dp, y = 8.dp)
-                    .size(20.dp)
+                    .offset(x = 10.dp, y = 10.dp)
+                    .size(28.dp)
                     .clip(CircleShape)
                     .background(Color(0xFF8B5CF6))
                     .clickable {
                         val nextScale = when {
-                            sticker.scale < 1.3f -> sticker.scale + 0.35f
-                            sticker.scale < 2.0f -> sticker.scale + 0.35f
-                            else -> 0.8f
+                            sticker.scale < 1.25f -> 1.5f
+                            sticker.scale < 1.75f -> 2.2f
+                            sticker.scale < 2.5f -> 3.0f
+                            else -> 1.0f
                         }
                         onUpdate(sticker.copy(scale = nextScale))
                     },
@@ -748,7 +777,7 @@ private fun StickerOverlayView(
                 Text(
                     text = "⤢",
                     color = Color.White,
-                    style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 12.sp, fontWeight = FontWeight.Bold),
+                    style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 14.sp, fontWeight = FontWeight.Bold),
                 )
             }
         }

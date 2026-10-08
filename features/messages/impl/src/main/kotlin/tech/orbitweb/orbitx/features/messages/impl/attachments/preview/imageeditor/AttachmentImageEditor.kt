@@ -17,6 +17,7 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.resolvedImageMimeType
+import tech.orbitweb.orbitx.libraries.androidutils.bitmap.calculateInSampleSize
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.rotateToExifMetadataOrientation
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.writeBitmap
 import tech.orbitweb.orbitx.libraries.androidutils.file.createTmpFile
@@ -56,10 +57,12 @@ class DefaultAttachmentImageEditor(
             ?.takeIf { it.isEditableStillImageMimeType() }
             ?.let { return@withContext true }
 
-        val decodedMimeType = context.openInputStreamSafe(localMedia.uri)?.use { input ->
-            val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-            BitmapFactory.decodeStream(input, null, options)
-            options.outMimeType
+        val decodedMimeType = tech.orbitweb.orbitx.libraries.core.data.tryOrNull {
+            context.contentResolver.openInputStream(localMedia.uri)?.use { stream ->
+                val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+                BitmapFactory.decodeStream(stream, null, options)
+                options.outMimeType
+            }
         }
 
         decodedMimeType.isEditableStillImageMimeType()
@@ -70,17 +73,54 @@ class DefaultAttachmentImageEditor(
         edits: AttachmentImageEdits,
     ): Result<EditedLocalMedia> = withContext(dispatchers.io) {
         runCatchingExceptions {
+            android.util.Log.i("OrbitImageEditor", "exportEdits: starting for uri=${localMedia.uri}")
             val sourceMimeType = localMedia.info.resolvedImageMimeType() ?: localMedia.info.mimeType
             val exportedMimeType = exportedMimeTypeFor(sourceMimeType)
-            val exifOrientation = context.openInputStreamSafe(localMedia.uri)?.let { input ->
-                input.use {
-                    ExifInterface(it).getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_UNDEFINED)
-                }
-            } ?: ExifInterface.ORIENTATION_UNDEFINED
 
-            val decodedBitmap = context.openInputStreamSafe(localMedia.uri)?.use { input ->
-                BitmapFactory.decodeStream(input)
-            } ?: error("Unable to decode image from ${localMedia.uri}")
+            // Copy URI stream safely to a temporary disk file to avoid OOM and allow multi-pass decoding
+            val tempSourceFile = context.copyUriToTempFile(localMedia.uri)
+                ?: error("Unable to access or copy image from ${localMedia.uri}")
+
+            val (decodedBitmap, exifOrientation) = try {
+                val exif = tech.orbitweb.orbitx.libraries.core.data.tryOrNull {
+                    ExifInterface(tempSourceFile.absolutePath).getAttributeInt(
+                        ExifInterface.TAG_ORIENTATION,
+                        ExifInterface.ORIENTATION_UNDEFINED,
+                    )
+                } ?: ExifInterface.ORIENTATION_UNDEFINED
+
+                // 1. Determine bounds & inSampleSize targeting max 2048px to prevent OOM
+                val boundsOptions = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+                BitmapFactory.decodeFile(tempSourceFile.absolutePath, boundsOptions)
+
+                val sampleSize = boundsOptions.calculateInSampleSize(
+                    desiredWidth = 2048,
+                    desiredHeight = 2048,
+                )
+
+                // 2. Decode downsampled bitmap
+                val decodeOptions = BitmapFactory.Options().apply {
+                    inSampleSize = sampleSize
+                }
+                var bmp = BitmapFactory.decodeFile(tempSourceFile.absolutePath, decodeOptions)
+                if (bmp == null) {
+                    bmp = context.contentResolver.openInputStream(localMedia.uri)?.use { stream ->
+                        BitmapFactory.decodeStream(stream, null, decodeOptions)
+                    }
+                }
+                if (bmp == null) {
+                    bmp = BitmapFactory.decodeFile(tempSourceFile.absolutePath)
+                }
+                val validBmp = bmp ?: error("Unable to decode bitmap from ${localMedia.uri}")
+                Pair(validBmp, exif)
+            } finally {
+                tempSourceFile.delete()
+            }
+
+            android.util.Log.i(
+                "OrbitImageEditor",
+                "exportEdits: decoded bitmap ${decodedBitmap.width}x${decodedBitmap.height}, orientation=$exifOrientation"
+            )
 
             val normalizedBitmap = decodedBitmap.rotateToExifMetadataOrientation(exifOrientation)
             if (normalizedBitmap !== decodedBitmap) {
@@ -101,12 +141,14 @@ class DefaultAttachmentImageEditor(
             val croppedBitmap = if (isCropUnchanged) {
                 transformedBitmap
             } else {
+                val safeWidth = cropRect.width().coerceAtLeast(1).coerceAtMost(transformedBitmap.width - cropRect.left)
+                val safeHeight = cropRect.height().coerceAtLeast(1).coerceAtMost(transformedBitmap.height - cropRect.top)
                 Bitmap.createBitmap(
                     transformedBitmap,
-                    cropRect.left,
-                    cropRect.top,
-                    cropRect.width(),
-                    cropRect.height(),
+                    cropRect.left.coerceIn(0, transformedBitmap.width - 1),
+                    cropRect.top.coerceIn(0, transformedBitmap.height - 1),
+                    safeWidth,
+                    safeHeight,
                 )
             }
             if (croppedBitmap !== transformedBitmap) {
@@ -115,12 +157,13 @@ class DefaultAttachmentImageEditor(
 
             val editedMediaDir = File(context.cacheDir, EDITED_MEDIA_DIR_NAME).apply { mkdirs() }
             val outputFile = context.createTmpFile(baseDir = editedMediaDir, extension = compressFileExtension(exportedMimeType))
-            outputFile.writeBitmap(
-                bitmap = croppedBitmap,
-                format = compressFormat(exportedMimeType),
-                quality = 90,
-            )
+            outputFile.outputStream().use { out ->
+                croppedBitmap.compress(compressFormat(exportedMimeType), 90, out)
+                out.flush()
+            }
             croppedBitmap.recycle()
+
+            android.util.Log.i("OrbitImageEditor", "exportEdits: successfully exported to ${outputFile.absolutePath}")
 
             EditedLocalMedia(
                 localMedia = localMedia.copy(
@@ -129,42 +172,53 @@ class DefaultAttachmentImageEditor(
                 ),
                 file = outputFile,
             )
+        }.onFailure {
+            android.util.Log.e("OrbitImageEditor", "exportEdits FATAL ERROR for uri=${localMedia.uri}", it)
+            timber.log.Timber.e(it, "exportEdits failed for uri=${localMedia.uri}")
         }
     }
 }
 
-private fun Context.openInputStreamSafe(uri: Uri): java.io.InputStream? {
-    if (uri.scheme == android.content.ContentResolver.SCHEME_FILE) {
-        val path = uri.path
-        if (path != null) {
-            val file = File(path)
+private fun Context.copyUriToTempFile(uri: Uri): File? {
+    val tempFile = File.createTempFile("orbit_edit_", ".tmp", cacheDir)
+    return try {
+        var success = false
+        if (uri.scheme == android.content.ContentResolver.SCHEME_FILE) {
+            val file = File(uri.path ?: "")
             if (file.exists() && file.canRead()) {
-                return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(file) }
+                file.copyTo(tempFile, overwrite = true)
+                success = true
             }
         }
+        if (!success) {
+            contentResolver.openInputStream(uri)?.use { input ->
+                tempFile.outputStream().use { output ->
+                    input.copyTo(output)
+                }
+                success = true
+            }
+        }
+        if (!success || tempFile.length() == 0L) {
+            val path = uri.path
+            if (path != null) {
+                val direct = File(path)
+                if (direct.exists() && direct.canRead()) {
+                    direct.copyTo(tempFile, overwrite = true)
+                    success = true
+                }
+            }
+        }
+        if (success && tempFile.length() > 0L) {
+            tempFile
+        } else {
+            tempFile.delete()
+            null
+        }
+    } catch (e: Throwable) {
+        android.util.Log.w("OrbitImageEditor", "copyUriToTempFile failed for $uri", e)
+        tempFile.delete()
+        null
     }
-    val streamFromResolver = tech.orbitweb.orbitx.libraries.core.data.tryOrNull { contentResolver.openInputStream(uri) }
-    if (streamFromResolver != null) return streamFromResolver
-
-    val path = uri.path
-    if (path != null) {
-        val directFile = File(path)
-        if (directFile.exists() && directFile.canRead()) {
-            return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(directFile) }
-        }
-        if (path.startsWith("/cache/")) {
-            val cacheFile = File(cacheDir, path.removePrefix("/cache/"))
-            if (cacheFile.exists() && cacheFile.canRead()) {
-                return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(cacheFile) }
-            }
-        } else if (path.startsWith("/files/")) {
-            val appFile = File(filesDir, path.removePrefix("/files/"))
-            if (appFile.exists() && appFile.canRead()) {
-                return tech.orbitweb.orbitx.libraries.core.data.tryOrNull { java.io.FileInputStream(appFile) }
-            }
-        }
-    }
-    return null
 }
 
 internal fun exportedMimeTypeFor(sourceMimeType: String?): String {
@@ -204,14 +258,28 @@ private fun Bitmap.applyEdits(edits: AttachmentImageEdits): Bitmap {
         return filtered
     }
 
-    val resultBitmap = filtered.copy(Bitmap.Config.ARGB_8888, true)
-    if (filtered !== this && filtered !== transformed) {
+    val mutableBitmap = if (filtered.isMutable) {
+        filtered
+    } else {
+        try {
+            filtered.copy(Bitmap.Config.ARGB_8888, true)
+        } catch (_: Throwable) {
+            null
+        } ?: run {
+            val fallback = Bitmap.createBitmap(filtered.width, filtered.height, Bitmap.Config.ARGB_8888)
+            val c = android.graphics.Canvas(fallback)
+            c.drawBitmap(filtered, 0f, 0f, null)
+            fallback
+        }
+    }
+
+    if (mutableBitmap !== filtered && filtered !== this && filtered !== transformed) {
         filtered.recycle()
     }
 
-    val canvas = android.graphics.Canvas(resultBitmap)
-    val bmpWidth = resultBitmap.width.toFloat()
-    val bmpHeight = resultBitmap.height.toFloat()
+    val canvas = android.graphics.Canvas(mutableBitmap)
+    val bmpWidth = mutableBitmap.width.toFloat()
+    val bmpHeight = mutableBitmap.height.toFloat()
 
     // 1. Draw strokes
     val strokePaint = android.graphics.Paint().apply {
@@ -257,7 +325,7 @@ private fun Bitmap.applyEdits(edits: AttachmentImageEdits): Bitmap {
         canvas.restore()
     }
 
-    return resultBitmap
+    return mutableBitmap
 }
 
 private fun Bitmap.applyFilter(filter: ImageFilter): Bitmap {

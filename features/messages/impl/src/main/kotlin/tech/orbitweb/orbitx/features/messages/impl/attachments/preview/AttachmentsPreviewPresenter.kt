@@ -469,6 +469,7 @@ class AttachmentsPreviewPresenter(
                                 resetPreparedMedia(sendActionState)
                             },
                             onFailure = {
+                                android.util.Log.e("OrbitImageEditor", "Failed to apply image edits: ${it.message}", it)
                                 Timber.e(it, "Failed to apply image edits")
                                 displayImageEditError = true
                             }
