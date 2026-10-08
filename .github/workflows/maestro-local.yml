@@ -1,9 +1,7 @@
 name: Maestro (local)
 
-# Run this flow only when APK Build workflow completes
 on:
   workflow_dispatch:
-  pull_request:
 
 permissions: {}
 
