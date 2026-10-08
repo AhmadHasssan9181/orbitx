@@ -26,11 +26,11 @@ jobs:
       - name: Configure gradle
         uses: gradle/actions/setup-gradle@3f131e8634966bd73d06cc69884922b02e6faf92 # v6.2.0
         with:
-          cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
+          cache-read-only: ${{ github.ref != 'refs/heads/master' }}
       - name: Set up Python 3.12
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.14
+          python-version: '3.12'
       - name: Run World screenshots generation script
         run: |
           ./tools/test/generateWorldScreenshots.py
