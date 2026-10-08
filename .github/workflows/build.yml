@@ -11,8 +11,8 @@ permissions:
   contents: read
 
 env:
-  GRADLE_OPTS: -Dorg.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8 -XX:+HeapDumpOnOutOfMemoryError -XX:+UseG1GC -Dkotlin.daemon.jvm.options=-Xmx4g
-  CI_GRADLE_ARG_PROPERTIES: --stacktrace -Dsonar.gradle.skipCompile=true --no-configuration-cache
+  GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx7g -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8 -XX:+HeapDumpOnOutOfMemoryError" -Dkotlin.daemon.jvm.options=-Xmx2g -XX:+UseG1GC
+  CI_GRADLE_ARG_PROPERTIES: --stacktrace --no-daemon -Dsonar.gradle.skipCompile=true --no-configuration-cache
 
 jobs:
   build:
@@ -32,6 +32,15 @@ jobs:
           large-packages: false
           docker-images: true
           swap-storage: false
+
+      - name: Increase swapfile size
+        run: |
+          sudo swapoff -a
+          sudo fallocate -l 8G /mnt/swapfile
+          sudo chmod 600 /mnt/swapfile
+          sudo mkswap /mnt/swapfile
+          sudo swapon /mnt/swapfile
+          sudo swapon --show
 
       - name: Checkout repository
         uses: actions/checkout@v4

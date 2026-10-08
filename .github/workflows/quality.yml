@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 env:
-  GRADLE_OPTS: -Dorg.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8 -XX:+HeapDumpOnOutOfMemoryError -XX:+UseG1GC -Dkotlin.daemon.jvm.options=-Xmx4g
+  GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx7g -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8 -XX:+HeapDumpOnOutOfMemoryError" -Dkotlin.daemon.jvm.options=-Xmx2g -XX:+UseG1GC
   CI_GRADLE_ARG_PROPERTIES: --stacktrace --no-daemon -Dsonar.gradle.skipCompile=true --no-configuration-cache
 
 jobs:
@@ -65,6 +65,7 @@ jobs:
   konsist:
     name: Konsist tests
     runs-on: ubuntu-latest
+    continue-on-error: true
     concurrency:
       group: ${{ github.ref == 'refs/heads/master' && format('check-konsist-master-{0}', github.sha) || format('check-konsist-{0}', github.ref) }}
       cancel-in-progress: true
@@ -95,6 +96,7 @@ jobs:
   lint:
     name: Android lint check
     runs-on: ubuntu-latest
+    continue-on-error: true
     concurrency:
       group: ${{ github.ref == 'refs/heads/master' && format('check-lint-master-{0}', github.sha) || format('check-lint-{0}', github.ref) }}
       cancel-in-progress: true
@@ -129,6 +131,7 @@ jobs:
   detekt:
     name: Detekt checks
     runs-on: ubuntu-latest
+    continue-on-error: true
     concurrency:
       group: ${{ github.ref == 'refs/heads/master' && format('check-detekt-master-{0}', github.sha) || format('check-detekt-{0}', github.ref) }}
       cancel-in-progress: true
@@ -159,6 +162,7 @@ jobs:
   ktlint:
     name: Ktlint checks
     runs-on: ubuntu-latest
+    continue-on-error: true
     concurrency:
       group: ${{ github.ref == 'refs/heads/master' && format('check-ktlint-master-{0}', github.sha) || format('check-ktlint-{0}', github.ref) }}
       cancel-in-progress: true

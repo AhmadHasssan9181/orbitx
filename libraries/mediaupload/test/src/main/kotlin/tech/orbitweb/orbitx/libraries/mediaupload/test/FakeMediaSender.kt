@@ -55,6 +55,7 @@ class FakeMediaSender(
         mimeType: String,
         waveForm: List<Float>,
         inReplyToEventId: EventId?,
+        isViewOnce: Boolean,
     ): Result<Unit> {
         return sendVoiceMessageResult()
     }
