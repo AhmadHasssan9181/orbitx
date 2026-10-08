@@ -32,4 +32,6 @@ sealed interface AttachmentsPreviewEvent {
     data class AddSticker(val sticker: tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.StickerItem) : AttachmentsPreviewEvent
     data class UpdateSticker(val sticker: tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.StickerItem) : AttachmentsPreviewEvent
     data class RemoveSticker(val stickerId: String) : AttachmentsPreviewEvent
+    data object ToggleVideoTrimMode : AttachmentsPreviewEvent
+    data class SetVideoTrimRange(val startMs: Long, val endMs: Long) : AttachmentsPreviewEvent
 }

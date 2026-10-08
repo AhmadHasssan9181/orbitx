@@ -49,6 +49,8 @@ class KonsistComposableTest {
                 "HorizontalFloatingToolbarItem",
                 "HorizontalFloatingToolbarSeparator",
                 "DebugNavStateNodeHost",
+                "OrbitLogoAtom",
+                "OrbitMascotAtom",
             )
             .assertTrue(
                 additionalMessage =

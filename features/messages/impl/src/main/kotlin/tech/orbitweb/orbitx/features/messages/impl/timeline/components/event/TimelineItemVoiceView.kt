@@ -125,7 +125,6 @@ fun TimelineItemVoiceView(
             isMine = false,
             isDestroyed = false,
             onContentClick = {
-                content.eventId?.value?.let { tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(it) }
                 hasStartedPlayback = true
                 state.eventSink(VoiceMessageEvent.PlayPause)
             },

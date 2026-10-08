@@ -13,6 +13,8 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -209,6 +211,15 @@ fun AttachmentsPreviewView(
                         val isCurrentVideo = currentAttachment?.localMedia?.info?.mimeType?.startsWith("video/") == true
                         if (isCurrentVideo) {
                             IconButton(
+                                onClick = { state.eventSink(AttachmentsPreviewEvent.ToggleVideoTrimMode) }
+                            ) {
+                                Icon(
+                                    imageVector = CompoundIcons.Crop(),
+                                    contentDescription = "Trim video",
+                                    tint = if (state.isTrimmingVideo) ElementTheme.colors.iconPrimary else ElementTheme.colors.iconSecondary,
+                                )
+                            }
+                            IconButton(
                                 onClick = { state.eventSink(AttachmentsPreviewEvent.ToggleVideoMute) }
                             ) {
                                 Icon(
@@ -393,6 +404,14 @@ private fun AttachmentPreviewContent(
         if (mediaInfo?.isImageAttachment() == true) {
             ImageOptimizationSelector(state.mediaOptimizationSelectorState)
         } else if (mediaInfo?.mimeType?.isMimeTypeVideo() == true) {
+            if (state.isTrimmingVideo || state.videoTrimStartMs > 0L || (state.videoDurationMs > 0L && state.videoTrimEndMs < state.videoDurationMs)) {
+                VideoTrimBar(
+                    state = state,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 6.dp),
+                )
+            }
             VideoPresetSelector(state = state.mediaOptimizationSelectorState)
         }
 
@@ -728,4 +747,133 @@ internal fun GalleryCarouselPill(
             color = ElementTheme.colors.textPrimary,
         )
     }
+}
+
+@Composable
+private fun VideoTrimBar(
+    state: AttachmentsPreviewState,
+    modifier: Modifier = Modifier,
+) {
+    val durationMs = state.videoDurationMs.coerceAtLeast(1000L)
+    val startMs = state.videoTrimStartMs.coerceIn(0L, durationMs)
+    val endMs = state.videoTrimEndMs.takeIf { it > 0L }?.coerceIn(startMs, durationMs) ?: durationMs
+
+    val selectedDurationSec = ((endMs - startMs) / 1000L).coerceAtLeast(1L)
+    val totalDurationSec = (durationMs / 1000L).coerceAtLeast(1L)
+
+    Surface(
+        modifier = modifier
+            .clip(RoundedCornerShape(16.dp))
+            .border(1.dp, ElementTheme.colors.borderInteractiveSecondary, RoundedCornerShape(16.dp)),
+        color = ElementTheme.colors.bgSubtleSecondary,
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        imageVector = CompoundIcons.Crop(),
+                        contentDescription = null,
+                        tint = ElementTheme.colors.iconPrimary,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "Trim Video",
+                        style = ElementTheme.typography.fontBodyMdMedium,
+                        color = ElementTheme.colors.textPrimary,
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Surface(
+                        shape = CircleShape,
+                        color = Color(0xFF8B5CF6).copy(alpha = 0.2f),
+                    ) {
+                        Text(
+                            text = "${selectedDurationSec}s / ${totalDurationSec}s",
+                            style = ElementTheme.typography.fontBodyXsRegular,
+                            color = Color(0xFFC4B5FD),
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp)
+                        )
+                    }
+                }
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    if (startMs > 0L || endMs < durationMs) {
+                        Text(
+                            text = "Reset",
+                            style = ElementTheme.typography.fontBodySmMedium,
+                            color = ElementTheme.colors.textActionAccent,
+                            modifier = Modifier
+                                .niceClickable {
+                                    state.eventSink(AttachmentsPreviewEvent.SetVideoTrimRange(0L, durationMs))
+                                }
+                                .padding(horizontal = 6.dp, vertical = 2.dp)
+                        )
+                    }
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Icon(
+                        imageVector = CompoundIcons.Close(),
+                        contentDescription = "Close trim",
+                        tint = ElementTheme.colors.iconSecondary,
+                        modifier = Modifier
+                            .size(18.dp)
+                            .niceClickable {
+                                state.eventSink(AttachmentsPreviewEvent.ToggleVideoTrimMode)
+                            }
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = formatVideoTrimTimestamp(startMs),
+                    style = ElementTheme.typography.fontBodySmRegular,
+                    color = ElementTheme.colors.textSecondary,
+                )
+                Text(
+                    text = formatVideoTrimTimestamp(endMs),
+                    style = ElementTheme.typography.fontBodySmRegular,
+                    color = ElementTheme.colors.textSecondary,
+                )
+            }
+
+            androidx.compose.material3.RangeSlider(
+                value = (startMs.toFloat()..endMs.toFloat()),
+                onValueChange = { range ->
+                    state.eventSink(
+                        AttachmentsPreviewEvent.SetVideoTrimRange(
+                            startMs = range.start.toLong(),
+                            endMs = range.endInclusive.toLong(),
+                        )
+                    )
+                },
+                valueRange = 0f..durationMs.toFloat(),
+                colors = androidx.compose.material3.SliderDefaults.colors(
+                    thumbColor = ElementTheme.colors.iconPrimary,
+                    activeTrackColor = Color(0xFF8B5CF6),
+                    inactiveTrackColor = ElementTheme.colors.borderInteractiveSecondary,
+                ),
+                modifier = Modifier.fillMaxWidth(),
+            )
+        }
+    }
+}
+
+private fun formatVideoTrimTimestamp(ms: Long): String {
+    val totalSeconds = (ms / 1000L).coerceAtLeast(0L)
+    val minutes = totalSeconds / 60L
+    val seconds = totalSeconds % 60L
+    return String.format("%02d:%02d", minutes, seconds)
 }

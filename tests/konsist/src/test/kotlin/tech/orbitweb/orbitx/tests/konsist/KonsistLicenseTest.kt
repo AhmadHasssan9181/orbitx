@@ -16,7 +16,7 @@ class KonsistLicenseTest {
     private val publicLicense = """
         /\*
         (?:.*\n)* \*
-         \* SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Element-Commercial\.
+         \* SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-(?:Element|Orbit)-Commercial\.
          \* Please see LICENSE files in the repository root for full details\.
          \*/
         """.trimIndent().toRegex()
@@ -24,11 +24,11 @@ class KonsistLicenseTest {
     private val enterpriseLicense = """
         /\*
         (?:.*\n)* \*
-         \* and Element Software GmbH \(the "Element Group"\) only make this file available
+         \* and (?:Element|Orbit) Software GmbH \(the "(?:Element|Orbit) Group"\) only make this file available
          \* under a proprietary license model\.
          \*
          \* Without a proprietary license with us, you cannot use this file\. The terms of
-         \* the proprietary license agreement between you and any member of the Element Group
+         \* the proprietary license agreement between you and any member of the (?:Element|Orbit) Group
          \* shall always apply to your use of this file\. Unauthorised use, copying, distribution,
          \* or modification of this file, via any medium, is strictly prohibited\.
          \*
@@ -44,7 +44,7 @@ class KonsistLicenseTest {
             .files
             .filter {
                 it.moduleName.startsWith("enterprise").not() &&
-                    it.moduleName != "libraries/rustls-tls" &&
+                    it.moduleName.contains("rustls-tls").not() &&
                     it.nameWithExtension != "locales.kt" &&
                     it.name.startsWith("Template ").not()
             }
@@ -81,6 +81,7 @@ class KonsistLicenseTest {
                     it.name.startsWith("Template ").not()
             }
             .assertTrue {
+                it.text.count("SPDX-License-Identifier") <= 1
             }
     }
 }

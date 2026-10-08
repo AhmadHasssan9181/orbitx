@@ -33,6 +33,7 @@ fun aMessageComposerState(
     canShareLocation: Boolean = true,
     suggestions: ImmutableList<ResolvedSuggestion> = persistentListOf(),
     slashCommandAction: AsyncAction<Unit> = AsyncAction.Uninitialized,
+    isViewOnce: Boolean = false,
     eventSink: (MessageComposerEvent) -> Unit = {},
 ) = MessageComposerState(
     textEditorState = textEditorState,
@@ -45,5 +46,6 @@ fun aMessageComposerState(
     resolveMentionDisplay = { _, _ -> TextDisplay.Plain },
     resolveAtRoomMentionDisplay = { TextDisplay.Plain },
     slashCommandAction = slashCommandAction,
+    isViewOnce = isViewOnce,
     eventSink = eventSink,
 )

@@ -279,17 +279,32 @@ class FakeTimeline(
         Result.success(FakeMediaUploadHandler())
     }
 
+    var sendVoiceMessageWithCaptionLambda: (
+        file: File,
+        audioInfo: AudioInfo,
+        waveform: List<Float>,
+        inReplyToEventId: EventId?,
+        caption: String?,
+        formattedCaption: String?,
+    ) -> Result<MediaUploadHandler> = { file, audioInfo, waveform, inReplyToEventId, _, _ ->
+        sendVoiceMessageLambda(file, audioInfo, waveform, inReplyToEventId)
+    }
+
     override suspend fun sendVoiceMessage(
         file: File,
         audioInfo: AudioInfo,
         waveform: List<Float>,
         inReplyToEventId: EventId?,
+        caption: String?,
+        formattedCaption: String?,
     ): Result<MediaUploadHandler> = simulateLongTask {
-        sendVoiceMessageLambda(
+        sendVoiceMessageWithCaptionLambda(
             file,
             audioInfo,
             waveform,
             inReplyToEventId,
+            caption,
+            formattedCaption,
         )
     }
 

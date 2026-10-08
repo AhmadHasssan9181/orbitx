@@ -520,14 +520,15 @@ class RustTimeline(
         audioInfo: AudioInfo,
         waveform: List<Float>,
         inReplyToEventId: EventId?,
+        caption: String?,
+        formattedCaption: String?,
     ): Result<MediaUploadHandler> {
         return sendAttachment(listOf(file)) {
             inner.sendVoiceMessage(
                 params = UploadParameters(
                     source = UploadSource.File(file.path),
-                    // Maybe allow a caption in the future?
-                    caption = null,
-                    formattedCaption = null,
+                    caption = caption,
+                    formattedCaption = formattedCaption,
                     mentions = null,
                     inReplyTo = inReplyToEventId?.value,
                 ),

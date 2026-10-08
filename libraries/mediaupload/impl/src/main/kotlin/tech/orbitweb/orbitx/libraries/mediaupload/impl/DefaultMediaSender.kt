@@ -171,7 +171,7 @@ class DefaultMediaSender(
                 )
                 getTimeline().getOrThrow().sendMedia(
                     uploadInfo = newInfo,
-                    caption = if (isViewOnce) "View-Once Audio" else null,
+                    caption = if (isViewOnce) "🔒 View-Once • Voice message" else null,
                     formattedCaption = null,
                     inReplyToEventId = inReplyToEventId,
                 )
@@ -257,6 +257,8 @@ class DefaultMediaSender(
                     audioInfo = uploadInfo.audioInfo,
                     waveform = uploadInfo.waveform,
                     inReplyToEventId = inReplyToEventId,
+                    caption = caption,
+                    formattedCaption = formattedCaption,
                 )
             }
             is MediaUploadInfo.AnyFile -> {

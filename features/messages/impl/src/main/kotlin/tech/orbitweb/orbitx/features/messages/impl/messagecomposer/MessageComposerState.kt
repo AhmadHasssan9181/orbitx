@@ -27,7 +27,7 @@ data class MessageComposerState(
     val resolveMentionDisplay: (String, String) -> TextDisplay,
     val resolveAtRoomMentionDisplay: () -> TextDisplay,
     val slashCommandAction: AsyncAction<Unit>,
-    val isViewOnce: Boolean = false,
+    val isViewOnce: Boolean,
     val eventSink: (MessageComposerEvent) -> Unit,
 )
 

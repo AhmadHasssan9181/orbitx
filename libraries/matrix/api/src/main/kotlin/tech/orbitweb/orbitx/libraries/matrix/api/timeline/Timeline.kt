@@ -155,6 +155,8 @@ interface Timeline : AutoCloseable {
         audioInfo: AudioInfo,
         waveform: List<Float>,
         inReplyToEventId: EventId?,
+        caption: String? = null,
+        formattedCaption: String? = null,
     ): Result<MediaUploadHandler>
 
     suspend fun sendGallery(

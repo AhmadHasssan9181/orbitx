@@ -72,6 +72,12 @@ fun anAttachmentsPreviewState(
     mediaOptimizationSelectorState: MediaOptimizationSelectorState = aMediaOptimisationSelectorState(),
     displayFileTooLargeError: Boolean = false,
     currentIndex: Int = 0,
+    isViewOnce: Boolean = false,
+    isVideoMuted: Boolean = false,
+    isTrimmingVideo: Boolean = false,
+    videoTrimStartMs: Long = 0L,
+    videoTrimEndMs: Long = 0L,
+    videoDurationMs: Long = 0L,
 ) = AttachmentsPreviewState(
     attachments = persistentListOf(
         Attachment.Media(
@@ -87,6 +93,12 @@ fun anAttachmentsPreviewState(
     mediaOptimizationSelectorState = mediaOptimizationSelectorState,
     displayFileTooLargeError = displayFileTooLargeError,
     currentIndex = currentIndex,
+    isViewOnce = isViewOnce,
+    isVideoMuted = isVideoMuted,
+    isTrimmingVideo = isTrimmingVideo,
+    videoTrimStartMs = videoTrimStartMs,
+    videoTrimEndMs = videoTrimEndMs,
+    videoDurationMs = videoDurationMs,
     eventSink = {}
 )
 
@@ -96,6 +108,12 @@ fun anAttachmentsPreviewGalleryState(
     sendActionState: SendActionState = SendActionState.Idle,
     mediaOptimizationSelectorState: MediaOptimizationSelectorState = aMediaOptimisationSelectorState(),
     currentIndex: Int = 0,
+    isViewOnce: Boolean = false,
+    isVideoMuted: Boolean = false,
+    isTrimmingVideo: Boolean = false,
+    videoTrimStartMs: Long = 0L,
+    videoTrimEndMs: Long = 0L,
+    videoDurationMs: Long = 0L,
 ) = AttachmentsPreviewState(
     attachments = persistentListOf(
         Attachment.Media(
@@ -117,6 +135,12 @@ fun anAttachmentsPreviewGalleryState(
     mediaOptimizationSelectorState = mediaOptimizationSelectorState,
     displayFileTooLargeError = false,
     currentIndex = currentIndex,
+    isViewOnce = isViewOnce,
+    isVideoMuted = isVideoMuted,
+    isTrimmingVideo = isTrimmingVideo,
+    videoTrimStartMs = videoTrimStartMs,
+    videoTrimEndMs = videoTrimEndMs,
+    videoDurationMs = videoDurationMs,
     eventSink = {}
 )
 

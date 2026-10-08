@@ -26,8 +26,12 @@ data class AttachmentsPreviewState(
     val mediaOptimizationSelectorState: MediaOptimizationSelectorState,
     val displayFileTooLargeError: Boolean,
     val currentIndex: Int,
-    val isViewOnce: Boolean = false,
-    val isVideoMuted: Boolean = false,
+    val isViewOnce: Boolean,
+    val isVideoMuted: Boolean,
+    val isTrimmingVideo: Boolean,
+    val videoTrimStartMs: Long,
+    val videoTrimEndMs: Long,
+    val videoDurationMs: Long,
     val eventSink: (AttachmentsPreviewEvent) -> Unit,
 ) {
     val isGallery: Boolean get() = attachments.size > 1
