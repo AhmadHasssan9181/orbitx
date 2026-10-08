@@ -2,7 +2,8 @@ name: Validate Git LFS
 
 on: [pull_request, merge_group]
 
-permissions: {}
+permissions:
+  contents: read
 
 jobs:
   build:

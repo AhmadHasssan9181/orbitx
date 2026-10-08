@@ -3,7 +3,8 @@ name: Maestro (local)
 on:
   workflow_dispatch:
 
-permissions: {}
+permissions:
+  contents: read
 
 # Enrich gradle.properties for CI/CD
 env:

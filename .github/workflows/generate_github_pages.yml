@@ -6,7 +6,8 @@ on:
 #    # At 00:00 on every Tuesday UTC
 #    - cron: '0 0 * * 2'
 
-permissions: {}
+permissions:
+  contents: write
 
 jobs:
   generate-github-pages:
