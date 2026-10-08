@@ -528,7 +528,9 @@ class RustTimeline(
                 params = UploadParameters(
                     source = UploadSource.File(file.path),
                     caption = caption,
-                    formattedCaption = formattedCaption,
+                    formattedCaption = formattedCaption?.let {
+                        FormattedBody(body = it, format = MessageFormat.Html)
+                    },
                     mentions = null,
                     inReplyTo = inReplyToEventId?.value,
                 ),
