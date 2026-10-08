@@ -4,10 +4,9 @@
 
 * [Introduction](#introduction)
 * [Design Language](#design-language)
-* [Colors & Theme](#colors--theme)
+* [Colors & Theme](#colors-theme)
 * [Typography](#typography)
-* [Icons & Assets](#icons--assets)
-* [Components & Guidelines](#components--guidelines)
+* [Icons & Assets](#icons-assets)
 
 <!--- END -->
 

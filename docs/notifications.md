@@ -12,7 +12,7 @@ This document aims to describe how OrbitX Android displays notifications to the 
   * [How does the homeserver know when to notify a client?](#how-does-the-homeserver-know-when-to-notify-a-client)
   * [Push vs privacy, and mitigation](#push-vs-privacy-and-mitigation)
   * [Background processing limitations](#background-processing-limitations)
-* [OrbitX Notification implementations](#OrbitX-notification-implementations)
+* [OrbitX Notification implementations](#orbitx-notification-implementations)
   * [Requirements](#requirements)
   * [Foreground sync mode (Gplay and F-Droid)](#foreground-sync-mode-gplay-and-f-droid)
   * [Push (FCM) received in background](#push-fcm-received-in-background)
