@@ -10,11 +10,11 @@ package tech.orbitweb.orbitx.features.analytics.impl
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultAnalyticsEntryPointTest {
     @get:Rule

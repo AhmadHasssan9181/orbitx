@@ -9,11 +9,11 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications.sound
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.push.api.notifications.sound.NotificationSoundCopier
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.robolectric.RuntimeEnvironment
+import tech.orbitweb.orbitx.libraries.push.api.notifications.sound.NotificationSoundCopier
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class DefaultNotificationSoundCopierTest : RobolectricTest() {
     private val context: Context get() = RuntimeEnvironment.getApplication()

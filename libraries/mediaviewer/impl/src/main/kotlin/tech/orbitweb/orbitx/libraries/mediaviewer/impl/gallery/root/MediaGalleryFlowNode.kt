@@ -16,6 +16,7 @@ import com.bumble.appyx.core.plugin.Plugin
 import com.bumble.appyx.navmodel.backstack.BackStack
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.libraries.architecture.BackstackWithOverlayBox
 import tech.orbitweb.orbitx.libraries.architecture.BaseFlowNode
@@ -37,7 +38,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.eventId
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.mediaInfo
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.mediaSource
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.thumbnailSource
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(RoomScope::class)
 @AssistedInject

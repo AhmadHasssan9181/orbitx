@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.RoomPowerLevels
 import tech.orbitweb.orbitx.libraries.matrix.api.room.tombstone.SuccessorRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class RoomInfo(
     val id: RoomId,

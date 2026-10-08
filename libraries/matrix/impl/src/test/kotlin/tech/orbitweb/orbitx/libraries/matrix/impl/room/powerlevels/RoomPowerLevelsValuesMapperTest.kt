@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.powerlevels
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.RoomPowerLevelsValues
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomPowerLevelsValues
-import org.junit.Test
 
 class RoomPowerLevelsValuesMapperTest {
     @Test

@@ -14,7 +14,6 @@ import android.content.Context.POWER_SERVICE
 import android.os.PowerManager
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import kotlinx.coroutines.async
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.withTimeout
@@ -22,6 +21,7 @@ import org.junit.Test
 import org.robolectric.Shadows
 import org.robolectric.shadows.ShadowActivityManager
 import org.robolectric.shadows.ShadowPowerManager
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import kotlin.time.Duration.Companion.seconds
 
 class DefaultFetchPushForegroundServiceManagerTest : RobolectricTest() {

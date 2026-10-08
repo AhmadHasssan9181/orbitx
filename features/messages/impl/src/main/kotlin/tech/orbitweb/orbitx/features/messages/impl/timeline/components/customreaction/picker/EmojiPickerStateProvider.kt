@@ -11,15 +11,15 @@ import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import io.element.android.emojibasebindings.Emoji
 import io.element.android.emojibasebindings.EmojibaseCategory
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.R
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction.icon
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction.title
 import tech.orbitweb.orbitx.libraries.designsystem.icons.CompoundDrawables
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.IconSource
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 class EmojiPickerStateProvider : PreviewParameterProvider<EmojiPickerState> {
     override val values: Sequence<EmojiPickerState>

@@ -15,6 +15,10 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 import im.vector.app.features.analytics.itf.VectorAnalyticsScreen
 import im.vector.app.features.analytics.plan.SuperProperties
 import im.vector.app.features.analytics.plan.UserProperties
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionListener
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
@@ -28,10 +32,6 @@ import tech.orbitweb.orbitx.services.analytics.impl.log.analyticsTag
 import tech.orbitweb.orbitx.services.analytics.impl.store.AnalyticsStore
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsProvider
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransaction
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.atomic.AtomicBoolean

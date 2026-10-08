@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.features.lockscreen.impl
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.FakeBiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.fixtures.aLockScreenConfig
@@ -23,9 +26,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserve
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.observer.FakeSessionObserver
 import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppForegroundStateService
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultLockScreenServiceTest {
     @Test

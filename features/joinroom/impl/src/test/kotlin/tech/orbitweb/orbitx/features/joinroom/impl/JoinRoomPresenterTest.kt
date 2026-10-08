@@ -9,6 +9,12 @@ package tech.orbitweb.orbitx.features.joinroom.impl
 
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.JoinedRoom
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteEvents
@@ -61,12 +67,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 import java.util.Optional
 
 @Suppress("LargeClass")

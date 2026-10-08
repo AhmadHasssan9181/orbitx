@@ -18,6 +18,8 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticator
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.PinCodeManager
@@ -30,8 +32,6 @@ import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class PinUnlockPresenter(

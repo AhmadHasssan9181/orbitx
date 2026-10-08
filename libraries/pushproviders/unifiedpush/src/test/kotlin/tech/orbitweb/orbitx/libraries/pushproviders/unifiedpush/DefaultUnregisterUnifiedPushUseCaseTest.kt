@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SECRET
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.pushproviders.api.PusherSubscriber
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultUnregisterUnifiedPushUseCaseTest : RobolectricTest() {
     @Test

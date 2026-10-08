@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.widget
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.first
+import org.matrix.rustcomponents.sdk.newVirtualElementCallWidget
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.core.meta.BuildType
 import tech.orbitweb.orbitx.libraries.matrix.api.widget.CallAnalyticCredentialsProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.widget.CallWidgetSettingsProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetSettings
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.coroutines.flow.first
-import org.matrix.rustcomponents.sdk.newVirtualElementCallWidget
 import timber.log.Timber
 import uniffi.matrix_sdk.EncryptionSystem
 import uniffi.matrix_sdk.VirtualElementCallWidgetConfig

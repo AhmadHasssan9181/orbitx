@@ -10,6 +10,13 @@ package tech.orbitweb.orbitx.features.invitepeople.impl
 import androidx.compose.foundation.text.input.setTextAndPlaceCursorAtEnd
 import app.cash.turbine.ReceiveTurbine
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invitepeople.api.InvitePeopleEvents
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
@@ -50,13 +57,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 @Suppress("LargeClass")
 internal class DefaultInvitePeoplePresenterTest {

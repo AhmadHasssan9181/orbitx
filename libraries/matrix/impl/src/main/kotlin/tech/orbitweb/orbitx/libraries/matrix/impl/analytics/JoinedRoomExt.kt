@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.analytics
 
 import im.vector.app.features.analytics.plan.JoinedRoom
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
-import kotlinx.coroutines.flow.first
 
 private fun Long.toAnalyticsRoomSize(): JoinedRoom.RoomSize {
     return when (this) {

@@ -9,11 +9,11 @@ package tech.orbitweb.orbitx.libraries.androidutils.filesize
 
 import android.os.Build
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import org.junit.Test
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
+import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class AndroidFileSizeFormatterTest : RobolectricTest() {
     @Config(sdk = [Build.VERSION_CODES.N])

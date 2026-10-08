@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.classic.missingkeybackup
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_APPLICATION_NAME
 import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class MissingKeyBackupPresenterTest {
     @Test

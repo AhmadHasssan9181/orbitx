@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.home.impl.spaces
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
 import tech.orbitweb.orbitx.features.invite.test.InMemorySeenInvitesStore
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class HomeSpacesPresenterTest {
     @Test

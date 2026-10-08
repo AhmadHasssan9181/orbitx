@@ -10,6 +10,11 @@
 package tech.orbitweb.orbitx.features.linknewdevice.impl.screens.scan
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.linknewdevice.impl.LinkNewDesktopHandler
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeDecodeException
@@ -21,11 +26,6 @@ import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class ScanQrCodePresenterTest {
     @get:Rule

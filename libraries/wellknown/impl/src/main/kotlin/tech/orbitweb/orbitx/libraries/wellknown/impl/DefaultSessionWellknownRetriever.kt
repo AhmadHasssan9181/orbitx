@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.wellknown.impl
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.androidutils.json.JsonProvider
 import tech.orbitweb.orbitx.libraries.cachestore.api.CacheData
 import tech.orbitweb.orbitx.libraries.cachestore.api.CacheStore
@@ -20,8 +22,6 @@ import tech.orbitweb.orbitx.libraries.wellknown.api.ElementWellKnown
 import tech.orbitweb.orbitx.libraries.wellknown.api.SessionWellknownRetriever
 import tech.orbitweb.orbitx.libraries.wellknown.api.WellknownRetrieverResult
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @ContributesBinding(SessionScope::class)

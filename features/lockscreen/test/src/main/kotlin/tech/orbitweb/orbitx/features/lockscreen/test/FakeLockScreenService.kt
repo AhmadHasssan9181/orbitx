@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.features.lockscreen.test
 
-import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenLockState
-import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenLockState
+import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenService
 
 class FakeLockScreenService : LockScreenService {
     private var isPinSetup = MutableStateFlow(false)

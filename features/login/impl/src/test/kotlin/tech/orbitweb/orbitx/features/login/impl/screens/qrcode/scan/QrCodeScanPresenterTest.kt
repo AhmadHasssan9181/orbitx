@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.qrcode.scan
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.features.login.impl.accesscontrol.DefaultAccountProviderAccessControl
@@ -23,9 +26,6 @@ import tech.orbitweb.orbitx.libraries.wellknown.api.WellknownRetriever
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class QrCodeScanPresenterTest {
     @Test

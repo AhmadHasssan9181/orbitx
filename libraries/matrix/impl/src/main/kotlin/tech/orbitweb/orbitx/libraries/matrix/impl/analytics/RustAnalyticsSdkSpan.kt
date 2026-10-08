@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.analytics
 
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsSdkSpan
 import kotlinx.coroutines.DelicateCoroutinesApi
 import org.matrix.rustcomponents.sdk.LogLevel
 import org.matrix.rustcomponents.sdk.Span
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsSdkSpan
 import timber.log.Timber
 
 class RustAnalyticsSdkSpan(

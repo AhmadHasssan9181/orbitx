@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.resolve
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.VerifiedUserSendFailure
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.VerifiedUserSendFailureFactory
 import tech.orbitweb.orbitx.features.messages.impl.fixtures.aMessageEvent
@@ -22,9 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeBaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class ResolveVerifiedUserSendFailurePresenterTest {
     @get:Rule

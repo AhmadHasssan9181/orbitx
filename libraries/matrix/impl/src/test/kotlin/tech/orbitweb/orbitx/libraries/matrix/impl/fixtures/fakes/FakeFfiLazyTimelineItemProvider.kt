@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.anEventTimelineItemDebugInfo
 import org.matrix.rustcomponents.sdk.EventTimelineItemDebugInfo
 import org.matrix.rustcomponents.sdk.LazyTimelineItemProvider
 import org.matrix.rustcomponents.sdk.NoHandle
 import org.matrix.rustcomponents.sdk.SendHandle
 import org.matrix.rustcomponents.sdk.ShieldState
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.anEventTimelineItemDebugInfo
 
 class FakeFfiLazyTimelineItemProvider(
     private val debugInfo: EventTimelineItemDebugInfo = anEventTimelineItemDebugInfo(),

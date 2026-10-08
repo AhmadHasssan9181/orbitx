@@ -20,6 +20,11 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
 import im.vector.app.features.analytics.plan.CryptoSessionStateChange
 import im.vector.app.features.analytics.plan.UserProperties
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkMonitor
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -38,11 +43,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerifiedSta
 import tech.orbitweb.orbitx.libraries.push.api.PushService
 import tech.orbitweb.orbitx.libraries.push.api.PusherRegistrationFailure
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private val pusherTag = LoggerTag("Pusher", LoggerTag.PushLoggerTag)

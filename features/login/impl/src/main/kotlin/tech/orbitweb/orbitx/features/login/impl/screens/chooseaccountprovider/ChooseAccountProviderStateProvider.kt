@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.chooseaccountprovider
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.anAccountProvider
 import tech.orbitweb.orbitx.features.login.impl.login.LoginMode
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import kotlinx.collections.immutable.toImmutableList
 
 open class ChooseAccountProviderStateProvider : PreviewParameterProvider<ChooseAccountProviderState> {
     private val server1 = anAccountProvider(

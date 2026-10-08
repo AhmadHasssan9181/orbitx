@@ -11,6 +11,7 @@ import android.net.Uri
 import androidx.core.text.buildSpannedString
 import androidx.core.text.inSpans
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
@@ -30,7 +31,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.model.Suggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.model.SuggestionType
 import tech.orbitweb.orbitx.libraries.textcomposer.model.aMarkdownTextEditorState
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class MarkdownTextEditorStateTest : RobolectricTest() {
     @Test

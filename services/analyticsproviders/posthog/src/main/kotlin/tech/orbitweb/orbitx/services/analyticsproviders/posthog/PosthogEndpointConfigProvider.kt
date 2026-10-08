@@ -9,13 +9,9 @@ package tech.orbitweb.orbitx.services.analyticsproviders.posthog
 
 import dev.zacsweers.metro.Inject
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
-import tech.orbitweb.orbitx.libraries.core.extensions.isElement
-import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
-import tech.orbitweb.orbitx.libraries.core.meta.BuildType
 
 @Inject
 class PosthogEndpointConfigProvider(
-    private val buildMeta: BuildMeta,
     private val enterpriseService: EnterpriseService,
 ) {
     fun provide(): PosthogEndpointConfig? {
@@ -27,7 +23,7 @@ class PosthogEndpointConfigProvider(
                 it.isValid
             }
         } else {
-            // Do not send telemetry or tracking logs to Element
+            // Disabled external telemetry by default
             null
         }
     }

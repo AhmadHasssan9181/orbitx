@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.tracing
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import org.matrix.rustcomponents.sdk.SentryConfig
+import org.matrix.rustcomponents.sdk.TracingFileConfiguration
+import org.matrix.rustcomponents.sdk.reloadTracingFileWriter
 import tech.orbitweb.orbitx.libraries.core.data.ByteUnit
 import tech.orbitweb.orbitx.libraries.core.data.megaBytes
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
@@ -16,9 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.tracing.LogLevel
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TracingConfiguration
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TracingService
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.WriteToFilesConfiguration
-import org.matrix.rustcomponents.sdk.SentryConfig
-import org.matrix.rustcomponents.sdk.TracingFileConfiguration
-import org.matrix.rustcomponents.sdk.reloadTracingFileWriter
 import timber.log.Timber
 
 @ContributesBinding(AppScope::class)

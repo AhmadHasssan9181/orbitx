@@ -20,6 +20,8 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Ignore
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.AvatarAction
 import tech.orbitweb.orbitx.libraries.testtags.TestTags
@@ -30,8 +32,6 @@ import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Ignore
-import org.junit.Test
 
 class RoomDetailsEditViewTest : RobolectricTest() {
     @Test

@@ -10,13 +10,13 @@ package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 import android.content.Context
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
-import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
-import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.registration.EndpointRegistrationHandler
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withTimeout
 import org.unifiedpush.android.connector.UnifiedPush
+import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
+import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
+import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.registration.EndpointRegistrationHandler
 import kotlin.time.Duration.Companion.seconds
 
 interface RegisterUnifiedPushUseCase {

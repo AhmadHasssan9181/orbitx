@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.usersearch.impl
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.MatrixPatterns
@@ -17,9 +20,6 @@ import tech.orbitweb.orbitx.libraries.usersearch.api.UserListDataSource
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserRepository
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResult
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResultState
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 
 @ContributesBinding(SessionScope::class)
 class MatrixUserRepository(

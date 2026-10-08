@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.attachments.video
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
-import kotlinx.collections.immutable.ImmutableList
 
 data class MediaOptimizationSelectorState(
     // Adding an index helps to fix a Compose issue where the state of the wrong item is updated

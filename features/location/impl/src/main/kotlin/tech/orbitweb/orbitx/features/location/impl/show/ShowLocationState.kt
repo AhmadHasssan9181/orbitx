@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.features.location.impl.show
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.location.impl.common.ui.LocationConstraintsDialogState
 import tech.orbitweb.orbitx.features.location.impl.common.ui.LocationMarkerData
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.components.PinVariant
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.location.AssetType
-import kotlinx.collections.immutable.ImmutableList
 
 data class ShowLocationState(
     val customMapStyleUrl: AsyncData<String?>,

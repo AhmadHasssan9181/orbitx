@@ -19,6 +19,7 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.viewfolder.api.ViewFolderEntryPoint
 import tech.orbitweb.orbitx.features.viewfolder.impl.file.ViewFileNode
@@ -30,7 +31,6 @@ import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
 import tech.orbitweb.orbitx.libraries.architecture.callback
 import tech.orbitweb.orbitx.libraries.architecture.createNode
 import tech.orbitweb.orbitx.libraries.architecture.inputs
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(AppScope::class)
 @AssistedInject

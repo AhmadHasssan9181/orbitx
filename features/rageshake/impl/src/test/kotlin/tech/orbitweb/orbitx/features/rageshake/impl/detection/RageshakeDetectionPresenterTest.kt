@@ -9,6 +9,13 @@ package tech.orbitweb.orbitx.features.rageshake.impl.detection
 
 import android.graphics.Bitmap
 import com.google.common.truth.Truth.assertThat
+import io.mockk.mockk
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import org.junit.BeforeClass
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.rageshake.api.detection.RageshakeDetectionEvent
 import tech.orbitweb.orbitx.features.rageshake.api.screenshot.ImageResult
 import tech.orbitweb.orbitx.features.rageshake.impl.preferences.DefaultRageshakePreferencesPresenter
@@ -18,13 +25,6 @@ import tech.orbitweb.orbitx.features.rageshake.impl.screenshot.FakeScreenshotHol
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import io.mockk.mockk
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
-import org.junit.BeforeClass
-import org.junit.Rule
-import org.junit.Test
 
 class RageshakeDetectionPresenterTest {
     @get:Rule

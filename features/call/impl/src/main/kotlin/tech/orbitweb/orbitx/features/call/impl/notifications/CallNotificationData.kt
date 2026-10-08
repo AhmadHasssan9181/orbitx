@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.call.impl.notifications
 
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class CallNotificationData(

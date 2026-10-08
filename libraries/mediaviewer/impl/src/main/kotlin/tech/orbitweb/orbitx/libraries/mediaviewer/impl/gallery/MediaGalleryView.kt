@@ -40,6 +40,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -78,7 +79,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.id
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageState
-import kotlinx.collections.immutable.ImmutableList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

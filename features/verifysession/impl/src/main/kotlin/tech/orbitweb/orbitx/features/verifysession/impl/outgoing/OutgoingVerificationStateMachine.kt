@@ -11,6 +11,11 @@
 package tech.orbitweb.orbitx.features.verifysession.impl.outgoing
 
 import com.freeletics.flowredux.dsl.FlowReduxStateMachine
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.timeout
 import tech.orbitweb.orbitx.features.verifysession.impl.util.andLogStateChange
 import tech.orbitweb.orbitx.features.verifysession.impl.util.logReceivedEvents
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
@@ -20,11 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.encryption.RecoveryState
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationData
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationRequest
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.timeout
 import kotlin.time.Duration.Companion.seconds
 import com.freeletics.flowredux.dsl.State as MachineState
 

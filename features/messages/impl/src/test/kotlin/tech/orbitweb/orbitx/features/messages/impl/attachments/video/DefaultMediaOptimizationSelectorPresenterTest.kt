@@ -10,6 +10,10 @@ package tech.orbitweb.orbitx.features.messages.impl.attachments.video
 import android.net.Uri
 import android.util.Size
 import com.google.common.truth.Truth.assertThat
+import io.mockk.mockk
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.test.attachments.video.FakeVideoMetadataExtractor
 import tech.orbitweb.orbitx.features.messages.test.attachments.video.FakeVideoMetadataExtractorFactory
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -26,10 +30,6 @@ import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPres
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.test
-import io.mockk.mockk
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 import kotlin.time.Duration.Companion.minutes
 
 class DefaultMediaOptimizationSelectorPresenterTest : RobolectricTest() {

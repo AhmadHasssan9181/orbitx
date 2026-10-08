@@ -16,15 +16,6 @@ import im.vector.app.features.analytics.plan.MobileScreen
 import im.vector.app.features.analytics.plan.PollEnd
 import im.vector.app.features.analytics.plan.SuperProperties
 import im.vector.app.features.analytics.plan.UserProperties
-import tech.orbitweb.orbitx.libraries.matrix.test.analytics.FakeAnalyticsSdkManager
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
-import tech.orbitweb.orbitx.libraries.sessionstorage.test.observer.NoOpSessionObserver
-import tech.orbitweb.orbitx.services.analytics.impl.store.AnalyticsStore
-import tech.orbitweb.orbitx.services.analytics.impl.store.FakeAnalyticsStore
-import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsProvider
-import tech.orbitweb.orbitx.services.analyticsproviders.test.FakeAnalyticsProvider
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -35,6 +26,15 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.analytics.FakeAnalyticsSdkManager
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
+import tech.orbitweb.orbitx.libraries.sessionstorage.test.observer.NoOpSessionObserver
+import tech.orbitweb.orbitx.services.analytics.impl.store.AnalyticsStore
+import tech.orbitweb.orbitx.services.analytics.impl.store.FakeAnalyticsStore
+import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsProvider
+import tech.orbitweb.orbitx.services.analyticsproviders.test.FakeAnalyticsProvider
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
+import tech.orbitweb.orbitx.tests.testutils.lambda.value
 
 class DefaultAnalyticsServiceTest {
     @Test

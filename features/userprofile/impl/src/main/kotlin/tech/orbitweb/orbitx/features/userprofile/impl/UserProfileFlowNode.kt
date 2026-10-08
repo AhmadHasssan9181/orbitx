@@ -18,6 +18,7 @@ import com.bumble.appyx.navmodel.backstack.operation.pop
 import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.api.ElementCallEntryPoint
@@ -38,7 +39,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationRequest
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaViewerEntryPoint
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

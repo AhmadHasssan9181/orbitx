@@ -10,14 +10,14 @@ package tech.orbitweb.orbitx.libraries.network.interceptors
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.libraries.matrix.api.tracing.LogLevel
-import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level
+import tech.orbitweb.orbitx.libraries.matrix.api.tracing.LogLevel
+import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 
 /**
  * HTTP logging interceptor that decides whether to display the HTTP logs or not based on the current log level.

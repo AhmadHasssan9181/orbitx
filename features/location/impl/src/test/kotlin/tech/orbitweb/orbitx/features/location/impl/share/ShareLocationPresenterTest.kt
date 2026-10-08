@@ -18,6 +18,14 @@ import app.cash.turbine.ReceiveTurbine
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.Composer
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.location.impl.aPermissionsState
 import tech.orbitweb.orbitx.features.location.impl.common.FakeUserLocationStateFactory
@@ -56,14 +64,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.hours
 

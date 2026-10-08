@@ -16,6 +16,8 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
@@ -35,8 +37,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class SpaceViewTest : RobolectricTest() {
     @Test

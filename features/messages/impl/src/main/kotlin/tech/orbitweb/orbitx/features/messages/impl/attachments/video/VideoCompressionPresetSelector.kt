@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl.attachments.video
 
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
-import kotlinx.collections.immutable.ImmutableList
 
 @Inject
 class VideoCompressionPresetSelector {

@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.auth
 
 import com.google.common.truth.ThrowableSubject
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.auth.AuthenticationException
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.ClientBuildException
 import org.matrix.rustcomponents.sdk.OAuthException
+import tech.orbitweb.orbitx.libraries.matrix.api.auth.AuthenticationException
 
 class AuthenticationExceptionMappingTest {
     @Test

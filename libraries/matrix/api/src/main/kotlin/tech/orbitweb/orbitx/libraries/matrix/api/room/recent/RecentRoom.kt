@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room.recent
 
-import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
 
 /**
  * Returns a [Flow] of [RoomInfo] from recently visited rooms.

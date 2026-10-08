@@ -15,14 +15,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.room.alias.ResolvedRoomAlias
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import kotlin.jvm.optionals.getOrElse
 
 @AssistedInject

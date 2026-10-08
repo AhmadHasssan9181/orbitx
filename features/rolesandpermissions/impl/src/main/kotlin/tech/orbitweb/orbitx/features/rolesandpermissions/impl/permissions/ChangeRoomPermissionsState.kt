@@ -10,14 +10,14 @@ package tech.orbitweb.orbitx.features.rolesandpermissions.impl.permissions
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.res.stringResource
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.rolesandpermissions.impl.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.components.preferences.DropdownOption
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.RoomPowerLevelsValues
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.persistentListOf
 
 data class ChangeRoomPermissionsState(
     private val ownPowerLevel: Long,

@@ -9,8 +9,8 @@ package tech.orbitweb.orbitx.features.login.impl.screens.qrcode.confirmation
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
 
 @Immutable
 sealed interface QrCodeConfirmationStep : NodeInputs, Parcelable {

@@ -24,11 +24,11 @@ import androidx.compose.ui.test.pressKey
 import androidx.compose.ui.test.requestFocus
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
 import androidx.compose.ui.unit.dp
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.tests.testutils.EnsureNeverCalledWithParam
 import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class PinKeypadTest : RobolectricTest() {
     @Test

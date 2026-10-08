@@ -16,6 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.login.impl.R
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.organisms.NumberedListOrganism
@@ -24,7 +25,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.components.BigIcon
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Button
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun MissingKeyBackupView(

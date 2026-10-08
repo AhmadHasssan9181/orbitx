@@ -8,6 +8,10 @@
 package tech.orbitweb.orbitx.features.home.impl.search
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.home.impl.datasource.aRoomListRoomSummaryFactory
 import tech.orbitweb.orbitx.libraries.dateformatter.test.FakeDateFormatter
 import tech.orbitweb.orbitx.libraries.eventformatter.test.FakeRoomLatestEventFormatter
@@ -20,10 +24,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RoomListSearchPresenterTest {
     @Test

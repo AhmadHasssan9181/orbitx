@@ -7,15 +7,15 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomInfo
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import org.matrix.rustcomponents.sdk.LatestEventValue
 import org.matrix.rustcomponents.sdk.NoHandle
 import org.matrix.rustcomponents.sdk.Room
 import org.matrix.rustcomponents.sdk.RoomInfo
 import org.matrix.rustcomponents.sdk.RoomMembersIterator
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomInfo
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import uniffi.matrix_sdk.RoomMemberRole
 
 class FakeFfiRoom(

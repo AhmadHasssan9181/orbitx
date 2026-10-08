@@ -7,9 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.member
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
-import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.CoroutineDispatcher
@@ -22,6 +19,9 @@ import kotlinx.coroutines.withContext
 import org.matrix.rustcomponents.sdk.RoomInterface
 import org.matrix.rustcomponents.sdk.RoomMembersIterator
 import org.matrix.rustcomponents.sdk.use
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
+import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
 import timber.log.Timber
 import kotlin.coroutines.cancellation.CancellationException
 import kotlin.coroutines.coroutineContext

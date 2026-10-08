@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.pushstore.test.userpushstore
 
-import tech.orbitweb.orbitx.libraries.pushstore.api.UserPushStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.libraries.pushstore.api.UserPushStore
 
 class FakeUserPushStore(
     private var pushProviderName: String? = null

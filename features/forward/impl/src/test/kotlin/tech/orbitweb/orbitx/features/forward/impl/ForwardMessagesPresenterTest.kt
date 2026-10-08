@@ -11,6 +11,10 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -21,10 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.timeline.FakeTimeline
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.LiveTimelineProvider
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class ForwardMessagesPresenterTest {
     @get:Rule

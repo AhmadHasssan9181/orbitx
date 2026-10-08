@@ -9,16 +9,16 @@ package tech.orbitweb.orbitx.features.securityandprivacy.impl.root
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableSet
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.securityandprivacy.api.SecurityAndPrivacyPermissions
 import tech.orbitweb.orbitx.features.securityandprivacy.impl.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableSet
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 data class SecurityAndPrivacyState(
     // the settings that are currently applied on the room.

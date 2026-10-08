@@ -36,6 +36,8 @@ import androidx.compose.ui.unit.coerceIn
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
@@ -44,8 +46,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.text.toSp
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Icon
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.libraries.ui.utils.time.digit
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 private val spaceBetweenPinKey = 16.dp
 private val minSizePinKey = 16.dp

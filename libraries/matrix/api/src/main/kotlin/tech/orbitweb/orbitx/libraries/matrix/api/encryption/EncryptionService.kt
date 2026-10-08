@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.encryption
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
 
 interface EncryptionService {
     val backupStateStateFlow: StateFlow<BackupState>

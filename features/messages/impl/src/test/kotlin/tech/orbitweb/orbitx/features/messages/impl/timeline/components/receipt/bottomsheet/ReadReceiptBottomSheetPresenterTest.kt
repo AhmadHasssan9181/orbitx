@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.receipt.bottomsheet
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemEvent
-import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import tech.orbitweb.orbitx.tests.testutils.test
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemEvent
+import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
+import tech.orbitweb.orbitx.tests.testutils.test
 
 class ReadReceiptBottomSheetPresenterTest {
     @get:Rule

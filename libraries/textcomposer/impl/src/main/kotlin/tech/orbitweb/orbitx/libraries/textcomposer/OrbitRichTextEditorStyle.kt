@@ -13,12 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.isSpecified
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import tech.orbitweb.orbitx.compound.theme.ElementTheme
-import tech.orbitweb.orbitx.libraries.designsystem.theme.bgSubtleTertiary
 import io.element.android.wysiwyg.compose.RichTextEditorDefaults
 import io.element.android.wysiwyg.compose.RichTextEditorStyle
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
+import tech.orbitweb.orbitx.libraries.designsystem.theme.bgSubtleTertiary
 
-object ElementRichTextEditorStyle {
+object OrbitRichTextEditorStyle {
     @Composable
     fun composerStyle(
         hasFocus: Boolean,
@@ -85,3 +85,5 @@ object ElementRichTextEditorStyle {
         )
     }
 }
+
+typealias ElementRichTextEditorStyle = OrbitRichTextEditorStyle

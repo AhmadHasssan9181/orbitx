@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.location.impl.common.userlocation
 
-import tech.orbitweb.orbitx.features.location.api.Location
 import org.maplibre.compose.location.PositionWithAccuracy
 import org.maplibre.spatialk.geojson.Position
 import org.maplibre.spatialk.units.extensions.meters
+import tech.orbitweb.orbitx.features.location.api.Location
 import kotlin.time.TimeSource
 import org.maplibre.compose.location.Location as MapLibreLocation
 

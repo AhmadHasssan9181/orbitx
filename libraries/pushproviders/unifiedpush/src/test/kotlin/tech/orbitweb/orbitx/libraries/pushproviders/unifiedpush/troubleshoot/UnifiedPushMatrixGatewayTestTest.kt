@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.troubleshoot
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Config
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubles
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.TestFilterData
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.runAndTestState
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class UnifiedPushMatrixGatewayTestTest {
     @Test

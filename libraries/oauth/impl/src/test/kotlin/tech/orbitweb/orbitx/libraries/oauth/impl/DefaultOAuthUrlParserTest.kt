@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.oauth.impl
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.auth.FAKE_REDIRECT_URL
 import tech.orbitweb.orbitx.libraries.matrix.test.auth.FakeOAuthRedirectUrlProvider
 import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
-import org.junit.Test
 
 class DefaultOAuthUrlParserTest {
     @Test

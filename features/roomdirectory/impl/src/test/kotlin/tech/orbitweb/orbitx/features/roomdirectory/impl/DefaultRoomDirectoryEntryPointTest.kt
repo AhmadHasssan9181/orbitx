@@ -10,15 +10,15 @@ package tech.orbitweb.orbitx.features.roomdirectory.impl
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.roomdirectory.api.RoomDescription
 import tech.orbitweb.orbitx.features.roomdirectory.api.RoomDirectoryEntryPoint
 import tech.orbitweb.orbitx.features.roomdirectory.impl.root.RoomDirectoryNode
 import tech.orbitweb.orbitx.features.roomdirectory.impl.root.createRoomDirectoryPresenter
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultRoomDirectoryEntryPointTest {
     @get:Rule

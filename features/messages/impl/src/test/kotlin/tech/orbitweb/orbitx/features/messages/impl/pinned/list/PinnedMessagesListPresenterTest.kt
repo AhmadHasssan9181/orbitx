@@ -9,6 +9,12 @@ package tech.orbitweb.orbitx.features.messages.impl.pinned.list
 
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.PinUnpinAction
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.anActionListState
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemAction
 import tech.orbitweb.orbitx.features.messages.impl.fixtures.aTimelineItemsFactoryCreator
@@ -42,12 +48,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class PinnedMessagesListPresenterTest {

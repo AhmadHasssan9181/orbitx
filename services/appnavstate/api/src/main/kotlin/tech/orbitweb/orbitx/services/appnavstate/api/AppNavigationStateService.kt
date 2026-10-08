@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.services.appnavstate.api
 
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
-import kotlinx.coroutines.flow.StateFlow
 
 /**
  * A service that tracks the navigation and foreground states of the app.

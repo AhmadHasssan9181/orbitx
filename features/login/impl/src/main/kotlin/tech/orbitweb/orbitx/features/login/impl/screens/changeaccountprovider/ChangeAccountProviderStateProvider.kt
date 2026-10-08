@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.changeaccountprovider
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.anAccountProvider
 import tech.orbitweb.orbitx.features.login.impl.changeserver.ChangeServerState
 import tech.orbitweb.orbitx.features.login.impl.changeserver.aChangeServerState
-import kotlinx.collections.immutable.toImmutableList
 
 open class ChangeAccountProviderStateProvider : PreviewParameterProvider<ChangeAccountProviderState> {
     override val values: Sequence<ChangeAccountProviderState>

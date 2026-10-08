@@ -8,6 +8,11 @@
 package tech.orbitweb.orbitx.features.messages.impl.crypto.identity
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
@@ -25,11 +30,6 @@ import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class IdentityChangeStatePresenterTest {
     @get:Rule

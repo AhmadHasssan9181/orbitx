@@ -23,12 +23,12 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.internal.OverlapRatioProvider
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.designsystem.text.toPx
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 /**
  * Draw a row of avatars (they must all have the same size), from start to end.

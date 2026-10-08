@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline.reply
 
+import org.matrix.rustcomponents.sdk.EmbeddedEventDetails
+import org.matrix.rustcomponents.sdk.InReplyToDetails
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.InReplyTo
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.TimelineEventContentMapper
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.map
-import org.matrix.rustcomponents.sdk.EmbeddedEventDetails
-import org.matrix.rustcomponents.sdk.InReplyToDetails
 
 class InReplyToMapper(
     private val timelineEventContentMapper: TimelineEventContentMapper,

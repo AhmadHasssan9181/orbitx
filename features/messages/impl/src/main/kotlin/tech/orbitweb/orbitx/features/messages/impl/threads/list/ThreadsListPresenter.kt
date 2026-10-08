@@ -13,6 +13,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.messages.impl.timeline.factories.event.TimelineItemContentFactory
 import tech.orbitweb.orbitx.features.messages.impl.utils.messagesummary.MessageSummaryFormatter
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
@@ -21,11 +26,6 @@ import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatterMode
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListPaginationStatus
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @Inject

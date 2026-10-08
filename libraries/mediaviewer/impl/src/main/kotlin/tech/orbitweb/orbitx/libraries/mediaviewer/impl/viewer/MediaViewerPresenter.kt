@@ -22,6 +22,10 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarDispatcher
@@ -40,10 +44,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.local.LocalMediaActions
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaPermissions
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.mediaPermissions
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.androidutils.R as UtilsR
 
 @AssistedInject

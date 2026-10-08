@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.startchat.impl.userlist
 
 import androidx.compose.foundation.text.input.TextFieldState
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.recent.RecentDirectRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResult
-import kotlinx.collections.immutable.ImmutableList
 
 data class UserListState(
     val searchQuery: TextFieldState,

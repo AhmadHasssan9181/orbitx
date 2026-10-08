@@ -13,6 +13,8 @@ import androidx.compose.runtime.mutableStateOf
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
@@ -21,8 +23,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.TimelineProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.getActiveTimeline
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AssistedInject

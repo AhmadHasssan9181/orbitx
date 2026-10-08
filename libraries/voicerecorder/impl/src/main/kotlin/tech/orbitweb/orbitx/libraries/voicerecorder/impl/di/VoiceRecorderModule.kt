@@ -12,12 +12,12 @@ import android.media.MediaRecorder
 import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
+import io.element.android.opusencoder.OggOpusEncoder
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.voicerecorder.impl.audio.AudioConfig
 import tech.orbitweb.orbitx.libraries.voicerecorder.impl.audio.SampleRate
 import tech.orbitweb.orbitx.libraries.voicerecorder.impl.file.VoiceFileConfig
-import io.element.android.opusencoder.OggOpusEncoder
 
 @BindingContainer
 @ContributesTo(RoomScope::class)

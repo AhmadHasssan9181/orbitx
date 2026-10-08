@@ -15,15 +15,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import io.element.android.wysiwyg.compose.StyledHtmlConverter
+import io.element.android.wysiwyg.display.MentionDisplayHandler
+import io.element.android.wysiwyg.display.TextDisplay
+import io.element.android.wysiwyg.utils.HtmlConverter
 import tech.orbitweb.orbitx.features.messages.api.timeline.HtmlConverterProvider
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.textcomposer.ElementRichTextEditorStyle
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanProvider
-import io.element.android.wysiwyg.compose.StyledHtmlConverter
-import io.element.android.wysiwyg.display.MentionDisplayHandler
-import io.element.android.wysiwyg.display.TextDisplay
-import io.element.android.wysiwyg.utils.HtmlConverter
 import uniffi.wysiwyg_composer.newMentionDetector
 
 @ContributesBinding(RoomScope::class)

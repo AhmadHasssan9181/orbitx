@@ -9,8 +9,8 @@ package tech.orbitweb.orbitx.libraries.androidutils.media
 
 import android.util.Size
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import org.junit.Test
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class VideoCompressorHelperTest : RobolectricTest() {
     @Test

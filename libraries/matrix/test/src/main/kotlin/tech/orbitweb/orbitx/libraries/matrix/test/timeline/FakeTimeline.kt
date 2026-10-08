@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.timeline
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.TransactionId
@@ -28,9 +31,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.InReplyTo
 import tech.orbitweb.orbitx.libraries.matrix.test.media.FakeMediaUploadHandler
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
 import java.io.File
 
 class FakeTimeline(

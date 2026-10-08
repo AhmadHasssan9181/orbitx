@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.preferences.api.store
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import kotlinx.coroutines.CoroutineScope
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 
 interface SessionPreferencesStoreFactory {
     fun get(sessionId: SessionId, sessionCoroutineScope: CoroutineScope): SessionPreferencesStore

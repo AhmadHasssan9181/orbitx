@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels
 
+import kotlinx.collections.immutable.ImmutableMap
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import kotlinx.collections.immutable.ImmutableMap
 
 /**
  * Represents the power levels in a Matrix room, containing both the levels needed to perform actions and the custom power levels for users.

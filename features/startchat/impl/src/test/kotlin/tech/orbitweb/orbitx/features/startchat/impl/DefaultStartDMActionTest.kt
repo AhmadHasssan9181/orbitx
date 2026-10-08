@@ -10,6 +10,8 @@ package tech.orbitweb.orbitx.features.startchat.impl
 import androidx.compose.runtime.mutableStateOf
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.CreatedRoom
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.startchat.api.ConfirmingStartDmWithMatrixUser
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUser
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultStartDMActionTest {
     @Test

@@ -10,11 +10,11 @@ package tech.orbitweb.orbitx.libraries.preferences.impl.store
 import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
-import kotlinx.coroutines.CoroutineScope
 
 @BindingContainer
 @ContributesTo(SessionScope::class)

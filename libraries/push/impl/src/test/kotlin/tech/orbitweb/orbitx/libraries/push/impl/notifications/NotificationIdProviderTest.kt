@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.push.impl.notifications
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID_2
 import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationIdProvider
-import org.junit.Test
 
 class NotificationIdProviderTest {
     @Test

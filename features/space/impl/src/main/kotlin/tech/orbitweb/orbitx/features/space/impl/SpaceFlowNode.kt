@@ -24,6 +24,11 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import com.bumble.appyx.navmodel.backstack.operation.replace
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.createroom.api.CreateRoomEntryPoint
 import tech.orbitweb.orbitx.features.rolesandpermissions.api.ChangeRoomMemberRolesEntryPoint
@@ -45,11 +50,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceService
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.loadAllIncrementally
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(RoomScope::class)
 @AssistedInject

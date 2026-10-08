@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.event.TimelineItemEventContentView
@@ -33,7 +34,6 @@ import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.aTimelin
 import tech.orbitweb.orbitx.features.messages.impl.timeline.util.defaultTimelineContentPadding
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun TimelineItemStateEventRow(

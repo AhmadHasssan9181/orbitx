@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.cachecleaner.impl
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TemporaryFolder
+import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import java.io.File
 
 class DefaultCacheCleanerTest {

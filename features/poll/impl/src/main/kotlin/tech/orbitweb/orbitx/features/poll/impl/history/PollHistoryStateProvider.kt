@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.poll.impl.history
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentState
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.aPollContentState
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryFilter
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryItem
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryItems
-import kotlinx.collections.immutable.toImmutableList
 
 class PollHistoryStateProvider : PreviewParameterProvider<PollHistoryState> {
     override val values: Sequence<PollHistoryState>

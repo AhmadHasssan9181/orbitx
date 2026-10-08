@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.features.space.impl.leave
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.preview.SPACE_NAME
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 class LeaveSpaceStateProvider : PreviewParameterProvider<LeaveSpaceState> {
     override val values: Sequence<LeaveSpaceState>

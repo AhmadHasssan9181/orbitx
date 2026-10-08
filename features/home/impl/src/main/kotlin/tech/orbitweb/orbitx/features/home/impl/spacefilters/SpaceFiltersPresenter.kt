@@ -16,12 +16,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
+import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 
 @Inject
 class SpaceFiltersPresenter(

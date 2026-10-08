@@ -30,6 +30,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import io.element.android.emojibasebindings.Emoji
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableSet
+import kotlinx.collections.immutable.persistentSetOf
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction.EmojiItem
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
@@ -38,10 +42,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Icon
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.IconSource
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBar
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableSet
-import kotlinx.collections.immutable.persistentSetOf
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

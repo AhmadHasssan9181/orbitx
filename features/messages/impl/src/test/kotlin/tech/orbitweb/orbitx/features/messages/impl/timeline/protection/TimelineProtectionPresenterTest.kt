@@ -8,6 +8,11 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.protection
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentSetOf
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewConfig
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewService
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
@@ -19,11 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeBaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.persistentSetOf
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class TimelineProtectionPresenterTest {
     @get:Rule

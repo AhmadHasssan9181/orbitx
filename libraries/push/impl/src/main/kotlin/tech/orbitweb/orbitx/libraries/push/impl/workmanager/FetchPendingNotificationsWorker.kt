@@ -16,6 +16,8 @@ import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metro.binding
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.withTimeoutOrNull
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkMonitor
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
@@ -39,8 +41,6 @@ import tech.orbitweb.orbitx.services.analytics.api.finishLongRunningTransaction
 import tech.orbitweb.orbitx.services.analytics.api.recordTransaction
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransaction
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.withTimeoutOrNull
 import timber.log.Timber
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.seconds

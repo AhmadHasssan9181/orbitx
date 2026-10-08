@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.licenses.impl.list
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.licenses.impl.model.DependencyLicenseItem
 import tech.orbitweb.orbitx.features.licenses.impl.model.License
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 open class DependencyLicensesListStateProvider : PreviewParameterProvider<DependencyLicensesListState> {
     override val values: Sequence<DependencyLicensesListState>

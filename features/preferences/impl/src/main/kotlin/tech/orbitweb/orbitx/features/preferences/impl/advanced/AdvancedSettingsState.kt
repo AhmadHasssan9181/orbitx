@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.features.preferences.impl.advanced
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.res.stringResource
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.preferences.impl.R
 import tech.orbitweb.orbitx.libraries.designsystem.components.preferences.DropdownOption
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
-import kotlinx.collections.immutable.ImmutableList
 
 data class AdvancedSettingsState(
     val isDeveloperModeEnabled: Boolean,

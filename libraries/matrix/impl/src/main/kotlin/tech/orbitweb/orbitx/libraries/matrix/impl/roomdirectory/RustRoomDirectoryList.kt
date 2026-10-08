@@ -7,7 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -17,6 +16,7 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import org.matrix.rustcomponents.sdk.RoomDirectorySearch
+import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
 import kotlin.coroutines.CoroutineContext
 
 class RustRoomDirectoryList(

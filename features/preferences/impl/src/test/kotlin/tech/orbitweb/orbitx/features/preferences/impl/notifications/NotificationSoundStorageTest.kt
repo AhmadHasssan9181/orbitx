@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.preferences.impl.notifications
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
 import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound.Companion.toStored
-import org.junit.Test
 
 class NotificationSoundStorageTest {
     @Test

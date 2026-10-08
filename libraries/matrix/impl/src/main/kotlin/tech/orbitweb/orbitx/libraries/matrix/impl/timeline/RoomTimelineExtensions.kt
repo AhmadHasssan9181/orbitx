@@ -7,7 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.channels.trySendBlocking
@@ -19,6 +18,7 @@ import org.matrix.rustcomponents.sdk.PaginationStatusListener
 import org.matrix.rustcomponents.sdk.TimelineDiff
 import org.matrix.rustcomponents.sdk.TimelineInterface
 import org.matrix.rustcomponents.sdk.TimelineListener
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import timber.log.Timber
 import uniffi.matrix_sdk.PaginationStatus
 

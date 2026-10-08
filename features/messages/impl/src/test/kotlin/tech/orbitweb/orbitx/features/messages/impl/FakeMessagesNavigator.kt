@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.features.messages.impl
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.attachments.Attachment
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -14,7 +15,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.TimelineItemDebugInfo
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
-import kotlinx.collections.immutable.ImmutableList
 
 class FakeMessagesNavigator(
     private val onShowEventDebugInfoClickLambda: (eventId: EventId?, debugInfo: TimelineItemDebugInfo) -> Unit = { _, _ -> lambdaError() },

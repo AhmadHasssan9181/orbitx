@@ -32,13 +32,13 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.persistentMapOf
 import tech.orbitweb.orbitx.compound.utils.toHrf
 import tech.orbitweb.orbitx.libraries.architecture.coverage.ExcludeFromCoverage
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreviewDark
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreviewLight
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewGroup
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.persistentMapOf
 
 @Composable
 fun Text(

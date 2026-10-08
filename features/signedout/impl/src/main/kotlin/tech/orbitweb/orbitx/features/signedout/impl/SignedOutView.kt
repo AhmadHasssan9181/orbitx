@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.molecules.ButtonColumnMolecule
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.molecules.IconTitleSubtitleMolecule
@@ -31,7 +32,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Button
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun SignedOutView(

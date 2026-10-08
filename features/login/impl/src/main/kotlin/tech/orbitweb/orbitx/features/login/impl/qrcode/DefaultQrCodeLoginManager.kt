@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.features.login.impl.qrcode
 
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.features.login.impl.di.QrCodeLoginScope
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.MatrixAuthenticationService
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.MatrixQrCodeLoginData
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeLoginStep
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrLoginException
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 
 @SingleIn(QrCodeLoginScope::class)
 @ContributesBinding(QrCodeLoginScope::class)

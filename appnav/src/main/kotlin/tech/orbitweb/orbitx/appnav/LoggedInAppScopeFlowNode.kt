@@ -24,6 +24,7 @@ import com.bumble.appyx.core.plugin.Plugin
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.appnav.di.SessionGraphFactory
 import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
@@ -33,7 +34,6 @@ import tech.orbitweb.orbitx.libraries.architecture.inputs
 import tech.orbitweb.orbitx.libraries.di.DependencyInjectionGraphOwner
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.ImageLoaderHolder
-import kotlinx.parcelize.Parcelize
 
 /**
  * `LoggedInAppScopeFlowNode` is a Node responsible to set up the Session graph.

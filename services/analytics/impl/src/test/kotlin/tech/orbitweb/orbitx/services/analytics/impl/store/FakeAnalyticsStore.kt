@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.services.analytics.impl.store
 
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 
 internal class FakeAnalyticsStore(
     defaultUserConsent: Boolean = false,

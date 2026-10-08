@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.enterprise.api
 
 import androidx.compose.ui.graphics.Color
+import kotlinx.coroutines.flow.Flow
 import tech.orbitweb.orbitx.compound.colors.SemanticColorsLightDark
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import kotlinx.coroutines.flow.Flow
 
 interface EnterpriseService {
     val isEnterpriseBuild: Boolean

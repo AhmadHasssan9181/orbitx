@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.preferences.impl.tasks
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
@@ -15,8 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.ReceiptType
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationCleaner
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.withContext
 
 interface MarkRoomAsRead {
     suspend operator fun invoke(roomId: RoomId): Result<Unit>

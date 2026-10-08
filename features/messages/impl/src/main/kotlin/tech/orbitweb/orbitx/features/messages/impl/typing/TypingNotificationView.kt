@@ -36,12 +36,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.messages.impl.R
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
-import kotlinx.collections.immutable.ImmutableList
 
 @Suppress("MultipleEmitters") // False positive
 @Composable

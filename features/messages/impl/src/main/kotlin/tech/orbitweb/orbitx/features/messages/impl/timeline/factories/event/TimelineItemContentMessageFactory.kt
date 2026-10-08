@@ -11,6 +11,9 @@ import android.text.style.URLSpan
 import androidx.core.text.getSpans
 import androidx.core.text.toSpannable
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import org.jsoup.nodes.Document
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.messages.api.timeline.HtmlConverterProvider
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.AttachmentItem
@@ -53,9 +56,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.VoiceMessag
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.getDisambiguatedDisplayName
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.toHtmlDocument
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.util.FileExtensionExtractor
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import org.jsoup.nodes.Document
 import kotlin.time.Duration
 
 private const val MIN_IMAGE_SIZE = 1L

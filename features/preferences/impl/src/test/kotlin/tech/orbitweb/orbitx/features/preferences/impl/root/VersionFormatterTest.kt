@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.preferences.impl.root
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
-import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
+import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 
 class VersionFormatterTest {
     @Test

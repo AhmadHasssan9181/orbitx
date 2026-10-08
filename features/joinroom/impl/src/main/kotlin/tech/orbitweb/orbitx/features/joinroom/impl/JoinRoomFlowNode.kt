@@ -18,6 +18,7 @@ import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteView
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.architecture.BackstackView
 import tech.orbitweb.orbitx.libraries.architecture.BaseFlowNode
 import tech.orbitweb.orbitx.libraries.architecture.inputs
 import tech.orbitweb.orbitx.libraries.di.SessionScope
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

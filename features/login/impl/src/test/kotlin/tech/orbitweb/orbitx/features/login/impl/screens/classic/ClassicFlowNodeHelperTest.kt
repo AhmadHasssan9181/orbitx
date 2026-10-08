@@ -12,6 +12,11 @@ package tech.orbitweb.orbitx.features.login.impl.screens.classic
 import androidx.core.graphics.createBitmap
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.advanceTimeBy
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnection
 import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnectionState
 import tech.orbitweb.orbitx.features.login.impl.classic.FakeElementClassicConnection
@@ -26,11 +31,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.advanceTimeBy
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 // Use RobolectricTest for the test with the Bitmap.
 class ClassicFlowNodeHelperTest : RobolectricTest() {

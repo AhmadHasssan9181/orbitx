@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.roomdirectory
 
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryService
-import kotlinx.coroutines.CoroutineScope
 
 class FakeRoomDirectoryService(
     private val createRoomDirectoryListFactory: (CoroutineScope) -> RoomDirectoryList = { throw AssertionError("Configure a proper factory.") }

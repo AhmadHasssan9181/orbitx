@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.space.impl.root
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomType
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
@@ -15,7 +16,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_3
 import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
-import org.junit.Test
 
 class SpaceStateTest {
     @Test

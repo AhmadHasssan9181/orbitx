@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.featureflag.impl
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 
 class DefaultFeaturesProviderTest {
     @Test

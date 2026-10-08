@@ -15,6 +15,11 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 import im.vector.app.features.analytics.itf.VectorAnalyticsScreen
 import im.vector.app.features.analytics.plan.SuperProperties
 import im.vector.app.features.analytics.plan.UserProperties
+import io.sentry.Breadcrumb
+import io.sentry.Sentry
+import io.sentry.SentryOptions
+import io.sentry.android.core.SentryAndroid
+import io.sentry.protocol.SentryTransaction
 import tech.orbitweb.orbitx.libraries.core.data.ByteUnit
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.core.meta.BuildType
@@ -27,11 +32,6 @@ import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsUserData
 import tech.orbitweb.orbitx.services.analyticsproviders.sentry.log.analyticsTag
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationStateService
 import tech.orbitweb.orbitx.services.appnavstate.api.currentSessionId
-import io.sentry.Breadcrumb
-import io.sentry.Sentry
-import io.sentry.SentryOptions
-import io.sentry.android.core.SentryAndroid
-import io.sentry.protocol.SentryTransaction
 import timber.log.Timber
 
 @ContributesIntoSet(AppScope::class)

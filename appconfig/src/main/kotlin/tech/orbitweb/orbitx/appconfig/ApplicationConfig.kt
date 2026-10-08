@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -24,7 +24,7 @@ object ApplicationConfig {
      * For Element, the value is "Element".
      */
     const val PRODUCTION_APPLICATION_NAME: String = "ORBIT Chat"
-    
+
     /**
      * Used in the strings to reference the Element Desktop client, for instance Element Web.
      * Cannot be empty.

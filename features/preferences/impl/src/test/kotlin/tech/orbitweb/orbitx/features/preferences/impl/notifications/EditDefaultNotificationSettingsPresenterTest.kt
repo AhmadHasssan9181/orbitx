@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.preferences.impl.notifications
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.preferences.impl.notifications.edit.EditDefaultNotificationSettingPresenter
 import tech.orbitweb.orbitx.features.preferences.impl.notifications.edit.EditDefaultNotificationSettingStateEvents
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeRoomListService
 import tech.orbitweb.orbitx.tests.testutils.awaitLastSequentialItem
 import tech.orbitweb.orbitx.tests.testutils.consumeItemsUntilPredicate
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class EditDefaultNotificationSettingsPresenterTest {
     @Test

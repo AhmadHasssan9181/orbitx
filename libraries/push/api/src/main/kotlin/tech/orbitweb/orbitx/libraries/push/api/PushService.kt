@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.push.api
 
+import kotlinx.coroutines.flow.Flow
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.push.api.history.PushHistoryItem
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PushProvider
-import kotlinx.coroutines.flow.Flow
 
 interface PushService {
     /**

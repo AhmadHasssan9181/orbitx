@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.link
 
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import io.element.android.wysiwyg.link.Link
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 
 class FakeLinkChecker(
     private val isSafeResult: (Link) -> Boolean = { lambdaError() }

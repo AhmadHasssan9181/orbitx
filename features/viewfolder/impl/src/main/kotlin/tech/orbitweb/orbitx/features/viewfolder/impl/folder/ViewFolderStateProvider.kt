@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.viewfolder.impl.folder
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import tech.orbitweb.orbitx.features.viewfolder.impl.model.Item
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.features.viewfolder.impl.model.Item
 
 open class ViewFolderStateProvider : PreviewParameterProvider<ViewFolderState> {
     override val values: Sequence<ViewFolderState>

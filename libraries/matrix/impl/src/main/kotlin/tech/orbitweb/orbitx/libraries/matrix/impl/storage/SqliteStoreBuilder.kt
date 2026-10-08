@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.storage
 
+import org.matrix.rustcomponents.sdk.ClientBuilder
 import tech.orbitweb.orbitx.libraries.androidutils.crypto.ClientSecret
 import tech.orbitweb.orbitx.libraries.core.data.ByteUnit
 import tech.orbitweb.orbitx.libraries.core.data.megaBytes
 import tech.orbitweb.orbitx.libraries.matrix.api.paths.SessionPaths
-import org.matrix.rustcomponents.sdk.ClientBuilder
 import org.matrix.rustcomponents.sdk.SqliteStoreBuilder as SdkSqliteStoreBuilder
 
 /**

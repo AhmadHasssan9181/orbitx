@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.room.StateEventType
 import org.junit.Ignore
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.room.StateEventType
 import uniffi.ruma_events.StateEventType as RustStateEventType
 
 class StateEventTypeTest {

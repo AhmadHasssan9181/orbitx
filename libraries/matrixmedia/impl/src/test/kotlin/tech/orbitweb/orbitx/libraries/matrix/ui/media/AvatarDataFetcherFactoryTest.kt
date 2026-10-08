@@ -19,10 +19,10 @@ import coil3.request.ImageResult
 import coil3.request.Options
 import coil3.request.SuccessResult
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.anAvatarData
-import tech.orbitweb.orbitx.libraries.matrix.test.media.FakeMatrixMediaLoader
 import io.mockk.mockk
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.anAvatarData
+import tech.orbitweb.orbitx.libraries.matrix.test.media.FakeMatrixMediaLoader
 
 class AvatarDataFetcherFactoryTest {
     @Test

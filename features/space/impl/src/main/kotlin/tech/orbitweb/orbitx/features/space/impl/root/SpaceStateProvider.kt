@@ -9,6 +9,10 @@ package tech.orbitweb.orbitx.features.space.impl.root
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.collections.immutable.toImmutableSet
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteState
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.anAcceptDeclineInviteState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -20,10 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.history.RoomHistoryVisibil
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
-import kotlinx.collections.immutable.toImmutableSet
 
 open class SpaceStateProvider : PreviewParameterProvider<SpaceState> {
     override val values: Sequence<SpaceState>

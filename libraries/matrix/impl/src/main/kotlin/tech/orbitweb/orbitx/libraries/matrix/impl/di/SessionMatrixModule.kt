@@ -10,6 +10,7 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.di
 import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.HomeserverCapabilitiesProvider
@@ -25,7 +26,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceService
 import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
-import kotlinx.coroutines.CoroutineScope
 
 @BindingContainer
 @ContributesTo(SessionScope::class)

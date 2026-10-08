@@ -9,13 +9,13 @@ package tech.orbitweb.orbitx.features.preferences.impl.tasks
 
 import android.content.Context
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.androidutils.file.getSizeOfFiles
 import tech.orbitweb.orbitx.libraries.androidutils.filesize.FileSizeFormatter
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
-import kotlinx.coroutines.withContext
 
 interface ComputeCacheSizeUseCase {
     suspend operator fun invoke(): String

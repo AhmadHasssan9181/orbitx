@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
+import org.matrix.rustcomponents.sdk.RoomHero
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
-import org.matrix.rustcomponents.sdk.RoomHero
 
 internal fun aRustRoomHero(
     userId: UserId = A_USER_ID,

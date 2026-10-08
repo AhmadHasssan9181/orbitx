@@ -9,8 +9,8 @@ package tech.orbitweb.orbitx.features.linknewdevice.impl.screens.error
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
 
 @Immutable
 sealed interface ErrorScreenType : NodeInputs, Parcelable {

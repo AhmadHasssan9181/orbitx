@@ -11,6 +11,11 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarDispatcher
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewConfig
@@ -19,11 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.media.FakeMediaPreviewService
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class MediaPreviewConfigStateStoreTest {
     @get:Rule

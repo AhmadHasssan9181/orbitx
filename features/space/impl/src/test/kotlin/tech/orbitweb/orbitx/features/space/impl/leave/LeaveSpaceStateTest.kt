@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.space.impl.leave
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 
 class LeaveSpaceStateTest {
     @Test

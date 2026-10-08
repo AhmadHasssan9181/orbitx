@@ -11,6 +11,14 @@ import android.Manifest
 import android.os.Build
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.ftue.api.state.FtueService
 import tech.orbitweb.orbitx.features.ftue.api.state.FtueState
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenService
@@ -23,14 +31,6 @@ import tech.orbitweb.orbitx.libraries.permissions.api.PermissionStateProvider
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.toolbox.api.sdk.BuildVersionSdkIntProvider
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 
 @ContributesBinding(SessionScope::class)
 @SingleIn(SessionScope::class)

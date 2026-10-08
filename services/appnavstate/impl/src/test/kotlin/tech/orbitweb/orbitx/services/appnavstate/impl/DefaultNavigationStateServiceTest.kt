@@ -8,6 +8,10 @@
 package tech.orbitweb.orbitx.services.appnavstate.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
@@ -20,10 +24,6 @@ import tech.orbitweb.orbitx.services.appnavstate.test.A_ROOM_OWNER
 import tech.orbitweb.orbitx.services.appnavstate.test.A_SESSION_OWNER
 import tech.orbitweb.orbitx.services.appnavstate.test.A_THREAD_OWNER
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppForegroundStateService
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultNavigationStateServiceTest {
     private val navigationStateRoot = NavigationState.Root

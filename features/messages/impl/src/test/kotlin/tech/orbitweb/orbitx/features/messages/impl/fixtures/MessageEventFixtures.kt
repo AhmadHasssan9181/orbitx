@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.fixtures
 
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemDebugInfo
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemReactions
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.ReadReceiptData
@@ -31,7 +32,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_NAME
 import tech.orbitweb.orbitx.libraries.matrix.test.core.FakeSendHandle
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply.InReplyToDetails
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply.aProfileDetailsReady
-import kotlinx.collections.immutable.toImmutableList
 
 internal fun aMessageEvent(
     eventId: EventId? = AN_EVENT_ID,

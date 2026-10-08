@@ -12,6 +12,9 @@ package tech.orbitweb.orbitx.libraries.permissions.impl
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionStatus
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsEvent
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsStore
 import tech.orbitweb.orbitx.libraries.permissions.impl.action.FakePermissionActions
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 private const val A_PERMISSION = "A_PERMISSION"
 

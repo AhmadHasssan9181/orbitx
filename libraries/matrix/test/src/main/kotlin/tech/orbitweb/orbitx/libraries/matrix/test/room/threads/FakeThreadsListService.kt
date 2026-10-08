@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.room.threads
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListItem
 import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListPaginationStatus
 import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadsListService
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeThreadsListService(
     private val items: MutableStateFlow<List<ThreadListItem>> = MutableStateFlow(emptyList()),

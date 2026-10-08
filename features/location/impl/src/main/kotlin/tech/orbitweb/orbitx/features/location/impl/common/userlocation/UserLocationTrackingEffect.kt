@@ -12,10 +12,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.snapshotFlow
-import tech.orbitweb.orbitx.features.location.impl.common.MapDefaults
 import kotlinx.coroutines.flow.distinctUntilChanged
 import org.maplibre.compose.camera.CameraState
 import org.maplibre.compose.location.Location
+import tech.orbitweb.orbitx.features.location.impl.common.MapDefaults
 import kotlin.math.abs
 
 /**

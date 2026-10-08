@@ -15,14 +15,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import tech.orbitweb.orbitx.libraries.recentemojis.api.EmojibaseProvider
-import tech.orbitweb.orbitx.libraries.recentemojis.api.GetRecentEmojis
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableSet
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
+import tech.orbitweb.orbitx.libraries.recentemojis.api.EmojibaseProvider
+import tech.orbitweb.orbitx.libraries.recentemojis.api.GetRecentEmojis
 
 @Inject
 class CustomReactionPresenter(

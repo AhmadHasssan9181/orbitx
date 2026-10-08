@@ -24,6 +24,9 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
 import dev.zacsweers.metro.binding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.appconfig.NotificationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
@@ -34,9 +37,6 @@ import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
 import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationSoundUpdater
 import tech.orbitweb.orbitx.libraries.push.impl.R
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 /* ==========================================================================================

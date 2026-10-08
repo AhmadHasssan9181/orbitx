@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.textcomposer.model
 
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkBuilder
 import io.element.android.wysiwyg.compose.RichTextEditorState
+import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkBuilder
 
 @Immutable
 sealed interface TextEditorState {

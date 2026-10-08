@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomList
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomListService
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import kotlin.coroutines.EmptyCoroutineContext
 
 class RoomListFactoryTest {

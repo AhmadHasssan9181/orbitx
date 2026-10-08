@@ -15,10 +15,10 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
 import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class SpaceFiltersViewTest : RobolectricTest() {
     @Test

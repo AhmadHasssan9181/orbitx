@@ -8,6 +8,10 @@
 package tech.orbitweb.orbitx.features.messages.impl.pinned.banner
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.pinned.DefaultPinnedEventsTimelineProvider
 import tech.orbitweb.orbitx.libraries.eventformatter.test.FakePinnedMessagesBannerFormatter
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
@@ -25,10 +29,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.timeline.aMessageContent
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.anEventTimelineItem
 import tech.orbitweb.orbitx.tests.testutils.test
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class PinnedMessagesBannerPresenterTest {
     @Test

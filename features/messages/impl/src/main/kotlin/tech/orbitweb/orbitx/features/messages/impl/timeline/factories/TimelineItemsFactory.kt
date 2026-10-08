@@ -10,6 +10,14 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline.factories
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.messages.impl.timeline.diff.TimelineItemsCacheInvalidator
 import tech.orbitweb.orbitx.features.messages.impl.timeline.factories.event.TimelineItemEventFactory
 import tech.orbitweb.orbitx.features.messages.impl.timeline.factories.virtual.TimelineItemVirtualFactory
@@ -20,14 +28,6 @@ import tech.orbitweb.orbitx.libraries.androidutils.diff.MutableListDiffCache
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
-import kotlinx.coroutines.withContext
 
 @AssistedInject
 class TimelineItemsFactory(

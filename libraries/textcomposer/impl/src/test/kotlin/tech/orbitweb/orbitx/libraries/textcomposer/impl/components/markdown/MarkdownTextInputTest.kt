@@ -16,6 +16,7 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
 import androidx.core.text.getSpans
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
@@ -34,7 +35,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.model.aMarkdownTextEditorStat
 import tech.orbitweb.orbitx.tests.testutils.EnsureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class MarkdownTextInputTest : RobolectricTest() {
     @Test

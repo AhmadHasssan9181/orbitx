@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.pushstore.impl.clientsecret
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import tech.orbitweb.orbitx.libraries.pushstore.test.userpushstore.clientsecret.InMemoryPushClientSecretStore
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
+import tech.orbitweb.orbitx.libraries.pushstore.test.userpushstore.clientsecret.InMemoryPushClientSecretStore
 
 private val A_USER_ID_0 = SessionId("@A_USER_ID_0:domain")
 private val A_USER_ID_1 = SessionId("@A_USER_ID_1:domain")

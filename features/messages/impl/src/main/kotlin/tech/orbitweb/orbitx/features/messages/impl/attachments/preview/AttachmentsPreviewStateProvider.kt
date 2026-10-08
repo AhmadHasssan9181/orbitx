@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.features.messages.impl.attachments.preview
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.core.net.toUri
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.messages.impl.attachments.Attachment
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.AttachmentImageEditorState
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.anAttachmentImageEditorState
@@ -25,8 +27,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 import tech.orbitweb.orbitx.libraries.textcomposer.model.TextEditorState
 import tech.orbitweb.orbitx.libraries.textcomposer.model.aTextEditorStateMarkdown
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 import java.io.File
 
 open class AttachmentsPreviewStateProvider : PreviewParameterProvider<AttachmentsPreviewState> {

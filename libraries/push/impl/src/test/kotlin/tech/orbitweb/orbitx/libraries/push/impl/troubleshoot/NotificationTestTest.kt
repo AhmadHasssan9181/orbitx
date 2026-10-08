@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.push.impl.troubleshoot
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.fake.FakeNotificationCreator
@@ -16,8 +18,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubles
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.runAndTestState
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class NotificationTestTest {
     private val notificationCreator = FakeNotificationCreator()

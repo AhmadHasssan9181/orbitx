@@ -10,11 +10,11 @@ package tech.orbitweb.orbitx.libraries.featureflag.impl
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 @ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)

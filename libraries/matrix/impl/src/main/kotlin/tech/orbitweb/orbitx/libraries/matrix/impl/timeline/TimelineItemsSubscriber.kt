@@ -7,7 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
-import tech.orbitweb.orbitx.libraries.core.coroutine.childScope
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancelChildren
@@ -16,6 +15,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import org.matrix.rustcomponents.sdk.Timeline
+import tech.orbitweb.orbitx.libraries.core.coroutine.childScope
 
 /**
  * This class is responsible for subscribing to a timeline and post the items/diffs to the timelineDiffProcessor.

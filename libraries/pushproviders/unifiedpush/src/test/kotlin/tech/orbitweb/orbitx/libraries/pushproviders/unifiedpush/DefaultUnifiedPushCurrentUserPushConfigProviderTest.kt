@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SECRET
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Config
 import tech.orbitweb.orbitx.libraries.pushstore.api.clientsecret.PushClientSecret
 import tech.orbitweb.orbitx.libraries.pushstore.test.userpushstore.clientsecret.FakePushClientSecret
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultUnifiedPushCurrentUserPushConfigProviderTest {
     @Test

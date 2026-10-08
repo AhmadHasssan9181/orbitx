@@ -9,9 +9,6 @@ package tech.orbitweb.orbitx.features.securityandprivacy.impl.manageauthorizedsp
 
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.libraries.di.RoomScope
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableSet
 import kotlinx.collections.immutable.persistentListOf
@@ -20,6 +17,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import tech.orbitweb.orbitx.libraries.di.RoomScope
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 
 data class SpaceSelectionState(
     val selectableSpaces: ImmutableSet<SpaceRoom>,

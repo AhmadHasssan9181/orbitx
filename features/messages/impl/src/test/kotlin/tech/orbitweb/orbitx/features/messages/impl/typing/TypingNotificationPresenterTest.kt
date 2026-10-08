@@ -9,6 +9,11 @@ package tech.orbitweb.orbitx.features.messages.impl.typing
 
 import app.cash.turbine.Event
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
@@ -23,11 +28,6 @@ import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesSt
 import tech.orbitweb.orbitx.libraries.preferences.test.InMemorySessionPreferencesStore
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 @Suppress("LargeClass")
 class TypingNotificationPresenterTest {

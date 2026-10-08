@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.oidc
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import tech.orbitweb.orbitx.R
 import org.junit.Test
+import tech.orbitweb.orbitx.R
+import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 
 class DefaultOAuthRedirectUrlProviderTest {
     @Test

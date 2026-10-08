@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.sync
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.SyncServiceState
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 
 class AppStateMapperKtTest {
     @Test

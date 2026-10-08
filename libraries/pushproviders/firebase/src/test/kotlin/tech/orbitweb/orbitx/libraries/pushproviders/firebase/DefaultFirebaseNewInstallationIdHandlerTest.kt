@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.firebase
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClientProvider
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
@@ -26,8 +28,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultFirebaseNewInstallationIdHandlerTest {
     @Test

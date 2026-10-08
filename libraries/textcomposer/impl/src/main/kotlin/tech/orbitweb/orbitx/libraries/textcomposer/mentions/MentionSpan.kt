@@ -15,10 +15,10 @@ import android.text.TextPaint
 import android.text.TextUtils
 import android.text.style.ReplacementSpan
 import androidx.core.text.getSpans
+import io.element.android.wysiwyg.view.spans.CustomMentionSpan
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import io.element.android.wysiwyg.view.spans.CustomMentionSpan
 import kotlin.math.roundToInt
 
 /**

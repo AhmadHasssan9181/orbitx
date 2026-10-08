@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.createroom.impl.configureroom
 
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 
 data class CreateRoomConfig(
     val roomName: String? = null,

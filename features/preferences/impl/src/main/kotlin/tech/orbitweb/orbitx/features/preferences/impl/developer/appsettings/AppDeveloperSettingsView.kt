@@ -18,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.preferences.impl.R
 import tech.orbitweb.orbitx.features.preferences.impl.developer.tracing.LogLevelItem
@@ -33,7 +34,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.featureflag.ui.FeatureListView
 import tech.orbitweb.orbitx.libraries.featureflag.ui.model.FeatureUiModel
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TraceLogPack
-import kotlinx.collections.immutable.toImmutableList
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable

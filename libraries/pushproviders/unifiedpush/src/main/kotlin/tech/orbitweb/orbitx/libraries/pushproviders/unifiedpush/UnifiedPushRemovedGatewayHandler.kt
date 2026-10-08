@@ -11,6 +11,7 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.androidutils.throttler.FirstThrottler
 import tech.orbitweb.orbitx.libraries.core.extensions.flatMap
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
@@ -19,7 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClientProvider
 import tech.orbitweb.orbitx.libraries.push.api.PushService
 import tech.orbitweb.orbitx.libraries.pushstore.api.clientsecret.PushClientSecret
-import kotlinx.coroutines.CoroutineScope
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("UnifiedPushRemovedGatewayHandler", LoggerTag.PushLoggerTag)

@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.matrix.ui.components
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 class SelectRoomInfoProvider : PreviewParameterProvider<SelectRoomInfo> {
     override val values: Sequence<SelectRoomInfo>

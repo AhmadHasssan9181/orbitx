@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemImage
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemLoadingIndicator
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemVideo
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemVoice
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
 
 class MediaItemsPostProcessorTest {
     private val file1 = aMediaItemFile(id = UniqueId("1"))

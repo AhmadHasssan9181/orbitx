@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.login.impl.screens.chooseaccountprovider
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
 import tech.orbitweb.orbitx.features.login.impl.login.LoginMode
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import kotlinx.collections.immutable.ImmutableList
 
 data class ChooseAccountProviderState(
     val accountProviders: ImmutableList<AccountProvider>,

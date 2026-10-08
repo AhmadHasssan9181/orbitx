@@ -10,8 +10,8 @@ package tech.orbitweb.orbitx.features.call
 import android.Manifest
 import android.webkit.PermissionRequest
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.call.impl.ui.mapWebkitPermissions
 import org.junit.Test
+import tech.orbitweb.orbitx.features.call.impl.ui.mapWebkitPermissions
 
 class MapWebkitPermissionsTest {
     @Test

@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.push.impl.troubleshoot
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.libraries.matrix.test.A_FAILURE_REASON
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class PushLoopbackTestTest {
     @Test

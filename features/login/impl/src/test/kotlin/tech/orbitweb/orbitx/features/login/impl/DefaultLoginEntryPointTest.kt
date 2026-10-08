@@ -11,6 +11,9 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.features.login.api.LoginEntryPoint
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProviderDataSource
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.features.preferences.test.FakePreferencesEntryPoint
 import tech.orbitweb.orbitx.libraries.oauth.test.customtab.FakeOAuthActionFlow
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultLoginEntryPointTest {
     @get:Rule

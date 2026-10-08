@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CreateTimelineParams
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
@@ -16,8 +18,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.timeline.FakeTimeline
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class LiveMediaTimelineTest {
     @Test

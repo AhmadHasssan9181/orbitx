@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.media
 
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import org.matrix.rustcomponents.sdk.use
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import org.matrix.rustcomponents.sdk.MediaSource as RustMediaSource
 
 fun RustMediaSource.map(): MediaSource = use {

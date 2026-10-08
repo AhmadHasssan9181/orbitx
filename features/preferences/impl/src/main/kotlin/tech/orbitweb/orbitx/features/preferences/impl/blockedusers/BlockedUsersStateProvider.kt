@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.preferences.impl.blockedusers
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
-import kotlinx.collections.immutable.toImmutableList
 
 class BlockedUsersStateProvider : PreviewParameterProvider<BlockedUsersState> {
     override val values: Sequence<BlockedUsersState>

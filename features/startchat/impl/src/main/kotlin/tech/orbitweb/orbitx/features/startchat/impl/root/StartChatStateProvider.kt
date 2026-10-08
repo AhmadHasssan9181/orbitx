@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.startchat.impl.root
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.startchat.api.ConfirmingStartDmWithMatrixUser
 import tech.orbitweb.orbitx.features.startchat.impl.userlist.UserListState
 import tech.orbitweb.orbitx.features.startchat.impl.userlist.aRecentDirectRoomList
@@ -18,7 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUser
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResult
-import kotlinx.collections.immutable.persistentListOf
 
 open class StartChatStateProvider : PreviewParameterProvider<StartChatState> {
     override val values: Sequence<StartChatState>

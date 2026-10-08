@@ -13,6 +13,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteEvents
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteState
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runUpdatingState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Inject
 class AcceptDeclineInvitePresenter(

@@ -7,9 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
-import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.channels.trySendBlocking
@@ -30,6 +27,9 @@ import org.matrix.rustcomponents.sdk.RoomListServiceState
 import org.matrix.rustcomponents.sdk.RoomListServiceStateListener
 import org.matrix.rustcomponents.sdk.RoomListServiceSyncIndicator
 import org.matrix.rustcomponents.sdk.RoomListServiceSyncIndicatorListener
+import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import timber.log.Timber
 
 private const val SYNC_INDICATOR_DELAY_BEFORE_SHOWING = 1000u

@@ -16,12 +16,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.linknewdevice.impl.LinkNewMobileHandler
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileStep
-import kotlinx.coroutines.launch
 
 @Inject
 class LinkNewDeviceRootPresenter(

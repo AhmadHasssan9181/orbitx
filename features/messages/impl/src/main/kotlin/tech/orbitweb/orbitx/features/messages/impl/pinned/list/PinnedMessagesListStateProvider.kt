@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.pinned.list
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.UserEventPermissions
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListState
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.anActionListState
@@ -26,8 +28,6 @@ import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.aTimelin
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.aTimelineItemTextContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.protection.TimelineProtectionState
 import tech.orbitweb.orbitx.features.messages.impl.timeline.protection.aTimelineProtectionState
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 open class PinnedMessagesListStateProvider : PreviewParameterProvider<PinnedMessagesListState> {
     override val values: Sequence<PinnedMessagesListState>

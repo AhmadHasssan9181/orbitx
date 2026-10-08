@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.knockrequests.impl.banner
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.KnockRequestPresentable
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.aKnockRequestPresentable
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_BOB
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_CHARLIE
-import kotlinx.collections.immutable.toImmutableList
 
 class KnockRequestsBannerStateProvider : PreviewParameterProvider<KnockRequestsBannerState> {
     override val values: Sequence<KnockRequestsBannerState>

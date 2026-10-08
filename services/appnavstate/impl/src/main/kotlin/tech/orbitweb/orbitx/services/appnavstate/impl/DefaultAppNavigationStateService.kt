@@ -10,6 +10,11 @@ package tech.orbitweb.orbitx.services.appnavstate.impl
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.getAndUpdate
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -19,11 +24,6 @@ import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationState
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationStateService
 import tech.orbitweb.orbitx.services.appnavstate.api.NavigationState
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.getAndUpdate
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("Navigation")

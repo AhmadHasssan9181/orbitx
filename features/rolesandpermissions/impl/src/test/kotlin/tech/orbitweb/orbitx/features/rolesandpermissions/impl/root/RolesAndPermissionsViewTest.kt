@@ -13,6 +13,8 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.rolesandpermissions.impl.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
@@ -25,8 +27,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledTimes
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class RolesAndPermissionsViewTest : RobolectricTest() {
     @Test

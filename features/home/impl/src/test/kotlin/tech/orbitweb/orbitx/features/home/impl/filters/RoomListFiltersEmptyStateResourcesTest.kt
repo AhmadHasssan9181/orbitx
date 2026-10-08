@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.home.impl.filters
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.home.impl.R
 import org.junit.Test
+import tech.orbitweb.orbitx.features.home.impl.R
 
 class RoomListFiltersEmptyStateResourcesTest {
     @Test

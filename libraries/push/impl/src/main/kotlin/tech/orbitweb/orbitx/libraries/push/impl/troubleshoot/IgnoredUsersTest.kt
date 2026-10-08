@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.push.impl.troubleshoot
 
 import dev.zacsweers.metro.ContributesIntoSet
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.push.impl.R
@@ -16,8 +18,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubles
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestDelegate
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.StateFlow
 
 @ContributesIntoSet(SessionScope::class)
 class IgnoredUsersTest(

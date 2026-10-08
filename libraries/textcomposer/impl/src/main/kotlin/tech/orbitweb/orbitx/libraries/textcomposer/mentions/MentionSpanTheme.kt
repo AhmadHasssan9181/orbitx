@@ -32,6 +32,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.text.buildSpannedString
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
@@ -46,7 +47,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
-import kotlinx.collections.immutable.persistentListOf
 
 /**
  * Theme used for mention spans.

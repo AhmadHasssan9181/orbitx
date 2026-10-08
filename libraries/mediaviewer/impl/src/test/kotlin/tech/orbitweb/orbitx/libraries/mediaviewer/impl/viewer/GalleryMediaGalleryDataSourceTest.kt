@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
@@ -24,9 +27,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemFile
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemImage
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class GalleryMediaGalleryDataSourceTest {
     @get:Rule

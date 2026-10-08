@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.designsystem.components.list.RadioButtonListItem
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewGroup
@@ -25,8 +27,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.DialogPrevie
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.ListSupportingText
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SimpleAlertDialogContent
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

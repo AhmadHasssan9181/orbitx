@@ -17,6 +17,11 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollToIndex
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import io.element.android.wysiwyg.link.Link
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Ignore
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.MessageShieldData
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.aCriticalShield
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
@@ -37,11 +42,6 @@ import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import io.element.android.wysiwyg.link.Link
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Ignore
-import org.junit.Test
 
 class TimelineViewTest : RobolectricTest() {
     @Test

@@ -8,6 +8,12 @@
 package tech.orbitweb.orbitx.libraries.push.impl.troubleshoot
 
 import dev.zacsweers.metro.ContributesIntoSet
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeout
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.push.api.PushService
@@ -19,12 +25,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubles
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.CompletableDeferred
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withTimeout
 import timber.log.Timber
 import kotlin.time.Duration.Companion.seconds
 

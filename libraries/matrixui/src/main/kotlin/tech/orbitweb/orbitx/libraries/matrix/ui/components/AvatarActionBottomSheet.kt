@@ -22,6 +22,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.designsystem.components.list.ListItemContent
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
@@ -33,8 +35,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.ModalBottomS
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.hide
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.AvatarAction
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

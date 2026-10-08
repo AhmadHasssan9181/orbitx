@@ -20,14 +20,14 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarType
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.anAvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.avatarShape
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementThemedPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewGroup
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 import java.util.Collections
 import kotlin.math.PI
 import kotlin.math.cos

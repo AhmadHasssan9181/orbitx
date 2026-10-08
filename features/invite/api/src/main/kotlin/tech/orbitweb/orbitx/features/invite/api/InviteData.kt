@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.invite.api
 
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.room.preview.RoomPreviewInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
-import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class InviteData(

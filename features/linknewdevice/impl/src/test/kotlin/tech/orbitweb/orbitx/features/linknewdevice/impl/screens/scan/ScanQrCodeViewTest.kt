@@ -16,6 +16,8 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
@@ -25,8 +27,6 @@ import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class ScanQrCodeViewTest : RobolectricTest() {
     @Test

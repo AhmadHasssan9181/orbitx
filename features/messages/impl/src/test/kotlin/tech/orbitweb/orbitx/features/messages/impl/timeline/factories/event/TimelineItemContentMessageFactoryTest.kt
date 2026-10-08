@@ -17,6 +17,12 @@ import androidx.core.text.buildSpannedString
 import androidx.core.text.inSpans
 import androidx.core.text.toSpannable
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.test.runTest
+import org.jsoup.nodes.Document
+import org.junit.Assert.fail
+import org.junit.Test
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.AttachmentItem
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.GalleryItem
@@ -73,12 +79,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.timeline.aStickerContent
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.A_BLUR_HASH
 import tech.orbitweb.orbitx.libraries.mediaviewer.test.util.FileExtensionExtractorWithoutValidation
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.test.runTest
-import org.jsoup.nodes.Document
-import org.junit.Assert.fail
-import org.junit.Test
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.minutes
 

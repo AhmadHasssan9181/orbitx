@@ -35,6 +35,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.home.impl.R
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.Avatar
@@ -48,7 +49,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -18,6 +18,12 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.messages.impl.UserEventPermissions
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemAction
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemActionComparator
@@ -50,12 +56,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 import tech.orbitweb.orbitx.libraries.recentemojis.api.GetRecentEmojis
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 interface ActionListPresenter : Presenter<ActionListState> {
     interface Factory {

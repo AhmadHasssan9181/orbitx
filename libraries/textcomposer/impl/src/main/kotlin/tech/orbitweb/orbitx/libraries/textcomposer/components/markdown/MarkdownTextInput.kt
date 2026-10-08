@@ -28,6 +28,8 @@ import androidx.core.view.OnReceiveContentListener
 import androidx.core.view.ViewCompat
 import androidx.core.view.setPadding
 import androidx.core.widget.addTextChangedListener
+import io.element.android.wysiwyg.compose.RichTextEditorStyle
+import io.element.android.wysiwyg.compose.internal.applyStyleInCompose
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
@@ -39,8 +41,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.model.MarkdownTextEditorState
 import tech.orbitweb.orbitx.libraries.textcomposer.model.Suggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.model.SuggestionType
 import tech.orbitweb.orbitx.libraries.textcomposer.model.aMarkdownTextEditorState
-import io.element.android.wysiwyg.compose.RichTextEditorStyle
-import io.element.android.wysiwyg.compose.internal.applyStyleInCompose
 import timber.log.Timber
 
 @Suppress("ModifierMissing")

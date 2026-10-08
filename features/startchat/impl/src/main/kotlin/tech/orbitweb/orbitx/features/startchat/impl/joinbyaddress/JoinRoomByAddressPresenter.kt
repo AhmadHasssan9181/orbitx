@@ -18,6 +18,8 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.withTimeoutOrNull
 import tech.orbitweb.orbitx.features.startchat.StartChatNavigator
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
@@ -25,8 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.room.alias.RoomAliasHelper
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.time.Duration.Companion.seconds
 
 private const val ADDRESS_RESOLVE_TIMEOUT_IN_SECONDS = 10

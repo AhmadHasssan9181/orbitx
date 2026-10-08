@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.features.messages.impl.pinned.banner
 
 import androidx.compose.ui.text.AnnotatedString
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.eventformatter.api.PinnedMessagesBannerFormatter
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
-import kotlinx.coroutines.withContext
 
 @Inject
 class PinnedMessagesBannerItemFactory(

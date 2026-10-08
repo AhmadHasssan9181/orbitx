@@ -11,8 +11,8 @@ import io.gitlab.arturbosch.detekt.api.Config
 import io.gitlab.arturbosch.detekt.api.RuleSet
 import io.gitlab.arturbosch.detekt.api.RuleSetProvider
 
-class ElementRuleSetProvider : RuleSetProvider {
-    override val ruleSetId: String = "ElementXRules"
+class OrbitRuleSetProvider : RuleSetProvider {
+    override val ruleSetId: String = "OrbitXRules"
 
     override fun instance(config: Config): RuleSet = RuleSet(
         id = ruleSetId,
@@ -22,3 +22,5 @@ class ElementRuleSetProvider : RuleSetProvider {
         )
     )
 }
+
+typealias ElementRuleSetProvider = OrbitRuleSetProvider

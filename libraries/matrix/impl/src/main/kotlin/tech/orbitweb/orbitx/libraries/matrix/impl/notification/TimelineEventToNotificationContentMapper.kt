@@ -7,6 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.notification
 
+import org.matrix.rustcomponents.sdk.MessageLikeEventContent
+import org.matrix.rustcomponents.sdk.StateEventContent
+import org.matrix.rustcomponents.sdk.TimelineEvent
+import org.matrix.rustcomponents.sdk.TimelineEventContent
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -15,11 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.notification.NotificationConten
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.RtcNotificationType
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.member.RoomMemberMapper
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.EventMessageMapper
-import org.matrix.rustcomponents.sdk.MessageLikeEventContent
-import org.matrix.rustcomponents.sdk.StateEventContent
-import org.matrix.rustcomponents.sdk.TimelineEvent
-import org.matrix.rustcomponents.sdk.TimelineEventContent
-import org.matrix.rustcomponents.sdk.use
 import org.matrix.rustcomponents.sdk.RtcCallIntent as SdkRtcCallIntent
 import org.matrix.rustcomponents.sdk.RtcNotificationType as SdkRtcNotificationType
 

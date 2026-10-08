@@ -16,6 +16,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.views.RecoveryKeyUserStory
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.views.RecoveryKeyViewState
 import tech.orbitweb.orbitx.features.securebackup.impl.tools.RecoveryKeyTools
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Inject
 class SecureBackupEnterRecoveryKeyPresenter(

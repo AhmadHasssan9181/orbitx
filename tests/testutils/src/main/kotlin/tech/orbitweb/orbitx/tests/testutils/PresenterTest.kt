@@ -11,8 +11,8 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.TurbineTestContext
 import app.cash.turbine.test
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import org.junit.Assert.fail
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import kotlin.time.Duration
 
 suspend fun <State> Presenter<State>.test(

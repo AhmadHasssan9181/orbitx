@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.roomlist
 
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeDynamicRoomList(
     override val summaries: MutableStateFlow<List<RoomSummary>> = MutableStateFlow(emptyList()),

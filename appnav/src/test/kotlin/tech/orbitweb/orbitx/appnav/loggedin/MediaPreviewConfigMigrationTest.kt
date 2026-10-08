@@ -10,14 +10,14 @@
 package tech.orbitweb.orbitx.appnav.loggedin
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewConfig
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
-import tech.orbitweb.orbitx.libraries.matrix.test.media.FakeMediaPreviewService
-import tech.orbitweb.orbitx.libraries.preferences.test.InMemoryAppPreferencesStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewConfig
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
+import tech.orbitweb.orbitx.libraries.matrix.test.media.FakeMediaPreviewService
+import tech.orbitweb.orbitx.libraries.preferences.test.InMemoryAppPreferencesStore
 
 class MediaPreviewConfigMigrationTest {
     @Test

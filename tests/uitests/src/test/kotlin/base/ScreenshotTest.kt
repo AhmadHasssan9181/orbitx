@@ -24,9 +24,9 @@ import app.cash.paparazzi.TestName
 import com.android.resources.Density.DEFAULT_DENSITY
 import com.android.resources.NightMode
 import com.android.resources.ScreenOrientation
-import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import sergio.sastre.composable.preview.scanner.android.AndroidPreviewInfo
 import sergio.sastre.composable.preview.scanner.core.preview.ComposablePreview
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import java.util.Locale
 
 object ScreenshotTest {

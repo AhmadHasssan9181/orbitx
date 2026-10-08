@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.home.impl.roomlist
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.home.impl.filters.RoomListFiltersState
 import tech.orbitweb.orbitx.features.home.impl.filters.aRoomListFiltersState
 import tech.orbitweb.orbitx.features.home.impl.model.LatestEvent
@@ -26,9 +29,6 @@ import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomState
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
 import tech.orbitweb.orbitx.libraries.push.api.battery.aBatteryOptimizationState
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 open class RoomListStateProvider : PreviewParameterProvider<RoomListState> {
     override val values: Sequence<RoomListState>

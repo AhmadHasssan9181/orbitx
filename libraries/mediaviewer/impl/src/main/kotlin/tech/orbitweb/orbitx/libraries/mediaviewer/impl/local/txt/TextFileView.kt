@@ -19,6 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.viewfolder.api.TextFileViewer
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
@@ -29,8 +31,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer.topAppBarHeight
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 fun TextFileView(

@@ -10,6 +10,9 @@ package tech.orbitweb.orbitx.features.location.impl.share
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.location.impl.common.FakeUserLocationStateFactory
 import tech.orbitweb.orbitx.features.location.impl.common.actions.FakeLocationActions
 import tech.orbitweb.orbitx.features.location.impl.common.permissions.FakePermissionsPresenter
@@ -24,9 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.libraries.preferences.test.FakePreferenceDataStoreFactory
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultShareLocationEntryPointTest {
     @get:Rule

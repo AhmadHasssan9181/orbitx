@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.location.api.live
 
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.core.coroutine.mapState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import kotlinx.coroutines.flow.StateFlow
 import kotlin.time.Duration
 
 interface ActiveLiveLocationShareManager {

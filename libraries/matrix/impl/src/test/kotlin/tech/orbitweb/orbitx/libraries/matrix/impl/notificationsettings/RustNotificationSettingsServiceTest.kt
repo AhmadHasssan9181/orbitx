@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.notificationsettings
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.NotificationSettings
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiClient
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiNotificationSettings
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.NotificationSettings
 
 class RustNotificationSettingsServiceTest {
     @Test

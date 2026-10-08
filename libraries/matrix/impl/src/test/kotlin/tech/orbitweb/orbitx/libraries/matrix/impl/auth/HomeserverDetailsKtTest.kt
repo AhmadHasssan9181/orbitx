@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.MatrixHomeServerDetails
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiHomeserverLoginDetails
-import org.junit.Test
 
 class HomeserverDetailsKtTest {
     @Test

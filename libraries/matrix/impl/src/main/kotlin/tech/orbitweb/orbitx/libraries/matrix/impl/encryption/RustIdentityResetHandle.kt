@@ -7,14 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.encryption
 
+import org.matrix.rustcomponents.sdk.AuthData
+import org.matrix.rustcomponents.sdk.AuthDataPasswordDetails
+import org.matrix.rustcomponents.sdk.CrossSigningResetAuthType
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.IdentityOAuthResetHandle
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.IdentityPasswordResetHandle
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.IdentityResetHandle
-import org.matrix.rustcomponents.sdk.AuthData
-import org.matrix.rustcomponents.sdk.AuthDataPasswordDetails
-import org.matrix.rustcomponents.sdk.CrossSigningResetAuthType
 
 object RustIdentityResetHandleFactory {
     fun create(

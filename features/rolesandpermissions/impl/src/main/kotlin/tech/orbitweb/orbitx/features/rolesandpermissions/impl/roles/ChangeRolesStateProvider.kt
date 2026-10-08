@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.features.rolesandpermissions.impl.roles
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_BOB
@@ -24,9 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.PowerLevelRoomMemberComparator
 import tech.orbitweb.orbitx.libraries.previewutils.room.aRoomMember
 import tech.orbitweb.orbitx.libraries.previewutils.room.aRoomMemberList
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 class ChangeRolesStateProvider : PreviewParameterProvider<ChangeRolesState> {
     override val values: Sequence<ChangeRolesState>

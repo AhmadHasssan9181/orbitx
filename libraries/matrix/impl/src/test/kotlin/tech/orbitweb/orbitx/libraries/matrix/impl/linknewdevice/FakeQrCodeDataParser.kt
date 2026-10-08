@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.linknewdevice
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiQrCodeData
 import org.matrix.rustcomponents.sdk.QrCodeData
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiQrCodeData
 
 class FakeQrCodeDataParser : QrCodeDataParser {
     override fun parse(data: ByteArray): QrCodeData {

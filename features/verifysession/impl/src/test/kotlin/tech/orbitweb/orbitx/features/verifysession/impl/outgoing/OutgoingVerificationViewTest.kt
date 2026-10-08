@@ -13,6 +13,7 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.verifysession.impl.R
 import tech.orbitweb.orbitx.features.verifysession.impl.ui.aEmojisSessionVerificationData
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -23,7 +24,6 @@ import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class OutgoingVerificationViewTest : RobolectricTest() {
     @Test

@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.pushstore.api.clientsecret.PushClientSecre
 import tech.orbitweb.orbitx.libraries.pushstore.test.userpushstore.clientsecret.FakePushClientSecret
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class UnifiedPushProviderTest {
     @Test

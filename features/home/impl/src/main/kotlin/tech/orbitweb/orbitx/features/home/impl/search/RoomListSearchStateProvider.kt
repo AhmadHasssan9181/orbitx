@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.features.home.impl.search
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
-import tech.orbitweb.orbitx.features.home.impl.roomlist.aRoomListRoomSummaryList
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
+import tech.orbitweb.orbitx.features.home.impl.roomlist.aRoomListRoomSummaryList
 
 class RoomListSearchStateProvider : PreviewParameterProvider<RoomListSearchState> {
     override val values: Sequence<RoomListSearchState>

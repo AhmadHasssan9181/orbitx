@@ -9,12 +9,12 @@ package tech.orbitweb.orbitx.features.rolesandpermissions.impl.roles
 
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.rolesandpermissions.api.ChangeRoomMemberRolesListType
 import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultChangeRoomMemberRolesEntyPointTest : RobolectricTest() {
     @Test

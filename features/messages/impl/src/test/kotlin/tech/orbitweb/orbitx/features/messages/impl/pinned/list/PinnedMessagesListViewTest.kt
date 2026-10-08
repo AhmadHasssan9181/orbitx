@@ -18,6 +18,8 @@ import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import io.element.android.wysiwyg.link.Link
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListEvent
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.anActionListState
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemList
@@ -33,8 +35,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import io.element.android.wysiwyg.link.Link
-import org.junit.Test
 
 class PinnedMessagesListViewTest : RobolectricTest() {
     @Test

@@ -14,17 +14,6 @@ import android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION
 import android.os.IBinder
 import androidx.core.app.ServiceCompat
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.features.location.impl.common.userlocation.PlatformLocationProvider
-import tech.orbitweb.orbitx.features.location.impl.di.LocationBindings
-import tech.orbitweb.orbitx.features.location.impl.live.notification.LiveLocationSharingNotificationCreator
-import tech.orbitweb.orbitx.libraries.architecture.bindings
-import tech.orbitweb.orbitx.libraries.core.coroutine.childScope
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
-import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
-import tech.orbitweb.orbitx.libraries.push.api.notifications.ForegroundServiceType
-import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationIdProvider
-import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -41,6 +30,17 @@ import org.maplibre.compose.location.DesiredAccuracy
 import org.maplibre.compose.location.PermissionException
 import org.maplibre.spatialk.units.extensions.inMeters
 import org.maplibre.spatialk.units.extensions.meters
+import tech.orbitweb.orbitx.features.location.impl.common.userlocation.PlatformLocationProvider
+import tech.orbitweb.orbitx.features.location.impl.di.LocationBindings
+import tech.orbitweb.orbitx.features.location.impl.live.notification.LiveLocationSharingNotificationCreator
+import tech.orbitweb.orbitx.libraries.architecture.bindings
+import tech.orbitweb.orbitx.libraries.core.coroutine.childScope
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
+import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
+import tech.orbitweb.orbitx.libraries.push.api.notifications.ForegroundServiceType
+import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationIdProvider
+import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import timber.log.Timber
 import kotlin.time.Duration.Companion.seconds
 import tech.orbitweb.orbitx.features.location.api.Location as ApiLocation

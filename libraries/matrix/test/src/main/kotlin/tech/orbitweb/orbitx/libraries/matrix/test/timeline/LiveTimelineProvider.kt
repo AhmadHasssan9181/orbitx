@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.timeline
 
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.TimelineProvider
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 
 class LiveTimelineProvider(
     private val room: JoinedRoom,

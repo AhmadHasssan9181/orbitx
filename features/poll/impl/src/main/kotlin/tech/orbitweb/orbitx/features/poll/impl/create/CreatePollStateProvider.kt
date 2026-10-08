@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.poll.impl.create
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 
 class CreatePollStateProvider : PreviewParameterProvider<CreatePollState> {
     override val values: Sequence<CreatePollState>

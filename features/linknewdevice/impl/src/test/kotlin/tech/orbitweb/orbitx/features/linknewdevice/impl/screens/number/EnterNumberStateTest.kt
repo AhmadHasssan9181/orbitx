@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.linknewdevice.impl.screens.number
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.linknewdevice.impl.screens.number.model.Digit
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
-import org.junit.Test
 
 class EnterNumberStateTest {
     @Test

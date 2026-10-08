@@ -32,12 +32,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.text.util.LinkifyCompat
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.persistentMapOf
 import tech.orbitweb.orbitx.compound.theme.LinkColor
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementThemedPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewGroup
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.persistentMapOf
 import timber.log.Timber
 
 const val LINK_TAG = "URL"

@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MembershipChange
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MembershipChange
 
 class RoomMembershipObserver {
     data class RoomMembershipUpdate(

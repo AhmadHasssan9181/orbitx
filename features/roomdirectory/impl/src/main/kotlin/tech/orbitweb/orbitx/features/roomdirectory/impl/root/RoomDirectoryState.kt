@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.roomdirectory.impl.root
 
-import tech.orbitweb.orbitx.features.roomdirectory.api.RoomDescription
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.features.roomdirectory.api.RoomDescription
 
 data class RoomDirectoryState(
     val query: String,

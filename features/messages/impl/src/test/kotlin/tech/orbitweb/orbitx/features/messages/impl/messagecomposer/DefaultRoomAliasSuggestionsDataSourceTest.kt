@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.features.messages.impl.messagecomposer
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions.DefaultRoomAliasSuggestionsDataSource
 import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions.RoomAliasSuggestion
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
@@ -16,8 +18,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomSummary
 import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeDynamicRoomList
 import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeRoomListService
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultRoomAliasSuggestionsDataSourceTest {
     @Test

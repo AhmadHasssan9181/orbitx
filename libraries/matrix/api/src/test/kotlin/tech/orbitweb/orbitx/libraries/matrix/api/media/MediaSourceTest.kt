@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.media
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.media.aMediaSource
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.media.aMediaSource
 
 class MediaSourceTest {
     @Test

@@ -10,6 +10,8 @@ package tech.orbitweb.orbitx.features.location.impl.show
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.location.api.ShowLocationEntryPoint
 import tech.orbitweb.orbitx.features.location.api.ShowLocationMode
@@ -25,8 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultShowLocationEntryPointTest {
     @get:Rule

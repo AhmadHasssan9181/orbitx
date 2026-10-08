@@ -24,6 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.appconfig.AnalyticsConfig
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
@@ -43,7 +44,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Button
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.ButtonSize
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.TextButton
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun AnalyticsOptInView(

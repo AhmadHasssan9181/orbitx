@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.home.impl.datasource
 
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.home.impl.model.LatestEvent
 import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
 import tech.orbitweb.orbitx.features.home.impl.model.RoomSummaryDisplayType
@@ -22,7 +23,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.LatestEventValue
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.toInviteSender
-import kotlinx.collections.immutable.toImmutableList
 
 @Inject
 class RoomListRoomSummaryFactory(

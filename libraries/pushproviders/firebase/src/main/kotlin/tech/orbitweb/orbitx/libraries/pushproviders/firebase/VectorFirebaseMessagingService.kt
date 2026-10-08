@@ -11,13 +11,13 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.google.firebase.messaging.RemoteMessage.PRIORITY_HIGH
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.bindings
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.push.api.push.FetchPushForegroundServiceManager
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PushHandler
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("VectorFirebaseMessagingService", LoggerTag.PushLoggerTag)

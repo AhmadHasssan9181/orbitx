@@ -22,6 +22,9 @@ import com.bumble.appyx.navmodel.backstack.operation.pop
 import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.appnav.di.RoomGraphFactory
 import tech.orbitweb.orbitx.appnav.di.TimelineBindings
@@ -51,9 +54,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.api.finishLongRunningTransaction
 import tech.orbitweb.orbitx.services.appnavstate.api.ActiveRoomsHolder
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationStateService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import kotlinx.parcelize.Parcelize
 import timber.log.Timber
 
 @ContributesNode(SessionScope::class)

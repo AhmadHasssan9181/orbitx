@@ -14,8 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
-import tech.orbitweb.orbitx.libraries.designsystem.utils.LocalUiTestMode
 import org.junit.Assert.assertFalse
+import tech.orbitweb.orbitx.libraries.designsystem.utils.LocalUiTestMode
 import kotlin.coroutines.CoroutineContext
 
 object RobolectricDispatcherCleaner {

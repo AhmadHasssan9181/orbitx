@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.home.impl.model
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
@@ -15,7 +16,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.InviteSender
-import kotlinx.collections.immutable.ImmutableList
 
 @Immutable
 data class RoomListRoomSummary(

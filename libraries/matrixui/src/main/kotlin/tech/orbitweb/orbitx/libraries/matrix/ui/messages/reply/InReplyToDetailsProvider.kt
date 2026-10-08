@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentMapOf
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_SENDER
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -31,8 +33,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TextMessage
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.UnableToDecryptContent
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.VideoMessageType
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.VoiceMessageType
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentMapOf
 
 open class InReplyToDetailsProvider : PreviewParameterProvider<InReplyToDetails> {
     override val values: Sequence<InReplyToDetails>

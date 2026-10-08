@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.gallery
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.components.media.WaveFormSamples
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ROOM_NAME
@@ -23,7 +24,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemImage
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemLoadingIndicator
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemVideo
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemVoice
-import kotlinx.collections.immutable.toImmutableList
 
 open class MediaGalleryStateProvider : PreviewParameterProvider<MediaGalleryState> {
     override val values: Sequence<MediaGalleryState>

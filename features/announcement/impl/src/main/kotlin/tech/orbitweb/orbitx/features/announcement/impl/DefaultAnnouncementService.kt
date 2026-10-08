@@ -11,15 +11,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
 import tech.orbitweb.orbitx.features.announcement.api.Announcement
 import tech.orbitweb.orbitx.features.announcement.api.AnnouncementService
 import tech.orbitweb.orbitx.features.announcement.impl.fullscreen.FullscreenAnnouncementView
 import tech.orbitweb.orbitx.features.announcement.impl.store.AnnouncementStatus
 import tech.orbitweb.orbitx.features.announcement.impl.store.AnnouncementStore
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
 
 @ContributesBinding(AppScope::class)
 class DefaultAnnouncementService(

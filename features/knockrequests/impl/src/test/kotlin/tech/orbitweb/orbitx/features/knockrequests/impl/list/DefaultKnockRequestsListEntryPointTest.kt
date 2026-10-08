@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.features.knockrequests.impl.list
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 
 class DefaultKnockRequestsListEntryPointTest {
     @get:Rule

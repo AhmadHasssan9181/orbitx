@@ -10,6 +10,8 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications
 import android.app.Notification
 import androidx.core.app.NotificationCompat
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.factories.aNotificationAccountParams
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.fake.FakeNotificationCreator
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.services.toolbox.test.systemclock.A_FAKE_TIMESTAMP
 import tech.orbitweb.orbitx.tests.testutils.lambda.any
 import tech.orbitweb.orbitx.tests.testutils.lambda.nonNull
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultSummaryGroupMessageCreatorTest : RobolectricTest() {
     @Test

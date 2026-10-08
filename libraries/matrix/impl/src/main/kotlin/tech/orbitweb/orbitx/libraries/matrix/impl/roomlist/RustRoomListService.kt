@@ -7,11 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
-import tech.orbitweb.orbitx.libraries.matrix.impl.room.RoomSyncSubscriber
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -22,6 +17,11 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import org.matrix.rustcomponents.sdk.RoomListServiceState
 import org.matrix.rustcomponents.sdk.RoomListServiceSyncIndicator
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
+import tech.orbitweb.orbitx.libraries.matrix.impl.room.RoomSyncSubscriber
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 import org.matrix.rustcomponents.sdk.RoomListService as InnerRustRoomListService

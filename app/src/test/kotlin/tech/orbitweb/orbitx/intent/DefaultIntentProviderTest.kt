@@ -12,6 +12,9 @@ package tech.orbitweb.orbitx.intent
 import android.content.Context
 import android.content.Intent
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
+import tech.orbitweb.orbitx.MainActivity
 import tech.orbitweb.orbitx.libraries.deeplink.api.DeepLinkCreator
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -24,9 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_THREAD_ID
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import tech.orbitweb.orbitx.MainActivity
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
 
 class DefaultIntentProviderTest : RobolectricTest() {
     @Test

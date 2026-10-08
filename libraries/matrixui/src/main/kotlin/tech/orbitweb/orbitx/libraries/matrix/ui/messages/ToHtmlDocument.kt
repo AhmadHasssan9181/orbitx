@@ -7,14 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.ui.messages
 
-import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
-import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.FormattedBody
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageFormat
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Document.OutputSettings
 import org.jsoup.safety.Safelist
+import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
+import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.FormattedBody
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageFormat
 
 /**
  * Converts the HTML string [FormattedBody.body] to a [Document] by parsing it.

@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.attachments.preview
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.attachments.Attachment
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.AttachmentImageEditorState
 import tech.orbitweb.orbitx.features.messages.impl.attachments.video.MediaOptimizationSelectorState
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo
 import tech.orbitweb.orbitx.libraries.textcomposer.model.TextEditorState
-import kotlinx.collections.immutable.ImmutableList
 
 data class AttachmentsPreviewState(
     val attachments: ImmutableList<Attachment>,

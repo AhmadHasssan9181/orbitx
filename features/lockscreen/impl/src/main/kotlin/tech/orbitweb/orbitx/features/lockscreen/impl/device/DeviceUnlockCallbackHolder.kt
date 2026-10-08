@@ -10,9 +10,9 @@ package tech.orbitweb.orbitx.features.lockscreen.impl.device
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.features.lockscreen.api.DeviceUnlockEntryPoint
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import tech.orbitweb.orbitx.features.lockscreen.api.DeviceUnlockEntryPoint
 
 @Inject
 @SingleIn(AppScope::class)

@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth
 
 import dev.zacsweers.metro.Inject
+import org.matrix.rustcomponents.sdk.OAuthConfiguration
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.OAuthConfig
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.OAuthRedirectUrlProvider
-import org.matrix.rustcomponents.sdk.OAuthConfiguration
 
 @Inject
 class OAuthConfigurationProvider(

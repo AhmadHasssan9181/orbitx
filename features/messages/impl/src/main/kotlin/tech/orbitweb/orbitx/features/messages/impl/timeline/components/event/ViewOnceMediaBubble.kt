@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -39,9 +40,9 @@ fun ViewOnceMediaBubble(
     onContentClick: (() -> Unit)?,
     onLongClick: (() -> Unit)?,
     onContentLayoutChange: (ContentAvoidingLayoutData) -> Unit,
+    modifier: Modifier = Modifier,
     isDestroyed: Boolean = false,
     isMine: Boolean = false,
-    modifier: Modifier = Modifier,
 ) {
     val borderColor = if (isDestroyed) {
         Color(0xFF374151).copy(alpha = 0.5f)
@@ -59,6 +60,9 @@ fun ViewOnceMediaBubble(
                 color = borderColor,
                 shape = RoundedCornerShape(16.dp)
             )
+            .onSizeChanged {
+                onContentLayoutChange(ContentAvoidingLayoutData(it.width, it.height))
+            }
             .then(
                 if (onContentClick != null) {
                     Modifier

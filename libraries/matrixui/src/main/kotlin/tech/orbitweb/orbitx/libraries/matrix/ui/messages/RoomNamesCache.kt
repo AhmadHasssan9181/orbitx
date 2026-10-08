@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.libraries.matrix.ui.messages
 
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.libraries.di.RoomScope
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
-import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.drop
 import kotlinx.coroutines.flow.runningFold
+import tech.orbitweb.orbitx.libraries.di.RoomScope
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
+import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 
 @SingleIn(RoomScope::class)
 @Inject

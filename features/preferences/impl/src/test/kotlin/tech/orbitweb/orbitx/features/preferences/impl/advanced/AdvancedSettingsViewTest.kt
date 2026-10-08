@@ -17,6 +17,9 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.Interaction
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.preferences.impl.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
@@ -31,9 +34,6 @@ import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class AdvancedSettingsViewTest : RobolectricTest() {
     @Test

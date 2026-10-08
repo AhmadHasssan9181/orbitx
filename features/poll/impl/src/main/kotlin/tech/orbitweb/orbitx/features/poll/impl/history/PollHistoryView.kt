@@ -34,6 +34,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentView
 import tech.orbitweb.orbitx.features.poll.impl.R
@@ -50,7 +51,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.TopAppBar
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

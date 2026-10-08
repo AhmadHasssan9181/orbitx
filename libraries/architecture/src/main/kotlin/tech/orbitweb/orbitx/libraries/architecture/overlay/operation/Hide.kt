@@ -10,8 +10,8 @@ package tech.orbitweb.orbitx.libraries.architecture.overlay.operation
 import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.BackStackElements
 import com.bumble.appyx.navmodel.backstack.activeIndex
-import tech.orbitweb.orbitx.libraries.architecture.overlay.Overlay
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.architecture.overlay.Overlay
 
 @Parcelize
 class Hide<T : Any> : OverlayOperation<T> {

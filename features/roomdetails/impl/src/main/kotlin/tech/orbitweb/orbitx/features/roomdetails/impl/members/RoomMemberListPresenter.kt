@@ -18,6 +18,13 @@ import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationEvents.ShowActionsForUser
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -36,13 +43,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
 import tech.orbitweb.orbitx.libraries.matrix.api.room.toMatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.PowerLevelRoomMemberComparator
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.roomMemberIdentityStateChange
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.persistentMapOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.withContext
 
 @Inject
 class RoomMemberListPresenter(

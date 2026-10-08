@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.securityandprivacy.impl.manageauthorizedspaces
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableSet
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 
 data class ManageAuthorizedSpacesState(
     val selectableSpaces: ImmutableSet<SpaceRoom>,

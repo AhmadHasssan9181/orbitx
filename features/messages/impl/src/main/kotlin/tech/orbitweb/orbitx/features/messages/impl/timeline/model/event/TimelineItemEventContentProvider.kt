@@ -12,10 +12,10 @@ import android.text.style.StyleSpan
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.core.text.buildSpannedString
 import androidx.core.text.inSpans
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.UnableToDecryptContent
 import kotlinx.collections.immutable.toImmutableList
 import org.jsoup.nodes.Document
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.UnableToDecryptContent
 
 class TimelineItemEventContentProvider : PreviewParameterProvider<TimelineItemEventContent> {
     override val values = sequenceOf(

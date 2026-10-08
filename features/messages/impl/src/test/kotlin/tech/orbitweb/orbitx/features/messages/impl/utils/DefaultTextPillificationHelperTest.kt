@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.features.messages.impl.utils
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -26,7 +27,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanTheme
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionType
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.getMentionSpans
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class DefaultTextPillificationHelperTest : RobolectricTest() {
     @Test

@@ -12,6 +12,9 @@ import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStoreFile
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
 import tech.orbitweb.orbitx.libraries.androidutils.file.safeDelete
 import tech.orbitweb.orbitx.libraries.androidutils.hash.hash
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionListener
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 private val seenInvitesKey = stringSetPreferencesKey("seenInvites")
 

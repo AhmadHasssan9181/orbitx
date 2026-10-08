@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.media
 
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewConfig
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewService
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 
 class FakeMediaPreviewService(
     override val mediaPreviewConfigFlow: StateFlow<MediaPreviewConfig> = MutableStateFlow(MediaPreviewConfig.DEFAULT),

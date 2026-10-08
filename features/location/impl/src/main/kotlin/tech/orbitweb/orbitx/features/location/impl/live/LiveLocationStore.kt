@@ -12,13 +12,13 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.libraries.androidutils.hash.hash
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
-import kotlinx.coroutines.flow.first
 import timber.log.Timber
 import kotlin.time.Instant
 

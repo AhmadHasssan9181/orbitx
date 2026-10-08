@@ -13,13 +13,13 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.startup.AppInitializer
 import androidx.work.Configuration
 import dev.zacsweers.metro.createGraphFactory
-import tech.orbitweb.orbitx.libraries.di.DependencyInjectionGraphOwner
-import tech.orbitweb.orbitx.libraries.workmanager.api.di.MetroWorkerFactory
 import tech.orbitweb.orbitx.di.AppGraph
 import tech.orbitweb.orbitx.info.logApplicationInfo
 import tech.orbitweb.orbitx.initializer.CacheCleanerInitializer
 import tech.orbitweb.orbitx.initializer.CrashInitializer
 import tech.orbitweb.orbitx.initializer.PlatformInitializer
+import tech.orbitweb.orbitx.libraries.di.DependencyInjectionGraphOwner
+import tech.orbitweb.orbitx.libraries.workmanager.api.di.MetroWorkerFactory
 
 class OrbitApplication : Application(), DependencyInjectionGraphOwner, Configuration.Provider {
     override val graph: AppGraph = createGraphFactory<AppGraph.Factory>().create(this)

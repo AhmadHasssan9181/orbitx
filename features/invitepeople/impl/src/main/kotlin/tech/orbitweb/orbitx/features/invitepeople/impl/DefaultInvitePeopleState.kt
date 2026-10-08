@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.invitepeople.impl
 
 import androidx.compose.foundation.text.input.TextFieldState
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.invitepeople.api.InvitePeopleEvents
 import tech.orbitweb.orbitx.features.invitepeople.api.InvitePeopleState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -15,7 +16,6 @@ import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class DefaultInvitePeopleState(
     val room: AsyncData<Unit>,

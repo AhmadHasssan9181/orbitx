@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 data class RoomAliasSuggestion(
     val roomAlias: RoomAlias,

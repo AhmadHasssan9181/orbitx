@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.aCriticalShield
 import tech.orbitweb.orbitx.features.messages.impl.timeline.di.LocalTimelineItemPresenterFactories
 import tech.orbitweb.orbitx.features.messages.impl.timeline.di.aFakeTimelineItemPresenterFactories
@@ -17,7 +18,6 @@ import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.aTimelin
 import tech.orbitweb.orbitx.features.messages.impl.timeline.protection.aTimelineProtectionState
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
-import kotlinx.collections.immutable.toImmutableList
 
 @PreviewsDayNight
 @Composable

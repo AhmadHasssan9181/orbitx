@@ -19,6 +19,8 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.securityandprivacy.impl.SecurityAndPrivacyNavigator
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
@@ -31,8 +33,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.alias.RoomAliasHelper
 import tech.orbitweb.orbitx.libraries.matrix.api.roomAliasFromName
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.address.RoomAddressValidity
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.address.RoomAddressValidityEffect
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class EditRoomAddressPresenter(

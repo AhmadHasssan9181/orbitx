@@ -17,6 +17,7 @@ import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.operation.replace
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.createroom.api.CreateRoomEntryPoint
 import tech.orbitweb.orbitx.features.createroom.impl.addpeople.AddPeopleNode
@@ -28,7 +29,6 @@ import tech.orbitweb.orbitx.libraries.architecture.callback
 import tech.orbitweb.orbitx.libraries.architecture.createNode
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

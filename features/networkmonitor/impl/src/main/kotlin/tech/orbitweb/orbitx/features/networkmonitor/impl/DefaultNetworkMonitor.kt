@@ -17,10 +17,6 @@ import android.net.NetworkRequest
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkMonitor
-import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
-import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
-import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.awaitClose
@@ -33,6 +29,10 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
+import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkMonitor
+import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
+import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
+import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicInteger
 

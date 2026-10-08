@@ -9,8 +9,8 @@ package tech.orbitweb.orbitx.features.messages.impl.attachments
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
 
 @Immutable
 sealed interface Attachment : Parcelable {

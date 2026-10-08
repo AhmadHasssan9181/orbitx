@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CreateTimelineParams
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
@@ -20,9 +23,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemImage
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class FocusedMediaTimelineTest {
     @Test

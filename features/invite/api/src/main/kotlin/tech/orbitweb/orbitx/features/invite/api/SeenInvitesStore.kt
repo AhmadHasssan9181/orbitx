@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.invite.api
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import kotlinx.coroutines.flow.Flow
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 
 interface SeenInvitesStore {
     /**

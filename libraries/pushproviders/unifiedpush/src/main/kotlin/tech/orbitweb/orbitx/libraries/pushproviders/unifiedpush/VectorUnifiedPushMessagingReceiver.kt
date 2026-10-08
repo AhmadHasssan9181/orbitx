@@ -10,6 +10,12 @@ package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 import android.content.Context
 import android.content.Intent
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import org.unifiedpush.android.connector.FailedReason
+import org.unifiedpush.android.connector.MessagingReceiver
+import org.unifiedpush.android.connector.data.PushEndpoint
+import org.unifiedpush.android.connector.data.PushMessage
 import tech.orbitweb.orbitx.libraries.architecture.bindings
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
@@ -17,12 +23,6 @@ import tech.orbitweb.orbitx.libraries.push.api.push.FetchPushForegroundServiceMa
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PushHandler
 import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.registration.EndpointRegistrationHandler
 import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.registration.RegistrationResult
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import org.unifiedpush.android.connector.FailedReason
-import org.unifiedpush.android.connector.MessagingReceiver
-import org.unifiedpush.android.connector.data.PushEndpoint
-import org.unifiedpush.android.connector.data.PushMessage
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("VectorUnifiedPushMessagingReceiver", LoggerTag.PushLoggerTag)

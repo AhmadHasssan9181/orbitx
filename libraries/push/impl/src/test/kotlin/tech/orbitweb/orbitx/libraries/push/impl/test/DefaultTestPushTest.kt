@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.push.impl.test
 
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.appconfig.PushConfig
 import tech.orbitweb.orbitx.libraries.push.impl.pushgateway.PushGatewayNotifyRequest
 import tech.orbitweb.orbitx.libraries.pushproviders.test.aSessionPushConfig
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultTestPushTest {
     @Test

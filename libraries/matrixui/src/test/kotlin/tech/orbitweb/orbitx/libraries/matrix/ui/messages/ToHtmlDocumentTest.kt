@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.libraries.matrix.ui.messages
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.FormattedBo
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageFormat
 import tech.orbitweb.orbitx.libraries.matrix.test.permalink.FakePermalinkParser
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class ToHtmlDocumentTest : RobolectricTest() {
     @Test

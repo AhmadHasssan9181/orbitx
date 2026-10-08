@@ -9,13 +9,13 @@ package tech.orbitweb.orbitx.features.space.impl.addroom
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 internal class AddRoomToSpaceStateProvider : PreviewParameterProvider<AddRoomToSpaceState> {
     override val values: Sequence<AddRoomToSpaceState>

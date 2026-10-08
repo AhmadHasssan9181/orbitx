@@ -16,12 +16,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.compose.LifecycleResumeEffect
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.push.api.battery.BatteryOptimizationEvents
 import tech.orbitweb.orbitx.libraries.push.api.battery.BatteryOptimizationState
 import tech.orbitweb.orbitx.libraries.push.impl.push.MutableBatteryOptimizationStore
 import tech.orbitweb.orbitx.libraries.push.impl.store.PushDataStore
-import kotlinx.coroutines.launch
 
 @Inject
 class BatteryOptimizationPresenter(

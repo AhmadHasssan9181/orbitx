@@ -39,4 +39,3 @@ sealed interface MessageComposerEvent {
     data object ClearSlashError : MessageComposerEvent
     data object ToggleViewOnce : MessageComposerEvent
 }
-

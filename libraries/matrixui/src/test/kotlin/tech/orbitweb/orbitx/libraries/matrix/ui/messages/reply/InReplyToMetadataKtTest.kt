@@ -11,6 +11,8 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -47,8 +49,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.components.AttachmentThumbnailIn
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.AttachmentThumbnailType
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.withConfigurationAndContext
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import kotlin.time.Duration.Companion.minutes
 
 class InReplyToMetadataKtTest : RobolectricTest() {

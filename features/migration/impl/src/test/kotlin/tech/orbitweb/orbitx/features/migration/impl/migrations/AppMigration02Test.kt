@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.features.migration.impl.migrations
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.preferences.test.FakeSessionPreferencesStoreFactory
 import tech.orbitweb.orbitx.libraries.preferences.test.InMemorySessionPreferencesStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class AppMigration02Test {
     @Test

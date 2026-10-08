@@ -7,8 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -17,6 +15,8 @@ import org.matrix.rustcomponents.sdk.Room
 import org.matrix.rustcomponents.sdk.RoomListEntriesUpdate
 import org.matrix.rustcomponents.sdk.RoomListServiceInterface
 import org.matrix.rustcomponents.sdk.use
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import timber.log.Timber
 import kotlin.collections.groupingBy
 import kotlin.coroutines.CoroutineContext

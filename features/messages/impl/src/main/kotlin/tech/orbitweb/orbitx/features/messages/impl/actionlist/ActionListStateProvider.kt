@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl.actionlist
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemAction
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemActionComparator
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.VerifiedUserSendFailure
@@ -23,9 +26,6 @@ import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.aTimelin
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.aTimelineItemVideoContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.aTimelineItemVoiceContent
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageShield
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 open class ActionListStateProvider : PreviewParameterProvider<ActionListState> {
     private val suggestedEmojis = persistentListOf("👍️", "👎️", "🔥", "❤️", "👏")

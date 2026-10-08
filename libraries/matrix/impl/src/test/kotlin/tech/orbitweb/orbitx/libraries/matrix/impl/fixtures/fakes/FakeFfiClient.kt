@@ -7,11 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustSession
-import tech.orbitweb.orbitx.libraries.matrix.test.A_DEVICE_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
-import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 import org.matrix.rustcomponents.sdk.Client
 import org.matrix.rustcomponents.sdk.ClientDelegate
 import org.matrix.rustcomponents.sdk.CreateRoomParameters
@@ -35,6 +30,11 @@ import org.matrix.rustcomponents.sdk.SyncServiceBuilder
 import org.matrix.rustcomponents.sdk.TaskHandle
 import org.matrix.rustcomponents.sdk.UnableToDecryptDelegate
 import org.matrix.rustcomponents.sdk.UserProfile
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustSession
+import tech.orbitweb.orbitx.libraries.matrix.test.A_DEVICE_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
+import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 import uniffi.matrix_sdk_base.MediaRetentionPolicy
 
 class FakeFfiClient(

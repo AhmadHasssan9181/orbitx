@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.previewutils.room
 
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_BOB
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_CAROL
@@ -20,7 +21,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_WALTER
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipState
-import kotlinx.collections.immutable.persistentListOf
 
 fun aRoomMember(
     userId: UserId = UserId("@alice:server.org"),

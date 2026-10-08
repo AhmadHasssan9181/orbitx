@@ -12,6 +12,10 @@ import androidx.compose.runtime.Composable
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
+import io.mockk.mockk
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.call.test.FakeElementCallEntryPoint
 import tech.orbitweb.orbitx.features.forward.test.FakeForwardEntryPoint
 import tech.orbitweb.orbitx.features.knockrequests.test.FakeKnockRequestsListEntryPoint
@@ -42,10 +46,6 @@ import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import io.mockk.mockk
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultMessagesEntryPointTest {
     @get:Rule

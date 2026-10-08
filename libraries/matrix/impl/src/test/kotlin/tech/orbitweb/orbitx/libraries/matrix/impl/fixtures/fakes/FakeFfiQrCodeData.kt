@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import org.matrix.rustcomponents.sdk.NoHandle
 import org.matrix.rustcomponents.sdk.QrCodeData
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 
 class FakeFfiQrCodeData(
     private val serverNameResult: () -> String? = { lambdaError() },

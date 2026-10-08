@@ -13,12 +13,6 @@ import androidx.work.WorkManager
 import androidx.work.WorkRequest
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import tech.orbitweb.orbitx.libraries.sessionstorage.test.observer.FakeSessionObserver
-import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestBuilder
-import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestType
-import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestWrapper
-import tech.orbitweb.orbitx.libraries.workmanager.api.workManagerTag
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.spyk
@@ -27,6 +21,12 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
+import tech.orbitweb.orbitx.libraries.sessionstorage.test.observer.FakeSessionObserver
+import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestBuilder
+import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestType
+import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestWrapper
+import tech.orbitweb.orbitx.libraries.workmanager.api.workManagerTag
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DefaultWorkManagerSchedulerTest {

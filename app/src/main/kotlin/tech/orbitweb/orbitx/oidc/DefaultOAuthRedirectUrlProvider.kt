@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.oidc
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import tech.orbitweb.orbitx.R
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.OAuthRedirectUrlProvider
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import tech.orbitweb.orbitx.R
 
 @ContributesBinding(AppScope::class)
 class DefaultOAuthRedirectUrlProvider(

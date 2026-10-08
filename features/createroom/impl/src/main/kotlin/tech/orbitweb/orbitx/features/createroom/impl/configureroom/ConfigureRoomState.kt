@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.features.createroom.impl.configureroom
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.AvatarAction
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.address.RoomAddressValidity
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsState
-import kotlinx.collections.immutable.ImmutableList
 
 data class ConfigureRoomState(
     val isSpace: Boolean,

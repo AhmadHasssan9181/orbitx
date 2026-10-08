@@ -11,9 +11,6 @@ import com.google.common.truth.Truth.assertThat
 import io.element.android.emojibasebindings.Emoji
 import io.element.android.emojibasebindings.EmojibaseCategory
 import io.element.android.emojibasebindings.EmojibaseCategory.People
-import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
-import tech.orbitweb.orbitx.libraries.recentemojis.test.FakeEmojibaseProvider
-import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableMap
 import kotlinx.collections.immutable.persistentListOf
@@ -22,6 +19,9 @@ import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
+import tech.orbitweb.orbitx.libraries.recentemojis.test.FakeEmojibaseProvider
+import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 
 class DefaultGetRecentEmojisTest {
     @Test

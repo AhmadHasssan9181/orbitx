@@ -12,11 +12,11 @@ import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import tech.orbitweb.orbitx.libraries.network.interceptors.DynamicHttpLoggingInterceptor
 import tech.orbitweb.orbitx.libraries.network.interceptors.FormattedJsonHttpLogger
 import tech.orbitweb.orbitx.libraries.network.interceptors.UserAgentInterceptor
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
 @BindingContainer

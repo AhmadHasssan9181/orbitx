@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.preferences.impl.developer
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.persistentMapOf
 import tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings.AppDeveloperSettingsState
 import tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings.anAppDeveloperSettingsState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import kotlinx.collections.immutable.persistentMapOf
 
 open class DeveloperSettingsStateProvider : PreviewParameterProvider<DeveloperSettingsState> {
     override val values: Sequence<DeveloperSettingsState>

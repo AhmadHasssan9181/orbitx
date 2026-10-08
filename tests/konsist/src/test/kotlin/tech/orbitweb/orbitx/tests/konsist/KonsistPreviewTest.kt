@@ -16,8 +16,8 @@ import com.lemonappdev.konsist.api.ext.list.withNameEndingWith
 import com.lemonappdev.konsist.api.ext.list.withoutName
 import com.lemonappdev.konsist.api.verify.assertEmpty
 import com.lemonappdev.konsist.api.verify.assertTrue
-import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 
 class KonsistPreviewTest {
     @Test

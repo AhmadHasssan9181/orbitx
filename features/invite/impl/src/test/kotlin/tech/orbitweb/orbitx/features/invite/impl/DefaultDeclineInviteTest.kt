@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.invite.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.test.InMemorySeenInvitesStore
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.push.test.notifications.FakeNotificationCl
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultDeclineInviteTest {
     private val roomId = A_ROOM_ID

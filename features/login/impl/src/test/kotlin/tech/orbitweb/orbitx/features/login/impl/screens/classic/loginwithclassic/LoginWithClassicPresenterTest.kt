@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.classic.loginwithclassic
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProviderDataSource
 import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnection
@@ -28,8 +30,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.auth.FakeMatrixAuthenticationS
 import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class LoginWithClassicPresenterTest {
     @Test

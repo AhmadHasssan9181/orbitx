@@ -7,6 +7,12 @@
 
 package tech.orbitweb.orbitx.appnav
 
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceTimeBy
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.appnav.di.SyncOrchestrator
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
 import tech.orbitweb.orbitx.features.networkmonitor.test.FakeNetworkMonitor
@@ -17,12 +23,6 @@ import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppForegroundStateServ
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceTimeBy
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.seconds
 

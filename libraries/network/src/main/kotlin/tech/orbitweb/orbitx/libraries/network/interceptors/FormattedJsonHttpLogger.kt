@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.network.interceptors
 
-import tech.orbitweb.orbitx.libraries.core.extensions.ellipsize
 import okhttp3.logging.HttpLoggingInterceptor
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import tech.orbitweb.orbitx.libraries.core.extensions.ellipsize
 import timber.log.Timber
 
 internal class FormattedJsonHttpLogger(

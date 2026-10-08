@@ -11,6 +11,7 @@ package tech.orbitweb.orbitx.features.home.impl.roomlist
 
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.home.impl.model.aRoomListRoomSummary
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.tests.testutils.EnsureCalledOnceWithParam
@@ -19,7 +20,6 @@ import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import org.junit.Test
 
 class RoomListDeclineInviteMenuTest : RobolectricTest() {
     @Test

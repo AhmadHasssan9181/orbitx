@@ -11,6 +11,10 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
@@ -20,10 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class BlockedUsersPresenterTest {
     @Test

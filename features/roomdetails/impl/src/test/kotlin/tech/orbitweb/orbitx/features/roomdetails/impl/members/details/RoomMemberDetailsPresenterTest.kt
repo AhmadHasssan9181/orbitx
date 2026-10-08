@@ -8,6 +8,12 @@
 package tech.orbitweb.orbitx.features.roomdetails.impl.members.details
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.roomdetails.impl.aJoinedRoom
 import tech.orbitweb.orbitx.features.roomdetails.impl.members.aRoomMember
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileEvents
@@ -32,12 +38,6 @@ import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.consumeItemsUntilPredicate
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 @ExperimentalCoroutinesApi
 class RoomMemberDetailsPresenterTest {

@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.roomlist
 
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.filterIsInstance
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 
 /**
  * Entry point for the room list api.

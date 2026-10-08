@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.home.impl.model
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_NAME
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
 
 class RoomListBaseRoomSummaryTest {
     @Test

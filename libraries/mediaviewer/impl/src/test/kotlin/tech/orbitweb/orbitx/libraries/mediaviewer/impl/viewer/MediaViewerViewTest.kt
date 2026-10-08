@@ -25,6 +25,10 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.test.swipeDown
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import io.mockk.mockk
+import kotlinx.coroutines.delay
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.details.aMediaBottomSheetStateDetails
@@ -37,10 +41,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import io.mockk.mockk
-import kotlinx.coroutines.delay
-import org.junit.Test
-import org.robolectric.annotation.Config
 import kotlin.time.Duration.Companion.milliseconds
 
 class MediaViewerViewTest : RobolectricTest() {

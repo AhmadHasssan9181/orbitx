@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.model
 
-import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 
 data class TimelineItemReadReceipts(
     val receipts: ImmutableList<ReadReceiptData>,

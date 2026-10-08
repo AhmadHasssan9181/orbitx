@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.labs
 
-import tech.orbitweb.orbitx.libraries.featureflag.ui.model.FeatureUiModel
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.featureflag.ui.model.FeatureUiModel
 
 data class LabsState(
     val features: ImmutableList<FeatureUiModel>,

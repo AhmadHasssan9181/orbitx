@@ -10,6 +10,16 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.Client
+import org.matrix.rustcomponents.sdk.CreateRoomParameters
+import org.matrix.rustcomponents.sdk.RoomHistoryVisibility
+import org.matrix.rustcomponents.sdk.StoreSizes
+import org.matrix.rustcomponents.sdk.UserProfile
 import tech.orbitweb.orbitx.libraries.core.data.bytes
 import tech.orbitweb.orbitx.libraries.featureflag.test.FakeFeatureFlagService
 import tech.orbitweb.orbitx.libraries.matrix.api.paths.SessionPaths
@@ -30,16 +40,6 @@ import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.Client
-import org.matrix.rustcomponents.sdk.CreateRoomParameters
-import org.matrix.rustcomponents.sdk.RoomHistoryVisibility
-import org.matrix.rustcomponents.sdk.StoreSizes
-import org.matrix.rustcomponents.sdk.UserProfile
 import java.io.File
 
 class RustMatrixClientTest {

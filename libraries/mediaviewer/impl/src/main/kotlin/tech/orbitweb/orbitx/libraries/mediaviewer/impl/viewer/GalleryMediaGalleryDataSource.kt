@@ -7,6 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer
 
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.flowOf
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
@@ -17,10 +21,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaInfo
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource.MediaGalleryDataSource
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.flowOf
 
 class GalleryMediaGalleryDataSource(
     private val data: GroupedMediaItems,

@@ -14,6 +14,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
@@ -21,8 +23,6 @@ import tech.orbitweb.orbitx.features.login.impl.login.LoginHelper
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.uri.ensureProtocol
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.launch
 
 @Inject
 class ChooseAccountProviderPresenter(

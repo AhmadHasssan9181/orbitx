@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.virtual.TimelineItemReadMarkerModel
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class TimelineItemIndexerTest {
     @Test

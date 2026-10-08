@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.widget
 
-import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetDriver
 import kotlinx.coroutines.flow.MutableSharedFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetDriver
 import java.util.UUID
 
 class FakeMatrixWidgetDriver(

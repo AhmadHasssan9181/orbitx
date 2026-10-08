@@ -6,8 +6,8 @@
  */
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomType
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomType
 import org.matrix.rustcomponents.sdk.RoomType as RustRoomType
 
 class RoomTypeKtTest {

@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.voicemessages.timeline
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.RedactedContent
 import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
-import kotlinx.coroutines.withContext
 
 interface RedactedVoiceMessageManager {
     suspend fun onEachMatrixTimelineItem(timelineItems: List<MatrixTimelineItem>)

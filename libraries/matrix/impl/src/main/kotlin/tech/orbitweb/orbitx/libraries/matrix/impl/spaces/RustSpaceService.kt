@@ -7,17 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.spaces
 
-import tech.orbitweb.orbitx.libraries.core.coroutine.childScope
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipObserver
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.LeaveSpaceHandle
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceService
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.Channel
@@ -36,6 +25,17 @@ import org.matrix.rustcomponents.sdk.SpaceListUpdate
 import org.matrix.rustcomponents.sdk.SpaceServiceInterface
 import org.matrix.rustcomponents.sdk.SpaceServiceJoinedSpacesListener
 import org.matrix.rustcomponents.sdk.SpaceServiceSpaceFiltersListener
+import tech.orbitweb.orbitx.libraries.core.coroutine.childScope
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipObserver
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.LeaveSpaceHandle
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceService
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import timber.log.Timber
 import org.matrix.rustcomponents.sdk.SpaceService as ClientSpaceService
 

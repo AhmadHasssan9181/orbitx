@@ -18,6 +18,7 @@ import com.bumble.appyx.navmodel.backstack.operation.pop
 import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.rolesandpermissions.api.RolesAndPermissionsEntryPoint
 import tech.orbitweb.orbitx.features.roomdetailsedit.api.RoomDetailsEditEntryPoint
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.architecture.BackstackView
 import tech.orbitweb.orbitx.libraries.architecture.BaseFlowNode
 import tech.orbitweb.orbitx.libraries.architecture.callback
 import tech.orbitweb.orbitx.libraries.architecture.createNode
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SpaceFlowScope::class)
 @AssistedInject

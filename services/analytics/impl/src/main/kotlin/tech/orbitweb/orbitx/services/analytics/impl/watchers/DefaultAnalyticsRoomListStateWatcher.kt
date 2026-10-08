@@ -8,6 +8,13 @@
 package tech.orbitweb.orbitx.services.analytics.impl.watchers
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.cancelChildren
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkMonitor
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
@@ -19,13 +26,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransacti
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.api.watchers.AnalyticsRoomListStateWatcher
 import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancelChildren
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.time.Duration.Companion.minutes

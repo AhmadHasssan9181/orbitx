@@ -9,15 +9,15 @@ package tech.orbitweb.orbitx.features.rageshake.impl.reporter
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import okhttp3.HttpUrl.Companion.toHttpUrl
+import org.junit.Test
 import tech.orbitweb.orbitx.appconfig.RageshakeConfig
 import tech.orbitweb.orbitx.features.enterprise.api.BugReportUrl
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
-import kotlinx.coroutines.test.runTest
-import okhttp3.HttpUrl.Companion.toHttpUrl
-import org.junit.Test
 
 class DefaultBugReporterUrlProviderTest {
     @Test

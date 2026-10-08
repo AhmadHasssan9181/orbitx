@@ -9,6 +9,12 @@ package tech.orbitweb.orbitx.appnav.di
 
 import com.bumble.appyx.core.state.MutableSavedStateMapImpl
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.networkmonitor.test.FakeNetworkMonitor
 import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
@@ -17,12 +23,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.auth.FakeMatrixAuthenticationS
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppForegroundStateService
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class MatrixSessionCacheTest {

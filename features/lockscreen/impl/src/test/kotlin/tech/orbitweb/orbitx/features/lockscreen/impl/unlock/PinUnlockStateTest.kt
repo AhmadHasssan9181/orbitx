@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.features.lockscreen.impl.unlock
 
 import androidx.biometric.BiometricPrompt
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticator
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricUnlockError
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import org.junit.Test
 
 class PinUnlockStateTest {
     @Test

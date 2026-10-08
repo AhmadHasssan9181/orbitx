@@ -10,6 +10,8 @@ package tech.orbitweb.orbitx.features.preferences.impl.tasks
 import android.content.Context
 import coil3.SingletonImageLoader
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
 import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
 import tech.orbitweb.orbitx.features.preferences.impl.DefaultCacheService
 import tech.orbitweb.orbitx.libraries.cachestore.api.CacheStore
@@ -19,8 +21,6 @@ import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.push.api.PushService
 import tech.orbitweb.orbitx.services.appnavstate.api.ActiveRoomsHolder
-import kotlinx.coroutines.withContext
-import okhttp3.OkHttpClient
 
 interface ClearCacheUseCase {
     suspend operator fun invoke()

@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.receipt
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.ReadReceiptData
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.LocalEventSendState
-import kotlinx.collections.immutable.ImmutableList
 
 data class ReadReceiptViewState(
     val sendState: LocalEventSendState?,

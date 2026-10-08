@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.reactionsummary
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.AggregatedReaction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import kotlinx.collections.immutable.ImmutableList
 
 data class ReactionSummaryState(
     val target: Summary?,

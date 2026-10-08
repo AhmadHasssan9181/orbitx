@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.featureflag.test
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeFeatureFlagService(
     initialState: Map<String, Boolean> = emptyMap(),

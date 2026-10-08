@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.info
 
 import android.content.Context
-import tech.orbitweb.orbitx.libraries.androidutils.system.getVersionCodeFromManifest
 import tech.orbitweb.orbitx.BuildConfig
+import tech.orbitweb.orbitx.libraries.androidutils.system.getVersionCodeFromManifest
 import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.Date

@@ -9,12 +9,6 @@ package tech.orbitweb.orbitx.features.rageshake.impl.reporter
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.appconfig.RageshakeConfig
-import tech.orbitweb.orbitx.features.enterprise.api.BugReportUrl
-import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.sessionIdFlow
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flatMapLatest
@@ -22,6 +16,12 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.map
 import okhttp3.HttpUrl
 import okhttp3.HttpUrl.Companion.toHttpUrl
+import tech.orbitweb.orbitx.appconfig.RageshakeConfig
+import tech.orbitweb.orbitx.features.enterprise.api.BugReportUrl
+import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.sessionIdFlow
 
 @ContributesBinding(AppScope::class)
 class DefaultBugReporterUrlProvider(

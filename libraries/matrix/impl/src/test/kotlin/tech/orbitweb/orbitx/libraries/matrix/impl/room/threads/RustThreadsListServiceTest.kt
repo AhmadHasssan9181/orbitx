@@ -9,14 +9,6 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.room.threads
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListPaginationStatus
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustTimelineItemContentMsgLike
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTaskHandle
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiThreadListService
-import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.A_TIMESTAMP
-import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runCurrent
@@ -29,6 +21,14 @@ import org.matrix.rustcomponents.sdk.ThreadListItem
 import org.matrix.rustcomponents.sdk.ThreadListItemEvent
 import org.matrix.rustcomponents.sdk.ThreadListPaginationStateListener
 import org.matrix.rustcomponents.sdk.ThreadListUpdate
+import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListPaginationStatus
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustTimelineItemContentMsgLike
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTaskHandle
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiThreadListService
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.A_TIMESTAMP
+import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import uniffi.matrix_sdk_ui.ThreadListPaginationState
 
 @OptIn(ExperimentalCoroutinesApi::class)

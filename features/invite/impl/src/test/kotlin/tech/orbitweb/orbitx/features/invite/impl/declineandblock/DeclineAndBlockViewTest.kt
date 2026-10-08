@@ -15,6 +15,7 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performTextInput
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.impl.R
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.tests.testutils.EnsureNeverCalled
@@ -23,7 +24,6 @@ import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class DeclineAndBlockViewTest : RobolectricTest() {
     @Test

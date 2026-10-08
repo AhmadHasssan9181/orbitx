@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.analytics
 
 import im.vector.app.features.analytics.plan.Error
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import org.matrix.rustcomponents.sdk.UnableToDecryptDelegate
 import org.matrix.rustcomponents.sdk.UnableToDecryptInfo
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import timber.log.Timber
 import uniffi.matrix_sdk_crypto.UtdCause
 

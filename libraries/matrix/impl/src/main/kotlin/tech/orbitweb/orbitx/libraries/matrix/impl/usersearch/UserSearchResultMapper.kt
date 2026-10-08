@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.usersearch
 
-import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixSearchUserResults
-import tech.orbitweb.orbitx.libraries.matrix.impl.mapper.map
 import kotlinx.collections.immutable.toImmutableList
 import org.matrix.rustcomponents.sdk.SearchUsersResults
+import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixSearchUserResults
+import tech.orbitweb.orbitx.libraries.matrix.impl.mapper.map
 
 object UserSearchResultMapper {
     fun map(result: SearchUsersResults): MatrixSearchUserResults {

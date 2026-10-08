@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.searchaccountprovider
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.login.impl.changeserver.aChangeServerState
 import tech.orbitweb.orbitx.features.login.impl.resolver.HomeserverResolver
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -17,9 +20,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class SearchAccountProviderPresenterTest {
     @get:Rule

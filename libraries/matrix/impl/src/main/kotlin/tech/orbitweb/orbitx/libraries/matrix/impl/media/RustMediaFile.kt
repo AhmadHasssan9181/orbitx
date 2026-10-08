@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.media
 
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaFile
 import org.matrix.rustcomponents.sdk.MediaFileHandle
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaFile
 
 class RustMediaFile(private val inner: MediaFileHandle) : MediaFile {
     override fun path(): String {

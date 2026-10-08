@@ -11,9 +11,9 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.runtime.Immutable
 import io.element.android.emojibasebindings.Emoji
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.IconSource
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
-import kotlinx.collections.immutable.ImmutableList
 
 // Emoji is unstable (because from an external library?), so we annotate with @Immutable
 @Immutable

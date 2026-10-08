@@ -7,7 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 import org.matrix.rustcomponents.sdk.BackupState
 import org.matrix.rustcomponents.sdk.BackupStateListener
 import org.matrix.rustcomponents.sdk.Encryption
@@ -16,6 +15,7 @@ import org.matrix.rustcomponents.sdk.RecoveryState
 import org.matrix.rustcomponents.sdk.RecoveryStateListener
 import org.matrix.rustcomponents.sdk.TaskHandle
 import org.matrix.rustcomponents.sdk.VerificationStateListener
+import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 
 class FakeFfiEncryption : Encryption(NoHandle) {
     override fun verificationStateListener(listener: VerificationStateListener): TaskHandle {

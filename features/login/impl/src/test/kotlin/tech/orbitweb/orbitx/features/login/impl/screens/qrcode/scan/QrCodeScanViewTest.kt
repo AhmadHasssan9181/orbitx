@@ -15,6 +15,9 @@ import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
 import androidx.test.platform.app.InstrumentationRegistry
+import org.junit.After
+import org.junit.Before
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.MatrixQrCodeLoginData
 import tech.orbitweb.orbitx.libraries.matrix.test.auth.qrlogin.FakeMatrixQrCodeLoginData
@@ -24,9 +27,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
 
 class QrCodeScanViewTest : RobolectricTest() {
     private var provider: ProcessCameraProvider? = null

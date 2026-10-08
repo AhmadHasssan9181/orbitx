@@ -11,6 +11,12 @@ package tech.orbitweb.orbitx.libraries.pushproviders.firebase
 
 import android.os.Bundle
 import com.google.firebase.messaging.RemoteMessage
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SECRET
@@ -21,12 +27,6 @@ import tech.orbitweb.orbitx.libraries.pushproviders.api.PushHandler
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class VectorFirebaseMessagingServiceTest : RobolectricTest() {
     @Test

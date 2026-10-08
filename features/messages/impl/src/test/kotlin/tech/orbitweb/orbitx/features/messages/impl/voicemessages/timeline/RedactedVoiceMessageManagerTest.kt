@@ -8,6 +8,10 @@
 package tech.orbitweb.orbitx.features.messages.impl.voicemessages.timeline
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
@@ -23,10 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.core.FakeSendHandle
 import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
 import tech.orbitweb.orbitx.libraries.mediaplayer.test.FakeMediaPlayer
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RedactedVoiceMessageManagerTest {
     @Test

@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.libraries.mediaupload.impl
 
 import android.net.Uri
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Job
 import tech.orbitweb.orbitx.libraries.androidutils.hash.hash
 import tech.orbitweb.orbitx.libraries.core.extensions.flatMap
 import tech.orbitweb.orbitx.libraries.core.extensions.flatMapCatching
@@ -27,8 +29,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaSenderFactory
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaSenderRoomFactory
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo
 import tech.orbitweb.orbitx.libraries.mediaupload.api.toGalleryItemInfo
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Job
 import timber.log.Timber
 import java.io.File
 import java.util.concurrent.ConcurrentHashMap
@@ -155,7 +155,10 @@ class DefaultMediaSender(
                 val uploadFile = if (isViewOnce) {
                     val encrypted = java.io.File(info.file.parentFile, "orbit_vo_viewonce_${info.file.name}.ephemeral")
                     if (tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralCrypto.encryptFile(info.file, encrypted)) {
-                        try { info.file.delete() } catch (_: Exception) {}
+                        try {
+                            info.file.delete()
+                        } catch (_: Exception) {
+                            }
                         encrypted
                     } else {
                         info.file

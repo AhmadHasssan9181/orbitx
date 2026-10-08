@@ -36,9 +36,9 @@ import tech.orbitweb.orbitx.compound.tokens.generated.compoundColorsLight
 /**
  * Inspired from https://medium.com/@lucasyujideveloper/54cbcbde1ace
  */
-object ElementTheme {
+object OrbitTheme {
     /**
-     * The current [SemanticColors] provided by [ElementTheme].
+     * The current [SemanticColors] provided by [OrbitTheme].
      * These come from Compound and are the recommended colors to use for custom components.
      * In Figma, these colors usually have the `Light/` or `Dark/` prefix.
      */
@@ -48,7 +48,7 @@ object ElementTheme {
         get() = LocalCompoundColors.current
 
     /**
-     * The current Material 3 [ColorScheme] provided by [ElementTheme], coming from [MaterialTheme].
+     * The current Material 3 [ColorScheme] provided by [OrbitTheme], coming from [MaterialTheme].
      * In Figma, these colors usually have the `M3/` prefix.
      */
     val materialColors: ColorScheme
@@ -70,7 +70,7 @@ object ElementTheme {
         get() = LocalCompoundColors.current.isLight
 }
 
-typealias OrbitTheme = ElementTheme
+typealias ElementTheme = OrbitTheme
 
 // Global variables (application level)
 internal val LocalCompoundColors = staticCompositionLocalOf { compoundColorsLight }
@@ -85,13 +85,11 @@ internal val LocalCompoundColors = staticCompositionLocalOf { compoundColorsLigh
  * @param dynamicColor whether to enable MaterialYou or not. It's `false` by default.
  * @param compoundLight the [SemanticColors] to use in light theme.
  * @param compoundDark the [SemanticColors] to use in dark theme.
- * @param materialColorsLight the Material 3 [ColorScheme] to use in light theme.
- * @param materialColorsDark the Material 3 [ColorScheme] to use in dark theme.
  * @param typography the Material 3 [Typography] tokens to use. It'll use [compoundTypography] by default.
  * @param content the content to apply the theme to.
  */
 @Composable
-fun ElementTheme(
+fun OrbitTheme(
     theme: Theme = if (isSystemInDarkTheme()) Theme.Dark else Theme.Light,
     applySystemBarsUpdate: Boolean = true,
     lightStatusBar: Boolean = !theme.isDark(),
@@ -99,8 +97,6 @@ fun ElementTheme(
     dynamicColor: Boolean = false,
     compoundLight: SemanticColors = compoundColorsLight,
     compoundDark: SemanticColors = compoundColorsDark,
-    materialColorsLight: ColorScheme = compoundLight.toMaterialColorScheme(),
-    materialColorsDark: ColorScheme = compoundDark.toMaterialColorScheme(),
     typography: Typography = compoundTypography,
     content: @Composable () -> Unit,
 ) {
@@ -230,3 +226,24 @@ fun ElementTheme(
         )
     }
 }
+
+@Composable
+fun ElementTheme(
+    theme: Theme = if (isSystemInDarkTheme()) Theme.Dark else Theme.Light,
+    applySystemBarsUpdate: Boolean = true,
+    lightStatusBar: Boolean = !theme.isDark(),
+    dynamicColor: Boolean = false,
+    compoundLight: SemanticColors = compoundColorsLight,
+    compoundDark: SemanticColors = compoundColorsDark,
+    typography: Typography = compoundTypography,
+    content: @Composable () -> Unit,
+) = OrbitTheme(
+    theme = theme,
+    applySystemBarsUpdate = applySystemBarsUpdate,
+    lightStatusBar = lightStatusBar,
+    dynamicColor = dynamicColor,
+    compoundLight = compoundLight,
+    compoundDark = compoundDark,
+    typography = typography,
+    content = content,
+)

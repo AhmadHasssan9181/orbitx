@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
-import tech.orbitweb.orbitx.libraries.architecture.coverage.ExcludeFromCoverage
 import org.matrix.rustcomponents.sdk.RoomListEntriesUpdate
+import tech.orbitweb.orbitx.libraries.architecture.coverage.ExcludeFromCoverage
 
 @Suppress("unused")
 @ExcludeFromCoverage

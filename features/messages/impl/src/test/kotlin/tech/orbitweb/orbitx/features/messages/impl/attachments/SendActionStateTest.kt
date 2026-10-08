@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl.attachments
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.SendActionState
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.aMediaUploadInfo
-import org.junit.Test
 
 class SendActionStateTest {
     @Test

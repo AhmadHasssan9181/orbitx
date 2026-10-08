@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.libraries.mediaupload.impl
 
 import androidx.media3.transformer.VideoEncoderSettings
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 @Suppress("NOTHING_TO_INLINE")
 class VideoCompressorConfigFactoryTest : RobolectricTest() {
     @Test

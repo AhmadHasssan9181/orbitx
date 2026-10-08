@@ -15,6 +15,7 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.preferences.impl.R
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
@@ -28,7 +29,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class PreferencesRootViewTest : RobolectricTest() {
     @Test

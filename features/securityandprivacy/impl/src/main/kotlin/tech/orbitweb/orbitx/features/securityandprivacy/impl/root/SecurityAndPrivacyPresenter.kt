@@ -21,6 +21,16 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentSetOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableSet
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.securityandprivacy.api.SecurityAndPrivacyPermissions
 import tech.orbitweb.orbitx.features.securityandprivacy.api.securityAndPrivacyPermissions
 import tech.orbitweb.orbitx.features.securityandprivacy.impl.SecurityAndPrivacyNavigator
@@ -44,16 +54,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.permissionsAsState
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomVisibility
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentSetOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableSet
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class SecurityAndPrivacyPresenter(

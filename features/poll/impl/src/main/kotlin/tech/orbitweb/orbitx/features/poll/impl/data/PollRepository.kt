@@ -10,6 +10,9 @@ package tech.orbitweb.orbitx.features.poll.impl.data
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.libraries.core.extensions.flatMap
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
@@ -22,9 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.TimelineProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.getActiveTimeline
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.PollContent
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.toEventOrTransactionId
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.first
 
 @AssistedInject
 class PollRepository(

@@ -10,9 +10,6 @@ package tech.orbitweb.orbitx.libraries.matrix.ui.room
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,6 +18,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 
 @Immutable
 sealed interface LoadingRoomState {

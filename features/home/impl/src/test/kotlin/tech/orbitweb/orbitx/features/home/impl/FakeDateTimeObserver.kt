@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.home.impl
 
-import tech.orbitweb.orbitx.libraries.androidutils.system.DateTimeObserver
 import kotlinx.coroutines.flow.MutableSharedFlow
+import tech.orbitweb.orbitx.libraries.androidutils.system.DateTimeObserver
 
 class FakeDateTimeObserver : DateTimeObserver {
     override val changes = MutableSharedFlow<DateTimeObserver.Event>(extraBufferCapacity = 1)

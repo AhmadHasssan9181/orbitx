@@ -11,10 +11,6 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.linknewdevice
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.ErrorType
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopStep
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiGrantLoginWithQrCodeHandler
-import tech.orbitweb.orbitx.libraries.matrix.test.QR_CODE_DATA
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
@@ -26,6 +22,10 @@ import org.junit.Test
 import org.matrix.rustcomponents.sdk.GrantQrLoginProgress
 import org.matrix.rustcomponents.sdk.HumanQrGrantLoginException
 import org.matrix.rustcomponents.sdk.QrCodeDecodeException
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.ErrorType
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopStep
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiGrantLoginWithQrCodeHandler
+import tech.orbitweb.orbitx.libraries.matrix.test.QR_CODE_DATA
 
 class RustLinkDesktopHandlerTest {
     @Test

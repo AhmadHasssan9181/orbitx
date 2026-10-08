@@ -15,6 +15,7 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.knockrequests.impl.R
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.aKnockRequestPresentable
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
@@ -23,7 +24,6 @@ import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class KnockRequestsBannerViewTest : RobolectricTest() {
     @Test

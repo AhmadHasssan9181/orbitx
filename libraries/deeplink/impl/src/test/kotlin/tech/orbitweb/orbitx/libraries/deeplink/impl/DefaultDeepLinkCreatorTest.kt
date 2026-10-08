@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.deeplink.impl
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_THREAD_ID
-import org.junit.Test
 
 class DefaultDeepLinkCreatorTest {
     @Test

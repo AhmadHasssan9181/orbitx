@@ -9,10 +9,6 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustEventTimelineItem
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimeline
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimelineItem
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.test.StandardTestDispatcher
@@ -22,6 +18,10 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.Timeline
 import org.matrix.rustcomponents.sdk.TimelineDiff
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustEventTimelineItem
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimeline
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimelineItem
 import uniffi.matrix_sdk_ui.EventItemOrigin
 
 @OptIn(ExperimentalCoroutinesApi::class)

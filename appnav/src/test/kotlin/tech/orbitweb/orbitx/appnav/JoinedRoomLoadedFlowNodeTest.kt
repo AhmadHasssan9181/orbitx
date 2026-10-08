@@ -17,6 +17,10 @@ import com.bumble.appyx.navmodel.backstack.activeElement
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.bumble.appyx.testing.unit.common.helper.parentNodeTestHelper
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.appnav.di.RoomGraphFactory
 import tech.orbitweb.orbitx.appnav.di.TimelineBindings
 import tech.orbitweb.orbitx.appnav.room.RoomNavigationTarget
@@ -45,10 +49,6 @@ import tech.orbitweb.orbitx.services.appnavstate.api.ActiveRoomsHolder
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeActiveRoomsHolder
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppNavigationStateService
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class JoinedRoomLoadedFlowNodeTest : RobolectricTest() {
     @get:Rule

@@ -10,6 +10,7 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications
 import androidx.compose.ui.graphics.toArgb
 import coil3.ImageLoader
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.appconfig.NotificationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.api.finishLongRunningTransaction
-import kotlinx.coroutines.flow.first
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("NotificationRenderer", LoggerTag.NotificationLoggerTag)

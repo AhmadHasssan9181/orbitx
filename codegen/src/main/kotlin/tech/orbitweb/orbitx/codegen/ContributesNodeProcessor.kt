@@ -36,8 +36,8 @@ import dev.zacsweers.metro.Binds
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.IntoMap
 import dev.zacsweers.metro.Origin
-import tech.orbitweb.orbitx.annotations.ContributesNode
 import org.jetbrains.kotlin.name.FqName
+import tech.orbitweb.orbitx.annotations.ContributesNode
 
 class ContributesNodeProcessor(
     private val logger: KSPLogger,

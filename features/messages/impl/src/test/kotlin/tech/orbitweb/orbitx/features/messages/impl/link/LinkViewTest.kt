@@ -13,6 +13,8 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import io.element.android.wysiwyg.link.Link
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.tests.testutils.EnsureNeverCalledWithParam
@@ -20,8 +22,6 @@ import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import io.element.android.wysiwyg.link.Link
-import org.junit.Test
 
 class LinkViewTest : RobolectricTest() {
     @Test

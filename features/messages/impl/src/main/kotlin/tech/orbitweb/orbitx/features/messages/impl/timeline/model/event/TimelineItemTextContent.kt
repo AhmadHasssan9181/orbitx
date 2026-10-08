@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.model.event
 
-import tech.orbitweb.orbitx.libraries.matrix.ui.messages.toPlainText
 import org.jsoup.nodes.Document
+import tech.orbitweb.orbitx.libraries.matrix.ui.messages.toPlainText
 
 data class TimelineItemTextContent(
     override val body: String,

@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.services.appnavstate.test
 
-import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 
 class FakeAppForegroundStateService(
     initialForegroundValue: Boolean = true,

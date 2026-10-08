@@ -10,12 +10,12 @@ package tech.orbitweb.orbitx.libraries.accountselect.impl
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.accountselect.api.AccountSelectEntryPoint
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultAccountSelectEntryPointTest {
     @get:Rule

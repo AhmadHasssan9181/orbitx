@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.home.impl.filters.selection
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.features.home.impl.filters.RoomListFilter
 import tech.orbitweb.orbitx.libraries.di.SessionScope
-import kotlinx.coroutines.flow.MutableStateFlow
 
 @ContributesBinding(SessionScope::class)
 class DefaultFilterSelectionStrategy : FilterSelectionStrategy {

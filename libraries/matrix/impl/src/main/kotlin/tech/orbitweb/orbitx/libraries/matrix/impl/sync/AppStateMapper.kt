@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.sync
 
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 import org.matrix.rustcomponents.sdk.SyncServiceState
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 
 internal fun SyncServiceState.toSyncState(): SyncState {
     return when (this) {

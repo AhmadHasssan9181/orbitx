@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth.qrlogin
 
-import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeLoginStep
 import org.matrix.rustcomponents.sdk.QrLoginProgress
+import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeLoginStep
 
 fun QrLoginProgress.toStep(): QrCodeLoginStep {
     return when (this) {

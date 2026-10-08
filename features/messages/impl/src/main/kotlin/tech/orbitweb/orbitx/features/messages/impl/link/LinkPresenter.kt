@@ -12,9 +12,9 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import dev.zacsweers.metro.Inject
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import io.element.android.wysiwyg.link.Link
 
 @Inject
 class LinkPresenter(

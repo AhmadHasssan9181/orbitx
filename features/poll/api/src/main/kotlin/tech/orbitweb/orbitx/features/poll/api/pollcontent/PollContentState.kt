@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.poll.api.pollcontent
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
-import kotlinx.collections.immutable.ImmutableList
 
 /**
  * UI model for a PollContent.

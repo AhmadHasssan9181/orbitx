@@ -18,6 +18,13 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runUpdatingStateNoSuccess
@@ -28,13 +35,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import java.text.Collator
 import kotlin.time.Duration.Companion.seconds
 

@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.libraries.voiceplayer.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
+import org.junit.rules.TemporaryFolder
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MatrixMediaLoader
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import tech.orbitweb.orbitx.libraries.matrix.test.media.FakeMatrixMediaLoader
 import tech.orbitweb.orbitx.libraries.matrix.test.mxc.FakeMxcTools
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
-import org.junit.rules.TemporaryFolder
 import java.io.File
 
 class DefaultVoiceMessageMediaRepoTest {

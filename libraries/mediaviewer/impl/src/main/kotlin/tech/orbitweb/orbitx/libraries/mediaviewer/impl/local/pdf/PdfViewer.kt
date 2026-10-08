@@ -30,6 +30,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import me.saket.telephoto.zoomable.zoomable
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
@@ -39,8 +41,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.text.toDp
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer.topAppBarHeight
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import me.saket.telephoto.zoomable.zoomable
 import java.io.IOException
 
 @Composable

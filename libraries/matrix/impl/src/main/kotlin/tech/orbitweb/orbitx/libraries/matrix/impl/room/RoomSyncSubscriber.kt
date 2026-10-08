@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.matrix.rustcomponents.sdk.RoomListService
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import timber.log.Timber
 
 class RoomSyncSubscriber(

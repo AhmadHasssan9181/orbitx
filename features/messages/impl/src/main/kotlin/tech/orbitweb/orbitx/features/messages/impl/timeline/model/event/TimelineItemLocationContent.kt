@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.rememberUpdatedState
+import kotlinx.coroutines.delay
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.libraries.designsystem.components.PinVariant
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
@@ -20,7 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.location.AssetType
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.ProfileDetails
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.getAvatarUrl
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.getDisplayName
-import kotlinx.coroutines.delay
 
 data class TimelineItemLocationContent(
     val senderId: UserId,

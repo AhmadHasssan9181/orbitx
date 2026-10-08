@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID_2
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemImage
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemLoadingIndicator
-import org.junit.Test
 
 class PagerKeysHandlerTest {
     private val image1 = aMediaItemImage(

@@ -8,6 +8,11 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.firebase.troubleshoot
 
 import dev.zacsweers.metro.ContributesIntoSet
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.pushproviders.firebase.FirebaseConfig
 import tech.orbitweb.orbitx.libraries.pushproviders.firebase.FirebaseStore
@@ -19,11 +24,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubles
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.TestFilterData
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 
 @ContributesIntoSet(SessionScope::class)
 class FirebaseTokenTest(

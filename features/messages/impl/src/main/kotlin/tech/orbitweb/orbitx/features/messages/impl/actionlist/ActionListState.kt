@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.messages.impl.actionlist
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemAction
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.VerifiedUserSendFailure
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
-import kotlinx.collections.immutable.ImmutableList
 
 data class ActionListState(
     val target: Target,

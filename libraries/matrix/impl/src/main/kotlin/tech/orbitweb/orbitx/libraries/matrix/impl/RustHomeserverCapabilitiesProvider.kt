@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl
 
+import org.matrix.rustcomponents.sdk.HomeserverCapabilities
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.HomeserverCapabilitiesProvider
-import org.matrix.rustcomponents.sdk.HomeserverCapabilities
 
 class RustHomeserverCapabilitiesProvider(
     private val homeserverCapabilities: HomeserverCapabilities,

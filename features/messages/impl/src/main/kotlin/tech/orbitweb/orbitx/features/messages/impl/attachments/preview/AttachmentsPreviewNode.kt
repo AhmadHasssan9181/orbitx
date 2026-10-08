@@ -17,6 +17,7 @@ import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.plugin.Plugin
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.compound.colors.SemanticColorsLightDark
 import tech.orbitweb.orbitx.compound.theme.ForcedDarkElementTheme
@@ -29,7 +30,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMediaRenderer
-import kotlinx.collections.immutable.ImmutableList
 
 @ContributesNode(RoomScope::class)
 @AssistedInject

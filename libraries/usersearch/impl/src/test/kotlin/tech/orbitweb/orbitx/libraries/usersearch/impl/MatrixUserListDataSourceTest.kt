@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.usersearch.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixSearchUserResults
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
@@ -16,9 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_NAME
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 internal class MatrixUserListDataSourceTest {
     @Test

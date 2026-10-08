@@ -11,13 +11,13 @@ import android.content.Context
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStoreFactory
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionListener
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
-import kotlinx.coroutines.CoroutineScope
 import java.util.concurrent.ConcurrentHashMap
 
 @SingleIn(AppScope::class)

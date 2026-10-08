@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.model
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import java.text.DateFormat
 import java.util.Date
 import java.util.TimeZone

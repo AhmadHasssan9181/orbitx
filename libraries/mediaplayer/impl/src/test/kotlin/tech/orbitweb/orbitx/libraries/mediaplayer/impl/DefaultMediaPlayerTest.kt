@@ -11,17 +11,17 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.TimeoutCancellationException
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertThrows
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.audio.api.AudioFocus
 import tech.orbitweb.orbitx.libraries.audio.api.AudioFocusRequester
 import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
 import tech.orbitweb.orbitx.libraries.mediaplayer.test.FakeAudioFocus
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.TimeoutCancellationException
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertThrows
-import org.junit.Test
 
 class DefaultMediaPlayerTest {
     private val aMediaId = "mediaId"

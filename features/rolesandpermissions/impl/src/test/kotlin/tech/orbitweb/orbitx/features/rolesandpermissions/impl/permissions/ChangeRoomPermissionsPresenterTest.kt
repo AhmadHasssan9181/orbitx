@@ -14,6 +14,9 @@ import app.cash.turbine.TurbineTestContext
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.RoomModeration
+import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember.Role.Admin
@@ -26,9 +29,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.test.room.defaultRoomPowerLevelValues
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import kotlinx.collections.immutable.persistentMapOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class ChangeRoomPermissionsPresenterTest {
     @Test

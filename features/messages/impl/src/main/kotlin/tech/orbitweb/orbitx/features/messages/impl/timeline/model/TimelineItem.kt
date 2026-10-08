@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.model
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.MessageShieldData
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemAttachmentsContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemEventContent
@@ -37,7 +38,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TimelineIte
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TimelineItemEventOrigin
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.getDisambiguatedDisplayName
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply.InReplyToDetails
-import kotlinx.collections.immutable.ImmutableList
 
 @Immutable
 sealed interface TimelineItem {

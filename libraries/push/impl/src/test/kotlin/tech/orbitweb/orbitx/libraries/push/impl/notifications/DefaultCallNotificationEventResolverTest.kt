@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.push.impl.notifications
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.NotificationContent
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.RtcNotificationType
@@ -27,8 +29,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.notifications.model.NotifiableMe
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.model.NotifiableRingingCallEvent
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppForegroundStateService
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultCallNotificationEventResolverTest {
     @Test

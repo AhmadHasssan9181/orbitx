@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.firebase.util
 
 import com.google.android.gms.tasks.Task
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import kotlinx.coroutines.suspendCancellableCoroutine
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 

@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.features.migration.impl.migrations
 
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class AppMigration04Test : RobolectricTest() {
     @Test

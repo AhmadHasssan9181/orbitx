@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.migration.impl.migrations
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import java.io.File
 
 class AppMigration06Test {

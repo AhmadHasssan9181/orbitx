@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.poll
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import org.matrix.rustcomponents.sdk.PollKind as RustPollKind
 
 class PollKindKtTest {

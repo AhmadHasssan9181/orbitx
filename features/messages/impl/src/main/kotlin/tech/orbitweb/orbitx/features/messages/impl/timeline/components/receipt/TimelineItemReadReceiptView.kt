@@ -32,6 +32,7 @@ import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.appconfig.TimelineConfig
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
@@ -48,7 +49,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.LocalEventS
 import tech.orbitweb.orbitx.libraries.testtags.TestTags
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonPlurals
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun TimelineItemReadReceiptView(

@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.features.poll.impl.history.model
 
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentStateFactory
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatter
 import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatterMode
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.PollContent
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.withContext
 
 @Inject
 class PollHistoryItemsFactory(

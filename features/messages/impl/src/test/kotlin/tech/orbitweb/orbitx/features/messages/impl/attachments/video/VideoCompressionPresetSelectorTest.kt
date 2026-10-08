@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.messages.impl.attachments.video
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 import kotlinx.collections.immutable.persistentListOf
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 
 class VideoCompressionPresetSelectorTest {
     private val selector = VideoCompressionPresetSelector()

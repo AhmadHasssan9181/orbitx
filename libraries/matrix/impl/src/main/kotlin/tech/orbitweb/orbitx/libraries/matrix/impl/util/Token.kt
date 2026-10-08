@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.util
 
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionData
 import org.matrix.rustcomponents.sdk.Session
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionData
 import java.security.MessageDigest
 
 private val sha256 by lazy { MessageDigest.getInstance("SHA-256") }

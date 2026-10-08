@@ -18,9 +18,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
 
 @Inject
 class RoomListSearchPresenter(

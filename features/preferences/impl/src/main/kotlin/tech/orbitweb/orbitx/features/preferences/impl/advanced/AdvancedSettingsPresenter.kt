@@ -14,6 +14,11 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.theme.Theme
 import tech.orbitweb.orbitx.compound.theme.mapToTheme
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
@@ -22,11 +27,6 @@ import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.launch
 
 @Inject
 class AdvancedSettingsPresenter(

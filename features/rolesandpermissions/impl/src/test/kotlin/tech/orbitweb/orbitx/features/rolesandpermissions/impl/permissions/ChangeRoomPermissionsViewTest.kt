@@ -13,6 +13,9 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentMapOf
+import org.junit.Test
 import tech.orbitweb.orbitx.features.rolesandpermissions.impl.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
@@ -23,9 +26,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentMapOf
-import org.junit.Test
 
 class ChangeRoomPermissionsViewTest : RobolectricTest() {
     @Test

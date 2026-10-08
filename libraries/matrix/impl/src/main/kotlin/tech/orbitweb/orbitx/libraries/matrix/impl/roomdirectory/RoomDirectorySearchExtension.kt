@@ -7,7 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.channels.trySendBlocking
@@ -18,6 +17,7 @@ import kotlinx.coroutines.flow.catch
 import org.matrix.rustcomponents.sdk.RoomDirectorySearch
 import org.matrix.rustcomponents.sdk.RoomDirectorySearchEntriesListener
 import org.matrix.rustcomponents.sdk.RoomDirectorySearchEntryUpdate
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import timber.log.Timber
 
 internal fun RoomDirectorySearch.resultsFlow(): Flow<List<RoomDirectorySearchEntryUpdate>> =

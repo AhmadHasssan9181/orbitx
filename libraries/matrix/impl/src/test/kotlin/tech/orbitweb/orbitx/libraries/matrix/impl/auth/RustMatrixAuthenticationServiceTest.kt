@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.libraries.matrix.impl.ClientBuilderProvider
@@ -22,9 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import java.io.File
 
 class RustMatrixAuthenticationServiceTest {

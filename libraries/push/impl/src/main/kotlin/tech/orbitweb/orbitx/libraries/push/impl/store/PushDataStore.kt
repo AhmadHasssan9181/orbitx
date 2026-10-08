@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.push.impl.store
 
-import tech.orbitweb.orbitx.libraries.push.api.history.PushHistoryItem
 import kotlinx.coroutines.flow.Flow
+import tech.orbitweb.orbitx.libraries.push.api.history.PushHistoryItem
 
 interface PushDataStore {
     val shouldDisplayBatteryOptimizationBannerFlow: Flow<Boolean>

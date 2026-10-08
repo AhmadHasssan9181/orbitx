@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.featureflag.impl
 
-import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
-import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
+import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
 
 class FakeMutableFeatureFlagProvider(
     override val priority: Int,

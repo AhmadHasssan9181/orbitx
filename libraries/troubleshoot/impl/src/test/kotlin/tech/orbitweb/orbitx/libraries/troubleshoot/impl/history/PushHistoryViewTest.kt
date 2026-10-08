@@ -16,6 +16,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_FORMATTED_DATE
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
@@ -25,7 +26,6 @@ import tech.orbitweb.orbitx.tests.testutils.EnsureNeverCalled
 import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class PushHistoryViewTest : RobolectricTest() {
     @Test

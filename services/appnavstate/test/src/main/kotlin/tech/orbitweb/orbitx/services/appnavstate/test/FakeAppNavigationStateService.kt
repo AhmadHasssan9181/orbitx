@@ -7,14 +7,14 @@
 
 package tech.orbitweb.orbitx.services.appnavstate.test
 
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationState
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationStateService
 import tech.orbitweb.orbitx.services.appnavstate.api.NavigationState
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 
 class FakeAppNavigationStateService(
     initialAppNavigationState: AppNavigationState = AppNavigationState(

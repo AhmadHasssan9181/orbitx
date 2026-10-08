@@ -20,9 +20,9 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
+import io.element.android.wysiwyg.compose.EditorStyledText
 import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
 import tech.orbitweb.orbitx.libraries.designsystem.text.roundToPx
-import io.element.android.wysiwyg.compose.EditorStyledText
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt

@@ -10,14 +10,14 @@ package tech.orbitweb.orbitx.libraries.matrix.api.permalink
 import android.net.Uri
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.parcelize.Parcelize
 
 /**
  * This sealed class represents all the permalink cases.

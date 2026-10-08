@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipState
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.slashcommands.test.FakeSlashCommandService
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.ResolvedSuggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.model.Suggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.model.SuggestionType
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class SuggestionsProcessorTest {
     private fun aMentionSuggestion(text: String) = Suggestion(0, 1, SuggestionType.Mention, text)

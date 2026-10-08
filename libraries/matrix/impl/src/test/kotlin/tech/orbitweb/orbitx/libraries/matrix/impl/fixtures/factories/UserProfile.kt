@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import org.matrix.rustcomponents.sdk.UserProfile
+import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 
 internal fun aRustUserProfile(
     userId: String = A_USER_ID.value,

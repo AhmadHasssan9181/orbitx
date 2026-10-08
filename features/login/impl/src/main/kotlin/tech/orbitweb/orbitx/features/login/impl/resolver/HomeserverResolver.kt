@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.features.login.impl.resolver
 
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.coroutine.parallelMap
 import tech.orbitweb.orbitx.libraries.core.uri.ensureProtocol
 import tech.orbitweb.orbitx.libraries.core.uri.isValidUrl
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.HomeServerLoginCompatibilityChecker
-import kotlinx.coroutines.currentCoroutineContext
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 import java.util.Collections
 

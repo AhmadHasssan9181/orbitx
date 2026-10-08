@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.pushers
 
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.pusher.SetHttpPusherData
 import tech.orbitweb.orbitx.libraries.matrix.api.pusher.UnsetHttpPusherData
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiClient
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RustPushersServiceTest {
     @Test

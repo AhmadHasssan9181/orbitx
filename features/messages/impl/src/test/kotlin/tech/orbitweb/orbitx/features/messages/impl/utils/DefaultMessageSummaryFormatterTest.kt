@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.features.messages.impl.utils
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.RtcNotificationState
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemLocationContent
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.aProfileDetails
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
-import org.robolectric.annotation.Config
 
 class DefaultMessageSummaryFormatterTest : RobolectricTest() {
     private val formatter = DefaultMessageSummaryFormatter(

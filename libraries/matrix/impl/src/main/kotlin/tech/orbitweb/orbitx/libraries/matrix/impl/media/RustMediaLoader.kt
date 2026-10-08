@@ -7,15 +7,15 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.media
 
+import kotlinx.coroutines.withContext
+import org.matrix.rustcomponents.sdk.Client
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MatrixMediaLoader
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaFile
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
-import kotlinx.coroutines.withContext
-import org.matrix.rustcomponents.sdk.Client
-import org.matrix.rustcomponents.sdk.use
 import java.io.File
 import org.matrix.rustcomponents.sdk.MediaSource as RustMediaSource
 

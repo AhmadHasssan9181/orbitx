@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.features.viewfolder.impl.folder
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.viewfolder.impl.model.Item
 import tech.orbitweb.orbitx.libraries.androidutils.filesize.FileSizeFormatter
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import kotlinx.coroutines.withContext
 import java.io.File
 
 interface FolderExplorer {

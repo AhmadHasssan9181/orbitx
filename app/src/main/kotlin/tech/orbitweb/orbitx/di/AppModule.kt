@@ -16,6 +16,12 @@ import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.plus
+import tech.orbitweb.orbitx.BuildConfig
+import tech.orbitweb.orbitx.R
 import tech.orbitweb.orbitx.appconfig.ApplicationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.libraries.androidutils.system.getVersionCodeFromManifest
@@ -29,12 +35,6 @@ import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.recentemojis.api.EmojibaseProvider
 import tech.orbitweb.orbitx.libraries.recentemojis.impl.DefaultEmojibaseProvider
-import tech.orbitweb.orbitx.BuildConfig
-import tech.orbitweb.orbitx.R
-import kotlinx.coroutines.CoroutineName
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.plus
 import java.io.File
 
 @BindingContainer

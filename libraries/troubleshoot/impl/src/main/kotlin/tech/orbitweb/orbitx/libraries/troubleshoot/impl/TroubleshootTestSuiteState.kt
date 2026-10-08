@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.troubleshoot.impl
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
-import kotlinx.collections.immutable.ImmutableList
 
 data class TroubleshootTestSuiteState(
     val mainState: AsyncAction<Unit>,

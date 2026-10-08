@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.services.analytics.api
 
 import androidx.annotation.Discouraged
+import kotlinx.coroutines.flow.Flow
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsProvider
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransaction
 import tech.orbitweb.orbitx.services.analyticsproviders.api.trackers.AnalyticsTracker
 import tech.orbitweb.orbitx.services.analyticsproviders.api.trackers.ErrorTracker
-import kotlinx.coroutines.flow.Flow
 
 interface AnalyticsService : AnalyticsTracker, ErrorTracker {
     /**

@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.poll.impl.model
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollAnswerItem
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentState
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentStateFactory
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.isDisclosed
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.PollContent
-import kotlinx.collections.immutable.toImmutableList
 
 @ContributesBinding(RoomScope::class)
 class DefaultPollContentStateFactory(

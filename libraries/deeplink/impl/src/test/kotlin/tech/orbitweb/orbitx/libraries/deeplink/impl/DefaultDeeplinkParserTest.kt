@@ -10,6 +10,7 @@ package tech.orbitweb.orbitx.libraries.deeplink.impl
 import android.content.Intent
 import androidx.core.net.toUri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.deeplink.api.DeeplinkData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -21,7 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_THREAD_ID
 import tech.orbitweb.orbitx.tests.testutils.assertThrowsInDebug
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class DefaultDeeplinkParserTest : RobolectricTest() {
     companion object {

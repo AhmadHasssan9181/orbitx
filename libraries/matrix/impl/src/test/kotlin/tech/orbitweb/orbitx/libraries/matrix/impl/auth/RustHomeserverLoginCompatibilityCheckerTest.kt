@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.impl.FakeClientBuilderProvider
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiClient
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiClientBuilder
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiHomeserverLoginDetails
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RustHomeserverLoginCompatibilityCheckerTest {
     @Test

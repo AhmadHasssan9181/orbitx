@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
@@ -18,9 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.hasEvent
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
 
 interface MediaTimeline {
     suspend fun getTimeline(): Result<Timeline>

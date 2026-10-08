@@ -12,15 +12,15 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
-import tech.orbitweb.orbitx.libraries.matrix.ui.safety.rememberHideInvitesAvatar
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.persistentSetOf
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toImmutableSet
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
+import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
+import tech.orbitweb.orbitx.libraries.matrix.ui.safety.rememberHideInvitesAvatar
 
 @Inject
 class HomeSpacesPresenter(

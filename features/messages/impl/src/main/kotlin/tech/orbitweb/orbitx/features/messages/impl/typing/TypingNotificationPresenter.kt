@@ -17,12 +17,6 @@ import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
-import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -30,6 +24,12 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
+import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
+import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 
 @Inject
 class TypingNotificationPresenter(

@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.encryption
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
 import org.matrix.rustcomponents.sdk.BackupState as RustBackupState
 
 class BackupStateMapperTest {

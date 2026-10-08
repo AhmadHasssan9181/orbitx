@@ -13,6 +13,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomEvent
 import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -25,9 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.usersWithRole
 import tech.orbitweb.orbitx.libraries.push.api.notifications.conversations.NotificationConversationService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @Inject

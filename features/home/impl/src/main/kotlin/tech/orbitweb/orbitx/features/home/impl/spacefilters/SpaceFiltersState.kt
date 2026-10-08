@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.features.home.impl.spacefilters
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 
 @Immutable
 sealed interface SpaceFiltersState {

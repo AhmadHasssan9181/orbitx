@@ -14,8 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import tech.orbitweb.orbitx.libraries.designsystem.atomic.atoms.MatrixBadgeAtom
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.designsystem.atomic.atoms.MatrixBadgeAtom
 
 @Composable
 fun MatrixBadgeRowMolecule(

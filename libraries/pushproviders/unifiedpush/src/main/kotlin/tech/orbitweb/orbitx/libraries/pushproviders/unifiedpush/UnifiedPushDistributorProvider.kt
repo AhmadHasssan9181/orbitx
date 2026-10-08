@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 import android.content.Context
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import org.unifiedpush.android.connector.UnifiedPush
 import tech.orbitweb.orbitx.libraries.androidutils.system.getApplicationLabel
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
-import org.unifiedpush.android.connector.UnifiedPush
 
 interface UnifiedPushDistributorProvider {
     fun getDistributors(): List<Distributor>

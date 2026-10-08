@@ -14,6 +14,7 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.core.extensions.ensureEndsLeftToRight
 import tech.orbitweb.orbitx.libraries.core.extensions.filterDirectionOverrides
@@ -21,7 +22,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.components.dialogs.Confirmati
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import io.element.android.wysiwyg.link.Link
 
 @Composable
 fun LinkView(

@@ -26,13 +26,13 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsEvent
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsPresenter
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsState
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsStore
 import tech.orbitweb.orbitx.libraries.permissions.impl.action.PermissionActions
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("DefaultPermissionsPresenter")

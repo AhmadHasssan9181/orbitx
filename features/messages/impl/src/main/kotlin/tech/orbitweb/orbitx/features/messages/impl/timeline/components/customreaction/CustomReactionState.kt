@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction
 
 import io.element.android.emojibasebindings.EmojibaseStore
-import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.ImmutableSet
+import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
 
 data class CustomReactionState(
     val target: Target,

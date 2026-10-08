@@ -15,12 +15,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class SignedOutPresenter(

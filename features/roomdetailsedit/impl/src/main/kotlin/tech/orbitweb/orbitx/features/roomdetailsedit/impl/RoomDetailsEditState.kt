@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.features.roomdetailsedit.impl
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.AvatarAction
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsState
-import kotlinx.collections.immutable.ImmutableList
 
 data class RoomDetailsEditState(
     val roomId: RoomId,

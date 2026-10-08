@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.features.messages.test.timeline.voicemessages.composer
 
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.features.messages.impl.voicemessages.composer.DefaultVoiceMessageComposerPresenter
 import tech.orbitweb.orbitx.features.messages.impl.voicemessages.composer.VoiceMessageComposerPlayer
 import tech.orbitweb.orbitx.features.messages.test.FakeMessageComposerContext
@@ -18,7 +19,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.test.FakeMediaSender
 import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenterFactory
 import tech.orbitweb.orbitx.libraries.voicerecorder.test.FakeVoiceRecorder
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import kotlinx.coroutines.CoroutineScope
 
 class FakeDefaultVoiceMessageComposerPresenterFactory(
     private val sessionCoroutineScope: CoroutineScope,

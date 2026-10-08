@@ -15,6 +15,11 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 import im.vector.app.features.analytics.itf.VectorAnalyticsScreen
 import im.vector.app.features.analytics.plan.SuperProperties
 import im.vector.app.features.analytics.plan.UserProperties
+import io.sentry.Sentry
+import io.sentry.SentryTracer
+import io.sentry.protocol.SentryId
+import io.sentry.protocol.SentryTransaction
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.data.megaBytes
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.di.identifiers.SentryDsn
@@ -27,11 +32,6 @@ import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationState
 import tech.orbitweb.orbitx.services.appnavstate.api.NavigationState
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppNavigationStateService
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import io.sentry.Sentry
-import io.sentry.SentryTracer
-import io.sentry.protocol.SentryId
-import io.sentry.protocol.SentryTransaction
-import org.junit.Test
 
 class SentryAnalyticsProviderTest : RobolectricTest() {
     @Test

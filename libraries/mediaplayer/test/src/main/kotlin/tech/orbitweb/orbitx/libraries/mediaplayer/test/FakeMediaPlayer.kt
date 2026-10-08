@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.mediaplayer.test
 
-import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
 
 /**
  * Fake implementation of [MediaPlayer] for testing purposes.

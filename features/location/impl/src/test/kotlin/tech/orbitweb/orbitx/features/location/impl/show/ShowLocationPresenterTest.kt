@@ -11,6 +11,11 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.location.api.ShowLocationMode
 import tech.orbitweb.orbitx.features.location.impl.aPermissionsState
@@ -35,11 +40,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.location.aLiveLocationSha
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 import kotlin.time.Duration.Companion.hours
 
 @OptIn(ExperimentalCoroutinesApi::class)

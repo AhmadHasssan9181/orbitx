@@ -7,10 +7,6 @@
 
 package tech.orbitweb.orbitx.features.knockrequests.impl.data
 
-import tech.orbitweb.orbitx.features.knockrequests.api.KnockRequestPermissions
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.knock.KnockRequest
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.async
@@ -22,6 +18,10 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.getAndUpdate
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.supervisorScope
+import tech.orbitweb.orbitx.features.knockrequests.api.KnockRequestPermissions
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.knock.KnockRequest
 
 class KnockRequestsService(
     knockRequestsFlow: Flow<List<KnockRequest>>,

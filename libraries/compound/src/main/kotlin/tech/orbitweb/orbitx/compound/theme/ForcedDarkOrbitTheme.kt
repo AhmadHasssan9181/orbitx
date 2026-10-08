@@ -57,3 +57,14 @@ fun ForcedDarkElementTheme(
         content = content,
     )
 }
+
+@Composable
+fun ForcedDarkOrbitTheme(
+    colors: SemanticColorsLightDark,
+    lightStatusBar: Boolean = false,
+    content: @Composable () -> Unit,
+) = ForcedDarkElementTheme(
+    colors = colors,
+    lightStatusBar = lightStatusBar,
+    content = content,
+)

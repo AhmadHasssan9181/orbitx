@@ -13,7 +13,6 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 import im.vector.app.features.analytics.plan.MobileScreen
 import im.vector.app.features.analytics.plan.SuperProperties
 import im.vector.app.features.analytics.plan.UserProperties
-import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import io.mockk.every
 import io.mockk.just
 import io.mockk.mockk
@@ -23,6 +22,7 @@ import io.mockk.verify
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 
 class PosthogAnalyticsProviderTest {
     @get:Rule

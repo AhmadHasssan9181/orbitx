@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.receipt.bottomsheet
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.receipt.ReadReceiptViewStateProvider
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItemReadReceipts
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.LocalEventSendState
-import kotlinx.collections.immutable.toImmutableList
 
 class ReadReceiptBottomSheetStateProvider : PreviewParameterProvider<ReadReceiptBottomSheetState> {
     // Reuse the provider ReadReceiptViewStateProvider

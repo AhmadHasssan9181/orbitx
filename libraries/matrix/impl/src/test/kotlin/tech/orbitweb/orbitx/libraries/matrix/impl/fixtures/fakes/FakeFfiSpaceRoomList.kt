@@ -7,8 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
-import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 import org.matrix.rustcomponents.sdk.NoHandle
 import org.matrix.rustcomponents.sdk.SpaceListUpdate
 import org.matrix.rustcomponents.sdk.SpaceRoom
@@ -16,6 +14,8 @@ import org.matrix.rustcomponents.sdk.SpaceRoomList
 import org.matrix.rustcomponents.sdk.SpaceRoomListEntriesListener
 import org.matrix.rustcomponents.sdk.SpaceRoomListPaginationStateListener
 import org.matrix.rustcomponents.sdk.TaskHandle
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
+import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 import uniffi.matrix_sdk_ui.SpaceRoomListPaginationState
 
 class FakeFfiSpaceRoomList(

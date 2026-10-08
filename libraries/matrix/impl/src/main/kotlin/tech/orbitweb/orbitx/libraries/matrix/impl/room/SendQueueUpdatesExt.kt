@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
+import org.matrix.rustcomponents.sdk.RoomSendQueueUpdate
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.TransactionId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.SendQueueUpdate
 import tech.orbitweb.orbitx.libraries.matrix.impl.media.map
-import org.matrix.rustcomponents.sdk.RoomSendQueueUpdate
 
 fun RoomSendQueueUpdate.map(): SendQueueUpdate = when (this) {
     is RoomSendQueueUpdate.NewLocalEvent -> SendQueueUpdate.NewLocalEvent(TransactionId(transactionId))

@@ -12,12 +12,12 @@ import coil3.decode.ImageSource
 import coil3.fetch.FetchResult
 import coil3.fetch.Fetcher
 import coil3.fetch.SourceFetchResult
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MatrixMediaLoader
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
-import tech.orbitweb.orbitx.libraries.matrix.api.media.toFile
 import okio.Buffer
 import okio.FileSystem
 import okio.Path.Companion.toOkioPath
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MatrixMediaLoader
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
+import tech.orbitweb.orbitx.libraries.matrix.api.media.toFile
 import timber.log.Timber
 import java.nio.ByteBuffer
 

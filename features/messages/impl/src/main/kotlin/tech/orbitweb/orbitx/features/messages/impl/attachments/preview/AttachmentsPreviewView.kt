@@ -55,6 +55,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import io.element.android.wysiwyg.display.TextDisplay
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.messages.impl.R
@@ -93,11 +98,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.model.MessageComposerMode
 import tech.orbitweb.orbitx.libraries.textcomposer.model.VoiceMessageState
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.libraries.ui.utils.formatter.rememberFileSizeFormatter
-import io.element.android.wysiwyg.display.TextDisplay
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collectLatest
 import kotlin.time.Duration.Companion.milliseconds
 
 /**
@@ -404,7 +404,8 @@ private fun AttachmentPreviewContent(
         if (mediaInfo?.isImageAttachment() == true) {
             ImageOptimizationSelector(state.mediaOptimizationSelectorState)
         } else if (mediaInfo?.mimeType?.isMimeTypeVideo() == true) {
-            if (state.isTrimmingVideo || state.videoTrimStartMs > 0L || (state.videoDurationMs > 0L && state.videoTrimEndMs < state.videoDurationMs)) {
+            val showTrimBar = state.isTrimmingVideo || isVideoTrimmed(state)
+            if (showTrimBar) {
                 VideoTrimBar(
                     state = state,
                     modifier = Modifier
@@ -850,7 +851,7 @@ private fun VideoTrimBar(
             }
 
             androidx.compose.material3.RangeSlider(
-                value = (startMs.toFloat()..endMs.toFloat()),
+                value = startMs.toFloat()..endMs.toFloat(),
                 onValueChange = { range ->
                     state.eventSink(
                         AttachmentsPreviewEvent.SetVideoTrimRange(
@@ -871,9 +872,14 @@ private fun VideoTrimBar(
     }
 }
 
+private fun isVideoTrimmed(state: AttachmentsPreviewState): Boolean {
+    val duration = state.videoDurationMs
+    return state.videoTrimStartMs > 0L || duration > 0L && state.videoTrimEndMs < duration
+}
+
 private fun formatVideoTrimTimestamp(ms: Long): String {
     val totalSeconds = (ms / 1000L).coerceAtLeast(0L)
     val minutes = totalSeconds / 60L
     val seconds = totalSeconds % 60L
-    return String.format("%02d:%02d", minutes, seconds)
+    return String.format(java.util.Locale.ROOT, "%02d:%02d", minutes, seconds)
 }

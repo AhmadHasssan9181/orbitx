@@ -10,6 +10,7 @@ package tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer
 import android.net.Uri
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.components.media.WaveFormSamples
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.details.MediaBottomSheetState
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.details.aMediaBottomSheetStateDeleteConfirmation
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.details.aMediaBottomSheetStateDetails
-import kotlinx.collections.immutable.toImmutableList
 
 private const val LONG_CAPTION = "This is a very long caption that should be scrollable in the media viewer. " +
     "It contains multiple lines of text to demonstrate the scrolling behavior. " +

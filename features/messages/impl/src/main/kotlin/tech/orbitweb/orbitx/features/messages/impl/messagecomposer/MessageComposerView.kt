@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerEvent
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerState
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerStateProvider
@@ -28,7 +29,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.TextComposer
 import tech.orbitweb.orbitx.libraries.textcomposer.model.Suggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.model.VoiceMessagePlayerEvent
 import tech.orbitweb.orbitx.libraries.textcomposer.model.VoiceMessageRecorderEvent
-import kotlinx.coroutines.launch
 
 @Composable
 internal fun MessageComposerView(
@@ -118,7 +118,6 @@ internal fun MessageComposerView(
         isViewOnce = state.isViewOnce,
         onToggleViewOnce = { state.eventSink(MessageComposerEvent.ToggleViewOnce) },
     )
-
 
     AsyncActionView(
         async = state.slashCommandAction,

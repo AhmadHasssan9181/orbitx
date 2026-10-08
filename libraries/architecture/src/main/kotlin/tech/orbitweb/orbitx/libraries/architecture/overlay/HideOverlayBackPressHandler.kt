@@ -10,9 +10,9 @@ package tech.orbitweb.orbitx.libraries.architecture.overlay
 import com.bumble.appyx.core.navigation.backpresshandlerstrategies.BaseBackPressHandlerStrategy
 import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.BackStackElements
-import tech.orbitweb.orbitx.libraries.architecture.overlay.operation.Hide
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.libraries.architecture.overlay.operation.Hide
 
 class HideOverlayBackPressHandler<NavTarget : Any> :
     BaseBackPressHandlerStrategy<NavTarget, BackStack.State>() {

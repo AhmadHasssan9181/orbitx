@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.IntentionalMention
 import org.matrix.rustcomponents.sdk.Mentions
+import tech.orbitweb.orbitx.libraries.matrix.api.room.IntentionalMention
 
 fun List<IntentionalMention>.map(): Mentions {
     val hasRoom = any { it is IntentionalMention.Room }

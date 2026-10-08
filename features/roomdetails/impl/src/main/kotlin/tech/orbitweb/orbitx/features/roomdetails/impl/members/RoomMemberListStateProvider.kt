@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.features.roomdetails.impl.members
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationEvents
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationPermissions
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationState
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipState
-import kotlinx.collections.immutable.persistentListOf
 
 internal class RoomMemberListStateProvider : PreviewParameterProvider<RoomMemberListState> {
     override val values: Sequence<RoomMemberListState>

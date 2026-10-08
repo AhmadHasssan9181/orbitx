@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.State
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessage
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
@@ -17,7 +18,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaInfo
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.details.MediaBottomSheetState
-import kotlinx.collections.immutable.ImmutableList
 
 data class MediaViewerState(
     val initiallySelectedEventId: EventId?,

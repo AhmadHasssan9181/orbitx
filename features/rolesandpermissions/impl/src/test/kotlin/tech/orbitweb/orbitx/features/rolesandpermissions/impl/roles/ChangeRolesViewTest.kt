@@ -18,6 +18,9 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
@@ -31,9 +34,6 @@ import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class ChangeRolesViewTest : RobolectricTest() {
     @Test

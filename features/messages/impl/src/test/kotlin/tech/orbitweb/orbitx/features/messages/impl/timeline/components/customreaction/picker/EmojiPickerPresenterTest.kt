@@ -21,10 +21,6 @@ import com.google.common.truth.Truth.assertThat
 import io.element.android.emojibasebindings.Emoji
 import io.element.android.emojibasebindings.EmojibaseCategory
 import io.element.android.emojibasebindings.EmojibaseStore
-import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
-import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableMap
@@ -32,6 +28,10 @@ import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
+import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
+import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 
 class EmojiPickerPresenterTest : RobolectricTest() {
     @get:Rule

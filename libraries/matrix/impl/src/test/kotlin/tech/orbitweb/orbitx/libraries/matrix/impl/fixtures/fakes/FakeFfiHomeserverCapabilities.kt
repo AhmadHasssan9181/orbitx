@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import org.matrix.rustcomponents.sdk.ExtendedProfileFields
 import org.matrix.rustcomponents.sdk.HomeserverCapabilities
 import org.matrix.rustcomponents.sdk.NoHandle
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 
 class FakeFfiHomeserverCapabilities(
     private val refresh: () -> Unit = { lambdaError() },

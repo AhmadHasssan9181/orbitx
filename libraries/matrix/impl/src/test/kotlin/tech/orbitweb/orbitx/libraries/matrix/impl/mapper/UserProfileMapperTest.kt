@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.mapper
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustUserProfile
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
-import org.junit.Test
 
 class UserProfileMapperTest {
     @Test

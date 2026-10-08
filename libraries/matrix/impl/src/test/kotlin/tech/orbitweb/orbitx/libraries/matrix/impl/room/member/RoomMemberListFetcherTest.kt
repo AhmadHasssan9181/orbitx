@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.room.member
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomMember
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_4
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RoomMemberListFetcherTest {
     @Test

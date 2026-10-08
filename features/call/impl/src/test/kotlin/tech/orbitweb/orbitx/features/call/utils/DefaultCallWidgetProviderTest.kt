@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.call.utils
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.call.impl.utils.DefaultCallWidgetProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClientProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.widget.CallWidgetSettingsProvider
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 import tech.orbitweb.orbitx.libraries.preferences.test.InMemoryAppPreferencesStore
 import tech.orbitweb.orbitx.services.appnavstate.api.ActiveRoomsHolder
 import tech.orbitweb.orbitx.services.appnavstate.impl.DefaultActiveRoomsHolder
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultCallWidgetProviderTest {
     @Test

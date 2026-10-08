@@ -23,6 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
@@ -31,7 +32,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.text.toDp
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Icon
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.launch
 
 @Composable
 fun RoomPreviewAliasAtom(

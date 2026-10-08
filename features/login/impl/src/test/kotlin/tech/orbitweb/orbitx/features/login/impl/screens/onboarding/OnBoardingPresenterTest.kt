@@ -8,6 +8,12 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.onboarding
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
 import tech.orbitweb.orbitx.appconfig.OnBoardingConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
@@ -38,12 +44,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.libraries.wellknown.api.WellknownRetriever
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class OnBoardingPresenterTest {
     @get:Rule

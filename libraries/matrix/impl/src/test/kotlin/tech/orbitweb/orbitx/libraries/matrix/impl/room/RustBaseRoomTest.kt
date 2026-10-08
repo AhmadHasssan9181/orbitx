@@ -10,6 +10,13 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.room
 import app.cash.turbine.TurbineTestContext
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.shareIn
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
@@ -24,13 +31,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.test.room.defaultRoomPowerLevelValues
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.collections.immutable.persistentMapOf
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.shareIn
-import kotlinx.coroutines.isActive
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import uniffi.matrix_sdk.RoomMemberRole
 
 class RustBaseRoomTest {

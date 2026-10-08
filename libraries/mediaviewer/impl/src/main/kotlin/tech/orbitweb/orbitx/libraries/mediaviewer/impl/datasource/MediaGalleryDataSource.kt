@@ -9,13 +9,6 @@ package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import tech.orbitweb.orbitx.libraries.di.RoomScope
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.toEventOrTransactionId
-import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
@@ -27,6 +20,13 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import tech.orbitweb.orbitx.libraries.di.RoomScope
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.toEventOrTransactionId
+import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 

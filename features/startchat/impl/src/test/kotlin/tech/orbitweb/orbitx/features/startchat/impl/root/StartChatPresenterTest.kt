@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.features.startchat.impl.root
 
 import androidx.compose.runtime.MutableState
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invitepeople.test.FakeStartDMAction
 import tech.orbitweb.orbitx.features.startchat.api.ConfirmingStartDmWithMatrixUser
 import tech.orbitweb.orbitx.features.startchat.api.StartDMAction
@@ -28,9 +31,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.any
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class StartChatPresenterTest {
     @get:Rule

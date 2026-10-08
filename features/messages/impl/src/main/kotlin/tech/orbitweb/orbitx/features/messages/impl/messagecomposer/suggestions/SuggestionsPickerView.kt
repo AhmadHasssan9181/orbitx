@@ -22,6 +22,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.messages.impl.R
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.Avatar
@@ -43,8 +45,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipState
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 import tech.orbitweb.orbitx.libraries.slashcommands.api.SlashCommandSuggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.ResolvedSuggestion
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun SuggestionsPickerView(

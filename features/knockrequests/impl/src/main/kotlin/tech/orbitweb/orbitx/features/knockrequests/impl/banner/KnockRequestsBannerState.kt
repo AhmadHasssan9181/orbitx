@@ -10,9 +10,9 @@ package tech.orbitweb.orbitx.features.knockrequests.impl.banner
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.knockrequests.impl.R
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.KnockRequestPresentable
-import kotlinx.collections.immutable.ImmutableList
 
 data class KnockRequestsBannerState(
     val isVisible: Boolean,

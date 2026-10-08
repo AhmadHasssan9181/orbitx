@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.home.impl.spaces
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableSet
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableSet
 
 open class HomeSpacesStateProvider : PreviewParameterProvider<HomeSpacesState> {
     override val values: Sequence<HomeSpacesState>

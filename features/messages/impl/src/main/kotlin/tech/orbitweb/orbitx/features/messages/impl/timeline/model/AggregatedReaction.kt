@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.model
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.core.extensions.ellipsize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import kotlinx.collections.immutable.ImmutableList
 
 /**
  * Length at which we ellipsize a reaction key for display

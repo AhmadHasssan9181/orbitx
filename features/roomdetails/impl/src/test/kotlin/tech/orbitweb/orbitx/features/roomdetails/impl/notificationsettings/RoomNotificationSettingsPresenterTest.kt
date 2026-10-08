@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.roomdetails.impl.notificationsettings
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.roomdetails.impl.aJoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
@@ -17,8 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.tests.testutils.awaitLastSequentialItem
 import tech.orbitweb.orbitx.tests.testutils.consumeItemsUntilPredicate
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RoomNotificationSettingsPresenterTest {
     @Test

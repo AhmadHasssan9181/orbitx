@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.networkmonitor.test
 
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkMonitor
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeNetworkMonitor(
     initialStatus: NetworkStatus = NetworkStatus.Connected,

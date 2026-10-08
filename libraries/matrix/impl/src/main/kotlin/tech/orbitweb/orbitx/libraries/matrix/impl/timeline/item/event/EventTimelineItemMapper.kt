@@ -7,6 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import org.matrix.rustcomponents.sdk.EventOrTransactionId
+import org.matrix.rustcomponents.sdk.QueueWedgeError
+import org.matrix.rustcomponents.sdk.Reaction
+import org.matrix.rustcomponents.sdk.ShieldState
+import org.matrix.rustcomponents.sdk.TimelineItemContent
 import tech.orbitweb.orbitx.libraries.matrix.api.core.DeviceId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.TransactionId
@@ -21,14 +29,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.ReactionSen
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.Receipt
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TimelineItemEventOrigin
 import tech.orbitweb.orbitx.libraries.matrix.impl.core.RustSendHandle
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import org.matrix.rustcomponents.sdk.EventOrTransactionId
-import org.matrix.rustcomponents.sdk.QueueWedgeError
-import org.matrix.rustcomponents.sdk.Reaction
-import org.matrix.rustcomponents.sdk.ShieldState
-import org.matrix.rustcomponents.sdk.TimelineItemContent
 import uniffi.matrix_sdk_ui.TimelineEventShieldStateCode
 import org.matrix.rustcomponents.sdk.EventSendState as RustEventSendState
 import org.matrix.rustcomponents.sdk.EventTimelineItem as RustEventTimelineItem

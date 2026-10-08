@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.startchat.impl.userlist
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 
 @Inject
 class UserListDataStore {

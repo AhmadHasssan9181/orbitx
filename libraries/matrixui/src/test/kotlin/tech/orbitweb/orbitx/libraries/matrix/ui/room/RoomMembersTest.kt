@@ -11,6 +11,9 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipState
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeBaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomMember
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RoomMembersTest {
     private val roomMember1 = aRoomMember(A_USER_ID)

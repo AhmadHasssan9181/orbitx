@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.location.api
 
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.location.AssetType
-import kotlinx.parcelize.Parcelize
 
 sealed interface ShowLocationMode : Parcelable {
     @Parcelize

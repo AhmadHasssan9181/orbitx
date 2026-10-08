@@ -8,6 +8,10 @@
 package tech.orbitweb.orbitx.features.home.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.home.impl.roomlist.aRoomListState
 import tech.orbitweb.orbitx.features.home.impl.spaces.HomeSpacesState
 import tech.orbitweb.orbitx.features.home.impl.spaces.aHomeSpacesState
@@ -31,10 +35,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class HomePresenterTest {
     @get:Rule

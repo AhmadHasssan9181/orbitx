@@ -10,15 +10,6 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
 import dev.zacsweers.metro.binding
-import tech.orbitweb.orbitx.features.messages.impl.timeline.di.LiveTimeline
-import tech.orbitweb.orbitx.libraries.di.RoomScope
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.CreateTimelineParams
-import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.TimelineProvider
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -34,6 +25,15 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.getAndUpdate
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import tech.orbitweb.orbitx.features.messages.impl.timeline.di.LiveTimeline
+import tech.orbitweb.orbitx.libraries.di.RoomScope
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.CreateTimelineParams
+import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.TimelineProvider
 import java.io.Closeable
 import java.util.Optional
 

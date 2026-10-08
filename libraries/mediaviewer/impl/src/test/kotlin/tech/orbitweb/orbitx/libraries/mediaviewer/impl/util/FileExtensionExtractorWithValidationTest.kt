@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.util
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import org.junit.Test
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class FileExtensionExtractorWithValidationTest : RobolectricTest() {
     @Test

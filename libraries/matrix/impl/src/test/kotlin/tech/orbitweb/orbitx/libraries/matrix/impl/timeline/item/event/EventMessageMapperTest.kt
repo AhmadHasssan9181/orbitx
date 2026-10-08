@@ -8,6 +8,13 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.EmoteMessageContent
+import org.matrix.rustcomponents.sdk.LocationContent
+import org.matrix.rustcomponents.sdk.MessageType
+import org.matrix.rustcomponents.sdk.NoticeMessageContent
+import org.matrix.rustcomponents.sdk.TextMessageContent
+import org.matrix.rustcomponents.sdk.UnstableVoiceContent
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import tech.orbitweb.orbitx.libraries.matrix.api.room.location.AssetType
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.AudioMessageType
@@ -33,13 +40,6 @@ import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustGaller
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustImageMessageContent
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustMessageTypeGallery
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustVideoMessageContent
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.EmoteMessageContent
-import org.matrix.rustcomponents.sdk.LocationContent
-import org.matrix.rustcomponents.sdk.MessageType
-import org.matrix.rustcomponents.sdk.NoticeMessageContent
-import org.matrix.rustcomponents.sdk.TextMessageContent
-import org.matrix.rustcomponents.sdk.UnstableVoiceContent
 import org.matrix.rustcomponents.sdk.AssetType as RustAssetType
 
 class EventMessageMapperTest {

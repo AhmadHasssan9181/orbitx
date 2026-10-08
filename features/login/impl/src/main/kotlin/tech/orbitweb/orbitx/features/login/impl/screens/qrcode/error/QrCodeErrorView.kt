@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.login.impl.R
 import tech.orbitweb.orbitx.features.login.impl.qrcode.QrCodeErrorScreenType
@@ -37,7 +38,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Button
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.OutlinedButton
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun QrCodeErrorView(

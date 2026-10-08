@@ -11,8 +11,8 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
-import tech.orbitweb.orbitx.libraries.dateformatter.impl.TimezoneProvider
 import kotlinx.datetime.TimeZone
+import tech.orbitweb.orbitx.libraries.dateformatter.impl.TimezoneProvider
 import java.util.Locale
 import kotlin.time.Clock
 

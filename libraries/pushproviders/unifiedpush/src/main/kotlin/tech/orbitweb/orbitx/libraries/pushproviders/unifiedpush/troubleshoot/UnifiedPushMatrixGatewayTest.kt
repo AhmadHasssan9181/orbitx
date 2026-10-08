@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.troubleshoot
 
 import dev.zacsweers.metro.ContributesIntoSet
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
@@ -18,9 +21,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubles
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestDelegate
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.TestFilterData
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 
 @ContributesIntoSet(SessionScope::class)
 class UnifiedPushMatrixGatewayTest(

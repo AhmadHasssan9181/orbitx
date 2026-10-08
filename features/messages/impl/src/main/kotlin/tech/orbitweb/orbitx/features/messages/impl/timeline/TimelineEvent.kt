@@ -60,4 +60,3 @@ sealed interface TimelineEvent {
     data object StopLiveLocationShare : TimelineItemEvent
     data class RedactViewOnce(val eventId: EventId) : TimelineItemEvent
 }
-

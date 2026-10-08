@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.rageshake.impl.bugreport
 
+import kotlinx.coroutines.delay
 import tech.orbitweb.orbitx.features.rageshake.api.reporter.BugReporter
 import tech.orbitweb.orbitx.features.rageshake.api.reporter.BugReporterListener
 import tech.orbitweb.orbitx.libraries.matrix.test.A_FAILURE_REASON
-import kotlinx.coroutines.delay
 import java.io.File
 
 class FakeBugReporter(val mode: Mode = Mode.Success) : BugReporter {

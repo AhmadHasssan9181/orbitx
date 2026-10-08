@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.preferences.api
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import kotlinx.coroutines.flow.Flow
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 
 interface CacheService {
     /**

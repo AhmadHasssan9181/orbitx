@@ -14,6 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.features.messages.impl.R
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineRoomInfo
@@ -34,7 +35,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.ui.utils.a11y.isTalkbackActive
-import io.element.android.wysiwyg.link.Link
 
 @Composable
 fun TimelineItemGroupedEventsRow(

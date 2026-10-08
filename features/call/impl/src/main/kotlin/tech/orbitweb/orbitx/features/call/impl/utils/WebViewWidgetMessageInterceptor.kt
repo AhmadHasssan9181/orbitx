@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -20,8 +20,8 @@ import androidx.core.net.toUri
 import androidx.webkit.WebViewAssetLoader
 import androidx.webkit.WebViewCompat
 import androidx.webkit.WebViewFeature
-import tech.orbitweb.orbitx.features.call.impl.BuildConfig
 import kotlinx.coroutines.flow.MutableSharedFlow
+import tech.orbitweb.orbitx.features.call.impl.BuildConfig
 import timber.log.Timber
 
 class WebViewWidgetMessageInterceptor(

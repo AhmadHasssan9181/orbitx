@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.slashcommands.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MsgType
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.slashcommands.api.SlashCommand
 import tech.orbitweb.orbitx.libraries.slashcommands.impl.rainbow.RainbowGenerator
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class CommandExecutorTest {
     @Test

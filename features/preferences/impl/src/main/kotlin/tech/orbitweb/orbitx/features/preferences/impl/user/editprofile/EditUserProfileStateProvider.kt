@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.preferences.impl.user.editprofile
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_JOHN_DOE
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.AvatarAction
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsState
 import tech.orbitweb.orbitx.libraries.permissions.api.aPermissionsState
-import kotlinx.collections.immutable.toImmutableList
 
 open class EditUserProfileStateProvider : PreviewParameterProvider<EditUserProfileState> {
     override val values: Sequence<EditUserProfileState>

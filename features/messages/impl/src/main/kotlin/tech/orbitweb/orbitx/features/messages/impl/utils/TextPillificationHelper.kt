@@ -14,6 +14,8 @@ import android.text.style.URLSpan
 import android.util.Patterns
 import androidx.core.text.getSpans
 import dev.zacsweers.metro.ContributesBinding
+import io.element.android.wysiwyg.view.spans.CodeBlockSpan
+import io.element.android.wysiwyg.view.spans.InlineCodeSpan
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.MatrixPatternType
 import tech.orbitweb.orbitx.libraries.matrix.api.core.MatrixPatterns
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkBuilder
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanProvider
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.getMentionSpans
-import io.element.android.wysiwyg.view.spans.CodeBlockSpan
-import io.element.android.wysiwyg.view.spans.InlineCodeSpan
 
 interface TextPillificationHelper {
     fun pillify(text: CharSequence, pillifyPermalinks: Boolean = true): CharSequence

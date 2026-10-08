@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.previewutils.room
 
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.preview.SPACE_NAME
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -15,7 +16,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.toImmutableList
 
 fun aSpaceRoom(
     rawName: String? = null,

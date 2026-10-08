@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.libraries.designsystem.theme
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import kotlinx.collections.immutable.persistentMapOf
 import tech.orbitweb.orbitx.compound.annotations.CoreColorToken
 import tech.orbitweb.orbitx.compound.previews.ColorListPreview
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
@@ -17,7 +18,6 @@ import tech.orbitweb.orbitx.compound.tokens.generated.internal.DarkColorTokens
 import tech.orbitweb.orbitx.compound.tokens.generated.internal.LightColorTokens
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
-import kotlinx.collections.immutable.persistentMapOf
 
 /**
  * Room list.

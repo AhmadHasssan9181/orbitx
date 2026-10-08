@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.space.impl.leave
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.LeaveSpaceHandle
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class LeaveSpacePresenterTest {
     @Test

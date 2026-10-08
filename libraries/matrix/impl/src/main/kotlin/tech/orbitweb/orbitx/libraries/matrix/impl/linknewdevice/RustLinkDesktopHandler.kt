@@ -7,11 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.linknewdevice
 
-import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopHandler
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopStep
-import tech.orbitweb.orbitx.libraries.matrix.api.logs.LoggerTags
-import tech.orbitweb.orbitx.libraries.matrix.impl.auth.qrlogin.QrErrorMapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,6 +19,11 @@ import org.matrix.rustcomponents.sdk.GrantQrLoginProgress
 import org.matrix.rustcomponents.sdk.GrantQrLoginProgressListener
 import org.matrix.rustcomponents.sdk.HumanQrGrantLoginException
 import org.matrix.rustcomponents.sdk.QrCodeDecodeException
+import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopHandler
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopStep
+import tech.orbitweb.orbitx.libraries.matrix.api.logs.LoggerTags
+import tech.orbitweb.orbitx.libraries.matrix.impl.auth.qrlogin.QrErrorMapper
 import timber.log.Timber
 
 private val tag = LoggerTag("RustLinkDesktopHandler", LoggerTags.linkNewDevice)

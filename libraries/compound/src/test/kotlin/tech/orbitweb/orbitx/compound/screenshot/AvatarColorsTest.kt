@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.compound.screenshot
 
 import com.github.takahirom.roborazzi.captureRoboImage
+import org.junit.Test
+import org.robolectric.annotation.Config
+import org.robolectric.annotation.GraphicsMode
 import tech.orbitweb.orbitx.compound.screenshot.utils.screenshotFile
 import tech.orbitweb.orbitx.compound.theme.AvatarColorsPreviewDark
 import tech.orbitweb.orbitx.compound.theme.AvatarColorsPreviewLight
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.annotation.Config
-import org.robolectric.annotation.GraphicsMode
 
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 class AvatarColorsTest : RobolectricTest() {

@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.viewfolder.impl.folder
 
-import tech.orbitweb.orbitx.features.viewfolder.impl.model.Item
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.features.viewfolder.impl.model.Item
 
 data class ViewFolderState(
     val title: String,

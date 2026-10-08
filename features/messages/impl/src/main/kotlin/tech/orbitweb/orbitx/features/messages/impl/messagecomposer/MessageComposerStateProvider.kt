@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.features.messages.impl.messagecomposer
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import io.element.android.wysiwyg.display.TextDisplay
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.ResolvedSuggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.model.MessageComposerMode
 import tech.orbitweb.orbitx.libraries.textcomposer.model.TextEditorState
 import tech.orbitweb.orbitx.libraries.textcomposer.model.aTextEditorStateRich
-import io.element.android.wysiwyg.display.TextDisplay
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 open class MessageComposerStateProvider : PreviewParameterProvider<MessageComposerState> {
     override val values: Sequence<MessageComposerState>

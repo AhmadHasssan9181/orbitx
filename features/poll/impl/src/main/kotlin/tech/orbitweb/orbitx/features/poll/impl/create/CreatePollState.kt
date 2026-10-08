@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.poll.impl.create
 
-import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 
 data class CreatePollState(
     val mode: Mode,

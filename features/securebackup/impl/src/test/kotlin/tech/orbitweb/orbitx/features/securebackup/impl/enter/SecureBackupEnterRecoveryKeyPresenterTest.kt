@@ -11,6 +11,9 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.views.RecoveryKeyUserStory
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.views.RecoveryKeyViewState
 import tech.orbitweb.orbitx.features.securebackup.impl.tools.RecoveryKeyTools
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.libraries.matrix.test.encryption.FakeEncryptionService
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class SecureBackupEnterRecoveryKeyPresenterTest {
     @get:Rule

@@ -7,7 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.spaces
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.channels.trySendBlocking
@@ -21,6 +20,7 @@ import org.matrix.rustcomponents.sdk.SpaceRoomListEntriesListener
 import org.matrix.rustcomponents.sdk.SpaceRoomListInterface
 import org.matrix.rustcomponents.sdk.SpaceRoomListPaginationStateListener
 import org.matrix.rustcomponents.sdk.SpaceRoomListSpaceListener
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import timber.log.Timber
 import uniffi.matrix_sdk_ui.SpaceRoomListPaginationState
 import java.util.Optional

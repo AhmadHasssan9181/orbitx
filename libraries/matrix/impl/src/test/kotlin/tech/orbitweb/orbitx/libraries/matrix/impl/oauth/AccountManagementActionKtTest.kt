@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.oauth
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.oauth.AccountManagementAction
 import tech.orbitweb.orbitx.libraries.matrix.test.A_DEVICE_ID
-import org.junit.Test
 import org.matrix.rustcomponents.sdk.AccountManagementAction as RustAccountManagementAction
 
 class AccountManagementActionKtTest {

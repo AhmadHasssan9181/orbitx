@@ -21,6 +21,9 @@ import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.Composer
 import im.vector.app.features.analytics.plan.PollCreation
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.messages.api.MessageComposerContext
 import tech.orbitweb.orbitx.features.poll.api.create.CreatePollMode
 import tech.orbitweb.orbitx.features.poll.impl.PollConstants.MAX_SELECTIONS
@@ -31,9 +34,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.isDisclosed
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AssistedInject

@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.roomdetails.impl
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomState
 import tech.orbitweb.orbitx.features.roomcall.api.RoomCallState
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileState
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationSettings
 import tech.orbitweb.orbitx.libraries.matrix.api.room.history.RoomHistoryVisibility
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 data class RoomDetailsState(
     val roomId: RoomId,

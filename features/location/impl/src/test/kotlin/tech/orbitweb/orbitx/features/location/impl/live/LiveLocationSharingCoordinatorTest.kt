@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.location.impl.live
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.location.impl.live.service.LiveLocationReceiver
 import tech.orbitweb.orbitx.features.location.impl.live.service.LiveLocationSharingCoordinator
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID_2
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class LiveLocationSharingCoordinatorTest {
     @Test

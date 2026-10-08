@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.createroom.impl.configureroom
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -18,7 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.room.address.RoomAddressValidity
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsState
 import tech.orbitweb.orbitx.libraries.permissions.api.aPermissionsState
 import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
-import kotlinx.collections.immutable.toImmutableList
 
 open class ConfigureRoomStateProvider : PreviewParameterProvider<ConfigureRoomState> {
     override val values: Sequence<ConfigureRoomState>

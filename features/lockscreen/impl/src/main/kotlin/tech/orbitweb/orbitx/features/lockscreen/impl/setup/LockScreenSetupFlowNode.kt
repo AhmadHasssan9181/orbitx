@@ -18,6 +18,7 @@ import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.operation.newRoot
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.DefaultPinCodeManagerCallback
@@ -29,7 +30,6 @@ import tech.orbitweb.orbitx.libraries.architecture.BaseFlowNode
 import tech.orbitweb.orbitx.libraries.architecture.callback
 import tech.orbitweb.orbitx.libraries.architecture.createNode
 import tech.orbitweb.orbitx.libraries.di.SessionScope
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

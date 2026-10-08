@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.licenses.impl.list
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.licenses.impl.model.DependencyLicenseItem
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import kotlinx.collections.immutable.ImmutableList
 
 data class DependencyLicensesListState(
     val licenses: AsyncData<ImmutableList<DependencyLicenseItem>>,

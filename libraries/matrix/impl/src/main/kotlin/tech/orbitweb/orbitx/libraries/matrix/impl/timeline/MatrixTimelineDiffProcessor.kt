@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
 import androidx.compose.ui.util.fastForEach
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.RoomMembershipContent
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TimelineItemEventOrigin
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import org.matrix.rustcomponents.sdk.TimelineDiff
 import org.matrix.rustcomponents.sdk.TimelineItem
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.RoomMembershipContent
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TimelineItemEventOrigin
 import timber.log.Timber
 
 internal class MatrixTimelineDiffProcessor(

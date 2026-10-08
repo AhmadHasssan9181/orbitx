@@ -25,9 +25,9 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -49,6 +49,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import androidx.compose.ui.window.SecureFlagPolicy
+import io.element.android.wysiwyg.compose.EditorStyledText
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.layout.ContentAvoidingLayout
@@ -64,8 +66,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.textcomposer.ElementRichTextEditorStyle
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.LocalMentionSpanUpdater
-import io.element.android.wysiwyg.compose.EditorStyledText
-import io.element.android.wysiwyg.link.Link
 
 @Composable
 fun TimelineItemTextView(

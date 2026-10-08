@@ -18,6 +18,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.takahirom.roborazzi.captureRoboImage
+import org.junit.Test
+import org.robolectric.annotation.Config
+import org.robolectric.annotation.GraphicsMode
 import tech.orbitweb.orbitx.compound.screenshot.utils.screenshotFile
 import tech.orbitweb.orbitx.compound.theme.ColorsSchemeDarkHcPreview
 import tech.orbitweb.orbitx.compound.theme.ColorsSchemeDarkPreview
@@ -25,9 +28,6 @@ import tech.orbitweb.orbitx.compound.theme.ColorsSchemeLightHcPreview
 import tech.orbitweb.orbitx.compound.theme.ColorsSchemeLightPreview
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.annotation.Config
-import org.robolectric.annotation.GraphicsMode
 
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 class MaterialColorSchemeTest : RobolectricTest() {

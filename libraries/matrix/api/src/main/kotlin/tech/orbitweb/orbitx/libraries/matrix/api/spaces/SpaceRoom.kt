@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.spaces
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 @Immutable
 data class SpaceRoom(

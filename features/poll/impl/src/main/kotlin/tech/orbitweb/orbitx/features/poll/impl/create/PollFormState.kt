@@ -9,11 +9,11 @@ package tech.orbitweb.orbitx.features.poll.impl.create
 
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.mapSaver
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.poll.impl.PollConstants
 import tech.orbitweb.orbitx.features.poll.impl.PollConstants.MIN_ANSWERS
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 /**
  * Represents the state of the poll creation / edit form.

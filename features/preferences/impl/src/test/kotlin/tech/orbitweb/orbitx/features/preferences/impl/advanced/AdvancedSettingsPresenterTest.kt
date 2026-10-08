@@ -11,6 +11,11 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.compound.theme.Theme
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
@@ -21,11 +26,6 @@ import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPres
 import tech.orbitweb.orbitx.libraries.preferences.test.InMemoryAppPreferencesStore
 import tech.orbitweb.orbitx.libraries.preferences.test.InMemorySessionPreferencesStore
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class AdvancedSettingsPresenterTest {
     @get:Rule

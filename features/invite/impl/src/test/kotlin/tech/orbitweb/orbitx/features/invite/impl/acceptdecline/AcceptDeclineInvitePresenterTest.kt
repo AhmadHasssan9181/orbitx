@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.invite.impl.acceptdecline
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteEvents
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.ConfirmingDeclineInvite
@@ -24,9 +27,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class AcceptDeclineInvitePresenterTest {
     @get:Rule

@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import org.matrix.rustcomponents.sdk.PublicRoomJoinRule
 import org.matrix.rustcomponents.sdk.RoomDescription
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 
 internal fun aRustRoomDescription(
     roomId: String = A_ROOM_ID.value,

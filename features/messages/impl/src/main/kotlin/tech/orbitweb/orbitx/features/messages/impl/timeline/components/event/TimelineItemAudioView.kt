@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.event
 
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -42,9 +42,21 @@ fun TimelineItemAudioView(
             mediaType = "Audio",
             isMine = isMine,
             onContentClick = if (isMine) {
-                { android.widget.Toast.makeText(context, "You sent this as a view-once audio. It cannot be reopened.", android.widget.Toast.LENGTH_SHORT).show() }
+                {
+                    android.widget.Toast.makeText(
+                        context,
+                        "You sent this as a view-once audio. It cannot be reopened.",
+                        android.widget.Toast.LENGTH_SHORT,
+                    ).show()
+                }
             } else if (isDestroyed) {
-                { android.widget.Toast.makeText(context, "This audio has already been played and destroyed", android.widget.Toast.LENGTH_SHORT).show() }
+                {
+                    android.widget.Toast.makeText(
+                        context,
+                        "This audio has already been played and destroyed",
+                        android.widget.Toast.LENGTH_SHORT,
+                    ).show()
+                }
             } else {
                 onContentClick
             },

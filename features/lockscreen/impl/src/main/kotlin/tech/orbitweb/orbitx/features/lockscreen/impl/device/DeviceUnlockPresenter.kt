@@ -15,11 +15,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.PinCodeManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.unlock.PinUnlockHelper
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import kotlinx.coroutines.flow.first
 
 @Inject
 class DeviceUnlockPresenter(

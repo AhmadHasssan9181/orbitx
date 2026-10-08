@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.preview
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.Membership
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
@@ -15,8 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.preview.RoomPreviewInfo
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomPreviewInfo
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.Membership
 import org.matrix.rustcomponents.sdk.JoinRule as RustJoinRule
 
 class RoomPreviewInfoMapperTest {

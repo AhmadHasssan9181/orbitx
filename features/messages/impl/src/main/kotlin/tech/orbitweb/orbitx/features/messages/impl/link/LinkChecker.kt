@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.features.messages.impl.link
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
 import tech.orbitweb.orbitx.libraries.core.extensions.containsRtLOverride
-import io.element.android.wysiwyg.link.Link
 import java.net.URI
 
 interface LinkChecker {

@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.mapper
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.external.ExternalSession
 import tech.orbitweb.orbitx.libraries.matrix.api.paths.SessionPaths
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustSession
@@ -17,7 +18,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_HOMESERVER_URL_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SECRET
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.LoginType
-import org.junit.Test
 import java.io.File
 
 class SessionKtTest {

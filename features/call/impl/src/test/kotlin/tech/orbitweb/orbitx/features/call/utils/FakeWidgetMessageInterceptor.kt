@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.call.utils
 
-import tech.orbitweb.orbitx.features.call.impl.utils.WidgetMessageInterceptor
 import kotlinx.coroutines.flow.MutableSharedFlow
+import tech.orbitweb.orbitx.features.call.impl.utils.WidgetMessageInterceptor
 
 class FakeWidgetMessageInterceptor : WidgetMessageInterceptor {
     val sentMessages = mutableListOf<String>()

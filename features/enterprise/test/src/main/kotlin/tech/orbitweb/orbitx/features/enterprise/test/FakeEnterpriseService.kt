@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.features.enterprise.test
 
 import androidx.compose.ui.graphics.Color
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import tech.orbitweb.orbitx.compound.colors.SemanticColorsLightDark
 import tech.orbitweb.orbitx.features.enterprise.api.BugReportUrl
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 
 class FakeEnterpriseService(
     override val isEnterpriseBuild: Boolean = false,

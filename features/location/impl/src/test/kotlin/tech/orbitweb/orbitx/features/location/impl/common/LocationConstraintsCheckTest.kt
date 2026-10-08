@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.location.impl.common
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.location.impl.aPermissionsState
 import tech.orbitweb.orbitx.features.location.impl.common.actions.FakeLocationActions
 import tech.orbitweb.orbitx.features.location.impl.common.permissions.PermissionsState
-import org.junit.Test
 
 class LocationConstraintsCheckTest {
     @Test

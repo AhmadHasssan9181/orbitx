@@ -11,6 +11,10 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import com.github.takahirom.roborazzi.captureRoboImage
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
+import org.robolectric.annotation.Config
+import org.robolectric.annotation.GraphicsMode
 import tech.orbitweb.orbitx.compound.previews.IconsCompoundPreviewDark
 import tech.orbitweb.orbitx.compound.previews.IconsCompoundPreviewLight
 import tech.orbitweb.orbitx.compound.previews.IconsCompoundPreviewRtl
@@ -20,10 +24,6 @@ import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.theme.Theme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
-import org.robolectric.annotation.Config
-import org.robolectric.annotation.GraphicsMode
 
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 class CompoundIconTest : RobolectricTest() {

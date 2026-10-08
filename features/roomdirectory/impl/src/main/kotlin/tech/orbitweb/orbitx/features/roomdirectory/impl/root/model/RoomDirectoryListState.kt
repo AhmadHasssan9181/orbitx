@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.roomdirectory.impl.root.model
 
-import tech.orbitweb.orbitx.features.roomdirectory.api.RoomDescription
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import tech.orbitweb.orbitx.features.roomdirectory.api.RoomDescription
 
 internal data class RoomDirectoryListState(
     val hasMoreToLoad: Boolean,

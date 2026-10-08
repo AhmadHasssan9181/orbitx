@@ -11,11 +11,11 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenEntryPoint
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultLockScreenEntryPointTest {
     @get:Rule

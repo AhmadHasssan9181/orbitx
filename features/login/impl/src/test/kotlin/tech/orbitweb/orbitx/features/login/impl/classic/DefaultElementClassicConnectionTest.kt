@@ -14,6 +14,12 @@ import android.os.Bundle
 import androidx.core.graphics.createBitmap
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.androidutils.service.ServiceBinder
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.ElementClassicSession
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.HomeServerLoginCompatibilityChecker
@@ -29,12 +35,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.auth.FakeMatrixAuthenticationS
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultElementClassicConnectionTest : RobolectricTest() {
     @Test

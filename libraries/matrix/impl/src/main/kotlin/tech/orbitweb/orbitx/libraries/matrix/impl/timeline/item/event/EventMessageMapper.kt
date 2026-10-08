@@ -7,6 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event
 
+import org.matrix.rustcomponents.sdk.InReplyToDetails
+import org.matrix.rustcomponents.sdk.MessageType
+import org.matrix.rustcomponents.sdk.MsgLikeKind
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.EventThreadInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.AudioMessageType
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.EmoteMessageType
@@ -27,10 +31,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.VoiceMessag
 import tech.orbitweb.orbitx.libraries.matrix.impl.media.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.location.into
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.reply.InReplyToMapper
-import org.matrix.rustcomponents.sdk.InReplyToDetails
-import org.matrix.rustcomponents.sdk.MessageType
-import org.matrix.rustcomponents.sdk.MsgLikeKind
-import org.matrix.rustcomponents.sdk.use
 import org.matrix.rustcomponents.sdk.FormattedBody as RustFormattedBody
 import org.matrix.rustcomponents.sdk.GalleryItemType as RustGalleryItemType
 import org.matrix.rustcomponents.sdk.MessageFormat as RustMessageFormat

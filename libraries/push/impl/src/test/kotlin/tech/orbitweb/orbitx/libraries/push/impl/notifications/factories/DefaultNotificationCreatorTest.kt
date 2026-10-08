@@ -13,6 +13,9 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
 import tech.orbitweb.orbitx.appconfig.NotificationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
@@ -45,9 +48,6 @@ import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.A_FAKE_TIMESTAMP
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
 
 class DefaultNotificationCreatorTest : RobolectricTest() {
     @Test

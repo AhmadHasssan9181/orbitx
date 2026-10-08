@@ -18,6 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.github.takahirom.roborazzi.captureRoboImage
+import org.junit.Test
+import org.robolectric.annotation.Config
+import org.robolectric.annotation.GraphicsMode
 import tech.orbitweb.orbitx.compound.previews.ColorPreview
 import tech.orbitweb.orbitx.compound.screenshot.utils.screenshotFile
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
@@ -25,9 +28,6 @@ import tech.orbitweb.orbitx.compound.theme.LinkColor
 import tech.orbitweb.orbitx.compound.theme.SnackBarLabelColorDark
 import tech.orbitweb.orbitx.compound.theme.SnackBarLabelColorLight
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.annotation.Config
-import org.robolectric.annotation.GraphicsMode
 
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 class LegacyColorsTest : RobolectricTest() {

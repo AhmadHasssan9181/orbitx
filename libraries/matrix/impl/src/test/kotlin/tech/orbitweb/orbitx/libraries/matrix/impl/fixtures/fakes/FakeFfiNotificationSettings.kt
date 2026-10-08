@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomNotificationSettings
 import org.matrix.rustcomponents.sdk.NoHandle
 import org.matrix.rustcomponents.sdk.NotificationSettings
 import org.matrix.rustcomponents.sdk.NotificationSettingsDelegate
 import org.matrix.rustcomponents.sdk.RoomNotificationSettings
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomNotificationSettings
 
 class FakeFfiNotificationSettings(
     private val roomNotificationSettings: RoomNotificationSettings = aRustRoomNotificationSettings(),

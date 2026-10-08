@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.storage
 
-import tech.orbitweb.orbitx.libraries.androidutils.crypto.ClientSecret
 import org.matrix.rustcomponents.sdk.ClientBuilder
+import tech.orbitweb.orbitx.libraries.androidutils.crypto.ClientSecret
 
 class FakeSqliteStoreBuilder : SqliteStoreBuilder {
     override fun secret(clientSecret: ClientSecret?): SqliteStoreBuilder = this

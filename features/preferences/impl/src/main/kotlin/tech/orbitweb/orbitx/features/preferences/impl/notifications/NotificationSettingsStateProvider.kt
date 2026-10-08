@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.preferences.impl.notifications
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.fullscreenintent.api.FullScreenIntentPermissionsState
@@ -15,8 +17,6 @@ import tech.orbitweb.orbitx.libraries.fullscreenintent.api.aFullScreenIntentPerm
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 open class NotificationSettingsStateProvider : PreviewParameterProvider<NotificationSettingsState> {
     override val values: Sequence<NotificationSettingsState>

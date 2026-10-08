@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.features.poll.impl
 
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollAnswer
@@ -14,9 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.PollContent
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.aPollContent
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.anEventTimelineItem
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 fun aPollTimelineItems(
     polls: Map<EventId, PollContent> = emptyMap(),

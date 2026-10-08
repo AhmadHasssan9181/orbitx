@@ -14,11 +14,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticator
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.storage.LockScreenStore
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import kotlinx.coroutines.launch
 
 @Inject
 class SetupBiometricPresenter(

@@ -21,6 +21,11 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.MobileScreen
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.impl.data.WidgetMessage
@@ -40,11 +45,6 @@ import tech.orbitweb.orbitx.libraries.network.useragent.UserAgentProvider
 import tech.orbitweb.orbitx.services.analytics.api.ScreenTracker
 import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.UUID
 import kotlin.time.Duration.Companion.seconds

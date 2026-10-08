@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.roomselect.impl
 
 import androidx.compose.foundation.text.input.TextFieldState
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
 import tech.orbitweb.orbitx.libraries.roomselect.api.RoomSelectMode
-import kotlinx.collections.immutable.ImmutableList
 
 data class RoomSelectState(
     val mode: RoomSelectMode,

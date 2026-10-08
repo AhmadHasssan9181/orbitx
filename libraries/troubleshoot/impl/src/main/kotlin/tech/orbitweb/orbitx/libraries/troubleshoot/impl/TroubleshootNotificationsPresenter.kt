@@ -15,9 +15,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootNavigator
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class TroubleshootNotificationsPresenter(

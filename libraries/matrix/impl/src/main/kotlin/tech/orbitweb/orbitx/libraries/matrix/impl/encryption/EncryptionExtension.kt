@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.encryption
 
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.RecoveryState
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import kotlinx.coroutines.flow.Flow
 import org.matrix.rustcomponents.sdk.BackupStateListener
 import org.matrix.rustcomponents.sdk.EncryptionInterface
 import org.matrix.rustcomponents.sdk.RecoveryStateListener
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.RecoveryState
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import org.matrix.rustcomponents.sdk.BackupState as RustBackupState
 import org.matrix.rustcomponents.sdk.RecoveryState as RustRecoveryState
 

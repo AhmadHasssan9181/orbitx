@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.firebase.troubleshoot
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.pushproviders.firebase.FakeIsPlayServiceAvailable
 import tech.orbitweb.orbitx.libraries.pushproviders.firebase.FirebaseConfig
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.TestFilterData
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.runAndTestState
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class FirebaseAvailabilityTestTest {
     @Test

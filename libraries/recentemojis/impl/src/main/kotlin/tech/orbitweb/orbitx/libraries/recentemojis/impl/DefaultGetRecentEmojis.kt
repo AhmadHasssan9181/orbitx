@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.libraries.recentemojis.impl
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.recentemojis.api.EmojibaseProvider
 import tech.orbitweb.orbitx.libraries.recentemojis.api.GetRecentEmojis
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.withContext
 
 @ContributesBinding(SessionScope::class)
 class DefaultGetRecentEmojis(

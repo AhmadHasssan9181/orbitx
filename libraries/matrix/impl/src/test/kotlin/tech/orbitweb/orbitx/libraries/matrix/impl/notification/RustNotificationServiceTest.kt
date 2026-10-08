@@ -8,6 +8,12 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.notification
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.NotificationClient
+import org.matrix.rustcomponents.sdk.NotificationStatus
+import org.matrix.rustcomponents.sdk.TimelineEventContent
 import tech.orbitweb.orbitx.libraries.matrix.api.exception.NotificationResolverException
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.NotificationContent
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TextMessageType
@@ -26,12 +32,6 @@ import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.NotificationClient
-import org.matrix.rustcomponents.sdk.NotificationStatus
-import org.matrix.rustcomponents.sdk.TimelineEventContent
 
 class RustNotificationServiceTest {
     @Test

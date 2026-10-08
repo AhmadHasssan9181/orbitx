@@ -7,14 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
+import org.matrix.rustcomponents.sdk.TimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.EventTimelineItemMapper
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.virtual.VirtualTimelineItemMapper
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import org.matrix.rustcomponents.sdk.TimelineItem
 
 class MatrixTimelineItemMapper(
     private val fetchDetailsForEvent: suspend (EventId) -> Result<Unit>,

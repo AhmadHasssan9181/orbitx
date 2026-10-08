@@ -9,12 +9,12 @@ package tech.orbitweb.orbitx.libraries.featureflag.impl
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
 import tech.orbitweb.orbitx.libraries.featureflag.test.FakeFeature
 import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultFeatureFlagServiceTest {
     private val aFeature = FakeFeature(

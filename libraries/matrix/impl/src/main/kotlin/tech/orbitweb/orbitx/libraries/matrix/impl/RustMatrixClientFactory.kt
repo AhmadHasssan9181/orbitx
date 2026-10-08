@@ -8,6 +8,16 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl
 
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.withContext
+import org.matrix.rustcomponents.sdk.Client
+import org.matrix.rustcomponents.sdk.ClientBuilder
+import org.matrix.rustcomponents.sdk.CrossProcessLockConfig
+import org.matrix.rustcomponents.sdk.RequestConfig
+import org.matrix.rustcomponents.sdk.Session
+import org.matrix.rustcomponents.sdk.SlidingSyncVersion
+import org.matrix.rustcomponents.sdk.SlidingSyncVersionBuilder
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.androidutils.crypto.ClientSecret
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.data.ByteUnit
@@ -29,16 +39,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
 import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerScheduler
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.withContext
-import org.matrix.rustcomponents.sdk.Client
-import org.matrix.rustcomponents.sdk.ClientBuilder
-import org.matrix.rustcomponents.sdk.CrossProcessLockConfig
-import org.matrix.rustcomponents.sdk.RequestConfig
-import org.matrix.rustcomponents.sdk.Session
-import org.matrix.rustcomponents.sdk.SlidingSyncVersion
-import org.matrix.rustcomponents.sdk.SlidingSyncVersionBuilder
-import org.matrix.rustcomponents.sdk.use
 import timber.log.Timber
 import uniffi.matrix_sdk_base.DmRoomDefinition
 import uniffi.matrix_sdk_base.MediaRetentionPolicy

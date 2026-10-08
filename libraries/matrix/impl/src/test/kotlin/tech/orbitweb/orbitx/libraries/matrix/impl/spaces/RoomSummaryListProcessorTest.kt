@@ -8,6 +8,11 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.spaces
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.SpaceListUpdate
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustSpaceRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
@@ -16,11 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_4
 import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.SpaceListUpdate
 
 class RoomSummaryListProcessorTest {
     private val spaceRoomsFlow = MutableStateFlow<List<SpaceRoom>>(emptyList())

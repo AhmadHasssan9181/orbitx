@@ -23,6 +23,9 @@ import androidx.core.net.toUri
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.androidutils.file.TemporaryUriDeleter
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
@@ -37,9 +40,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfigPro
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaPreProcessor
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsEvent
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsPresenter
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AssistedInject

@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.crypto.identity
 
-import tech.orbitweb.orbitx.libraries.matrix.ui.room.RoomMemberIdentityStateChange
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.ui.room.RoomMemberIdentityStateChange
 
 data class IdentityChangeState(
     val roomMemberIdentityStateChanges: ImmutableList<RoomMemberIdentityStateChange>,

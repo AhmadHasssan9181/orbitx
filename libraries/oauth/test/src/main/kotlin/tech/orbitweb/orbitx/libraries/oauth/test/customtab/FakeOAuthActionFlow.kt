@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.oauth.test.customtab
 
-import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
-import tech.orbitweb.orbitx.libraries.oauth.api.OAuthActionFlow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
+import tech.orbitweb.orbitx.libraries.oauth.api.OAuthActionFlow
 
 /**
  * This is actually a copy of DefaultOAuthActionFlow.

@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.features.call.impl.utils
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.firstOrNull
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClientProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.widget.CallWidgetSettingsProvider
 import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 import tech.orbitweb.orbitx.services.appnavstate.api.ActiveRoomsHolder
-import kotlinx.coroutines.flow.firstOrNull
 
 private const val EMBEDDED_CALL_WIDGET_BASE_URL = "https://appassets.androidplatform.net/element-call/index.html"
 

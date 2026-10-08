@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.features.invitepeople.impl
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 internal class DefaultInvitePeopleStateProvider : PreviewParameterProvider<DefaultInvitePeopleState> {
     override val values: Sequence<DefaultInvitePeopleState>

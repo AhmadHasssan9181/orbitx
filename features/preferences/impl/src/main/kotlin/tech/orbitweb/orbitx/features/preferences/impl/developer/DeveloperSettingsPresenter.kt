@@ -17,6 +17,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.toArgb
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings.AppDeveloperSettingsState
 import tech.orbitweb.orbitx.features.preferences.impl.tasks.ClearCacheUseCase
@@ -31,10 +35,6 @@ import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
 import tech.orbitweb.orbitx.libraries.core.data.ByteUnit
 import tech.orbitweb.orbitx.libraries.matrix.api.analytics.GetDatabaseSizesUseCase
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.toImmutableMap
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Inject
 class DeveloperSettingsPresenter(

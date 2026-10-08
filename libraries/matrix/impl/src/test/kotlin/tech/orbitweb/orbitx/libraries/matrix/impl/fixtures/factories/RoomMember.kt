@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import org.matrix.rustcomponents.sdk.MembershipState
 import org.matrix.rustcomponents.sdk.PowerLevel
 import org.matrix.rustcomponents.sdk.RoomMember
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import uniffi.matrix_sdk.RoomMemberRole
 
 internal fun aRustRoomMember(

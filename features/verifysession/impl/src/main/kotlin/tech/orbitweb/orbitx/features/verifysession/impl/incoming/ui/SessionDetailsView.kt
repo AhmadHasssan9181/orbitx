@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.

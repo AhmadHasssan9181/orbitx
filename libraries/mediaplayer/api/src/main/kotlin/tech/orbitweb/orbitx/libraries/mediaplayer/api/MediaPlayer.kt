@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.mediaplayer.api
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import kotlinx.coroutines.flow.StateFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 
 /**
  * A media player for ORBIT Chat.

@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.features.space.impl.root
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.ImmutableSet
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.ImmutableSet
 
 data class SpaceState(
     val spaceInfo: RoomInfo,

@@ -25,6 +25,9 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.lockscreen.impl.LockScreenConfig
 import tech.orbitweb.orbitx.features.lockscreen.impl.R
 import tech.orbitweb.orbitx.features.lockscreen.impl.storage.LockScreenStore
@@ -33,9 +36,6 @@ import tech.orbitweb.orbitx.libraries.cryptography.api.SecretKeyRepository
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.launch
 import java.util.concurrent.CopyOnWriteArrayList
 
 private const val SECRET_KEY_ALIAS = "elementx.SECRET_KEY_ALIAS_BIOMETRIC"

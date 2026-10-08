@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.features.rageshake.impl
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.features.rageshake.api.RageshakeFeatureAvailability
-import tech.orbitweb.orbitx.features.rageshake.impl.reporter.BugReporterUrlProvider
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.features.rageshake.api.RageshakeFeatureAvailability
+import tech.orbitweb.orbitx.features.rageshake.impl.reporter.BugReporterUrlProvider
 
 @ContributesBinding(AppScope::class)
 class DefaultRageshakeFeatureAvailability(

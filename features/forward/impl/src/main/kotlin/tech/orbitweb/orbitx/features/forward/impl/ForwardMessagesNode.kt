@@ -19,6 +19,7 @@ import com.bumble.appyx.core.node.ParentNode
 import com.bumble.appyx.core.plugin.Plugin
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.forward.api.ForwardEntryPoint
 import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
@@ -30,7 +31,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.TimelineProvider
 import tech.orbitweb.orbitx.libraries.roomselect.api.RoomSelectEntryPoint
 import tech.orbitweb.orbitx.libraries.roomselect.api.RoomSelectMode
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

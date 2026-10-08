@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.createaccount
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.serialization.SerializationException
+import org.junit.Assert.assertThrows
+import org.junit.Test
 import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProviderDataSource
 import tech.orbitweb.orbitx.libraries.androidutils.json.DefaultJsonProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.external.ExternalSession
-import kotlinx.serialization.SerializationException
-import org.junit.Assert.assertThrows
-import org.junit.Test
 
 class DefaultMessageParserTest {
     private val validMessage = """

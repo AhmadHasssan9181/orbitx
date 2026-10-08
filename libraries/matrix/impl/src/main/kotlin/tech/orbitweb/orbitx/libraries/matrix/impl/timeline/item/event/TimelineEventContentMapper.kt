@@ -7,6 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event
 
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
+import org.matrix.rustcomponents.sdk.BeaconInfo
+import org.matrix.rustcomponents.sdk.EmbeddedEventDetails
+import org.matrix.rustcomponents.sdk.MsgLikeContent
+import org.matrix.rustcomponents.sdk.MsgLikeKind
+import org.matrix.rustcomponents.sdk.TimelineItemContent
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -36,14 +44,6 @@ import tech.orbitweb.orbitx.libraries.matrix.impl.media.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.poll.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.join.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.location.into
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
-import org.matrix.rustcomponents.sdk.BeaconInfo
-import org.matrix.rustcomponents.sdk.EmbeddedEventDetails
-import org.matrix.rustcomponents.sdk.MsgLikeContent
-import org.matrix.rustcomponents.sdk.MsgLikeKind
-import org.matrix.rustcomponents.sdk.TimelineItemContent
-import org.matrix.rustcomponents.sdk.use
 import uniffi.matrix_sdk_ui.RoomPinnedEventsChange
 import org.matrix.rustcomponents.sdk.EncryptedMessage as RustEncryptedMessage
 import org.matrix.rustcomponents.sdk.MembershipChange as RustMembershipChange

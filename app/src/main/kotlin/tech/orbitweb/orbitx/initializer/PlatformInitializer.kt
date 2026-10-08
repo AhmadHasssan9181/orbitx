@@ -10,13 +10,13 @@ package tech.orbitweb.orbitx.initializer
 import android.content.Context
 import android.system.Os
 import androidx.startup.Initializer
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+import tech.orbitweb.orbitx.di.AppBindings
 import tech.orbitweb.orbitx.features.rageshake.api.logs.createWriteToFilesConfiguration
 import tech.orbitweb.orbitx.libraries.architecture.bindings
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TracingConfiguration
-import tech.orbitweb.orbitx.di.AppBindings
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 import timber.log.Timber
 
 private const val ELEMENT_X_TARGET = "elementx"

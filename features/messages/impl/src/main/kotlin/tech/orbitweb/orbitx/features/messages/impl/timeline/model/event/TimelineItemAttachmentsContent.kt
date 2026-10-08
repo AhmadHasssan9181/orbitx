@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.model.event
 
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 
 data class TimelineItemAttachmentsContent(
     val body: String,

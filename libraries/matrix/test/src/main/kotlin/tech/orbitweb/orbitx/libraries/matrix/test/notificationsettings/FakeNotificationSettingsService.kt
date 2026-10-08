@@ -7,14 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.notificationsettings
 
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.notificationsettings.NotificationSettingsService
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationSettings
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_NOTIFICATION_MODE
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
 
 class FakeNotificationSettingsService(
     initialRoomMode: RoomNotificationMode = A_ROOM_NOTIFICATION_MODE,

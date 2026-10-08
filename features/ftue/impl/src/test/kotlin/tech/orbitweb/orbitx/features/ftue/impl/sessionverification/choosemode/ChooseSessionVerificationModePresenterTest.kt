@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.ftue.impl.sessionverification.choosemode
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutEvents
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutState
 import tech.orbitweb.orbitx.features.logout.api.direct.aDirectLogoutState
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.encryption.FakeEncryptionServi
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class ChooseSessionVerificationModePresenterTest {
     @Test

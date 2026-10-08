@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.fixtures
 
+import kotlinx.coroutines.test.TestScope
 import tech.orbitweb.orbitx.features.messages.impl.messagesummary.FakeMessageSummaryFormatter
 import tech.orbitweb.orbitx.features.messages.impl.timeline.factories.TimelineItemsFactory
 import tech.orbitweb.orbitx.features.messages.impl.timeline.factories.TimelineItemsFactoryConfig
@@ -38,7 +39,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.permalink.FakePermalinkParser
 import tech.orbitweb.orbitx.libraries.mediaviewer.test.util.FileExtensionExtractorWithoutValidation
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.TestScope
 
 internal fun TestScope.aTimelineItemsFactoryCreator(): TimelineItemsFactory.Creator {
     return object : TimelineItemsFactory.Creator {

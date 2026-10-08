@@ -7,16 +7,16 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.ui.messages
 
-import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.FormattedBody
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageFormat
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageTypeWithAttachment
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TextMessageType
 import org.jsoup.nodes.Document
 import org.jsoup.nodes.Element
 import org.jsoup.nodes.Node
 import org.jsoup.nodes.TextNode
 import org.jsoup.select.NodeVisitor
+import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.FormattedBody
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageFormat
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageTypeWithAttachment
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TextMessageType
 
 /**
  * Converts the HTML string in [TextMessageType.formatted] to a plain text representation by parsing it and removing all formatting.

@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.accountselect.impl
 
-import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 
 data class AccountSelectState(
     val accounts: ImmutableList<MatrixUser>,

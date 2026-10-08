@@ -10,6 +10,13 @@ package tech.orbitweb.orbitx.features.call
 import android.content.Intent
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceTimeBy
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.Shadows.shadowOf
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.impl.DefaultElementCallEntryPoint
 import tech.orbitweb.orbitx.features.call.impl.notifications.CallNotificationData
@@ -21,13 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceTimeBy
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
-import org.robolectric.Shadows.shadowOf
 import kotlin.time.Duration.Companion.seconds
 
 class DefaultElementCallEntryPointTest : RobolectricTest() {

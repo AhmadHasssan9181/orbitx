@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.preferences.impl.store
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
-import tech.orbitweb.orbitx.libraries.core.meta.BuildType
-import tech.orbitweb.orbitx.libraries.preferences.test.FakePreferenceDataStoreFactory
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
+import tech.orbitweb.orbitx.libraries.core.meta.BuildType
+import tech.orbitweb.orbitx.libraries.preferences.test.FakePreferenceDataStoreFactory
 
 class DefaultAppPreferencesStoreTest {
     private val buildMeta = BuildMeta(

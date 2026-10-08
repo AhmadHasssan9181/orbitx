@@ -8,11 +8,6 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomListService
-import tech.orbitweb.orbitx.libraries.matrix.impl.room.RoomSyncSubscriber
-import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestScope
@@ -20,6 +15,11 @@ import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.RoomListServiceSyncIndicator
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomListService
+import tech.orbitweb.orbitx.libraries.matrix.impl.room.RoomSyncSubscriber
+import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
+import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import org.matrix.rustcomponents.sdk.RoomListService as RustRoomListService
 
 @OptIn(ExperimentalCoroutinesApi::class)

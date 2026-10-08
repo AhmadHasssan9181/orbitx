@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.linknewdevice
 
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.CheckCodeSender
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.CheckCodeSender
 import org.matrix.rustcomponents.sdk.CheckCodeSender as FfiCheckCodeSender
 
 class RustCheckCodeSender(

@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.preferences.impl.labs
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.icons.CompoundDrawables
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.IconSource
 import tech.orbitweb.orbitx.libraries.featureflag.ui.model.FeatureUiModel
-import kotlinx.collections.immutable.toImmutableList
 
 internal class LabsStateProvider : PreviewParameterProvider<LabsState> {
     override val values: Sequence<LabsState>

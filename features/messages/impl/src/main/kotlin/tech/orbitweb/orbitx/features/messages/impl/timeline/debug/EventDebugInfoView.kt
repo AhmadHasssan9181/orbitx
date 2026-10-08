@@ -39,6 +39,8 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.core.content.getSystemService
+import org.json.JSONException
+import org.json.JSONObject
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.components.button.BackButton
@@ -49,8 +51,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Scaffold
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.TopAppBar
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import org.json.JSONException
-import org.json.JSONObject
 
 /**
  * Screen used to display debug info for events.

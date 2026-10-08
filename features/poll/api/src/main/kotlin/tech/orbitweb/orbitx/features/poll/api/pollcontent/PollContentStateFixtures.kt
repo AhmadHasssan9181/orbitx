@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.features.poll.api.pollcontent
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollAnswer
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 fun aPollQuestion() = "What type of food should we have at the party?"
 

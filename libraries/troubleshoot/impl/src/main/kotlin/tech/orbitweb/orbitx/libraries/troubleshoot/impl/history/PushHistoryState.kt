@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.troubleshoot.impl.history
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.push.api.history.PushHistoryItem
-import kotlinx.collections.immutable.ImmutableList
 
 data class PushHistoryState(
     val pushCounter: Int,

@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.roomdetails.impl
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomEvent
 import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomState
 import tech.orbitweb.orbitx.features.roomcall.api.RoomCallState
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationSettings
 import tech.orbitweb.orbitx.libraries.matrix.api.room.history.RoomHistoryVisibility
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
-import kotlinx.collections.immutable.toImmutableList
 
 open class RoomDetailsStateProvider : PreviewParameterProvider<RoomDetailsState> {
     override val values: Sequence<RoomDetailsState>

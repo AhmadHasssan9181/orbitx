@@ -25,7 +25,7 @@ import tech.orbitweb.orbitx.libraries.designsystem.utils.CommonDrawables
 @OptIn(ExperimentalCoilApi::class)
 @Composable
 @Suppress("ModifierMissing")
-fun ElementPreview(
+fun OrbitPreview(
     theme: Theme = if (isSystemInDarkTheme()) Theme.Dark else Theme.Light,
     showBackground: Boolean = true,
     @DrawableRes
@@ -48,3 +48,19 @@ fun ElementPreview(
         }
     }
 }
+
+@OptIn(ExperimentalCoilApi::class)
+@Composable
+@Suppress("ModifierMissing")
+fun ElementPreview(
+    theme: Theme = if (isSystemInDarkTheme()) Theme.Dark else Theme.Light,
+    showBackground: Boolean = true,
+    @DrawableRes
+    drawableFallbackForImages: Int = CommonDrawables.sample_background,
+    content: @Composable () -> Unit
+) = OrbitPreview(
+    theme = theme,
+    showBackground = showBackground,
+    drawableFallbackForImages = drawableFallbackForImages,
+    content = content,
+)

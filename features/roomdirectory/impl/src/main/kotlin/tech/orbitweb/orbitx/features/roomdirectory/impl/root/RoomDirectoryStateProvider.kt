@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.roomdirectory.impl.root
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.roomdirectory.api.RoomDescription
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 open class RoomDirectoryStateProvider : PreviewParameterProvider<RoomDirectoryState> {
     override val values: Sequence<RoomDirectoryState>

@@ -14,6 +14,8 @@ import im.vector.app.features.analytics.itf.VectorAnalyticsEvent
 import im.vector.app.features.analytics.itf.VectorAnalyticsScreen
 import im.vector.app.features.analytics.plan.SuperProperties
 import im.vector.app.features.analytics.plan.UserProperties
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsSdkSpan
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
@@ -21,8 +23,6 @@ import tech.orbitweb.orbitx.services.analytics.api.NoopAnalyticsSdkSpan
 import tech.orbitweb.orbitx.services.analytics.api.NoopAnalyticsTransaction
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsProvider
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransaction
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 @SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)

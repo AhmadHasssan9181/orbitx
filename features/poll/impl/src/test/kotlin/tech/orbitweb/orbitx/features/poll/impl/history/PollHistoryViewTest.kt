@@ -15,6 +15,8 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.aPollContentState
 import tech.orbitweb.orbitx.features.poll.impl.R
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryFilter
@@ -28,8 +30,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class PollHistoryViewTest : RobolectricTest() {
     @Test

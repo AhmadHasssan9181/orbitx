@@ -10,6 +10,9 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenService
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClientProvider
@@ -36,9 +39,6 @@ import tech.orbitweb.orbitx.services.appnavstate.api.NavigationState
 import tech.orbitweb.orbitx.services.appnavstate.api.currentRoomId
 import tech.orbitweb.orbitx.services.appnavstate.api.currentSessionId
 import tech.orbitweb.orbitx.services.appnavstate.api.currentThreadId
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 
 /**
  * This class receives notification events as they arrive from the PushHandler calling [onNotifiableEventReceived] and

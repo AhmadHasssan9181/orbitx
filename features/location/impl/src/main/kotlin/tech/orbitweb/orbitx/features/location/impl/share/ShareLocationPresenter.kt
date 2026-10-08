@@ -21,6 +21,8 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.Composer
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.location.api.live.ActiveLiveLocationShareManager
 import tech.orbitweb.orbitx.features.location.impl.common.LocationConstraintsCheck
 import tech.orbitweb.orbitx.features.location.impl.common.MapDefaults
@@ -50,8 +52,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.permissionsAsS
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.textcomposer.model.MessageComposerMode
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 

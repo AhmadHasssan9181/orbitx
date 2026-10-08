@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.model
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.gallery.MediaGalleryMode
-import kotlinx.collections.immutable.ImmutableList
 
 data class GroupedMediaItems(
     val imageAndVideoItems: ImmutableList<MediaItem>,

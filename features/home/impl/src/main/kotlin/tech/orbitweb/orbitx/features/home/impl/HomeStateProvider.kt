@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.home.impl
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.home.impl.roomlist.RoomListState
 import tech.orbitweb.orbitx.features.home.impl.roomlist.RoomListStateProvider
 import tech.orbitweb.orbitx.features.home.impl.roomlist.aRoomListState
@@ -21,7 +22,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessag
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.toImmutableList
 
 open class HomeStateProvider : PreviewParameterProvider<HomeState> {
     override val values: Sequence<HomeState>

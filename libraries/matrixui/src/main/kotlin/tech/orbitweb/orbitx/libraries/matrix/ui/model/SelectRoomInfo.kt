@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.ui.model
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
@@ -14,7 +15,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class SelectRoomInfo(
     val roomId: RoomId,

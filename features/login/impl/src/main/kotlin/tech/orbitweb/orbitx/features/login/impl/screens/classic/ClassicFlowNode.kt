@@ -22,6 +22,9 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.login.impl.screens.classic.loginwithclassic.LoginWithClassicNode
 import tech.orbitweb.orbitx.features.login.impl.screens.classic.missingkeybackup.MissingKeyBackupNode
@@ -33,9 +36,6 @@ import tech.orbitweb.orbitx.libraries.architecture.callback
 import tech.orbitweb.orbitx.libraries.architecture.createNode
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.OAuthDetails
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(AppScope::class)
 @AssistedInject

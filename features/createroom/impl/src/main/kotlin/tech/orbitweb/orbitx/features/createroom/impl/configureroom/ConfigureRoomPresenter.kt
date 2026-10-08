@@ -23,6 +23,13 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.CreatedRoom
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
@@ -47,13 +54,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaPreProcessor
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsEvent
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsPresenter
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withTimeoutOrNull
 import timber.log.Timber
 import kotlin.jvm.optionals.getOrDefault
 import kotlin.jvm.optionals.getOrNull

@@ -9,12 +9,12 @@ package tech.orbitweb.orbitx.features.location.impl.common.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
-import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import org.maplibre.compose.camera.CameraState
 import org.maplibre.compose.location.Location
 import org.maplibre.compose.location.LocationPuck
 import org.maplibre.compose.location.LocationPuckColors
 import org.maplibre.compose.location.LocationPuckSizes
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
 
 @Composable
 fun UserLocationPuck(

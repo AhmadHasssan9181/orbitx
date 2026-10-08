@@ -7,10 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
-import tech.orbitweb.orbitx.libraries.matrix.api.room.activeRoomMembers
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.Flow
@@ -18,6 +14,10 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
+import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembersState
+import tech.orbitweb.orbitx.libraries.matrix.api.room.activeRoomMembers
 
 /**
  * Return a flow of the list of active room members who match the predicate.

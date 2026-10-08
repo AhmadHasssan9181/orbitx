@@ -20,6 +20,7 @@ import android.util.Size
 import androidx.core.net.toUri
 import com.vanniktech.blurhash.BlurHash
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.suspendCancellableCoroutine
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.resizeToMax
 import tech.orbitweb.orbitx.libraries.androidutils.file.createTmpFile
 import tech.orbitweb.orbitx.libraries.androidutils.media.runAndRelease
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.matrix.api.media.ThumbnailInfo
 import tech.orbitweb.orbitx.services.toolbox.api.sdk.BuildVersionSdkIntProvider
-import kotlinx.coroutines.suspendCancellableCoroutine
 import timber.log.Timber
 import java.io.File
 import java.io.IOException

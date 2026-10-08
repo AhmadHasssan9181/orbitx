@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.libraries.mediapickers
 import android.net.Uri
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.mediapickers.api.PickerType
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class PickerTypeTest : RobolectricTest() {
     @Test

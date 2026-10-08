@@ -19,7 +19,7 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.theme.messageFromMeBackground
 
 @Composable
-internal fun ElementTimelineItemPreview(
+internal fun OrbitTimelineItemPreview(
     content: @Composable BoxScope.() -> Unit,
 ) = ElementPreview {
     Box(
@@ -29,3 +29,8 @@ internal fun ElementTimelineItemPreview(
         content = content,
     )
 }
+
+@Composable
+internal fun ElementTimelineItemPreview(
+    content: @Composable BoxScope.() -> Unit,
+) = OrbitTimelineItemPreview(content = content)

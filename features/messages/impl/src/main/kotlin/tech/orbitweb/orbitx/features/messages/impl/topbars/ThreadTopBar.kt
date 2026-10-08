@@ -22,6 +22,9 @@ import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.Avatar
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
@@ -38,9 +41,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.TopAppBar
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.resolve.ResolveVerifiedUserSendFailureState
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.resolve.aResolveVerifiedUserSendFailureState
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.MessageShieldData
@@ -41,9 +44,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.LocalEventS
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageShield
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply.InReplyToDetails
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply.aProfileDetailsReady
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 import java.util.UUID
 import kotlin.random.Random
 

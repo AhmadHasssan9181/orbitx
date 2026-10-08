@@ -7,6 +7,16 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.withContext
+import org.matrix.rustcomponents.sdk.CallDeclineListener
+import org.matrix.rustcomponents.sdk.RoomInfoListener
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.coroutine.childScope
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
@@ -36,16 +46,6 @@ import tech.orbitweb.orbitx.libraries.matrix.impl.room.tombstone.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.toRustReceiptType
 import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.withContext
-import org.matrix.rustcomponents.sdk.CallDeclineListener
-import org.matrix.rustcomponents.sdk.RoomInfoListener
-import org.matrix.rustcomponents.sdk.use
 import timber.log.Timber
 import uniffi.matrix_sdk_base.EncryptionState
 import org.matrix.rustcomponents.sdk.Room as InnerRoom

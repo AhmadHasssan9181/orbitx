@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import org.matrix.rustcomponents.sdk.JoinRule
 import org.matrix.rustcomponents.sdk.Membership
 import org.matrix.rustcomponents.sdk.RoomHero
 import org.matrix.rustcomponents.sdk.RoomType
 import org.matrix.rustcomponents.sdk.SpaceRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 
 internal fun aRustSpaceRoom(
     roomId: RoomId = A_ROOM_ID,

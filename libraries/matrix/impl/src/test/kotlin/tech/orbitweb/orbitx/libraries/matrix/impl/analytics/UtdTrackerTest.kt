@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.analytics
 
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.Error
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustUnableToDecryptInfo
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import org.junit.Test
 import uniffi.matrix_sdk_crypto.UtdCause
 
 class UtdTrackerTest {

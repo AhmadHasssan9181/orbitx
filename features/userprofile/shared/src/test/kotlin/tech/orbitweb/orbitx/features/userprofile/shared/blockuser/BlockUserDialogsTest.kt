@@ -11,6 +11,7 @@ package tech.orbitweb.orbitx.features.userprofile.shared.blockuser
 
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileEvents
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileState
 import tech.orbitweb.orbitx.features.userprofile.shared.R
@@ -19,7 +20,6 @@ import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class BlockUserDialogsTest : RobolectricTest() {
     @Test

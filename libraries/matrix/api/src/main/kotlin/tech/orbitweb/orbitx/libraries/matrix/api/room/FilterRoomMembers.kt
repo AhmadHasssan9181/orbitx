@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room
 
-import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import kotlinx.coroutines.withContext
+import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import kotlin.coroutines.CoroutineContext
 
 /**

@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.model
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID_3
-import kotlinx.collections.immutable.persistentListOf
-import org.junit.Test
 
 class GroupedMediaItemsTest {
     @Test

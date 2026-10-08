@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.lockscreen.impl.setup.biometric
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticator
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.FakeBiometricAuthenticator
@@ -15,9 +18,6 @@ import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.FakeBiometricAuth
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.storage.InMemoryLockScreenStore
 import tech.orbitweb.orbitx.features.lockscreen.impl.storage.LockScreenStore
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class SetupBiometricPresenterTest {
     @Test

@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.migration.impl.migrations
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.rageshake.test.logs.FakeLogFilesRemover
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.features.rageshake.test.logs.FakeLogFilesRemover
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import java.io.File
 
 class AppMigration07Test {

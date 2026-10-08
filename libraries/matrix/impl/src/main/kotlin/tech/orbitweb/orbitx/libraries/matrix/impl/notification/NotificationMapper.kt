@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.notification
 
+import org.matrix.rustcomponents.sdk.NotificationEvent
+import org.matrix.rustcomponents.sdk.NotificationItem
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
@@ -18,9 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.notification.NotificationConten
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.NotificationData
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.join.map
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import org.matrix.rustcomponents.sdk.NotificationEvent
-import org.matrix.rustcomponents.sdk.NotificationItem
-import org.matrix.rustcomponents.sdk.use
 
 class NotificationMapper(
     private val clock: SystemClock,

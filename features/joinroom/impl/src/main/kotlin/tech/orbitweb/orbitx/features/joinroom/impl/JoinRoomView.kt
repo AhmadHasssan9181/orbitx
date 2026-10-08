@@ -36,6 +36,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.invite.api.InviteData
@@ -79,7 +80,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.components.SpaceInfoRow
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.SpaceMembersView
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.InviteSender
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun JoinRoomView(

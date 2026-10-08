@@ -12,6 +12,9 @@ import android.service.notification.StatusBarNotification
 import androidx.core.app.NotificationManagerCompat
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import io.mockk.every
+import io.mockk.mockk
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_THREAD_ID
 import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationIdProvider
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import io.mockk.every
-import io.mockk.mockk
-import org.junit.Test
 
 class DefaultActiveNotificationsProviderTest : RobolectricTest() {
     private val notificationIdProvider = NotificationIdProvider

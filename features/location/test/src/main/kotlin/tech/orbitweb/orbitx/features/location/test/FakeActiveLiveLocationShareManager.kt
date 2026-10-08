@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.features.location.test
 
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import tech.orbitweb.orbitx.features.location.api.live.ActiveLiveLocationShareManager
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 import kotlin.time.Duration
 
 class FakeActiveLiveLocationShareManager(

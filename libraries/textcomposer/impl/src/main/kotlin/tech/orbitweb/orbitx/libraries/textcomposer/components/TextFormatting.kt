@@ -21,16 +21,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import io.element.android.wysiwyg.compose.RichTextEditorState
+import io.element.android.wysiwyg.view.models.InlineFormat
+import io.element.android.wysiwyg.view.models.LinkAction
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.textcomposer.R
 import tech.orbitweb.orbitx.libraries.textcomposer.TextComposerLinkDialog
 import tech.orbitweb.orbitx.libraries.textcomposer.model.aRichTextEditorState
-import io.element.android.wysiwyg.compose.RichTextEditorState
-import io.element.android.wysiwyg.view.models.InlineFormat
-import io.element.android.wysiwyg.view.models.LinkAction
-import kotlinx.coroutines.launch
 import uniffi.wysiwyg_composer.ActionState
 import uniffi.wysiwyg_composer.ComposerAction
 

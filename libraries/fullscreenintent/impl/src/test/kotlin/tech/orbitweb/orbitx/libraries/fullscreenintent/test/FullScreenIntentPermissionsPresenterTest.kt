@@ -14,6 +14,13 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import io.mockk.every
+import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.fullscreenintent.api.FullScreenIntentPermissionsEvents
 import tech.orbitweb.orbitx.libraries.fullscreenintent.impl.FullScreenIntentPermissionsPresenter
@@ -24,13 +31,6 @@ import tech.orbitweb.orbitx.services.toolbox.test.intent.FakeExternalIntentLaunc
 import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import io.mockk.every
-import io.mockk.mockk
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class FullScreenIntentPermissionsPresenterTest {

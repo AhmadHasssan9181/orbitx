@@ -9,8 +9,8 @@ package tech.orbitweb.orbitx.tests.testutils
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
 
 class MutablePresenter<State>(initialState: State) : Presenter<State> {
     private val stateFlow = MutableStateFlow(initialState)

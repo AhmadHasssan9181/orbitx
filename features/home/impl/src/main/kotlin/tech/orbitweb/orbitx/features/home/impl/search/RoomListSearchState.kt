@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.home.impl.search
 
 import androidx.compose.foundation.text.input.TextFieldState
-import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
 
 data class RoomListSearchState(
     val isSearchActive: Boolean,

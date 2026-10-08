@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice
 
-import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeDecodeException
 import kotlinx.coroutines.flow.StateFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeDecodeException
 
 interface LinkDesktopHandler {
     val linkDesktopStep: StateFlow<LinkDesktopStep>

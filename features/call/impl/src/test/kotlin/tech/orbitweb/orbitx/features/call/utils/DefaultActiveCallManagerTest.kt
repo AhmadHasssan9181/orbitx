@@ -12,6 +12,16 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.getSystemService
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import io.mockk.coVerify
+import io.mockk.mockk
+import io.mockk.verify
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceTimeBy
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.robolectric.Shadows.shadowOf
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.impl.notifications.RingingCallNotificationCreator
 import tech.orbitweb.orbitx.features.call.impl.notifications.aCallNotificationData
@@ -45,16 +55,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.plantTestTimber
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import io.mockk.coVerify
-import io.mockk.mockk
-import io.mockk.verify
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceTimeBy
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.robolectric.Shadows.shadowOf
 
 class DefaultActiveCallManagerTest : RobolectricTest() {
     private val notificationId = NotificationIdProvider.getForegroundServiceNotificationId(ForegroundServiceType.INCOMING_CALL)

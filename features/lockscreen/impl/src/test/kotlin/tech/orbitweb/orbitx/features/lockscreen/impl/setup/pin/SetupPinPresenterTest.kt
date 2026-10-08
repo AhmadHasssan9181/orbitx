@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.lockscreen.impl.setup.pin
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.LockScreenConfig
 import tech.orbitweb.orbitx.features.lockscreen.impl.fixtures.aLockScreenConfig
 import tech.orbitweb.orbitx.features.lockscreen.impl.fixtures.aPinCodeManager
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.tests.testutils.awaitLastSequentialItem
 import tech.orbitweb.orbitx.tests.testutils.consumeItemsUntilPredicate
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.CompletableDeferred
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class SetupPinPresenterTest {
     private val forbiddenPin = "1234"

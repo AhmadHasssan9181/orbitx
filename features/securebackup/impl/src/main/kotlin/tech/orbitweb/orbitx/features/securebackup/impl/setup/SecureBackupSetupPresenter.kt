@@ -21,15 +21,15 @@ import com.freeletics.flowredux.compose.rememberStateAndDispatch
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.securebackup.impl.loggerTagSetup
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.views.RecoveryKeyUserStory
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.views.RecoveryKeyViewState
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EnableRecoveryProgress
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AssistedInject

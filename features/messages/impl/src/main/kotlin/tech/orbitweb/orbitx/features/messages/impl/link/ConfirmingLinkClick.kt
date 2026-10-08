@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.link
 
-import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import io.element.android.wysiwyg.link.Link
+import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 
 data class ConfirmingLinkClick(
     val link: Link,

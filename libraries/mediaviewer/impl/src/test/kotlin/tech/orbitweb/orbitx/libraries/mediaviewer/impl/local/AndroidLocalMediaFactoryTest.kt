@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.libraries.mediaviewer.impl.local
 
 import android.graphics.Bitmap
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
 import tech.orbitweb.orbitx.libraries.androidutils.file.getMimeType
 import tech.orbitweb.orbitx.libraries.androidutils.filesize.FakeFileSizeFormatter
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
@@ -20,8 +22,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaInfo
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.anImageMediaInfo
 import tech.orbitweb.orbitx.libraries.mediaviewer.test.util.FileExtensionExtractorWithoutValidation
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
 import java.io.File
 import java.io.FileOutputStream
 

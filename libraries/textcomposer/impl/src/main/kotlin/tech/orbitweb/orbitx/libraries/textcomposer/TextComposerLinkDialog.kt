@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import io.element.android.wysiwyg.view.models.LinkAction
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.designsystem.components.dialogs.ListDialog
 import tech.orbitweb.orbitx.libraries.designsystem.components.list.TextFieldListItem
@@ -23,7 +24,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.ListItem
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import io.element.android.wysiwyg.view.models.LinkAction
 
 @Composable
 fun TextComposerLinkDialog(

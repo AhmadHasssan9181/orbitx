@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.permalink
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import org.matrix.rustcomponents.sdk.matrixToRoomAliasPermalink
+import org.matrix.rustcomponents.sdk.matrixToUserPermalink
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.MatrixPatterns
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkBuilder
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkBuilderError
-import org.matrix.rustcomponents.sdk.matrixToRoomAliasPermalink
-import org.matrix.rustcomponents.sdk.matrixToUserPermalink
 
 @ContributesBinding(AppScope::class)
 class DefaultPermalinkBuilder : PermalinkBuilder {

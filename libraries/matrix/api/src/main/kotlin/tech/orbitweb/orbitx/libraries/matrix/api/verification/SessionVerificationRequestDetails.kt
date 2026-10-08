@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.verification
 
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.DeviceId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.FlowId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class SessionVerificationRequestDetails(

@@ -11,11 +11,11 @@ import android.os.Parcelable
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.plugin.Plugin
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.architecture.FeatureEntryPoint
 import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import kotlinx.parcelize.Parcelize
 
 interface PreferencesEntryPoint : FeatureEntryPoint {
     sealed interface InitialTarget : Parcelable {

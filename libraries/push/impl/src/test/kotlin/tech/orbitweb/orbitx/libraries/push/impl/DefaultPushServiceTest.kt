@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.push.impl
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerifiedStatus
@@ -45,9 +48,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.observer.NoOpSessionOb
 import tech.orbitweb.orbitx.tests.testutils.lambda.any
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultPushServiceTest {
     @Test

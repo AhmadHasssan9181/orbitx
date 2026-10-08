@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.messages.impl.crypto.identity
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
@@ -15,7 +16,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.IdentityRoomMember
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.RoomMemberIdentityStateChange
-import kotlinx.collections.immutable.toImmutableList
 
 class IdentityChangeStateProvider : PreviewParameterProvider<IdentityChangeState> {
     override val values: Sequence<IdentityChangeState>

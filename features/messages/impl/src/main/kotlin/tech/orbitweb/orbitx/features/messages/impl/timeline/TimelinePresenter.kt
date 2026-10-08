@@ -22,6 +22,17 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.location.api.live.ActiveLiveLocationShareManager
 import tech.orbitweb.orbitx.features.messages.impl.MessagesNavigator
 import tech.orbitweb.orbitx.features.messages.impl.UserEventPermissions
@@ -52,6 +63,7 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.permissionsAsS
 import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.ReceiptType
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.EventOrTransactionId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TimelineItemEventOrigin
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction.DisplayFirstTimelineItems
@@ -60,17 +72,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransacti
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.api.finishLongRunningTransaction
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsUserData
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 const val FOCUS_ON_PINNED_EVENT_DEBOUNCE_DURATION_IN_MILLIS = 200L
@@ -201,7 +202,10 @@ class TimelinePresenter(
                 is TimelineEvent.RedactViewOnce -> sessionCoroutineScope.launch {
                     tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(event.eventId.value)
                     timelineController.invokeOnCurrentTimeline {
-                        redactEvent(tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.EventOrTransactionId.Event(event.eventId), "View-once destroyed")
+                        redactEvent(
+                            EventOrTransactionId.Event(event.eventId),
+                            "View-once destroyed",
+                        )
                     }
                 }
                 is TimelineEvent.FocusOnEvent -> sessionCoroutineScope.launch {

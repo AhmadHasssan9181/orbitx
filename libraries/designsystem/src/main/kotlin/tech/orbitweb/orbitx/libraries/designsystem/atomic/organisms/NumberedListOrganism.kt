@@ -14,8 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import tech.orbitweb.orbitx.libraries.designsystem.atomic.molecules.NumberedListMolecule
 import kotlinx.collections.immutable.ImmutableList
+import tech.orbitweb.orbitx.libraries.designsystem.atomic.molecules.NumberedListMolecule
 
 @Composable
 fun NumberedListOrganism(

@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.analytics
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import org.matrix.rustcomponents.sdk.enableSentryLogging
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsSdkManager
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsSdkSpan
-import org.matrix.rustcomponents.sdk.enableSentryLogging
 
 @ContributesBinding(AppScope::class)
 class RustAnalyticsSdkManager : AnalyticsSdkManager {

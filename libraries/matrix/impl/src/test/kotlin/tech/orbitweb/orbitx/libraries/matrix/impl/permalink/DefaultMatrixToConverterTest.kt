@@ -9,8 +9,8 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.permalink
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import org.junit.Test
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class DefaultMatrixToConverterTest : RobolectricTest() {
     @Test

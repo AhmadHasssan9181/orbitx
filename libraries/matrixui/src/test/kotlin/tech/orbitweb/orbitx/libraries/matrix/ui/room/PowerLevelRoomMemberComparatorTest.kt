@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.ui.room
 
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
@@ -14,7 +15,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_4
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_5
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomMember
-import org.junit.Test
 
 class PowerLevelRoomMemberComparatorTest {
     @Test

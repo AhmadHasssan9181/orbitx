@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.features.invite.impl
 
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.JoinedRoom
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.test.InMemorySeenInvitesStore
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
@@ -22,9 +25,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.any
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultAcceptInviteTest {
     private val roomId = A_ROOM_ID

@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.roomlist
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 
 class FakeRoomListService(
     private val subscribeToVisibleRoomsLambda: (List<RoomId>) -> Unit = {},

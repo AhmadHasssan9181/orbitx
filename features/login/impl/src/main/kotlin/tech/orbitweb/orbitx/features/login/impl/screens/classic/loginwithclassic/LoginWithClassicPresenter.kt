@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProviderDataSource
 import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnection
 import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnectionState
@@ -26,7 +27,6 @@ import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.core.uri.ensureProtocol
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class LoginWithClassicPresenter(

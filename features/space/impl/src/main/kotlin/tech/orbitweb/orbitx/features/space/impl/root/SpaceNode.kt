@@ -17,6 +17,7 @@ import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.plugin.Plugin
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteView
 import tech.orbitweb.orbitx.features.space.impl.di.SpaceFlowScope
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoomList
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @ContributesNode(SpaceFlowScope::class)

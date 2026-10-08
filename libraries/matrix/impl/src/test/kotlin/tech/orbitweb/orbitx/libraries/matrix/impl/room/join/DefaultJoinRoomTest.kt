@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.room.join
 
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.JoinedRoom
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultJoinRoomTest {
     @Test

@@ -14,6 +14,13 @@ import androidx.lifecycle.Lifecycle
 import app.cash.turbine.TurbineTestContext
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.Composer
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerEvent
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerState
 import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.aReplyMode
@@ -50,13 +57,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.any
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 import java.io.File
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds

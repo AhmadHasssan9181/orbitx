@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 import android.content.Context
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import org.unifiedpush.android.connector.UnifiedPush
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PusherSubscriber
-import org.unifiedpush.android.connector.UnifiedPush
 import timber.log.Timber
 
 interface UnregisterUnifiedPushUseCase {

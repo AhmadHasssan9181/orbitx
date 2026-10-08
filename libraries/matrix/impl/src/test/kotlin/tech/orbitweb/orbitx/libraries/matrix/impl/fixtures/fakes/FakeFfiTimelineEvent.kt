@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustTimelineEventContentMessageLike
-import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
-import tech.orbitweb.orbitx.services.toolbox.test.systemclock.A_FAKE_TIMESTAMP
 import org.matrix.rustcomponents.sdk.NoHandle
 import org.matrix.rustcomponents.sdk.TimelineEvent
 import org.matrix.rustcomponents.sdk.TimelineEventContent
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustTimelineEventContentMessageLike
+import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
+import tech.orbitweb.orbitx.services.toolbox.test.systemclock.A_FAKE_TIMESTAMP
 
 open class FakeFfiTimelineEvent(
     val timestamp: ULong = A_FAKE_TIMESTAMP.toULong(),

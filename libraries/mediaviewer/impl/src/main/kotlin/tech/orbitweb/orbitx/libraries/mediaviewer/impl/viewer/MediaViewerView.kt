@@ -65,6 +65,11 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.core.text.toSpannable
 import coil3.compose.AsyncImage
+import io.element.android.wysiwyg.compose.EditorStyledText
+import kotlinx.coroutines.delay
+import me.saket.telephoto.zoomable.OverzoomEffect
+import me.saket.telephoto.zoomable.ZoomSpec
+import me.saket.telephoto.zoomable.rememberZoomableState
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.viewfolder.api.TextFileViewer
@@ -99,11 +104,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.local.rememberLocalMediaV
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.util.bgCanvasWithTransparency
 import tech.orbitweb.orbitx.libraries.textcomposer.ElementRichTextEditorStyle
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import io.element.android.wysiwyg.compose.EditorStyledText
-import kotlinx.coroutines.delay
-import me.saket.telephoto.zoomable.OverzoomEffect
-import me.saket.telephoto.zoomable.ZoomSpec
-import me.saket.telephoto.zoomable.rememberZoomableState
 
 val topAppBarHeight = 112.dp
 

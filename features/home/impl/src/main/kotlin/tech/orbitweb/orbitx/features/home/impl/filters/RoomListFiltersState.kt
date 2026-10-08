@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.home.impl.filters
 
-import tech.orbitweb.orbitx.features.home.impl.filters.selection.FilterSelectionState
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.features.home.impl.filters.selection.FilterSelectionState
 
 data class RoomListFiltersState(
     val filterSelectionStates: ImmutableList<FilterSelectionState>,

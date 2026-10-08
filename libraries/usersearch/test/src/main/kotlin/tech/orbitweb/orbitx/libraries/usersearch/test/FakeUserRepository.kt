@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.usersearch.test
 
-import tech.orbitweb.orbitx.libraries.usersearch.api.UserRepository
-import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResultState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import tech.orbitweb.orbitx.libraries.usersearch.api.UserRepository
+import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResultState
 
 class FakeUserRepository : UserRepository {
     var providedQuery: String? = null

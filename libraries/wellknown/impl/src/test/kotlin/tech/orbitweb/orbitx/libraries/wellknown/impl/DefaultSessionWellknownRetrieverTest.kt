@@ -10,6 +10,11 @@
 package tech.orbitweb.orbitx.libraries.wellknown.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.wellknown.test.anElementWellKnown
 import tech.orbitweb.orbitx.libraries.androidutils.json.DefaultJsonProvider
 import tech.orbitweb.orbitx.libraries.androidutils.json.JsonProvider
@@ -27,11 +32,6 @@ import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultSessionWellknownRetrieverTest {
     @Test

@@ -7,7 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
 import org.matrix.rustcomponents.sdk.RoomListEntriesDynamicFilterKind
 import org.matrix.rustcomponents.sdk.RoomListEntriesDynamicFilterKind.All
 import org.matrix.rustcomponents.sdk.RoomListEntriesDynamicFilterKind.Any
@@ -23,6 +22,7 @@ import org.matrix.rustcomponents.sdk.RoomListEntriesDynamicFilterKind.Normalized
 import org.matrix.rustcomponents.sdk.RoomListEntriesDynamicFilterKind.Space
 import org.matrix.rustcomponents.sdk.RoomListEntriesDynamicFilterKind.Unread
 import org.matrix.rustcomponents.sdk.RoomListFilterCategory
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
 
 /**
  * Mapper for converting RoomListFilter to Rust SDK filter kinds.

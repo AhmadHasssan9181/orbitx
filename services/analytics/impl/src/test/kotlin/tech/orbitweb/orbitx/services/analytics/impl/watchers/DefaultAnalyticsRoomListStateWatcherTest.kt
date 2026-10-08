@@ -8,6 +8,11 @@
 package tech.orbitweb.orbitx.services.analytics.impl.watchers
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.networkmonitor.test.FakeNetworkMonitor
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
 import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeRoomListService
@@ -15,11 +20,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransacti
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppForegroundStateService
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DefaultAnalyticsRoomListStateWatcherTest {

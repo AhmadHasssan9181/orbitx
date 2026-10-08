@@ -7,6 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
+import kotlinx.coroutines.withTimeout
+import org.matrix.rustcomponents.sdk.MsgLikeKind
+import org.matrix.rustcomponents.sdk.RoomListService
+import org.matrix.rustcomponents.sdk.Timeline
+import org.matrix.rustcomponents.sdk.TimelineItemContent
+import org.matrix.rustcomponents.sdk.contentWithoutRelationFromMessage
 import tech.orbitweb.orbitx.libraries.core.coroutine.parallelMap
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
@@ -14,12 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.ForwardEventException
 import tech.orbitweb.orbitx.libraries.matrix.impl.roomlist.roomOrNull
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.runWithTimelineListenerRegistered
-import kotlinx.coroutines.withTimeout
-import org.matrix.rustcomponents.sdk.MsgLikeKind
-import org.matrix.rustcomponents.sdk.RoomListService
-import org.matrix.rustcomponents.sdk.Timeline
-import org.matrix.rustcomponents.sdk.TimelineItemContent
-import org.matrix.rustcomponents.sdk.contentWithoutRelationFromMessage
 import kotlin.time.Duration.Companion.milliseconds
 
 /**

@@ -7,16 +7,16 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.spaces
 
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipObserver
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.LeaveSpaceHandle
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.LeaveSpaceRoom
-import kotlinx.coroutines.CompletableDeferred
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.launch
 import timber.log.Timber
 import org.matrix.rustcomponents.sdk.LeaveSpaceHandle as RustLeaveSpaceHandle
 

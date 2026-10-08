@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
-import kotlinx.collections.immutable.toImmutableList
 
 @Inject
 class MediaItemsPostProcessor {

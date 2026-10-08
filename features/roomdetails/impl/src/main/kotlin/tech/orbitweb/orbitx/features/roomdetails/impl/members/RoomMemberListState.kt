@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.roomdetails.impl.members
 
 import androidx.compose.foundation.text.input.TextFieldState
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 data class RoomMemberListState(
     // Only used to know if we can show the banned section

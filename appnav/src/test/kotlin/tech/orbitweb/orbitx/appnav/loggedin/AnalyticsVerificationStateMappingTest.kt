@@ -10,12 +10,12 @@ package tech.orbitweb.orbitx.appnav.loggedin
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.CryptoSessionStateChange
 import im.vector.app.features.analytics.plan.UserProperties
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.RecoveryState
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerifiedStatus
-import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.RecoveryState
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerifiedStatus
+import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 
 class AnalyticsVerificationStateMappingTest {
     @get:Rule

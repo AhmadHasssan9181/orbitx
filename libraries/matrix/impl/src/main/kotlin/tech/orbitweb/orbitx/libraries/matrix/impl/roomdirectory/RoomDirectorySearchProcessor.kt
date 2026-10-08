@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDescription
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.matrix.rustcomponents.sdk.RoomDirectorySearchEntryUpdate
+import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDescription
 import timber.log.Timber
 import kotlin.coroutines.CoroutineContext
 

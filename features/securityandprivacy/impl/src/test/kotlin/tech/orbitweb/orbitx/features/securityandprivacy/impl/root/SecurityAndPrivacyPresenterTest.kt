@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.securityandprivacy.impl.root
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.securityandprivacy.impl.FakeSecurityAndPrivacyNavigator
 import tech.orbitweb.orbitx.features.securityandprivacy.impl.SecurityAndPrivacyNavigator
 import tech.orbitweb.orbitx.features.securityandprivacy.impl.manageauthorizedspaces.SpaceSelectionStateHolder
@@ -38,9 +41,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 @Suppress("LargeClass")
 class SecurityAndPrivacyPresenterTest {

@@ -37,14 +37,14 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.architecture.coverage.ExcludeFromCoverage
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreviewDark
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreviewLight
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewGroup
 import tech.orbitweb.orbitx.libraries.designsystem.preview.sheetStateForPreview
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 /**
  * For parameter [scrollable], set it to true if the content of the sheet does not already contain a scrollable component, such as a LazyColumn,

@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.announcement.impl.store
 
-import tech.orbitweb.orbitx.features.announcement.api.Announcement
 import kotlinx.coroutines.flow.Flow
+import tech.orbitweb.orbitx.features.announcement.api.Announcement
 
 interface AnnouncementStore {
     suspend fun setAnnouncementStatus(

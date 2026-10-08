@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.roomcall.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.call.api.CurrentCall
 import tech.orbitweb.orbitx.features.call.api.CurrentCallService
 import tech.orbitweb.orbitx.features.call.test.FakeCurrentCallService
@@ -23,9 +26,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.test.room.powerlevels.FakeRoomPermissions
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RoomCallStatePresenterTest {
     @Test

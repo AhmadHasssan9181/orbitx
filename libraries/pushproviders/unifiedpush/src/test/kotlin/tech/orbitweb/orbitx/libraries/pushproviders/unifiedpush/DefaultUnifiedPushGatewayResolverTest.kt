@@ -8,16 +8,16 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
-import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.network.DiscoveryResponse
-import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.network.DiscoveryUnifiedPush
-import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runTest
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Test
 import retrofit2.HttpException
 import retrofit2.Response
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
+import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.network.DiscoveryResponse
+import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.network.DiscoveryUnifiedPush
+import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import java.net.HttpURLConnection
 
 internal val matrixDiscoveryResponse = {

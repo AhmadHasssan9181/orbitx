@@ -7,6 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.notification
 
+import kotlinx.coroutines.withContext
+import org.matrix.rustcomponents.sdk.BatchNotificationResult
+import org.matrix.rustcomponents.sdk.NotificationClient
+import org.matrix.rustcomponents.sdk.NotificationItemsRequest
+import org.matrix.rustcomponents.sdk.NotificationStatus
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
@@ -16,12 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.exception.NotificationResolverE
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.GetNotificationDataResult
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.NotificationService
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.withContext
-import org.matrix.rustcomponents.sdk.BatchNotificationResult
-import org.matrix.rustcomponents.sdk.NotificationClient
-import org.matrix.rustcomponents.sdk.NotificationItemsRequest
-import org.matrix.rustcomponents.sdk.NotificationStatus
-import org.matrix.rustcomponents.sdk.use
 import timber.log.Timber
 
 class RustNotificationService(

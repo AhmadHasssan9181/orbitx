@@ -26,6 +26,11 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import com.bumble.appyx.navmodel.backstack.operation.replace
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.enterprise.api.SessionEnterpriseService
@@ -52,11 +57,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.ErrorType
 import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopStep
 import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileStep
 import tech.orbitweb.orbitx.libraries.matrix.api.logs.LoggerTags
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.parcelize.Parcelize
 import timber.log.Timber
 
 private val tag = LoggerTag("LinkNewDeviceFlowNode", LoggerTags.linkNewDevice)

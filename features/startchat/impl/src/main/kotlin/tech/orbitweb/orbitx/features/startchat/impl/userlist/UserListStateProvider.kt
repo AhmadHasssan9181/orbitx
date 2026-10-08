@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.features.startchat.impl.userlist
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.recent.RecentDirectRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResult
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 open class UserListStateProvider : PreviewParameterProvider<UserListState> {
     override val values: Sequence<UserListState>

@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.features.home.impl.roomlist
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableSet
 import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
 import tech.orbitweb.orbitx.libraries.fullscreenintent.api.FullScreenIntentPermissionsState
 import tech.orbitweb.orbitx.libraries.fullscreenintent.api.aFullScreenIntentPermissionsState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.push.api.battery.BatteryOptimizationState
 import tech.orbitweb.orbitx.libraries.push.api.battery.aBatteryOptimizationState
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableSet
 
 open class RoomListContentStateProvider : PreviewParameterProvider<RoomListContentState> {
     override val values: Sequence<RoomListContentState>

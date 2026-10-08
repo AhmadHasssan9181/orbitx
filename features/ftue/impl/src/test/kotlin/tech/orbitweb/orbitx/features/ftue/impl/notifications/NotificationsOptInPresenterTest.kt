@@ -12,13 +12,6 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.permissions.api.PermissionStateProvider
-import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsPresenter
-import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionStateProvider
-import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenter
-import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenterFactory
-import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
-import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -28,6 +21,13 @@ import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.permissions.api.PermissionStateProvider
+import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsPresenter
+import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionStateProvider
+import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenter
+import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenterFactory
+import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
+import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 
 class NotificationsOptInPresenterTest {
     @get:Rule

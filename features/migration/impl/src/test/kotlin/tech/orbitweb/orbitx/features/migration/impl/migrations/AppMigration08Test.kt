@@ -8,14 +8,14 @@
 package tech.orbitweb.orbitx.features.migration.impl.migrations
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.announcement.api.Announcement
 import tech.orbitweb.orbitx.features.rageshake.test.logs.FakeAnnouncementService
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class AppMigration08Test {
     @Test

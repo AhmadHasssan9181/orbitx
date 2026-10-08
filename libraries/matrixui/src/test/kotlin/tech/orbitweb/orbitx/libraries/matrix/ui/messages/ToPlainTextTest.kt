@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.libraries.matrix.ui.messages
 
 import com.google.common.truth.Truth.assertThat
+import org.jsoup.Jsoup
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.FormattedBody
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MessageFormat
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.TextMessageType
 import tech.orbitweb.orbitx.libraries.matrix.test.permalink.FakePermalinkParser
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.jsoup.Jsoup
-import org.junit.Test
 
 class ToPlainTextTest : RobolectricTest() {
     @Test

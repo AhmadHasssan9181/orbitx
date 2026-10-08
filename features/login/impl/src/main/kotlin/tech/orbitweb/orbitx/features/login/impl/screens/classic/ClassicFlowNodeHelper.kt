@@ -8,10 +8,6 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.classic
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnection
-import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnectionState
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.toUserListFlow
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +16,10 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
+import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnection
+import tech.orbitweb.orbitx.features.login.impl.classic.ElementClassicConnectionState
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.toUserListFlow
 
 @Inject
 class ClassicFlowNodeHelper(

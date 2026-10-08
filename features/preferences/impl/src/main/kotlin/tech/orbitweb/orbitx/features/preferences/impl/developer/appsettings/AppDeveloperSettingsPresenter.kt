@@ -18,6 +18,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.preferences.impl.developer.tracing.toLogLevel
 import tech.orbitweb.orbitx.features.preferences.impl.developer.tracing.toLogLevelItem
 import tech.orbitweb.orbitx.features.preferences.impl.model.EnabledFeature
@@ -28,13 +35,6 @@ import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.ui.model.FeatureUiModel
 import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 import java.net.URL
 
 @Inject

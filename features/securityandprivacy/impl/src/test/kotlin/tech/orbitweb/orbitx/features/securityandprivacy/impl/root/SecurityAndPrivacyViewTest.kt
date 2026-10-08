@@ -15,6 +15,9 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import kotlinx.collections.immutable.persistentListOf
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.securityandprivacy.impl.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -25,9 +28,6 @@ import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.collections.immutable.persistentListOf
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class SecurityAndPrivacyViewTest : RobolectricTest() {
     @Test

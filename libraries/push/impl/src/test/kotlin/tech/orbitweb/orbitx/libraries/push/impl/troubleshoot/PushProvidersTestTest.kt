@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.push.impl.troubleshoot
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.pushproviders.test.FakePushProvider
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.runAndTestState
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class PushProvidersTestTest {
     @Test

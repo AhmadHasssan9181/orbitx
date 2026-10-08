@@ -19,6 +19,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.lifecycleScope
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.colors.SemanticColorsLightDark
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenLockState
@@ -31,7 +32,6 @@ import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.designsystem.theme.ElementThemeApp
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
-import kotlinx.coroutines.launch
 
 class PinUnlockActivity : AppCompatActivity() {
     internal companion object {

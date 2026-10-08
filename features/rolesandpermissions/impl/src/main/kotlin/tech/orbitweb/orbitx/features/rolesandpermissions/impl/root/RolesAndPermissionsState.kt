@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.rolesandpermissions.impl.root
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.rolesandpermissions.impl.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import kotlinx.collections.immutable.ImmutableList
 
 data class RolesAndPermissionsState(
     val roomSupportsOwnerRole: Boolean,

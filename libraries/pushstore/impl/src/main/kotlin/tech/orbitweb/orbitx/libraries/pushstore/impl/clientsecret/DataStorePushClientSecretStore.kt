@@ -11,10 +11,10 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 import tech.orbitweb.orbitx.libraries.pushstore.api.clientsecret.PushClientSecretStore
-import kotlinx.coroutines.flow.first
 
 @ContributesBinding(AppScope::class)
 class DataStorePushClientSecretStore(

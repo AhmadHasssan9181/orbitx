@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth
 
-import tech.orbitweb.orbitx.libraries.matrix.api.auth.AuthenticationException
 import org.matrix.rustcomponents.sdk.ClientBuildException
 import org.matrix.rustcomponents.sdk.OAuthException
+import tech.orbitweb.orbitx.libraries.matrix.api.auth.AuthenticationException
 
 fun Throwable.mapAuthenticationException(): AuthenticationException {
     return when (this) {

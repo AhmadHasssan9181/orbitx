@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.home.impl.filters
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import tech.orbitweb.orbitx.features.home.impl.filters.selection.FilterSelectionState
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.features.home.impl.filters.selection.FilterSelectionState
 
 class RoomListFiltersStateProvider : PreviewParameterProvider<RoomListFiltersState> {
     override val values: Sequence<RoomListFiltersState>

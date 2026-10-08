@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications
 
 import android.content.Intent
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClientProvider
@@ -28,9 +31,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.push.OnNotifiableEventReceived
 import tech.orbitweb.orbitx.services.appnavstate.api.ActiveRoomsHolder
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.UUID
 

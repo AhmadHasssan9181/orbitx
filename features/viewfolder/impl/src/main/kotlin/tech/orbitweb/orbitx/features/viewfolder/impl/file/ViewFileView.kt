@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.designsystem.components.async.AsyncFailure
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.IconButton
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Scaffold
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.TopAppBar
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.toImmutableList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

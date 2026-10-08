@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.widget
 
-import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetSettings
 import org.matrix.rustcomponents.sdk.ClientProperties
 import org.matrix.rustcomponents.sdk.Room
 import org.matrix.rustcomponents.sdk.WidgetSettings
 import org.matrix.rustcomponents.sdk.generateWebviewUrl
+import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetSettings
 
 fun MatrixWidgetSettings.toRustWidgetSettings() = WidgetSettings(
     widgetId = this.id,

@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.qrcode.intro
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenter
 import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenterFactory
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class QrCodeIntroPresenterTest {
     @Test

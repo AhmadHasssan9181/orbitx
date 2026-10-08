@@ -9,11 +9,11 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.libraries.matrix.api.room.StateEventType
-import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import org.matrix.rustcomponents.sdk.FilterTimelineEventCondition
 import org.matrix.rustcomponents.sdk.FilterTimelineEventType
 import org.matrix.rustcomponents.sdk.TimelineEventFilter
+import tech.orbitweb.orbitx.libraries.matrix.api.room.StateEventType
+import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import uniffi.matrix_sdk_ui.MembershipChangeFilter
 
 interface TimelineEventFilterFactory {

@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.lockscreen.impl.settings
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.LockScreenConfig
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticator
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
@@ -20,9 +23,6 @@ import tech.orbitweb.orbitx.features.lockscreen.impl.storage.LockScreenStore
 import tech.orbitweb.orbitx.tests.testutils.awaitLastSequentialItem
 import tech.orbitweb.orbitx.tests.testutils.consumeItemsUntilPredicate
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class LockScreenSettingsPresenterTest {
     @Test

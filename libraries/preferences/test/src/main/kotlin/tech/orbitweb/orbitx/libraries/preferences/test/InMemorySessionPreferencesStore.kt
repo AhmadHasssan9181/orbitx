@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.preferences.test
 
-import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
-import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
+import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 
 class InMemorySessionPreferencesStore(
     isSharePresenceEnabled: Boolean = true,

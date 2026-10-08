@@ -16,6 +16,7 @@ import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.plugin.Plugin
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.rolesandpermissions.api.ChangeRoomMemberRolesListType
 import tech.orbitweb.orbitx.libraries.architecture.NodeInputs
@@ -24,7 +25,6 @@ import tech.orbitweb.orbitx.libraries.architecture.inputs
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import kotlinx.coroutines.flow.first
 
 @ContributesNode(RoomScope::class)
 @AssistedInject

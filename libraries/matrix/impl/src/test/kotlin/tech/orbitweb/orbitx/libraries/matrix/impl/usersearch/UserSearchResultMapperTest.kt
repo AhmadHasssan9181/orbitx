@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.usersearch
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixSearchUserResults
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustSearchUsersResults
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustUserProfile
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
 
 class UserSearchResultMapperTest {
     @Test

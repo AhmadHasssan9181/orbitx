@@ -9,11 +9,11 @@
 
 package tech.orbitweb.orbitx.tests.testutils
 
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 
 /**
  * Create a [CoroutineDispatchers] instance for testing.

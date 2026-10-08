@@ -10,12 +10,12 @@ package tech.orbitweb.orbitx.libraries.featureflag.ui
 import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.components.preferences.PreferenceCheckbox
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.featureflag.ui.model.FeatureUiModel
 import tech.orbitweb.orbitx.libraries.featureflag.ui.model.aFeatureUiModelList
-import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun FeatureListView(

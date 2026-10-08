@@ -7,6 +7,8 @@
 
 package tech.orbitweb.orbitx.features.migration.impl.migrations
 
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
@@ -14,8 +16,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClientProvider
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class AppMigration09Test {
     @Test

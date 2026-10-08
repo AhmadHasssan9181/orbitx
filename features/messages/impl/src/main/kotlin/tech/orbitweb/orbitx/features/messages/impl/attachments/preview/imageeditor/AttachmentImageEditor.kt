@@ -15,6 +15,7 @@ import android.net.Uri
 import androidx.exifinterface.media.ExifInterface
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.resolvedImageMimeType
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.rotateToExifMetadataOrientation
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.writeBitmap
@@ -26,7 +27,6 @@ import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes.isMimeTypeAnimated
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes.isMimeTypeImage
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
-import kotlinx.coroutines.withContext
 import java.io.File
 import kotlin.math.roundToInt
 
@@ -224,7 +224,7 @@ private fun Bitmap.applyEdits(edits: AttachmentImageEdits): Bitmap {
     for (stroke in edits.drawStrokes) {
         if (stroke.points.size < 2) continue
         strokePaint.color = stroke.colorHex.toInt()
-        val strokeWidthPx = (stroke.strokeWidth / 360f) * bmpWidth
+        val strokeWidthPx = stroke.strokeWidth / 360f * bmpWidth
         strokePaint.strokeWidth = strokeWidthPx.coerceAtLeast(3f)
 
         val path = android.graphics.Path()
@@ -268,22 +268,70 @@ private fun Bitmap.applyFilter(filter: ImageFilter): Bitmap {
         ImageFilter.Mono -> cm.setSaturation(0f)
         ImageFilter.Vivid -> cm.setSaturation(1.6f)
         ImageFilter.Warm -> cm.set(floatArrayOf(
-            1.15f, 0f, 0f, 0f, 15f,
-            0f, 1.05f, 0f, 0f, 5f,
-            0f, 0f, 0.85f, 0f, -10f,
-            0f, 0f, 0f, 1f, 0f
+            1.15f,
+            0f,
+            0f,
+            0f,
+            15f,
+            0f,
+            1.05f,
+            0f,
+            0f,
+            5f,
+            0f,
+            0f,
+            0.85f,
+            0f,
+            -10f,
+            0f,
+            0f,
+            0f,
+            1f,
+            0f
         ))
         ImageFilter.Cool -> cm.set(floatArrayOf(
-            0.85f, 0f, 0f, 0f, -10f,
-            0f, 1.0f, 0f, 0f, 0f,
-            0f, 0f, 1.2f, 0f, 15f,
-            0f, 0f, 0f, 1f, 0f
+            0.85f,
+            0f,
+            0f,
+            0f,
+            -10f,
+            0f,
+            1.0f,
+            0f,
+            0f,
+            0f,
+            0f,
+            0f,
+            1.2f,
+            0f,
+            15f,
+            0f,
+            0f,
+            0f,
+            1f,
+            0f
         ))
         ImageFilter.Vintage -> cm.set(floatArrayOf(
-            0.9f, 0.1f, 0.1f, 0f, 25f,
-            0.1f, 0.8f, 0.1f, 0f, 15f,
-            0.1f, 0.1f, 0.6f, 0f, -10f,
-            0f, 0f, 0f, 1f, 0f
+            0.9f,
+            0.1f,
+            0.1f,
+            0f,
+            25f,
+            0.1f,
+            0.8f,
+            0.1f,
+            0f,
+            15f,
+            0.1f,
+            0.1f,
+            0.6f,
+            0f,
+            -10f,
+            0f,
+            0f,
+            0f,
+            1f,
+            0f
         ))
     }
     val filtered = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)

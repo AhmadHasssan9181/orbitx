@@ -36,6 +36,8 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.Avatar
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
@@ -58,8 +60,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 import tech.orbitweb.orbitx.libraries.roomselect.api.RoomSelectMode
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 @Suppress("MultipleEmitters") // False positive
 @OptIn(ExperimentalMaterial3Api::class)

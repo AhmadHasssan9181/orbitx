@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.spaces
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import java.util.Optional
 
 interface SpaceRoomList {

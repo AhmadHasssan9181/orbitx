@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.appnav.room
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
@@ -19,8 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeDynamicRoomList
 import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeRoomListService
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.LoadingRoomState
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.LoadingRoomStateFlowFactory
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class LoadingBaseRoomStateFlowFactoryTest {
     @Test

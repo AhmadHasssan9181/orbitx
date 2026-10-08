@@ -11,12 +11,6 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.linknewdevice
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.ErrorType
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileStep
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiCheckCodeSender
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiGrantLoginWithQrCodeHandler
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiQrCodeData
-import tech.orbitweb.orbitx.libraries.matrix.test.QR_CODE_DATA_RECIPROCATE
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
@@ -27,6 +21,12 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.GrantGeneratedQrLoginProgress
 import org.matrix.rustcomponents.sdk.HumanQrGrantLoginException
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.ErrorType
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileStep
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiCheckCodeSender
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiGrantLoginWithQrCodeHandler
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiQrCodeData
+import tech.orbitweb.orbitx.libraries.matrix.test.QR_CODE_DATA_RECIPROCATE
 
 class RustLinkMobileHandlerTest {
     @Test

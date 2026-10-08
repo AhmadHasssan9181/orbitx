@@ -20,6 +20,12 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.enterprise.api.SessionEnterpriseService
 import tech.orbitweb.orbitx.features.startchat.api.StartDMAction
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileEvents
@@ -36,12 +42,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.canCall
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.use
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class UserProfilePresenter(

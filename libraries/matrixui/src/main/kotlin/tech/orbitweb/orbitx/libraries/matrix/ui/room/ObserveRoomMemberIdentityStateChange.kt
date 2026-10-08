@@ -7,14 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.ui.room
 
-import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
-import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
-import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
-import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,6 +16,14 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
+import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
+import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
+import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
+import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 
 @OptIn(ExperimentalCoroutinesApi::class)
 fun JoinedRoom.roomMemberIdentityStateChange(waitForEncryption: Boolean): Flow<ImmutableList<RoomMemberIdentityStateChange>> {

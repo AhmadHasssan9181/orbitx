@@ -12,10 +12,10 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.floatPreferencesKey
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.libraries.core.bool.orFalse
-import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.libraries.core.bool.orFalse
+import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 
 private val enabledKey = booleanPreferencesKey("enabled")
 private val sensitivityKey = floatPreferencesKey("sensitivity")

@@ -12,10 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.libraries.di.RoomScope
 import org.maplibre.compose.location.DesiredAccuracy
 import org.maplibre.compose.location.rememberNullLocationProvider
 import org.maplibre.spatialk.units.extensions.meters
+import tech.orbitweb.orbitx.libraries.di.RoomScope
 import kotlin.time.Duration.Companion.seconds
 
 @ContributesBinding(RoomScope::class)

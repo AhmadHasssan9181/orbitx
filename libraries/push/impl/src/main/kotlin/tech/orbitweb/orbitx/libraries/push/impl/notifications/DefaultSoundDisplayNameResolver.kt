@@ -12,11 +12,11 @@ import android.media.RingtoneManager
 import androidx.core.net.toUri
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.push.api.notifications.SoundDisplayNameResolver
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 @ContributesBinding(AppScope::class)
 class DefaultSoundDisplayNameResolver(

@@ -26,6 +26,10 @@ import com.bumble.appyx.navmodel.backstack.operation.singleTop
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.login.api.LoginEntryPoint
@@ -52,10 +56,6 @@ import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.OAuthDetails
 import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
 import tech.orbitweb.orbitx.libraries.oauth.api.OAuthActionFlow
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(AppScope::class)
 @AssistedInject

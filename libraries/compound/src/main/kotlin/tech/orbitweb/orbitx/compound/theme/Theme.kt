@@ -33,7 +33,14 @@ private fun Theme.coerceBlackTheme(allowBlackTheme: Boolean): Theme {
 fun Theme.isDark(): Boolean {
     return when (this) {
         Theme.System -> isSystemInDarkTheme()
-        Theme.Dark, Theme.Black, Theme.Ocean, Theme.Forest, Theme.Sunset, Theme.Cyberpunk, Theme.Graphite, Theme.Slate -> true
+        Theme.Dark,
+        Theme.Black,
+        Theme.Ocean,
+        Theme.Forest,
+        Theme.Sunset,
+        Theme.Cyberpunk,
+        Theme.Graphite,
+        Theme.Slate -> true
         Theme.Light -> false
     }
 }
@@ -41,6 +48,10 @@ fun Theme.isDark(): Boolean {
 fun Flow<String?>.mapToTheme(allowBlackTheme: Boolean): Flow<Theme> = map {
     when (it) {
         null -> Theme.System
-        else -> runCatching { Theme.valueOf(it) }.getOrDefault(Theme.System)
+        else -> try {
+            Theme.valueOf(it)
+        } catch (_: Exception) {
+            Theme.System
+        }
     }.coerceBlackTheme(allowBlackTheme)
 }

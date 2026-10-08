@@ -24,6 +24,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.molecules.ButtonColumnMolecule
@@ -42,7 +43,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.components.SpaceHeaderView
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.SpaceRoomItemView
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 fun HomeSpacesView(

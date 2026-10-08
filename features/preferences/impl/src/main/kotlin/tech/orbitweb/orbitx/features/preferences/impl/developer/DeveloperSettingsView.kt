@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import io.mhssn.colorpicker.ColorPickerDialog
+import io.mhssn.colorpicker.ColorPickerType
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.preferences.impl.R
 import tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings.AppDeveloperSettingsView
@@ -31,8 +33,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.CircularProg
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.ListItem
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import io.mhssn.colorpicker.ColorPickerDialog
-import io.mhssn.colorpicker.ColorPickerType
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable

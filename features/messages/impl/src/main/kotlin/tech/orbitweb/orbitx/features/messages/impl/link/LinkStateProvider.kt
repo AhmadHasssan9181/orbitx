@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.link
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import io.element.android.wysiwyg.link.Link
+import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 
 open class LinkStateProvider : PreviewParameterProvider<LinkState> {
     override val values: Sequence<LinkState>

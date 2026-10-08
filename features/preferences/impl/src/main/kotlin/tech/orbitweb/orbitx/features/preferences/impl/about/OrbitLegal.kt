@@ -8,28 +8,30 @@
 package tech.orbitweb.orbitx.features.preferences.impl.about
 
 import androidx.annotation.StringRes
-import tech.orbitweb.orbitx.features.preferences.impl.BuildConfig
-import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
+import tech.orbitweb.orbitx.features.preferences.impl.BuildConfig
+import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 
 private const val COPYRIGHT_URL = BuildConfig.URL_COPYRIGHT
 private const val USE_POLICY_URL = BuildConfig.URL_ACCEPTABLE_USE
 private const val PRIVACY_URL = BuildConfig.URL_PRIVACY
 
-sealed class ElementLegal(
+sealed class OrbitLegal(
     @StringRes val titleRes: Int,
     val url: String,
 ) {
-    data object Copyright : ElementLegal(CommonStrings.common_copyright, COPYRIGHT_URL)
-    data object AcceptableUsePolicy : ElementLegal(CommonStrings.common_acceptable_use_policy, USE_POLICY_URL)
-    data object PrivacyPolicy : ElementLegal(CommonStrings.common_privacy_policy, PRIVACY_URL)
+    data object Copyright : OrbitLegal(CommonStrings.common_copyright, COPYRIGHT_URL)
+    data object AcceptableUsePolicy : OrbitLegal(CommonStrings.common_acceptable_use_policy, USE_POLICY_URL)
+    data object PrivacyPolicy : OrbitLegal(CommonStrings.common_privacy_policy, PRIVACY_URL)
 }
 
-fun getAllLegals(): ImmutableList<ElementLegal> {
+typealias ElementLegal = OrbitLegal
+
+fun getAllLegals(): ImmutableList<OrbitLegal> {
     return persistentListOf(
-        ElementLegal.Copyright,
-        ElementLegal.AcceptableUsePolicy,
-        ElementLegal.PrivacyPolicy,
+        OrbitLegal.Copyright,
+        OrbitLegal.AcceptableUsePolicy,
+        OrbitLegal.PrivacyPolicy,
     )
 }

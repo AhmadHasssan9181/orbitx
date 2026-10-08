@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.blockedusers
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class BlockedUsersState(
     val blockedUsers: ImmutableList<MatrixUser>,

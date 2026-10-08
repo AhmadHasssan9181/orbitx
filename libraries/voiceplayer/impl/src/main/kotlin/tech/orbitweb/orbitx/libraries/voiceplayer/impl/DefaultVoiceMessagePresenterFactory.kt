@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.voiceplayer.impl
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessagePresenterFactory
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageState
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.coroutines.CoroutineScope
 import kotlin.time.Duration
 
 @ContributesBinding(RoomScope::class)

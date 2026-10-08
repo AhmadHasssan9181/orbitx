@@ -10,15 +10,15 @@ package tech.orbitweb.orbitx.appnav.root
 import com.bumble.appyx.core.state.MutableSavedStateMap
 import com.bumble.appyx.core.state.SavedStateMap
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.onEach
 import tech.orbitweb.orbitx.appnav.di.MatrixSessionCache
 import tech.orbitweb.orbitx.features.preferences.api.CacheService
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.ImageLoaderHolder
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStoreFactory
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.onEach
 
 private const val SAVE_INSTANCE_KEY = "tech.orbitweb.orbitx.RootNavStateFlowFactory.SAVE_INSTANCE_KEY"
 

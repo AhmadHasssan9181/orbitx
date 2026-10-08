@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.login.impl.screens.changeaccountprovider
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
 import tech.orbitweb.orbitx.features.login.impl.changeserver.ChangeServerState
-import kotlinx.collections.immutable.ImmutableList
 
 data class ChangeAccountProviderState(
     val accountProviders: ImmutableList<AccountProvider>,

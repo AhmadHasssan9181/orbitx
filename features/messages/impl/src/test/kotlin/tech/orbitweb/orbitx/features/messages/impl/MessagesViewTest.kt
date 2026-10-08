@@ -31,6 +31,10 @@ import androidx.compose.ui.text.AnnotatedString
 import io.element.android.emojibasebindings.Emoji
 import io.element.android.emojibasebindings.EmojibaseCategory
 import io.element.android.emojibasebindings.EmojibaseStore
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentMapOf
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListEvent
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListState
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.anActionListState
@@ -79,10 +83,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentMapOf
-import org.junit.Test
-import org.robolectric.annotation.Config
 import kotlin.time.Duration.Companion.milliseconds
 
 class MessagesViewTest : RobolectricTest() {

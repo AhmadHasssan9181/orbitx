@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth.qrlogin
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiQrCodeData
 import tech.orbitweb.orbitx.libraries.matrix.test.A_HOMESERVER_URL
-import org.junit.Test
 
 class SdkQrCodeLoginDataTest {
     @Test

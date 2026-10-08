@@ -21,6 +21,7 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkMonitor
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
@@ -32,7 +33,6 @@ import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestWrapper
 import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerWorkerType
 import tech.orbitweb.orbitx.libraries.workmanager.api.workManagerTag
 import tech.orbitweb.orbitx.services.toolbox.api.sdk.BuildVersionSdkIntProvider
-import kotlinx.coroutines.flow.first
 import timber.log.Timber
 
 interface SyncPendingNotificationsRequestBuilder : WorkManagerRequestBuilder {

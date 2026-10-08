@@ -25,8 +25,8 @@ import androidx.compose.ui.test.isDialog
 import androidx.compose.ui.test.junit4.AndroidComposeTestRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import org.junit.rules.TestRule
+import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 
 val trueMatcher = SemanticsMatcher("true matcher") { true }
 

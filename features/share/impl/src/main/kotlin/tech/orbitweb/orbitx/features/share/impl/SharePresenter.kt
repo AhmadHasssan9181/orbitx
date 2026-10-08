@@ -13,6 +13,8 @@ import androidx.compose.runtime.mutableStateOf
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.share.api.OnSharedData
 import tech.orbitweb.orbitx.features.share.api.ShareIntentData
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -26,8 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfigProvider
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaSenderRoomFactory
 import tech.orbitweb.orbitx.services.appnavstate.api.ActiveRoomsHolder
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import kotlin.coroutines.cancellation.CancellationException
 
 @AssistedInject

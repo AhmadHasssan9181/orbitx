@@ -20,6 +20,12 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.take
+import kotlinx.coroutines.flow.toList
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
@@ -27,12 +33,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.recent.RecentDirectRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.recent.getRecentDirectRooms
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserRepository
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResult
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.take
-import kotlinx.coroutines.flow.toList
 
 private const val MAX_SUGGESTIONS_COUNT = 5
 

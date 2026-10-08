@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.features.poll.test.pollcontent
 
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollAnswerItem
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentState
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentStateFactory
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.PollContent
-import kotlinx.collections.immutable.toImmutableList
 
 class FakePollContentStateFactory : PollContentStateFactory {
     override suspend fun create(eventId: EventId?, isEditable: Boolean, isOwn: Boolean, content: PollContent): PollContentState {

@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.ftue.test
 
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.features.ftue.api.state.FtueService
 import tech.orbitweb.orbitx.features.ftue.api.state.FtueState
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeFtueService : FtueService {
     override val state: MutableStateFlow<FtueState> = MutableStateFlow(FtueState.Unknown)

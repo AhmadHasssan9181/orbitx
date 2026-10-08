@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.androidutils.json.DefaultJsonProvider
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PushData
 import tech.orbitweb.orbitx.tests.testutils.assertThrowsInDebug
-import org.junit.Test
 
 class UnifiedPushParserTest {
     private val aClientSecret = "a-client-secret"

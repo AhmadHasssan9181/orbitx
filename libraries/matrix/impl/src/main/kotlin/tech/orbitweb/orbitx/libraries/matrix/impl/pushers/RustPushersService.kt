@@ -7,6 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.pushers
 
+import kotlinx.coroutines.withContext
+import org.matrix.rustcomponents.sdk.Client
+import org.matrix.rustcomponents.sdk.HttpPusherData
+import org.matrix.rustcomponents.sdk.PushFormat
+import org.matrix.rustcomponents.sdk.PusherIdentifiers
+import org.matrix.rustcomponents.sdk.PusherKind
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.extensions.mapFailure
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
@@ -14,12 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.pusher.PushersService
 import tech.orbitweb.orbitx.libraries.matrix.api.pusher.SetHttpPusherData
 import tech.orbitweb.orbitx.libraries.matrix.api.pusher.UnsetHttpPusherData
 import tech.orbitweb.orbitx.libraries.matrix.impl.exception.mapClientException
-import kotlinx.coroutines.withContext
-import org.matrix.rustcomponents.sdk.Client
-import org.matrix.rustcomponents.sdk.HttpPusherData
-import org.matrix.rustcomponents.sdk.PushFormat
-import org.matrix.rustcomponents.sdk.PusherIdentifiers
-import org.matrix.rustcomponents.sdk.PusherKind
 
 class RustPushersService(
     private val client: Client,

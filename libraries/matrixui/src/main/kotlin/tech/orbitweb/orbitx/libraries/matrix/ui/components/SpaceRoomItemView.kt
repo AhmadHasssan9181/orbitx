@@ -31,6 +31,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.atoms.UnreadIndicatorAtom
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.molecules.InviteButtonsRowMolecule
@@ -52,8 +54,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.model.icon
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.label
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonPlurals
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 
 /**
  * Figma reference: https://www.figma.com/design/G1xy0HDZKJf5TCRFmKb5d5/Compound-Android-Components?node-id=3643-2079&m=dev

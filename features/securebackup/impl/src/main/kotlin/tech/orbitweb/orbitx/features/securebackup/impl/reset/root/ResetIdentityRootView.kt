@@ -18,6 +18,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.securebackup.impl.R
@@ -31,7 +32,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Button
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Icon
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun ResetIdentityRootView(

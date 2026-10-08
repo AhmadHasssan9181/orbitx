@@ -7,6 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.push.test
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -16,8 +18,6 @@ import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PushProvider
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakePushService(
     private val testPushBlock: suspend (SessionId) -> Boolean = { true },

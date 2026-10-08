@@ -11,6 +11,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.securebackup.api.SecureBackupSetupEntryPoint
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.SecureBackupSetupNode
 import tech.orbitweb.orbitx.features.securebackup.impl.setup.SecureBackupSetupPresenter
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.features.securebackup.impl.setup.SecureBackupSetupSt
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarDispatcher
 import tech.orbitweb.orbitx.libraries.matrix.test.encryption.FakeEncryptionService
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultSecureBackupSetupEntryPointTest {
     @get:Rule

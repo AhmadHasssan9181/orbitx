@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.join
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import org.matrix.rustcomponents.sdk.JoinRule as RustJoinRule
 
 fun RustJoinRule.map(): JoinRule {

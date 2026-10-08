@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.roommembermoderation.impl
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.roommembermoderation.api.ModerationAction
 import tech.orbitweb.orbitx.features.roommembermoderation.api.ModerationActionState
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationEvents
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.toImmutableList
 
 class InternalRoomMemberModerationStateProvider : PreviewParameterProvider<InternalRoomMemberModerationState> {
     override val values: Sequence<InternalRoomMemberModerationState>

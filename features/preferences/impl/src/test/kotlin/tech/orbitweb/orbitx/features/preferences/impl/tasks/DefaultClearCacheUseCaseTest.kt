@@ -10,6 +10,10 @@ package tech.orbitweb.orbitx.features.preferences.impl.tasks
 import androidx.test.platform.app.InstrumentationRegistry
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import okhttp3.OkHttpClient
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.test.InMemorySeenInvitesStore
 import tech.orbitweb.orbitx.features.preferences.impl.DefaultCacheService
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
@@ -25,10 +29,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import okhttp3.OkHttpClient
-import org.junit.Test
 
 class DefaultClearCacheUseCaseTest : RobolectricTest() {
     @Test

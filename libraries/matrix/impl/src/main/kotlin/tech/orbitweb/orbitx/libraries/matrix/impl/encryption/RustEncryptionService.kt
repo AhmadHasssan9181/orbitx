@@ -7,23 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.encryption
 
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.core.extensions.flatMap
-import tech.orbitweb.orbitx.libraries.core.extensions.mapFailure
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupUploadState
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EnableRecoveryProgress
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.IdentityResetHandle
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.RecoveryState
-import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
-import tech.orbitweb.orbitx.libraries.matrix.impl.exception.mapClientException
-import tech.orbitweb.orbitx.libraries.matrix.impl.sync.RustSyncService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.currentCoroutineContext
@@ -43,6 +26,23 @@ import org.matrix.rustcomponents.sdk.Client
 import org.matrix.rustcomponents.sdk.EnableRecoveryProgressListener
 import org.matrix.rustcomponents.sdk.Encryption
 import org.matrix.rustcomponents.sdk.UserIdentity
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.core.extensions.flatMap
+import tech.orbitweb.orbitx.libraries.core.extensions.mapFailure
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupUploadState
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EnableRecoveryProgress
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.IdentityResetHandle
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.RecoveryState
+import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
+import tech.orbitweb.orbitx.libraries.matrix.impl.exception.mapClientException
+import tech.orbitweb.orbitx.libraries.matrix.impl.sync.RustSyncService
 import timber.log.Timber
 import org.matrix.rustcomponents.sdk.BackupUploadState as RustBackupUploadState
 import org.matrix.rustcomponents.sdk.EnableRecoveryProgress as RustEnableRecoveryProgress

@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.notification
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.notification.aNotificationData
-import org.junit.Test
 
 class NotificationDataTest {
     @Test

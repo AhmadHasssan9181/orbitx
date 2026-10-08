@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.messages.test.pinned
 
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.features.messages.api.pinned.PinnedEventsTimelineProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.FakeTimelineProvider
-import kotlinx.coroutines.flow.StateFlow
 
 class FakePinnedEventsTimelineProvider(
     private val fakeTimelineProvider: FakeTimelineProvider = FakeTimelineProvider(),

@@ -54,6 +54,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.messages.impl.timeline.a11y.a11yReactionDetails
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.REACTION_IMAGE_ASPECT_RATIO
@@ -72,7 +73,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.MediaRequestData
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.getAvatarData
-import kotlinx.coroutines.launch
 
 internal val REACTION_SUMMARY_LINE_HEIGHT = 25.sp
 

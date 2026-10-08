@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.roomdetailsedit.impl
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.AvatarAction
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsState
 import tech.orbitweb.orbitx.libraries.permissions.api.aPermissionsState
-import kotlinx.collections.immutable.toImmutableList
 
 open class RoomDetailsEditStateProvider : PreviewParameterProvider<RoomDetailsEditState> {
     override val values: Sequence<RoomDetailsEditState>

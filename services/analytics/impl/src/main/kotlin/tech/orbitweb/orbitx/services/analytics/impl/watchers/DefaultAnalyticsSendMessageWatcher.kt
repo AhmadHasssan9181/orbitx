@@ -9,6 +9,11 @@ package tech.orbitweb.orbitx.services.analytics.impl.watchers
 
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.di.annotations.RoomCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.TransactionId
@@ -18,11 +23,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.api.watchers.AnalyticsSendMessageWatcher
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransaction
 import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransactions
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
 import java.util.concurrent.ConcurrentHashMap
 

@@ -15,6 +15,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutEvents
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutState
 import tech.orbitweb.orbitx.features.logout.impl.tools.isBackingUp
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupUploadState
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Inject
 class DirectLogoutPresenter(

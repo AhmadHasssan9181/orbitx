@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -23,6 +23,11 @@ import androidx.core.os.BundleCompat
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.login.impl.BuildConfig
 import tech.orbitweb.orbitx.libraries.androidutils.service.ServiceBinder
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
@@ -32,11 +37,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.auth.ElementClassicSession
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.HomeServerLoginCompatibilityChecker
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.MatrixAuthenticationService
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 interface ElementClassicConnection {

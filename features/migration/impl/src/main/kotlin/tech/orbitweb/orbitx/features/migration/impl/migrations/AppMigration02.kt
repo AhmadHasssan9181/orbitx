@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.features.migration.impl.migrations
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoSet
+import kotlinx.coroutines.coroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStoreFactory
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
-import kotlinx.coroutines.coroutineScope
 
 /**
  * This migration sets the skip session verification preference to true for all existing sessions.

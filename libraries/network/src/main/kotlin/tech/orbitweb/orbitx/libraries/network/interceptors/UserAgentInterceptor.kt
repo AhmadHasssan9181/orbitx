@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.network.interceptors
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.network.headers.HttpHeaders
-import tech.orbitweb.orbitx.libraries.network.useragent.UserAgentProvider
 import okhttp3.Interceptor
 import okhttp3.Response
+import tech.orbitweb.orbitx.libraries.network.headers.HttpHeaders
+import tech.orbitweb.orbitx.libraries.network.useragent.UserAgentProvider
 
 @Inject
 class UserAgentInterceptor(

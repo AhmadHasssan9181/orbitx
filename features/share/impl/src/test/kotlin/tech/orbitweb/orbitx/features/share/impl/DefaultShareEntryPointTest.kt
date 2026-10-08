@@ -11,6 +11,9 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.share.api.ShareEntryPoint
 import tech.orbitweb.orbitx.features.share.api.ShareIntentData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -18,9 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_MESSAGE
 import tech.orbitweb.orbitx.libraries.roomselect.test.FakeRoomSelectEntryPoint
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultShareEntryPointTest {
     @get:Rule

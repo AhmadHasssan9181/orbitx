@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.libraries.pushstore.impl
 
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID_2
 import tech.orbitweb.orbitx.libraries.preferences.test.FakePreferenceDataStoreFactory
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class UserPushStoreDataStoreTest : RobolectricTest() {
     @Test

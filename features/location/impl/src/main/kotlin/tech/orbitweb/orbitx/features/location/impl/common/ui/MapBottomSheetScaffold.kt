@@ -43,6 +43,12 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.max
+import org.maplibre.compose.camera.CameraState
+import org.maplibre.compose.camera.rememberCameraState
+import org.maplibre.compose.map.MapOptions
+import org.maplibre.compose.map.MaplibreMap
+import org.maplibre.compose.style.BaseStyle
+import org.maplibre.compose.util.MaplibreComposable
 import tech.orbitweb.orbitx.features.location.api.internal.rememberTileStyleUrl
 import tech.orbitweb.orbitx.features.location.impl.common.MapDefaults
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -50,12 +56,6 @@ import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
 import tech.orbitweb.orbitx.libraries.designsystem.text.toDp
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.BottomSheetScaffold
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.CircularProgressIndicator
-import org.maplibre.compose.camera.CameraState
-import org.maplibre.compose.camera.rememberCameraState
-import org.maplibre.compose.map.MapOptions
-import org.maplibre.compose.map.MaplibreMap
-import org.maplibre.compose.style.BaseStyle
-import org.maplibre.compose.util.MaplibreComposable
 import kotlin.math.roundToInt
 
 /**

@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.core
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.core.ProgressCallback
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.TransmissionProgress
+import tech.orbitweb.orbitx.libraries.matrix.api.core.ProgressCallback
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 

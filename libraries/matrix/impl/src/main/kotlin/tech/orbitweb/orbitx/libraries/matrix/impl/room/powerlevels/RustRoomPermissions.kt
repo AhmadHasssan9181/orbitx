@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.powerlevels
 
+import org.matrix.rustcomponents.sdk.RoomPowerLevels
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.MessageEventType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.StateEventType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.RoomPermissions
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.map
-import org.matrix.rustcomponents.sdk.RoomPowerLevels
 
 class RustRoomPermissions(
     private val inner: RoomPowerLevels,

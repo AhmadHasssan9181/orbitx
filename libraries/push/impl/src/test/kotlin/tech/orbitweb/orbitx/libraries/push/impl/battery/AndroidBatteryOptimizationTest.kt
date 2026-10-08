@@ -12,11 +12,11 @@ import android.content.Intent
 import android.provider.Settings
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.services.toolbox.api.intent.ExternalIntentLauncher
 import tech.orbitweb.orbitx.services.toolbox.test.intent.FakeExternalIntentLauncher
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class AndroidBatteryOptimizationTest : RobolectricTest() {
     @Test

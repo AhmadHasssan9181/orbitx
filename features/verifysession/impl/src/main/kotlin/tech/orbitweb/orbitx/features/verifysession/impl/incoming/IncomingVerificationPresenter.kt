@@ -20,6 +20,11 @@ import com.freeletics.flowredux.compose.rememberStateAndDispatch
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.verifysession.impl.incoming.IncomingVerificationState.Step
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatter
@@ -29,11 +34,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificatio
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationFlowState
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationRequest
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import timber.log.Timber
 import tech.orbitweb.orbitx.features.verifysession.impl.incoming.IncomingVerificationStateMachine.Event as StateMachineEvent
 import tech.orbitweb.orbitx.features.verifysession.impl.incoming.IncomingVerificationStateMachine.State as StateMachineState

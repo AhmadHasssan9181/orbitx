@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.login.impl.accesscontrol
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertThrows
+import org.junit.Test
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.features.login.impl.changeserver.AccountProviderAccessException
 import tech.orbitweb.orbitx.features.wellknown.test.FakeWellknownRetriever
@@ -17,9 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.AN_ACCOUNT_PROVIDER_2
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_ACCOUNT_PROVIDER_URL
 import tech.orbitweb.orbitx.libraries.wellknown.api.ElementWellKnown
 import tech.orbitweb.orbitx.libraries.wellknown.api.WellknownRetrieverResult
-import kotlinx.coroutines.test.runTest
-import org.junit.Assert.assertThrows
-import org.junit.Test
 
 class DefaultAccountProviderAccessControlTest {
     @Test

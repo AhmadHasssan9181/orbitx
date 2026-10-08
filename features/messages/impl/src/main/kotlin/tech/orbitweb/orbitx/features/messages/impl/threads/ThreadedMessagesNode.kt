@@ -25,6 +25,9 @@ import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.plugin.Plugin
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.messages.impl.MessagesNavigator
@@ -71,9 +74,6 @@ import tech.orbitweb.orbitx.libraries.ui.utils.a11y.hasExternalKeyboard
 import tech.orbitweb.orbitx.libraries.ui.utils.a11y.isTalkbackActive
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationStateService
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.launch
 
 @ContributesNode(RoomScope::class)
 @AssistedInject

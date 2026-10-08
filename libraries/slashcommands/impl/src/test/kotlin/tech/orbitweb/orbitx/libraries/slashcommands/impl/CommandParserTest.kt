@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.slashcommands.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import tech.orbitweb.orbitx.libraries.featureflag.test.FakeFeatureFlagService
@@ -22,8 +24,6 @@ import tech.orbitweb.orbitx.libraries.slashcommands.api.MessagePrefix
 import tech.orbitweb.orbitx.libraries.slashcommands.api.SlashCommand
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class CommandParserTest {
     @Test

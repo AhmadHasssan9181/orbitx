@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 import org.matrix.rustcomponents.sdk.NoHandle
 import org.matrix.rustcomponents.sdk.RoomDirectorySearch
 import org.matrix.rustcomponents.sdk.RoomDirectorySearchEntriesListener
 import org.matrix.rustcomponents.sdk.RoomDirectorySearchEntryUpdate
 import org.matrix.rustcomponents.sdk.TaskHandle
+import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
 
 class FakeFfiRoomDirectorySearch(
     var isAtLastPage: Boolean = false,

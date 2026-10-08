@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.features.call.utils
 
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.impl.notifications.CallNotificationData
 import tech.orbitweb.orbitx.features.call.impl.utils.ActiveCall
 import tech.orbitweb.orbitx.features.call.impl.utils.ActiveCallManager
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeActiveCallManager(
     var registerIncomingCallResult: (CallNotificationData) -> Unit = {},

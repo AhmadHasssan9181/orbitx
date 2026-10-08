@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.receipt
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.ReadReceiptData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarSize
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.anAvatarData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.LocalEventSendState
-import kotlinx.collections.immutable.toImmutableList
 
 class ReadReceiptViewStateProvider : PreviewParameterProvider<ReadReceiptViewState> {
     override val values: Sequence<ReadReceiptViewState>

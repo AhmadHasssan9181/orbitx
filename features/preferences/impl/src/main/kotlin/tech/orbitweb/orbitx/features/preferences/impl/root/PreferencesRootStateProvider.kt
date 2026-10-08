@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.preferences.impl.root
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutState
 import tech.orbitweb.orbitx.features.logout.api.direct.aDirectLogoutState
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessage
@@ -16,7 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.toImmutableList
 
 open class PreferencesRootStateProvider : PreviewParameterProvider<PreferencesRootState> {
     override val values: Sequence<PreferencesRootState>

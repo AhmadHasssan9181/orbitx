@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.announcement.impl.store
 
-import tech.orbitweb.orbitx.features.announcement.api.Announcement
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import tech.orbitweb.orbitx.features.announcement.api.Announcement
 
 class InMemoryAnnouncementStore(
     initialFullscreenAnnouncementStatus: AnnouncementStatus = AnnouncementStatus.NeverShown,

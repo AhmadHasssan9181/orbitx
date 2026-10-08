@@ -54,6 +54,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import io.element.android.wysiwyg.link.Link
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.location.api.LiveLocationSharingBanner
@@ -65,7 +67,6 @@ import tech.orbitweb.orbitx.features.messages.impl.crypto.identity.IdentityChang
 import tech.orbitweb.orbitx.features.messages.impl.link.LinkEvent
 import tech.orbitweb.orbitx.features.messages.impl.link.LinkView
 import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.AttachmentsBottomSheet
-import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.DisabledComposerView
 import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.MessageComposerEvent
 import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.MessageComposerView
 import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions.SuggestionsPickerView
@@ -124,8 +125,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.LocalEventS
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.textcomposer.model.TextEditorState
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import io.element.android.wysiwyg.link.Link
-import kotlinx.collections.immutable.persistentListOf
 import timber.log.Timber
 import kotlin.time.Duration.Companion.milliseconds
 
@@ -586,18 +585,11 @@ private fun MessagesViewComposerBottomSheetContents(
                         onLinkClick = onLinkClick,
                     )
                 }
-                val verificationViolation = state.identityChangeState.roomMemberIdentityStateChanges.firstOrNull {
-                    it.identityState == IdentityState.VerificationViolation
-                }
-                if (verificationViolation != null) {
-                    DisabledComposerView(modifier = Modifier.fillMaxWidth())
-                } else {
-                    MessageComposerView(
-                        state = state.composerState,
-                        voiceMessageState = state.voiceMessageComposerState,
-                        modifier = Modifier.fillMaxWidth(),
-                    )
-                }
+                MessageComposerView(
+                    state = state.composerState,
+                    voiceMessageState = state.voiceMessageComposerState,
+                    modifier = Modifier.fillMaxWidth(),
+                )
             }
         }
         else -> {

@@ -43,6 +43,8 @@ import androidx.media3.exoplayer.ExoPlaybackException
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
+import kotlinx.coroutines.delay
+import me.saket.telephoto.zoomable.zoomable
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.libraries.audio.api.AudioFocus
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
@@ -62,8 +64,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.local.player.togglePlay
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.local.rememberLocalMediaViewState
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.libraries.ui.utils.a11y.isTalkbackActive
-import kotlinx.coroutines.delay
-import me.saket.telephoto.zoomable.zoomable
 import timber.log.Timber
 import kotlin.time.Duration.Companion.seconds
 

@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomDescription
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_3
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.RoomDirectorySearchEntryUpdate
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomDescription
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_3
 
 class RoomDirectorySearchProcessorTest {
     private val rustRoom1 = aRustRoomDescription(roomId = A_ROOM_ID.value)

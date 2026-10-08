@@ -10,6 +10,9 @@ package tech.orbitweb.orbitx.features.ftue.impl
 import android.os.Build
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.ftue.api.state.FtueState
 import tech.orbitweb.orbitx.features.ftue.impl.state.DefaultFtueService
 import tech.orbitweb.orbitx.features.ftue.impl.state.FtueStep
@@ -27,9 +30,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.noop.NoopAnalyticsService
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultFtueServiceTest {
     @Test

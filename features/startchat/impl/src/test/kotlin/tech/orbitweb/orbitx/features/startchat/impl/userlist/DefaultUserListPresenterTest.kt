@@ -9,6 +9,10 @@ package tech.orbitweb.orbitx.features.startchat.impl.userlist
 
 import androidx.compose.foundation.text.input.setTextAndPlaceCursorAtEnd
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUser
@@ -18,10 +22,6 @@ import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResultState
 import tech.orbitweb.orbitx.libraries.usersearch.test.FakeUserRepository
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultUserListPresenterTest {
     @get:Rule

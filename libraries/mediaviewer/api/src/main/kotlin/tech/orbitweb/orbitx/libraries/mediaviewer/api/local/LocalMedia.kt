@@ -10,8 +10,8 @@ package tech.orbitweb.orbitx.libraries.mediaviewer.api.local
 import android.net.Uri
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaInfo
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaInfo
 
 @Parcelize
 @Immutable

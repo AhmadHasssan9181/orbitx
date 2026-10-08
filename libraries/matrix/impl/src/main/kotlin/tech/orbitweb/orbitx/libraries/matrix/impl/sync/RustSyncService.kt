@@ -7,10 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.sync
 
-import tech.orbitweb.orbitx.libraries.core.coroutine.mapState
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.NonCancellable
@@ -22,6 +18,10 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.withContext
 import org.matrix.rustcomponents.sdk.SyncServiceState
+import tech.orbitweb.orbitx.libraries.core.coroutine.mapState
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 import org.matrix.rustcomponents.sdk.SyncService as InnerSyncService

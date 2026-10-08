@@ -9,12 +9,12 @@ package tech.orbitweb.orbitx.features.enterprise.impl
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.compound.colors.SemanticColorsLightDark
 import tech.orbitweb.orbitx.features.enterprise.api.BugReportUrl
 import tech.orbitweb.orbitx.libraries.matrix.test.A_HOMESERVER_URL
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultEnterpriseServiceTest {
     @Test

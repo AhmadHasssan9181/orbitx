@@ -11,6 +11,10 @@ import android.content.Context
 import androidx.compose.ui.text.AnnotatedString
 import com.google.common.truth.Truth.assertThat
 import com.google.common.truth.Truth.assertWithMessage
+import org.junit.Before
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.media.ImageInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
@@ -51,10 +55,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.timeline.item.event.aRoomMembe
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.services.toolbox.impl.strings.AndroidStringProvider
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Before
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
-import org.robolectric.annotation.Config
 
 @Suppress("LargeClass")
 class DefaultPinnedMessagesBannerFormatterTest : RobolectricTest() {

@@ -9,6 +9,12 @@ package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Before
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SECRET
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
@@ -16,12 +22,6 @@ import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.registration.End
 import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.registration.RegistrationResult
 import tech.orbitweb.orbitx.tests.testutils.fake.FakeAndroidKeyStore
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Before
-import org.junit.Test
 
 class DefaultRegisterUnifiedPushUseCaseTest : RobolectricTest() {
     @Before

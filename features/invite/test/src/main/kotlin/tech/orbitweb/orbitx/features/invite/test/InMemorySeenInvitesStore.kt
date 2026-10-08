@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.invite.test
 
-import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 
 class InMemorySeenInvitesStore(
     initialRoomIds: Set<RoomId> = emptySet(),

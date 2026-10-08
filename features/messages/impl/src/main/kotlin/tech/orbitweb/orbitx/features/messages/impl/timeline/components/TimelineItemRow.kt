@@ -24,6 +24,7 @@ import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineRoomInfo
@@ -47,7 +48,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.libraries.ui.utils.a11y.isTalkbackActive
-import io.element.android.wysiwyg.link.Link
 import kotlin.time.DurationUnit
 
 @Composable

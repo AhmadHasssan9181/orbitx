@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.media
 
+import org.matrix.rustcomponents.sdk.SendGalleryJoinHandle
 import tech.orbitweb.orbitx.libraries.androidutils.file.safeDelete
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaUploadHandler
-import org.matrix.rustcomponents.sdk.SendGalleryJoinHandle
 import java.io.File
 
 class GalleryMediaUploadHandlerImpl(

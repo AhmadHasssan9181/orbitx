@@ -7,6 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.DeviceId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomVisibility
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetDriver
 import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetSettings
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
 
 interface JoinedRoom : BaseRoom {
     val syncUpdateFlow: StateFlow<Long>

@@ -11,8 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
 
 @Inject
 class ManageAuthorizedSpacesPresenter(

@@ -9,9 +9,6 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.room.location
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LiveLocationShare
-import tech.orbitweb.orbitx.libraries.matrix.test.room.location.aLiveLocationShare
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.emptyFlow
@@ -19,6 +16,9 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LiveLocationShare
+import tech.orbitweb.orbitx.libraries.matrix.test.room.location.aLiveLocationShare
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class TimedLiveLocationSharesFlowTest {

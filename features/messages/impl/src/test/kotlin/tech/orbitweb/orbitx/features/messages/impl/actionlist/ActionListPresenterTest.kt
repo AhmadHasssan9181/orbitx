@@ -8,6 +8,11 @@
 package tech.orbitweb.orbitx.features.messages.impl.actionlist
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.aUserEventPermissions
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemAction
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemActionPostProcessor
@@ -44,11 +49,6 @@ import tech.orbitweb.orbitx.libraries.preferences.test.InMemoryAppPreferencesSto
 import tech.orbitweb.orbitx.libraries.recentemojis.api.GetRecentEmojis
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 @Suppress("LargeClass")
 class ActionListPresenterTest {

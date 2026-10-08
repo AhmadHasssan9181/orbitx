@@ -22,6 +22,8 @@ import androidx.datastore.preferences.core.edit
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.fullscreenintent.api.FullScreenIntentPermissionsEvents
@@ -29,8 +31,6 @@ import tech.orbitweb.orbitx.libraries.fullscreenintent.api.FullScreenIntentPermi
 import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 import tech.orbitweb.orbitx.services.toolbox.api.intent.ExternalIntentLauncher
 import tech.orbitweb.orbitx.services.toolbox.api.sdk.BuildVersionSdkIntProvider
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 @SingleIn(AppScope::class)
 @Inject

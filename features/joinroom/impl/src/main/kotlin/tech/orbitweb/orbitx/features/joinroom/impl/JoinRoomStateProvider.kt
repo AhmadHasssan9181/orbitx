@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (c) 2026 Orbit Team.
  *
  * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Orbit-Commercial.
@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.joinroom.impl
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteState
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.anAcceptDeclineInviteState
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.InviteSender
-import kotlinx.collections.immutable.toImmutableList
 
 open class JoinRoomStateProvider : PreviewParameterProvider<JoinRoomState> {
     override val values: Sequence<JoinRoomState>

@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.protection
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID_2
 import kotlinx.collections.immutable.persistentSetOf
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID_2
 
 class TimelineProtectionStateTest {
     @Test

@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.keys
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.androidutils.crypto.ClientSecret
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class DefaultSecretGeneratorTest : RobolectricTest() {
     @Test

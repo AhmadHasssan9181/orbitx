@@ -15,6 +15,13 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Assert.assertEquals
+import org.junit.Test
+import org.robolectric.annotation.Config
+import org.robolectric.annotation.Implementation
+import org.robolectric.annotation.Implements
+import org.robolectric.annotation.Resetter
+import org.robolectric.shadows.ShadowWebView
 import tech.orbitweb.orbitx.features.call.impl.pip.PictureInPictureEvent
 import tech.orbitweb.orbitx.features.call.impl.pip.PictureInPictureState
 import tech.orbitweb.orbitx.features.call.impl.pip.aPictureInPictureState
@@ -26,13 +33,6 @@ import tech.orbitweb.orbitx.features.call.impl.ui.aCallScreenState
 import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Assert.assertEquals
-import org.junit.Test
-import org.robolectric.annotation.Config
-import org.robolectric.annotation.Implementation
-import org.robolectric.annotation.Implements
-import org.robolectric.annotation.Resetter
-import org.robolectric.shadows.ShadowWebView
 
 @OptIn(ExperimentalTestApi::class)
 class CallScreenViewTest : RobolectricTest() {

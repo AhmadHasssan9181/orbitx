@@ -16,16 +16,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.features.rageshake.api.RageshakeFeatureAvailability
-import tech.orbitweb.orbitx.features.rageshake.api.crash.CrashDetectionEvent
-import tech.orbitweb.orbitx.features.rageshake.api.crash.CrashDetectionPresenter
-import tech.orbitweb.orbitx.features.rageshake.api.crash.CrashDetectionState
-import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.features.rageshake.api.RageshakeFeatureAvailability
+import tech.orbitweb.orbitx.features.rageshake.api.crash.CrashDetectionEvent
+import tech.orbitweb.orbitx.features.rageshake.api.crash.CrashDetectionPresenter
+import tech.orbitweb.orbitx.features.rageshake.api.crash.CrashDetectionState
+import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 
 @ContributesBinding(AppScope::class)
 class DefaultCrashDetectionPresenter(

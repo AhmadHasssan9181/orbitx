@@ -11,12 +11,12 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.licenses.impl.model.DependencyLicenseItem
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.features.licenses.impl.model.DependencyLicenseItem
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 
 class DependencyLicensesListPresenterTest {
     @get:Rule

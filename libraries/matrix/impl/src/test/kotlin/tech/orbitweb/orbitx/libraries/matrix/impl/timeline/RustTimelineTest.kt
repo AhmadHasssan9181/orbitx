@@ -10,6 +10,14 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.TimelineDiff
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
@@ -23,14 +31,6 @@ import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.A_FAKE_TIMESTAMP
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.TimelineDiff
 import uniffi.matrix_sdk.PaginationStatus
 import org.matrix.rustcomponents.sdk.Timeline as InnerTimeline
 

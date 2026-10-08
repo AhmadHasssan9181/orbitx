@@ -8,24 +8,32 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.event
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.IconButtonDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.res.stringResource
@@ -33,10 +41,13 @@ import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.disabled
 import androidx.compose.ui.semantics.onClick
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.delay
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.layout.ContentAvoidingLayoutData
@@ -55,17 +66,6 @@ import tech.orbitweb.orbitx.libraries.ui.utils.a11y.isTalkbackActive
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageEvent
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageState
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageStateProvider
-import kotlinx.coroutines.delay
-
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.runtime.DisposableEffect
-import androidx.compose.ui.draw.clip
-import androidx.compose.runtime.collectAsState
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun TimelineItemVoiceView(
@@ -85,89 +85,199 @@ fun TimelineItemVoiceView(
     val isDestroyed = isViewOnce && content.eventId?.value != null && destroyedEventIds.contains(content.eventId.value)
     val context = androidx.compose.ui.platform.LocalContext.current
 
-    if (isViewOnce && isMine) {
-        ViewOnceMediaBubble(
-            mediaType = "Voice message",
-            isMine = true,
-            isDestroyed = isDestroyed,
-            onContentClick = {
-                android.widget.Toast.makeText(context, "You sent this as a view-once voice message. It cannot be reopened.", android.widget.Toast.LENGTH_SHORT).show()
-            },
-            onLongClick = null,
-            onContentLayoutChange = onContentLayoutChange,
-            modifier = modifier,
-        )
-        return
-    }
+    if (isViewOnce) {
+        var showRevealDialog by remember { mutableStateOf(false) }
+        var hasRedacted by remember { mutableStateOf(false) }
 
-    if (isViewOnce && isDestroyed) {
-        ViewOnceMediaBubble(
-            mediaType = "Voice message",
-            isMine = isMine,
-            isDestroyed = true,
-            onContentClick = {
-                android.widget.Toast.makeText(context, "This voice message has already been played and destroyed", android.widget.Toast.LENGTH_SHORT).show()
-            },
-            onLongClick = null,
-            onContentLayoutChange = onContentLayoutChange,
-            modifier = modifier,
-        )
-        return
-    }
-
-    var hasStartedPlayback by remember { mutableStateOf(false) }
-    var hasEverBeenPlaying by remember { mutableStateOf(false) }
-
-    // In WhatsApp style: view-once voice note shows the ViewOnce bubble until the user taps to play
-    if (isViewOnce && !hasStartedPlayback && state.buttonType != VoiceMessageState.ButtonType.Pause && state.buttonType != VoiceMessageState.ButtonType.Downloading) {
-        ViewOnceMediaBubble(
-            mediaType = "Voice message",
-            isMine = false,
-            isDestroyed = false,
-            onContentClick = {
-                hasStartedPlayback = true
+        val closeAndDestroy: () -> Unit = {
+            showRevealDialog = false
+            if (state.buttonType == VoiceMessageState.ButtonType.Pause) {
                 state.eventSink(VoiceMessageEvent.PlayPause)
-            },
-            onLongClick = null,
-            onContentLayoutChange = onContentLayoutChange,
-            modifier = modifier,
-        )
-        return
-    }
-
-    // Protect playback from screenshot and screen recording
-    DisposableEffect(hasStartedPlayback) {
-        val window = (context as? android.app.Activity)?.window
-        if (hasStartedPlayback && isViewOnce) {
-            window?.addFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE)
-        }
-        onDispose {
-            if (hasStartedPlayback && isViewOnce && content.eventId != null) {
-                tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(content.eventId.value)
-                eventSink?.invoke(tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent.RedactViewOnce(content.eventId))
-                tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.cleanupVoiceCache(context.cacheDir)
             }
-            window?.clearFlags(android.view.WindowManager.LayoutParams.FLAG_SECURE)
-        }
-    }
-
-    // Once playback begins and finishes (reaches end or player resets), mark destroyed and queue redaction
-    LaunchedEffect(state.buttonType, state.progress) {
-        if (state.buttonType == VoiceMessageState.ButtonType.Pause) {
-            hasEverBeenPlaying = true
-        } else if (hasEverBeenPlaying && isViewOnce && content.eventId != null) {
-            if ((state.buttonType == VoiceMessageState.ButtonType.Play && !state.showCursor) || state.progress >= 0.98f) {
+            if (content.eventId != null && !hasRedacted) {
+                hasRedacted = true
                 tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(content.eventId.value)
                 eventSink?.invoke(tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent.RedactViewOnce(content.eventId))
                 tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.cleanupVoiceCache(context.cacheDir)
             }
         }
+
+        Box(modifier = modifier) {
+            ViewOnceMediaBubble(
+                mediaType = "Voice message",
+                onContentClick = if (isMine) {
+                    {
+                        android.widget.Toast.makeText(
+                            context,
+                            "You sent this as a view-once voice message. It cannot be reopened.",
+                            android.widget.Toast.LENGTH_SHORT,
+                        ).show()
+                    }
+                } else if (isDestroyed) {
+                    {
+                        android.widget.Toast.makeText(
+                            context,
+                            "This voice message has already been played and destroyed",
+                            android.widget.Toast.LENGTH_SHORT,
+                        ).show()
+                    }
+                } else {
+                    {
+                        showRevealDialog = true
+                    }
+                },
+                onLongClick = null,
+                onContentLayoutChange = onContentLayoutChange,
+                isDestroyed = isDestroyed,
+                isMine = isMine,
+            )
+
+            if (showRevealDialog) {
+                DisposableEffect(Unit) {
+                    if (state.buttonType == VoiceMessageState.ButtonType.Play) {
+                        state.eventSink(VoiceMessageEvent.PlayPause)
+                    }
+                    onDispose {
+                        if (state.buttonType == VoiceMessageState.ButtonType.Pause) {
+                            state.eventSink(VoiceMessageEvent.PlayPause)
+                        }
+                        if (content.eventId != null && !hasRedacted) {
+                            hasRedacted = true
+                            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.markDestroyed(content.eventId.value)
+                            eventSink?.invoke(tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent.RedactViewOnce(content.eventId))
+                            tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralTracker.cleanupVoiceCache(context.cacheDir)
+                        }
+                    }
+                }
+
+                var hasStartedPlaying by remember { mutableStateOf(false) }
+                LaunchedEffect(state.buttonType) {
+                    if (state.buttonType == VoiceMessageState.ButtonType.Pause) {
+                        hasStartedPlaying = true
+                    }
+                }
+                LaunchedEffect(state.progress, state.buttonType) {
+                    val isFinished = state.progress >= 0.98f ||
+                        state.buttonType == VoiceMessageState.ButtonType.Play && !state.showCursor && state.progress == 0f
+                    if (hasStartedPlaying && isFinished) {
+                        closeAndDestroy()
+                    }
+                }
+
+            androidx.compose.ui.window.Dialog(
+                onDismissRequest = closeAndDestroy,
+                properties = androidx.compose.ui.window.DialogProperties(
+                    securePolicy = androidx.compose.ui.window.SecureFlagPolicy.SecureOn
+                )
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(24.dp))
+                        .background(Color(0xFF16152B))
+                        .border(1.dp, Color(0xFF8B5CF6).copy(alpha = 0.6f), RoundedCornerShape(24.dp))
+                        .padding(24.dp)
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(50.dp)
+                                .clip(CircleShape)
+                                .background(
+                                    androidx.compose.ui.graphics.Brush.linearGradient(
+                                        listOf(Color(0xFF8B5CF6), Color(0xFFEC4899))
+                                    )
+                                ),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            androidx.compose.material3.Text(
+                                text = "1",
+                                color = Color.White,
+                                fontWeight = FontWeight.Black,
+                                fontSize = 20.sp
+                            )
+                        }
+                        androidx.compose.material3.Text(
+                            text = "View-Once Voice Message",
+                            style = ElementTheme.typography.fontHeadingSmMedium,
+                            color = Color.White
+                        )
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clip(RoundedCornerShape(16.dp))
+                                .background(Color(0xFF0F0E1A))
+                                .padding(horizontal = 12.dp, vertical = 10.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            when (state.buttonType) {
+                                VoiceMessageState.ButtonType.Play -> PlayButton(onClick = { state.eventSink(VoiceMessageEvent.PlayPause) })
+                                VoiceMessageState.ButtonType.Pause -> PauseButton(onClick = { state.eventSink(VoiceMessageEvent.PlayPause) })
+                                VoiceMessageState.ButtonType.Downloading -> ProgressButton()
+                                VoiceMessageState.ButtonType.Retry -> RetryButton(onClick = { state.eventSink(VoiceMessageEvent.PlayPause) })
+                                VoiceMessageState.ButtonType.Disabled -> PlayButton(onClick = {}, enabled = false)
+                            }
+                            Spacer(Modifier.width(8.dp))
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.spacedBy(2.dp),
+                            ) {
+                                PlaybackSpeedButton(
+                                    speed = state.playbackSpeed,
+                                    onClick = { state.eventSink(VoiceMessageEvent.ChangePlaybackSpeed) },
+                                )
+                                Text(
+                                    text = state.time,
+                                    color = ElementTheme.colors.textSecondary,
+                                    style = ElementTheme.typography.fontBodySmMedium,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis,
+                                )
+                            }
+                            Spacer(Modifier.width(8.dp))
+                            WaveformPlaybackView(
+                                showCursor = state.showCursor,
+                                playbackProgress = state.progress,
+                                waveform = content.waveform,
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .height(34.dp),
+                                seekEnabled = true,
+                                onSeek = { state.eventSink(VoiceMessageEvent.Seek(it)) },
+                            )
+                        }
+                        androidx.compose.material3.Text(
+                            text = "This voice message will be permanently destroyed once finished or closed.",
+                            style = ElementTheme.typography.fontBodySmRegular,
+                            color = Color(0xFF9CA3AF),
+                            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                        )
+                        androidx.compose.material3.Button(
+                            onClick = closeAndDestroy,
+                            colors = androidx.compose.material3.ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFF8B5CF6)
+                            ),
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            androidx.compose.material3.Text(
+                                text = "Done",
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
+    return
+}
 
     fun playPause() {
-        if (isViewOnce) {
-            hasStartedPlayback = true
-        }
         state.eventSink(VoiceMessageEvent.PlayPause)
     }
 

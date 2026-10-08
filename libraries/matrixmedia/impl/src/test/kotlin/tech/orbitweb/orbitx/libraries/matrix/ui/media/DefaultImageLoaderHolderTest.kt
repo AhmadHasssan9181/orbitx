@@ -10,6 +10,8 @@ package tech.orbitweb.orbitx.libraries.matrix.ui.media
 import androidx.test.platform.app.InstrumentationRegistry
 import coil3.ImageLoader
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MatrixMediaLoader
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
@@ -19,8 +21,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.observer.NoOpSessionOb
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultImageLoaderHolderTest : RobolectricTest() {
     @Test

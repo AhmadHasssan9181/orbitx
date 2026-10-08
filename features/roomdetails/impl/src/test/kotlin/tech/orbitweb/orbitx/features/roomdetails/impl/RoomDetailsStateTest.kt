@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.roomdetails.impl
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.room.history.RoomHistoryVisibility
 import kotlinx.collections.immutable.persistentListOf
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.room.history.RoomHistoryVisibility
 
 class RoomDetailsStateTest {
     @Test

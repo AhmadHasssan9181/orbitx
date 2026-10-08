@@ -11,11 +11,11 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.poll.test.create.FakeCreatePollEntryPoint
-import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.features.poll.test.create.FakeCreatePollEntryPoint
+import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 
 class DefaultPollHistoryEntryPointTest {
     @get:Rule

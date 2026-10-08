@@ -37,6 +37,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import io.element.android.wysiwyg.compose.EditorStyledText
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.layout.ContentAvoidingLayout
@@ -53,8 +55,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Icon
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.MediaRequestData
 import tech.orbitweb.orbitx.libraries.textcomposer.ElementRichTextEditorStyle
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import io.element.android.wysiwyg.compose.EditorStyledText
-import io.element.android.wysiwyg.link.Link
 
 @Composable
 fun TimelineItemAttachmentsListView(

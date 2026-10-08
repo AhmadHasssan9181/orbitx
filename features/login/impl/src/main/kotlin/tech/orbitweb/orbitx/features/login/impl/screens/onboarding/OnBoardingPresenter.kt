@@ -19,6 +19,7 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.appconfig.OnBoardingConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.enterprise.api.canConnectToAnyHomeserver
@@ -31,7 +32,6 @@ import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.core.meta.BuildType
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
 import tech.orbitweb.orbitx.libraries.ui.utils.MultipleTapToUnlock
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class OnBoardingPresenter(

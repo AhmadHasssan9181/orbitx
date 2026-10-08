@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PushData
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
 
 /**
  * In this case, the format is:

@@ -12,6 +12,10 @@ import app.cash.molecule.moleculeFlow
 import app.cash.turbine.ReceiveTurbine
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutEvents
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
@@ -21,10 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.test.encryption.FakeEncryptionService
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class DirectLogoutPresenterTest {
     @get:Rule

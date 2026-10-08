@@ -15,6 +15,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.rageshake.api.detection.RageshakeDetectionEvent
 import tech.orbitweb.orbitx.features.rageshake.api.detection.RageshakeDetectionPresenter
 import tech.orbitweb.orbitx.features.rageshake.api.detection.RageshakeDetectionState
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.features.rageshake.api.preferences.RageshakePreferen
 import tech.orbitweb.orbitx.features.rageshake.api.screenshot.ImageResult
 import tech.orbitweb.orbitx.features.rageshake.impl.rageshake.RageShake
 import tech.orbitweb.orbitx.features.rageshake.impl.screenshot.ScreenshotHolder
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @ContributesBinding(AppScope::class)

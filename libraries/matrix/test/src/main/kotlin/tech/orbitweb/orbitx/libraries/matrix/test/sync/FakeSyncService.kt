@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.sync
 
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.core.coroutine.mapState
 import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
 import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 
 class FakeSyncService(
     initialSyncState: SyncState = SyncState.Idle,

@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.user.editprofile
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.AvatarAction
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsState
-import kotlinx.collections.immutable.ImmutableList
 
 data class EditUserProfileState(
     val userId: UserId,

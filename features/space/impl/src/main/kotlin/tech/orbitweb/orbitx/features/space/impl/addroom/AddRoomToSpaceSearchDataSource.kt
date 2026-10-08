@@ -10,6 +10,16 @@ package tech.orbitweb.orbitx.features.space.impl.addroom
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.take
+import kotlinx.coroutines.flow.toList
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -23,16 +33,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.updateVisibleRange
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoomList
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.toSelectRoomInfo
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.take
-import kotlinx.coroutines.flow.toList
 
 private const val PAGE_SIZE = 30
 private const val MAX_SUGGESTIONS_COUNT = 5

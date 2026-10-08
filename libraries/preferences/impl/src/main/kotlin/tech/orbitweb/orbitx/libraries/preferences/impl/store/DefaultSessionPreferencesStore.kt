@@ -14,6 +14,9 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStoreFile
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import tech.orbitweb.orbitx.libraries.androidutils.file.safeDelete
 import tech.orbitweb.orbitx.libraries.androidutils.hash.hash
 import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import java.io.File
 
 class DefaultSessionPreferencesStore(

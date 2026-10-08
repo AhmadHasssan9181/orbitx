@@ -10,6 +10,11 @@
 package tech.orbitweb.orbitx.features.linknewdevice.impl.screens.qrcode
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.linknewdevice.impl.LinkNewMobileHandler
 import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileHandler
 import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileStep
@@ -18,11 +23,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.linknewdevice.FakeLinkMobileHa
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class ShowQrCodePresenterTest {
     @get:Rule

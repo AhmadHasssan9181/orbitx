@@ -23,6 +23,10 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.JoinedRoom
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteEvents
@@ -49,10 +53,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.preview.RoomPreviewInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.toInviteSender
 import tech.orbitweb.orbitx.libraries.matrix.ui.safety.rememberHideInvitesAvatar
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import java.util.Optional
 import kotlin.jvm.optionals.getOrNull
 

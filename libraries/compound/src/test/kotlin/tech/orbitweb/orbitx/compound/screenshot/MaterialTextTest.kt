@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.compound.screenshot
 
 import com.github.takahirom.roborazzi.captureRoboImage
-import tech.orbitweb.orbitx.compound.screenshot.utils.screenshotFile
-import tech.orbitweb.orbitx.compound.theme.MaterialTextPreview
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import org.junit.Test
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
+import tech.orbitweb.orbitx.compound.screenshot.utils.screenshotFile
+import tech.orbitweb.orbitx.compound.theme.MaterialTextPreview
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 @GraphicsMode(GraphicsMode.Mode.NATIVE)
 class MaterialTextTest : RobolectricTest() {

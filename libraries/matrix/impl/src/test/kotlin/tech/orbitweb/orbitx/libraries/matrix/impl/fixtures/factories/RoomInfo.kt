@@ -7,9 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomPowerLevels
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_NAME
 import org.matrix.rustcomponents.sdk.JoinRule
 import org.matrix.rustcomponents.sdk.Membership
 import org.matrix.rustcomponents.sdk.RoomHero
@@ -20,6 +17,9 @@ import org.matrix.rustcomponents.sdk.RoomNotificationMode
 import org.matrix.rustcomponents.sdk.RoomPowerLevels
 import org.matrix.rustcomponents.sdk.RtcCallIntentConsensus
 import org.matrix.rustcomponents.sdk.SuccessorRoom
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomPowerLevels
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_NAME
 import uniffi.matrix_sdk_base.EncryptionState
 
 internal fun aRustRoomInfo(

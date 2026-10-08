@@ -18,6 +18,8 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes.isMimeTypeVideo
 import tech.orbitweb.orbitx.libraries.di.SessionScope
@@ -28,8 +30,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfigPro
 import tech.orbitweb.orbitx.libraries.mediaupload.api.compressorHelper
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.local.LocalMedia
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 import timber.log.Timber
 import kotlin.math.roundToLong
 

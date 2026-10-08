@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.featureflag.impl
 
-import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
 import kotlinx.coroutines.flow.Flow
+import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
 
 interface FeatureFlagProvider {
     val priority: Int

@@ -12,6 +12,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.exifinterface.media.ExifInterface
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.calculateInSampleSize
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.resizeToMax
 import tech.orbitweb.orbitx.libraries.androidutils.bitmap.rotateToExifMetadataOrientation
@@ -19,7 +20,6 @@ import tech.orbitweb.orbitx.libraries.androidutils.file.createTmpFile
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
-import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.InputStream
 

@@ -10,6 +10,15 @@ package tech.orbitweb.orbitx.features.lockscreen.impl
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenLockState
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenService
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
@@ -21,15 +30,6 @@ import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionListener
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
 import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 import kotlin.time.Duration
 
 @SingleIn(AppScope::class)

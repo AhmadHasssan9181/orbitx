@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.appnav.loggedin
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewService
-import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewService
+import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
 import timber.log.Timber
 
 /**

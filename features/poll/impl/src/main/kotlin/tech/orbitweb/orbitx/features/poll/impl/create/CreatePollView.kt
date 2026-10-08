@@ -31,6 +31,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.poll.impl.R
 import tech.orbitweb.orbitx.libraries.designsystem.components.button.BackButton
@@ -51,8 +53,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.TextField
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.TopAppBar
 import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 @Composable
 fun CreatePollView(

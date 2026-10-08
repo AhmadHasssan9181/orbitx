@@ -36,6 +36,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.delay
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.atoms.PlaybackSpeedButton
@@ -55,8 +57,6 @@ import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageEvent
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageState
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageStateProvider
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.aVoiceMessageState
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.delay
 
 @Composable
 fun VoiceItemView(

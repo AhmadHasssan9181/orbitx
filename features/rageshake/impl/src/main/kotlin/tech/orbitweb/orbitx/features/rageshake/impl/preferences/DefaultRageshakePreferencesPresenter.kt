@@ -17,14 +17,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.rageshake.api.RageshakeFeatureAvailability
 import tech.orbitweb.orbitx.features.rageshake.api.preferences.RageshakePreferencesEvent
 import tech.orbitweb.orbitx.features.rageshake.api.preferences.RageshakePreferencesPresenter
 import tech.orbitweb.orbitx.features.rageshake.api.preferences.RageshakePreferencesState
 import tech.orbitweb.orbitx.features.rageshake.impl.rageshake.RageShake
 import tech.orbitweb.orbitx.features.rageshake.impl.rageshake.RageshakeDataStore
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @ContributesBinding(AppScope::class)
 class DefaultRageshakePreferencesPresenter(

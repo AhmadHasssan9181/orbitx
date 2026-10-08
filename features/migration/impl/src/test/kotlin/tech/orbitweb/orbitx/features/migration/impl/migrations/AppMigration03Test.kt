@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.migration.impl.migrations
 
-import tech.orbitweb.orbitx.features.rageshake.test.logs.FakeLogFilesRemover
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.features.rageshake.test.logs.FakeLogFilesRemover
 
 class AppMigration03Test {
     @Test

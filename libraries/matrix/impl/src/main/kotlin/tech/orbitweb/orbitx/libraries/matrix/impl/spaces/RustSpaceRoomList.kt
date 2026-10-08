@@ -7,11 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.spaces
 
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoomList
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -22,6 +17,11 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoomList
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import timber.log.Timber
 import uniffi.matrix_sdk_ui.SpaceRoomListPaginationState
 import java.util.Optional

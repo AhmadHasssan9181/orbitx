@@ -16,6 +16,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.extensions.flatMap
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.MatrixAuthenticationService
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class CreateAccountPresenter(

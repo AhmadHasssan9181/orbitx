@@ -17,13 +17,13 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import tech.orbitweb.orbitx.compound.theme.ElementTheme
-import tech.orbitweb.orbitx.libraries.androidutils.system.areAnimationsEnabled
 import kotlinx.coroutines.delay
 import me.saket.telephoto.ExperimentalTelephotoApi
 import me.saket.telephoto.flick.FlickToDismiss
 import me.saket.telephoto.flick.FlickToDismissState
 import me.saket.telephoto.flick.rememberFlickToDismissState
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
+import tech.orbitweb.orbitx.libraries.androidutils.system.areAnimationsEnabled
 import kotlin.time.Duration
 
 @OptIn(ExperimentalTelephotoApi::class)

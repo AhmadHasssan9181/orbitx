@@ -10,6 +10,13 @@ package tech.orbitweb.orbitx.libraries.roomselect.impl
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
@@ -18,13 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.updateVisibleRange
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.toSelectRoomInfo
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
 
 private const val PAGE_SIZE = 30
 

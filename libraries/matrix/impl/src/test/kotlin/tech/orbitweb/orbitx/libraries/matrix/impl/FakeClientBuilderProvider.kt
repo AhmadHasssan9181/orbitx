@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiClientBuilder
 import org.matrix.rustcomponents.sdk.ClientBuilder
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiClientBuilder
 
 class FakeClientBuilderProvider(
     private val provideResult: () -> ClientBuilder = { FakeFfiClientBuilder() }

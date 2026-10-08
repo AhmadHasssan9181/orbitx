@@ -15,6 +15,8 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileEvents
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileState
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileVerificationState
@@ -41,8 +43,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithTwoParams
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class UserProfileViewTest : RobolectricTest() {
     @Test

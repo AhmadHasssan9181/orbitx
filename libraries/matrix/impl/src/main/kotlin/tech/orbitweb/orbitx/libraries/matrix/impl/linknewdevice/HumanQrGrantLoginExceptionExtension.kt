@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.linknewdevice
 
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.ErrorType
 import org.matrix.rustcomponents.sdk.HumanQrGrantLoginException
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.ErrorType
 
 internal fun HumanQrGrantLoginException.map() = when (this) {
     is HumanQrGrantLoginException.DeviceIdAlreadyInUse -> ErrorType.DeviceIdAlreadyInUse(message.orEmpty())

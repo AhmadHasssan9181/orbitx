@@ -27,21 +27,21 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.bumble.appyx.core.integrationpoint.NodeActivity
 import com.bumble.appyx.core.plugin.NodeReadyObserver
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.colors.SemanticColorsLightDark
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
+import tech.orbitweb.orbitx.di.AppBindings
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenEntryPoint
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenLockState
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenService
 import tech.orbitweb.orbitx.features.lockscreen.api.handleSecureFlag
+import tech.orbitweb.orbitx.intent.SafeUriHandler
 import tech.orbitweb.orbitx.libraries.architecture.appyx.DebugNavStateNodeHost
 import tech.orbitweb.orbitx.libraries.architecture.bindings
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.designsystem.theme.ElementThemeApp
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.LocalSnackbarDispatcher
 import tech.orbitweb.orbitx.services.analytics.compose.LocalAnalyticsService
-import tech.orbitweb.orbitx.di.AppBindings
-import tech.orbitweb.orbitx.intent.SafeUriHandler
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("MainActivity")

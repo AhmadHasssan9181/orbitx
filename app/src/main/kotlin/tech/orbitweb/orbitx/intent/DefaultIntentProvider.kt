@@ -13,6 +13,7 @@ import android.os.Bundle
 import androidx.core.net.toUri
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import tech.orbitweb.orbitx.MainActivity
 import tech.orbitweb.orbitx.libraries.deeplink.api.DeepLinkCreator
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
@@ -20,7 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
 import tech.orbitweb.orbitx.libraries.push.impl.intent.IntentProvider
-import tech.orbitweb.orbitx.MainActivity
 
 @ContributesBinding(AppScope::class)
 class DefaultIntentProvider(

@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.login.impl.classic
 
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 
 class FakeElementClassicConnection(
     private val startResult: () -> Unit = { lambdaError() },

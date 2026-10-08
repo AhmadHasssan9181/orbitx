@@ -18,6 +18,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.home.impl.roomlist.RoomListState
 import tech.orbitweb.orbitx.features.home.impl.spaces.HomeSpacesState
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutState
@@ -29,9 +32,6 @@ import tech.orbitweb.orbitx.libraries.indicator.api.IndicatorService
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.launch
 
 @Inject
 class HomePresenter(

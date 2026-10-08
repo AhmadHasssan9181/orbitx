@@ -14,6 +14,10 @@ import androidx.core.net.toUri
 import androidx.exifinterface.media.ExifInterface
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Ignore
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.androidutils.file.TemporaryUriDeleter
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.media.AudioInfo
@@ -30,10 +34,6 @@ import tech.orbitweb.orbitx.tests.testutils.fake.FakeTemporaryUriDeleter
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Ignore
-import org.junit.Test
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.IOException

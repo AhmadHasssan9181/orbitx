@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.aMediaItemImage
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultFocusedTimelineMediaGalleryDataSourceFactoryTest {
     @Test

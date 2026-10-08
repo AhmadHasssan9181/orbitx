@@ -14,6 +14,7 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runComposeUiTest
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.utils.FakeMentionSpanFormatter
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
@@ -21,7 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.permalink.FakePermalinkParser
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanProvider
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanTheme
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class DefaultHtmlConverterProviderTest : RobolectricTest() {
     private val provider = DefaultHtmlConverterProvider(

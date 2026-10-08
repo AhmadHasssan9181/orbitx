@@ -9,6 +9,10 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.IntentionalMention
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MsgType
@@ -20,10 +24,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.timeline.FakeTimeline
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.anEventTimelineItem
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class TimelineControllerTest {
     @Test

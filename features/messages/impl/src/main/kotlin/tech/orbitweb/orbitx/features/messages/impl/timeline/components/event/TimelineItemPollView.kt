@@ -10,6 +10,7 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline.components.event
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.PreviewParameter
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemPollContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemPollContentProvider
@@ -17,7 +18,6 @@ import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentView
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 fun TimelineItemPollView(

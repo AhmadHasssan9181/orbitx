@@ -7,11 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.location
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LastLocation
-import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LiveLocationShare
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +15,11 @@ import kotlinx.coroutines.flow.callbackFlow
 import org.matrix.rustcomponents.sdk.LiveLocationShareUpdate
 import org.matrix.rustcomponents.sdk.LiveLocationsListener
 import org.matrix.rustcomponents.sdk.RoomInterface
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LastLocation
+import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LiveLocationShare
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import org.matrix.rustcomponents.sdk.LiveLocationShare as RustLiveLocationShare
 
 fun RoomInterface.liveLocationSharesFlow(): Flow<List<LiveLocationShare>> {

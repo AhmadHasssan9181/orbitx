@@ -28,7 +28,7 @@ import kotlinx.serialization.Serializable
  * .
  */
 @Serializable
-data class InternalElementWellKnown(
+data class InternalOrbitWellKnown(
     @SerialName("registration_helper_url")
     val registrationHelperUrl: String? = null,
     @SerialName("enforce_element_pro")
@@ -44,6 +44,8 @@ data class InternalElementWellKnown(
     @SerialName("custom_recovery_passphrase")
     val customRecoveryPassphrase: InternalCustomRecoveryPassphrase? = null,
 )
+
+typealias InternalElementWellKnown = InternalOrbitWellKnown
 
 @Serializable
 data class InternalCustomRecoveryPassphrase(

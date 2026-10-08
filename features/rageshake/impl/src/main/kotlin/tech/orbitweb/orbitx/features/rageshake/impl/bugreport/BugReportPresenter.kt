@@ -17,6 +17,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.rageshake.api.reporter.BugReporter
 import tech.orbitweb.orbitx.features.rageshake.api.reporter.BugReporterListener
 import tech.orbitweb.orbitx.features.rageshake.impl.crash.CrashDataStore
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.features.rageshake.impl.screenshot.ScreenshotHolder
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Inject
 class BugReportPresenter(

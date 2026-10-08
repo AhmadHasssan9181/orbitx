@@ -14,10 +14,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProviderDataSource
 import tech.orbitweb.orbitx.features.login.impl.login.LoginHelper
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class ConfirmAccountProviderPresenter(

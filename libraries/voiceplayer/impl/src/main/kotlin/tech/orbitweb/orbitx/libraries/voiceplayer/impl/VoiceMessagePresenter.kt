@@ -15,6 +15,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runUpdatingState
@@ -26,8 +28,6 @@ import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageEvent
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageException
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageState
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
 

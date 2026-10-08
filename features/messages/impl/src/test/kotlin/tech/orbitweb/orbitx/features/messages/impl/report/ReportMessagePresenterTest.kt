@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl.report
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarDispatcher
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class ReportMessagePresenterTest {
     @get:Rule

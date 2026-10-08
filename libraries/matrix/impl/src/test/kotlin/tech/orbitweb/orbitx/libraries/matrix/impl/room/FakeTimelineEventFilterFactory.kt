@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
+import org.matrix.rustcomponents.sdk.TimelineEventFilter
 import tech.orbitweb.orbitx.libraries.matrix.api.room.StateEventType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimelineEventFilter
-import org.matrix.rustcomponents.sdk.TimelineEventFilter
 
 class FakeTimelineEventFilterFactory : TimelineEventFilterFactory {
     override fun create(joinRule: JoinRule?, isEncrypted: Boolean?, excludedStateTypes: List<StateEventType>): TimelineEventFilter {

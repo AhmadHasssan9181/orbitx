@@ -11,6 +11,9 @@ import android.content.Context
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
 import tech.orbitweb.orbitx.appconfig.NotificationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
@@ -31,9 +34,6 @@ import tech.orbitweb.orbitx.services.toolbox.api.sdk.BuildVersionSdkIntProvider
 import tech.orbitweb.orbitx.services.toolbox.impl.strings.AndroidStringProvider
 import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
 
 private const val A_ROOM_AVATAR = "mxc://roomAvatar"
 private const val A_USER_AVATAR_1 = "mxc://userAvatar1"

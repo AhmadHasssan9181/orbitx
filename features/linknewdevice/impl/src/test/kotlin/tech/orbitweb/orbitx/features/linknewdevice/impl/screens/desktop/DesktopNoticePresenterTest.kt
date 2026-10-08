@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.linknewdevice.impl.screens.desktop
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenter
 import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionsPresenterFactory
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DesktopNoticePresenterTest {
     @Test

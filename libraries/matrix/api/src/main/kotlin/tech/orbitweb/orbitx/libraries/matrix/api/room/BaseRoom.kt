@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.tombstone.PredecessorRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomVisibility
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.ReceiptType
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
 import java.io.Closeable
 
 /**

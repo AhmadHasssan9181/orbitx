@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.slashcommands.impl
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.withTimeoutOrNull
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.slashcommands.api.SlashCommand
 import tech.orbitweb.orbitx.libraries.slashcommands.api.SlashCommandService
 import tech.orbitweb.orbitx.libraries.slashcommands.api.SlashCommandSuggestion
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.withTimeoutOrNull
 import kotlin.time.Duration.Companion.seconds
 
 @ContributesBinding(RoomScope::class)

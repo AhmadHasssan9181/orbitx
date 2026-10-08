@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.spaces
 
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.join.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.map
-import kotlinx.collections.immutable.toImmutableList
 import org.matrix.rustcomponents.sdk.SpaceRoom as RustSpaceRoom
 
 class SpaceRoomMapper {

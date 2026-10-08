@@ -10,6 +10,12 @@
 package tech.orbitweb.orbitx.features.knockrequests.impl.list
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.knockrequests.api.KnockRequestPermissions
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.KnockRequestsService
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -21,12 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.knock.FakeKnockRequest
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class KnockRequestsListPresenterTest {
     @Test

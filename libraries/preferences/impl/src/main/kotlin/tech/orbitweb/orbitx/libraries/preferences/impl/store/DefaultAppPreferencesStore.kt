@@ -13,6 +13,9 @@ import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.core.meta.BuildType
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
@@ -23,9 +26,6 @@ import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
 import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound.Companion.toStored
 import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSoundChannelConfig
 import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
 
 private val developerModeKey = booleanPreferencesKey("developerMode")
 private val customElementCallBaseUrlKey = stringPreferencesKey("elementCallBaseUrl")

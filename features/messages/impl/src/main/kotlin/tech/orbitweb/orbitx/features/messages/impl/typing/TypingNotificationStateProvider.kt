@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.typing
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_ALICE
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_BOB
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_CHARLIE
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_DAVID
 import tech.orbitweb.orbitx.libraries.designsystem.preview.USER_NAME_EVE
-import kotlinx.collections.immutable.toImmutableList
 
 class TypingNotificationStateProvider : PreviewParameterProvider<TypingNotificationState> {
     override val values: Sequence<TypingNotificationState>

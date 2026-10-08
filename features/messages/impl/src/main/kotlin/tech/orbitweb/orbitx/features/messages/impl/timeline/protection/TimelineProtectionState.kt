@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.protection
 
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import kotlinx.collections.immutable.ImmutableSet
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 
 data class TimelineProtectionState(
     val protectionState: ProtectionState,

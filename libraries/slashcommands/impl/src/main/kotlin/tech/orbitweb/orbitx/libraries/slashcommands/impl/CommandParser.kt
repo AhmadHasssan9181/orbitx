@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.slashcommands.impl
 
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import tech.orbitweb.orbitx.libraries.matrix.api.core.MatrixPatterns
@@ -20,7 +21,6 @@ import tech.orbitweb.orbitx.libraries.slashcommands.api.ChatEffect
 import tech.orbitweb.orbitx.libraries.slashcommands.api.MessagePrefix
 import tech.orbitweb.orbitx.libraries.slashcommands.api.SlashCommand
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import kotlinx.coroutines.flow.first
 import timber.log.Timber
 
 @Inject

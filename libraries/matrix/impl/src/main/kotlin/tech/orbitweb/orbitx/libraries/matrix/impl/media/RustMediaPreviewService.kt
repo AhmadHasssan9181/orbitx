@@ -7,11 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.media
 
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewConfig
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewService
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -22,6 +17,11 @@ import org.matrix.rustcomponents.sdk.Client
 import org.matrix.rustcomponents.sdk.InviteAvatars
 import org.matrix.rustcomponents.sdk.MediaPreviewConfigListener
 import org.matrix.rustcomponents.sdk.MediaPreviews
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewConfig
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewService
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import org.matrix.rustcomponents.sdk.MediaPreviewConfig as RustMediaPreviewConfig
 
 class RustMediaPreviewService(

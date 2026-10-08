@@ -8,6 +8,10 @@
 package tech.orbitweb.orbitx.features.rageshake.impl.bugreport
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.rageshake.api.reporter.BugReporter
 import tech.orbitweb.orbitx.features.rageshake.impl.crash.A_CRASH_DATA
 import tech.orbitweb.orbitx.features.rageshake.impl.crash.CrashDataStore
@@ -19,10 +23,6 @@ import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.test.A_FAILURE_REASON
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 const val A_SHORT_DESCRIPTION = "bug!"
 const val A_LONG_DESCRIPTION = "I have seen a bug!"

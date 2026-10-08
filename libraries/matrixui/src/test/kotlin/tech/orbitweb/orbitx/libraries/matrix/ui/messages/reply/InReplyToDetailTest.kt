@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.FormattedBody
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.InReplyTo
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MembershipChange
@@ -19,7 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.permalink.FakePermalinkParser
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.aProfileDetails
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.item.event.aRoomMembershipContent
-import org.junit.Test
 
 class InReplyToDetailTest {
     @Test

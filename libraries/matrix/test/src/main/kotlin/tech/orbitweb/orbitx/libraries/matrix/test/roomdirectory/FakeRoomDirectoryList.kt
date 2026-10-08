@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.roomdirectory
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emptyFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
 
 class FakeRoomDirectoryList(
     override val state: Flow<RoomDirectoryList.SearchResult> = emptyFlow(),

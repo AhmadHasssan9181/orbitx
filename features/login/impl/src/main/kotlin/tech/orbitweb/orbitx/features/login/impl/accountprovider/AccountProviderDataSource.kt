@@ -10,11 +10,11 @@ package tech.orbitweb.orbitx.features.login.impl.accountprovider
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
-import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
+import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 
 @SingleIn(AppScope::class)
 @Inject

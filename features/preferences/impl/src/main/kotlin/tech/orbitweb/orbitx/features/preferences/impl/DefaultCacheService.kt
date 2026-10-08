@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.features.preferences.impl
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.features.preferences.api.CacheService
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import tech.orbitweb.orbitx.features.preferences.api.CacheService
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 
 @SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)

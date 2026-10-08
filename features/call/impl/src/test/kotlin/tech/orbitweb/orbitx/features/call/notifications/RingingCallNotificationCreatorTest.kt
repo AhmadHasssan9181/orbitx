@@ -11,6 +11,8 @@ import androidx.core.graphics.drawable.IconCompat
 import androidx.test.platform.app.InstrumentationRegistry
 import coil3.ImageLoader
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.call.impl.notifications.RingingCallNotificationCreator
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.media.test.FakeImageLoaderHolder
 import tech.orbitweb.orbitx.libraries.push.test.notifications.push.FakeNotificationBitmapLoader
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class RingingCallNotificationCreatorTest : RobolectricTest() {
     @Test

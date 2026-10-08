@@ -8,10 +8,6 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
-import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +16,10 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
+import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
 
 @Inject
 class TimelineMediaItemsFactory(

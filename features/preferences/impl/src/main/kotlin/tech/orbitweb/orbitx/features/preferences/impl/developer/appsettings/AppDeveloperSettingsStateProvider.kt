@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.preferences.impl.developer.tracing.LogLevelItem
 import tech.orbitweb.orbitx.features.rageshake.api.preferences.aRageshakePreferencesState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.featureflag.ui.model.aFeatureUiModelList
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TraceLogPack
-import kotlinx.collections.immutable.toImmutableList
 
 open class AppDeveloperSettingsStateProvider : PreviewParameterProvider<AppDeveloperSettingsState> {
     override val values: Sequence<AppDeveloperSettingsState>

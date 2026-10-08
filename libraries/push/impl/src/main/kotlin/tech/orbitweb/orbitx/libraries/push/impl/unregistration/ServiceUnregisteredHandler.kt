@@ -10,6 +10,7 @@ package tech.orbitweb.orbitx.libraries.push.impl.unregistration
 import androidx.compose.ui.graphics.toArgb
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.appconfig.NotificationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -18,7 +19,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.notifications.NotificationDispla
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.factories.NotificationAccountParams
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.factories.NotificationCreator
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
-import kotlinx.coroutines.flow.first
 
 interface ServiceUnregisteredHandler {
     suspend fun handle(userId: UserId)

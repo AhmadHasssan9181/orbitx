@@ -7,16 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.threads
 
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListItem
-import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListItemEvent
-import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListPaginationStatus
-import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadsListService
-import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.TimelineEventContentMapper
-import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.map
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
@@ -27,6 +17,16 @@ import kotlinx.coroutines.flow.onStart
 import org.matrix.rustcomponents.sdk.ThreadListEntriesListener
 import org.matrix.rustcomponents.sdk.ThreadListPaginationStateListener
 import org.matrix.rustcomponents.sdk.ThreadListUpdate
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListItem
+import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListItemEvent
+import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadListPaginationStatus
+import tech.orbitweb.orbitx.libraries.matrix.api.room.threads.ThreadsListService
+import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.TimelineEventContentMapper
+import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.map
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.mxCallbackFlow
 import uniffi.matrix_sdk_ui.ThreadListPaginationState
 import org.matrix.rustcomponents.sdk.ThreadListService as InnerThreadListService
 

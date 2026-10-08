@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
+import org.matrix.rustcomponents.sdk.Session
+import org.matrix.rustcomponents.sdk.SlidingSyncVersion
 import tech.orbitweb.orbitx.libraries.matrix.test.A_DEVICE_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_HOMESERVER_URL
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
-import org.matrix.rustcomponents.sdk.Session
-import org.matrix.rustcomponents.sdk.SlidingSyncVersion
 
 internal fun aRustSession(
     proxy: SlidingSyncVersion = SlidingSyncVersion.NONE,

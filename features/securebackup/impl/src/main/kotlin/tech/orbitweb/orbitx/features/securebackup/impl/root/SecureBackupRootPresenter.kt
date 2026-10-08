@@ -17,6 +17,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.securebackup.impl.loggerTagDisable
 import tech.orbitweb.orbitx.features.securebackup.impl.loggerTagRoot
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -28,8 +30,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarDispat
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.collectSnackbarMessageAsState
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @Inject

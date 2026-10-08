@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
-import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
-import tech.orbitweb.orbitx.libraries.matrix.api.room.CallIntentConsensus
 import org.matrix.rustcomponents.sdk.RtcCallIntent
 import org.matrix.rustcomponents.sdk.RtcCallIntentConsensus
+import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
+import tech.orbitweb.orbitx.libraries.matrix.api.room.CallIntentConsensus
 
 fun RtcCallIntentConsensus.map(): CallIntentConsensus = when (this) {
     is RtcCallIntentConsensus.Full -> CallIntentConsensus.Full(v1.map())

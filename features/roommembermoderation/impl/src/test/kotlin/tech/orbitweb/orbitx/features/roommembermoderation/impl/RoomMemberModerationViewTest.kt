@@ -13,6 +13,7 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.roommembermoderation.api.ModerationAction
 import tech.orbitweb.orbitx.features.roommembermoderation.api.ModerationActionState
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationEvents
@@ -27,7 +28,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithTwoParams
 import tech.orbitweb.orbitx.tests.testutils.pressTag
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import org.junit.Test
 
 class RoomMemberModerationViewTest : RobolectricTest() {
     @Test

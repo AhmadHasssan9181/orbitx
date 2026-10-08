@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.analytics
 
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.JoinedRoom
-import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeBaseRoom
-import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeBaseRoom
+import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 
 class JoinedExtKtTest {
     @Test

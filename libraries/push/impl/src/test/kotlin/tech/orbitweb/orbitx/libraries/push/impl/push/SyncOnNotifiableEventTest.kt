@@ -9,6 +9,10 @@ package tech.orbitweb.orbitx.libraries.push.impl.push
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import tech.orbitweb.orbitx.libraries.featureflag.test.FakeFeatureFlagService
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
@@ -24,10 +28,6 @@ import tech.orbitweb.orbitx.services.appnavstate.test.FakeAppForegroundStateServ
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class SyncOnNotifiableEventTest {
     private val startSyncLambda = lambdaRecorder<Result<Unit>> { Result.success(Unit) }

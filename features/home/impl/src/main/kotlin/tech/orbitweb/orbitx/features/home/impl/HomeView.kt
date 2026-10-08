@@ -47,6 +47,7 @@ import dev.chrisbanes.haze.hazeSource
 import dev.chrisbanes.haze.materials.ExperimentalHazeMaterialsApi
 import dev.chrisbanes.haze.materials.HazeMaterials
 import dev.chrisbanes.haze.rememberHazeState
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.home.impl.components.HomeTopBar
@@ -65,7 +66,6 @@ import tech.orbitweb.orbitx.features.home.impl.spaces.HomeSpacesView
 import tech.orbitweb.orbitx.libraries.androidutils.throttler.FirstThrottler
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
-import tech.orbitweb.orbitx.libraries.designsystem.theme.components.FloatingActionButton
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.HorizontalFloatingToolbar
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.HorizontalFloatingToolbarItem
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.HorizontalFloatingToolbarSeparator
@@ -75,7 +75,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarHost
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.rememberSnackbarHostState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.launch
 
 @Composable
 fun HomeView(

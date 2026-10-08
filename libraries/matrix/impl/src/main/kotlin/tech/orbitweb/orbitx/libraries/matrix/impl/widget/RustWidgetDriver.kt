@@ -7,8 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.widget
 
-import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetDriver
-import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetSettings
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -18,6 +16,8 @@ import kotlinx.coroutines.launch
 import org.matrix.rustcomponents.sdk.Room
 import org.matrix.rustcomponents.sdk.WidgetCapabilitiesProvider
 import org.matrix.rustcomponents.sdk.makeWidgetDriver
+import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetDriver
+import tech.orbitweb.orbitx.libraries.matrix.api.widget.MatrixWidgetSettings
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.coroutines.coroutineContext
 

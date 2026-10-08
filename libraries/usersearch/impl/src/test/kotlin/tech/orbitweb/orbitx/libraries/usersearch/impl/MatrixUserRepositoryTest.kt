@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.libraries.usersearch.impl
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUserList
 import tech.orbitweb.orbitx.libraries.usersearch.api.UserSearchResult
 import tech.orbitweb.orbitx.libraries.usersearch.test.FakeUserListDataSource
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 private val SESSION_ID = SessionId("@current-user:example.com")
 

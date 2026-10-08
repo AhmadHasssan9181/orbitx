@@ -23,6 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import im.vector.app.features.analytics.plan.Interaction
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListEvent
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListView
@@ -52,7 +53,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.services.analytics.compose.LocalAnalyticsService
 import tech.orbitweb.orbitx.services.analyticsproviders.api.trackers.captureInteraction
-import io.element.android.wysiwyg.link.Link
 
 @Composable
 fun PinnedMessagesListView(

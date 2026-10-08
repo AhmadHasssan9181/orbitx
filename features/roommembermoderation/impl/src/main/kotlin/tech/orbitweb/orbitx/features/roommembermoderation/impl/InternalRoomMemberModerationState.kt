@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.features.roommembermoderation.impl
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.roommembermoderation.api.ModerationActionState
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationEvents
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationPermissions
 import tech.orbitweb.orbitx.features.roommembermoderation.api.RoomMemberModerationState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class InternalRoomMemberModerationState(
     override val permissions: RoomMemberModerationPermissions,

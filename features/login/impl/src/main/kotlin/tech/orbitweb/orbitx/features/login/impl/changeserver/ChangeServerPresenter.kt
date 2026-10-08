@@ -13,6 +13,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.login.impl.accesscontrol.DefaultAccountProviderAccessControl
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProviderDataSource
@@ -21,8 +23,6 @@ import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runCatchingUpdatingState
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.MatrixAuthenticationService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Inject
 class ChangeServerPresenter(

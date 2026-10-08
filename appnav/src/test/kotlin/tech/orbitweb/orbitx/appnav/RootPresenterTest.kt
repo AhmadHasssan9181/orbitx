@@ -11,6 +11,9 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.appnav.root.RootPresenter
 import tech.orbitweb.orbitx.features.rageshake.api.crash.aCrashDetectionState
 import tech.orbitweb.orbitx.features.rageshake.api.detection.aRageshakeDetectionState
@@ -20,9 +23,6 @@ import tech.orbitweb.orbitx.services.apperror.api.AppErrorState
 import tech.orbitweb.orbitx.services.apperror.api.AppErrorStateService
 import tech.orbitweb.orbitx.services.apperror.test.FakeAppErrorStateService
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class RootPresenterTest {
     @get:Rule

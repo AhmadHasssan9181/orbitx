@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.libraries.pushstore.impl
 
 import androidx.test.platform.app.InstrumentationRegistry
-import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import tech.orbitweb.orbitx.libraries.pushstore.api.UserPushStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
+import tech.orbitweb.orbitx.libraries.pushstore.api.UserPushStore
 import kotlin.concurrent.thread
 
 /**

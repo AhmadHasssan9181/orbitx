@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.libraries.oauth.impl
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
-import tech.orbitweb.orbitx.libraries.oauth.api.OAuthActionFlow
 import kotlinx.coroutines.flow.FlowCollector
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
+import tech.orbitweb.orbitx.libraries.oauth.api.OAuthActionFlow
 
 @ContributesBinding(AppScope::class)
 @SingleIn(AppScope::class)

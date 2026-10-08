@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.preferences.impl.labs
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.preferences.impl.tasks.ClearCacheUseCase
 import tech.orbitweb.orbitx.features.preferences.impl.tasks.FakeClearCacheUseCase
 import tech.orbitweb.orbitx.libraries.featureflag.api.Feature
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class LabsPresenterTest {
     @Test

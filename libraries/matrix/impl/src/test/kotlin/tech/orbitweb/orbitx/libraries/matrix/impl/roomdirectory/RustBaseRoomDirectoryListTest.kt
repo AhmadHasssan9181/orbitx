@@ -9,10 +9,6 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomDescription
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomDirectorySearch
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.TestScope
@@ -21,6 +17,10 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.matrix.rustcomponents.sdk.RoomDirectorySearch
 import org.matrix.rustcomponents.sdk.RoomDirectorySearchEntryUpdate
+import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomDescription
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomDirectorySearch
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_2
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class RustBaseRoomDirectoryListTest {

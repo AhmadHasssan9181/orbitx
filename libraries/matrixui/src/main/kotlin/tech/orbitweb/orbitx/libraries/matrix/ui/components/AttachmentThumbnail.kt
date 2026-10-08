@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.libraries.designsystem.components.blurhash.BlurHashAsyncImage
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
@@ -28,7 +29,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Icon
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import tech.orbitweb.orbitx.libraries.matrix.ui.media.MediaRequestData
-import kotlinx.parcelize.Parcelize
 
 @Composable
 fun AttachmentThumbnail(

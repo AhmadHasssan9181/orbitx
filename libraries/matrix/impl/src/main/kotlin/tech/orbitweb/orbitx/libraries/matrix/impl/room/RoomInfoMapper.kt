@@ -7,6 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
+import org.matrix.rustcomponents.sdk.Membership
+import org.matrix.rustcomponents.sdk.RoomHero
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -21,10 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.impl.room.join.map
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.member.RoomMemberMapper
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.powerlevels.RoomPowerLevelsValuesMapper
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.tombstone.map
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
-import org.matrix.rustcomponents.sdk.Membership
-import org.matrix.rustcomponents.sdk.RoomHero
 import uniffi.matrix_sdk_base.EncryptionState
 import org.matrix.rustcomponents.sdk.Membership as RustMembership
 import org.matrix.rustcomponents.sdk.RoomInfo as RustRoomInfo

@@ -9,12 +9,12 @@ package tech.orbitweb.orbitx.features.login.impl.qrcode
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeLoginStep
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.auth.FakeMatrixAuthenticationService
 import tech.orbitweb.orbitx.libraries.matrix.test.auth.qrlogin.FakeMatrixQrCodeLoginData
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultQrCodeLoginManagerTest {
     @Test

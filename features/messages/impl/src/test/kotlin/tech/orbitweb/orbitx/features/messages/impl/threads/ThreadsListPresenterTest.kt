@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.threads
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.fixtures.aTimelineItemContentFactory
 import tech.orbitweb.orbitx.features.messages.impl.messagesummary.FakeMessageSummaryFormatter
 import tech.orbitweb.orbitx.features.messages.impl.threads.list.ThreadsListEvents
@@ -21,8 +23,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.room.threads.FakeThreadsListService
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class ThreadsListPresenterTest {
     @Test

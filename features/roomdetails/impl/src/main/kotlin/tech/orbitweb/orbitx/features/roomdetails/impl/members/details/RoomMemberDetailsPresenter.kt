@@ -16,6 +16,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.flow.filterNotNull
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileEvents
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfilePresenterFactory
 import tech.orbitweb.orbitx.features.userprofile.api.UserProfileState
@@ -33,9 +36,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.getRoomMemberAsState
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.roomMemberIdentityStateChange
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.flow.filterNotNull
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 /**
  * Presenter for room member details screen.

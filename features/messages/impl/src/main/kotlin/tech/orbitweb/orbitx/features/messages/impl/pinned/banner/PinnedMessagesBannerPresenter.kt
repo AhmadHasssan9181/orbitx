@@ -18,10 +18,6 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.features.messages.impl.pinned.DefaultPinnedEventsTimelineProvider
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -30,6 +26,10 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
+import tech.orbitweb.orbitx.features.messages.impl.pinned.DefaultPinnedEventsTimelineProvider
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
+import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
 
 @Inject
 class PinnedMessagesBannerPresenter(

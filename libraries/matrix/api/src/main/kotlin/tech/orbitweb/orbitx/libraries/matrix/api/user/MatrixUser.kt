@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.user
 
 import android.os.Parcelable
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 
 @Parcelize
 data class MatrixUser(

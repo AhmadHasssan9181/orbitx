@@ -11,11 +11,11 @@ import android.app.Activity
 import android.content.Intent
 import androidx.core.net.toUri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
 import tech.orbitweb.orbitx.libraries.matrix.test.auth.FakeOAuthRedirectUrlProvider
 import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
 
 class DefaultOAuthIntentResolverTest : RobolectricTest() {
     @Test

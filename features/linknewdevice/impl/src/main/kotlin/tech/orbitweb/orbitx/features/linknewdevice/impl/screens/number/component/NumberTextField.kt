@@ -35,12 +35,12 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import kotlinx.coroutines.delay
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.linknewdevice.impl.screens.number.model.Digit
 import tech.orbitweb.orbitx.features.linknewdevice.impl.screens.number.model.Number
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
-import kotlinx.coroutines.delay
 
 @Composable
 fun NumberTextField(

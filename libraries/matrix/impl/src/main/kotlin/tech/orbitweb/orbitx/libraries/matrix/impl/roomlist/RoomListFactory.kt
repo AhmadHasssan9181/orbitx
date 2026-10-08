@@ -7,14 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter.Companion.all
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import tech.orbitweb.orbitx.services.analytics.api.finishLongRunningTransaction
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,6 +17,14 @@ import kotlinx.coroutines.launch
 import org.matrix.rustcomponents.sdk.RoomListDynamicEntriesController
 import org.matrix.rustcomponents.sdk.RoomListLoadingState
 import org.matrix.rustcomponents.sdk.RoomListService
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter.Companion.all
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
+import tech.orbitweb.orbitx.services.analytics.api.finishLongRunningTransaction
 import kotlin.coroutines.CoroutineContext
 import org.matrix.rustcomponents.sdk.RoomList as InnerRoomList
 

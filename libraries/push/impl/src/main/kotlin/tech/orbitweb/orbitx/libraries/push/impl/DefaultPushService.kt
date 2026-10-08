@@ -11,6 +11,8 @@ import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
 import dev.zacsweers.metro.binding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -30,8 +32,6 @@ import tech.orbitweb.orbitx.libraries.pushstore.api.UserPushStoreFactory
 import tech.orbitweb.orbitx.libraries.pushstore.api.clientsecret.PushClientSecretStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionListener
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
 import timber.log.Timber
 
 @ContributesBinding(AppScope::class, binding = binding<PushService>())

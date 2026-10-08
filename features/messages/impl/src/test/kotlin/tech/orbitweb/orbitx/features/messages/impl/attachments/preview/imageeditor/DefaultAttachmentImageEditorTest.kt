@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 
 class DefaultAttachmentImageEditorTest {
     @Test

@@ -14,6 +14,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.delay
 import tech.orbitweb.orbitx.features.lockscreen.impl.LockScreenConfig
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.PinCodeManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.model.PinEntry
@@ -21,7 +22,6 @@ import tech.orbitweb.orbitx.features.lockscreen.impl.setup.pin.validation.PinVal
 import tech.orbitweb.orbitx.features.lockscreen.impl.setup.pin.validation.SetupPinFailure
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
-import kotlinx.coroutines.delay
 
 /**
  * Some time for the ui to refresh before showing confirmation step.

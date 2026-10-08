@@ -7,17 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.verification
 
-import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationData
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationServiceListener
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerifiedStatus
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationEmoji
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationFlowState
-import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationRequest
-import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.flow.Flow
@@ -42,6 +31,17 @@ import org.matrix.rustcomponents.sdk.SessionVerificationControllerDelegate
 import org.matrix.rustcomponents.sdk.VerificationState
 import org.matrix.rustcomponents.sdk.VerificationStateListener
 import org.matrix.rustcomponents.sdk.use
+import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationData
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationServiceListener
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerifiedStatus
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationEmoji
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationFlowState
+import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationRequest
+import tech.orbitweb.orbitx.libraries.matrix.impl.util.cancelAndDestroy
 import timber.log.Timber
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.time.Duration.Companion.seconds

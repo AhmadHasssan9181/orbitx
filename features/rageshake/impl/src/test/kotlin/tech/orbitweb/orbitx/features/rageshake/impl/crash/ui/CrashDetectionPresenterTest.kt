@@ -8,6 +8,12 @@
 package tech.orbitweb.orbitx.features.rageshake.impl.crash.ui
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.rageshake.api.crash.CrashDetectionEvent
 import tech.orbitweb.orbitx.features.rageshake.impl.crash.A_CRASH_DATA
 import tech.orbitweb.orbitx.features.rageshake.impl.crash.DefaultCrashDetectionPresenter
@@ -16,12 +22,6 @@ import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class CrashDetectionPresenterTest {
     @get:Rule

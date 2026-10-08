@@ -11,10 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberUpdatedState
+import kotlinx.coroutines.delay
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.room.alias.RoomAliasHelper
 import tech.orbitweb.orbitx.libraries.matrix.api.roomAliasFromName
-import kotlinx.coroutines.delay
 
 @Composable
 fun RoomAddressValidityEffect(

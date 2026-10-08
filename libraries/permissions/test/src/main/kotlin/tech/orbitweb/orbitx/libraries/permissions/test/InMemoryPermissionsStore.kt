@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.permissions.test
 
-import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsStore
 
 class InMemoryPermissionsStore(
     permissionDenied: Boolean = false,

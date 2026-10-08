@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.loginpassword
 
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import kotlinx.parcelize.Parcelize
 
 data class LoginPasswordState(
     val accountProvider: AccountProvider,

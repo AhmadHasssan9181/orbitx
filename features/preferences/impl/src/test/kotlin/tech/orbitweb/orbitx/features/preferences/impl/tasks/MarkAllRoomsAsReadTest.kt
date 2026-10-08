@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.preferences.impl.tasks
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
@@ -15,8 +17,6 @@ import tech.orbitweb.orbitx.libraries.push.test.notifications.FakeNotificationCl
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class MarkAllRoomsAsReadTest {
     @Test

@@ -10,6 +10,10 @@
 package tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.preferences.impl.developer.tracing.LogLevelItem
 import tech.orbitweb.orbitx.features.rageshake.api.preferences.aRageshakePreferencesState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -21,10 +25,6 @@ import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class AppDeveloperSettingsPresenterTest {
     @get:Rule

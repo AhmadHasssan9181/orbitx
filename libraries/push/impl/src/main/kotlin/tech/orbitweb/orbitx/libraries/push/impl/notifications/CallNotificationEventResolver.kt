@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.withTimeoutOrNull
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClientProvider
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.notifications.model.NotifiableEv
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.model.NotifiableRingingCallEvent
 import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.withTimeoutOrNull
 import timber.log.Timber
 import kotlin.time.Duration.Companion.seconds
 

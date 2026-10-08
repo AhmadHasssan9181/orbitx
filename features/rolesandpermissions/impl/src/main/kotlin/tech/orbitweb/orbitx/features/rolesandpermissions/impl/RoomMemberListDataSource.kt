@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.rolesandpermissions.impl
 
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.bool.orFalse
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.roomMembers
-import kotlinx.coroutines.withContext
 
 @Inject
 class RoomMemberListDataSource(

@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.spaces
 
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.LeaveSpaceHandle
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceRoom
@@ -15,9 +18,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceService
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
 
 class FakeSpaceService(
     private val spaceRoomListResult: (RoomId) -> SpaceRoomList = { lambdaError() },

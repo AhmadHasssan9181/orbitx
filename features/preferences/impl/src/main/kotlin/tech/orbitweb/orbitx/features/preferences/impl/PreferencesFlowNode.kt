@@ -18,6 +18,7 @@ import com.bumble.appyx.navmodel.backstack.operation.pop
 import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.deactivation.api.AccountDeactivationEntryPoint
 import tech.orbitweb.orbitx.features.licenses.api.OpenSourceLicensesEntryPoint
@@ -45,7 +46,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.NotificationTroubleShootEntryPoint
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.PushHistoryEntryPoint
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

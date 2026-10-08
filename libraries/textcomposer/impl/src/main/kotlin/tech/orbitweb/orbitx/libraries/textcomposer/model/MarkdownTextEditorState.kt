@@ -20,6 +20,7 @@ import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.SaverScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkBuilder
@@ -29,7 +30,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanProvider
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionType
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.ResolvedSuggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.getMentionSpans
-import kotlinx.parcelize.Parcelize
 
 @Stable
 class MarkdownTextEditorState(

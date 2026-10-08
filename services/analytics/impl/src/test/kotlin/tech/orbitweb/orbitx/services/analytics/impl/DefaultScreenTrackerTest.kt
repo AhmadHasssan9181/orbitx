@@ -13,14 +13,14 @@ import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.MobileScreen
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.FakeLifecycleOwner
 import tech.orbitweb.orbitx.tests.testutils.withFakeLifecycleOwner
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultScreenTrackerTest {
     @Test

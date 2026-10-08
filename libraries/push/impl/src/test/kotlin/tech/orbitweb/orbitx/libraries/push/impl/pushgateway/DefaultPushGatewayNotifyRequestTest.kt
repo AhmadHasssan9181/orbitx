@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.libraries.push.impl.pushgateway
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.push.api.gateway.PushGatewayFailure
-import tech.orbitweb.orbitx.libraries.push.impl.test.DefaultTestPush
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertThrows
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.push.api.gateway.PushGatewayFailure
+import tech.orbitweb.orbitx.libraries.push.impl.test.DefaultTestPush
 
 class DefaultPushGatewayNotifyRequestTest {
     @Test

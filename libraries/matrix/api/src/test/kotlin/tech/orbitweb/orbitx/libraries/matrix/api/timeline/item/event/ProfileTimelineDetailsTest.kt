@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 
 private const val A_USER_ID = "@foo:example.org"
 private val aUserId = UserId(A_USER_ID)

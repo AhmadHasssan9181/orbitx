@@ -10,13 +10,6 @@ package tech.orbitweb.orbitx.features.home.impl.search
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
-import tech.orbitweb.orbitx.features.home.impl.datasource.RoomListRoomSummaryFactory
-import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.updateVisibleRange
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.CoroutineScope
@@ -24,6 +17,13 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.features.home.impl.datasource.RoomListRoomSummaryFactory
+import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.updateVisibleRange
 
 private const val PAGE_SIZE = 30
 

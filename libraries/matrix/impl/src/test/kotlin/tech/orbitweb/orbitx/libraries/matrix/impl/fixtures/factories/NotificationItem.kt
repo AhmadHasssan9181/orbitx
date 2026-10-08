@@ -7,11 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimelineEvent
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_NAME
-import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_NAME
 import org.matrix.rustcomponents.sdk.Action
 import org.matrix.rustcomponents.sdk.BatchNotificationResult
 import org.matrix.rustcomponents.sdk.JoinRule
@@ -21,6 +16,11 @@ import org.matrix.rustcomponents.sdk.NotificationRoomInfo
 import org.matrix.rustcomponents.sdk.NotificationSenderInfo
 import org.matrix.rustcomponents.sdk.NotificationStatus
 import org.matrix.rustcomponents.sdk.TimelineEvent
+import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimelineEvent
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_NAME
+import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_NAME
 
 internal fun aRustNotificationItem(
     event: NotificationEvent = aRustNotificationEventTimeline(),

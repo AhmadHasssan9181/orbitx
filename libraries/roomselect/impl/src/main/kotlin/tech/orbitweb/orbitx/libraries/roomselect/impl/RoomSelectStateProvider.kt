@@ -9,14 +9,14 @@ package tech.orbitweb.orbitx.libraries.roomselect.impl
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aSelectRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
 import tech.orbitweb.orbitx.libraries.roomselect.api.RoomSelectMode
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 open class RoomSelectStateProvider : PreviewParameterProvider<RoomSelectState> {
     override val values: Sequence<RoomSelectState>

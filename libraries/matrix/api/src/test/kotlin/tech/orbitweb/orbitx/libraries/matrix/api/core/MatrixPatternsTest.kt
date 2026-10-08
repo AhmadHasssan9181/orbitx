@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.libraries.matrix.api.core
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
-import org.junit.Test
 
 class MatrixPatternsTest {
     private val longLocalPart = "a".repeat(255 - ":server.com".length - 1)

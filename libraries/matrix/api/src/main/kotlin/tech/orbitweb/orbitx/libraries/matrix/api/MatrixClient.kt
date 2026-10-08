@@ -7,6 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
 import tech.orbitweb.orbitx.libraries.matrix.api.analytics.SdkStoreSizes
 import tech.orbitweb.orbitx.libraries.matrix.api.core.DeviceId
@@ -44,10 +48,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixSearchUserResults
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
 import java.util.Optional
 
 interface MatrixClient {

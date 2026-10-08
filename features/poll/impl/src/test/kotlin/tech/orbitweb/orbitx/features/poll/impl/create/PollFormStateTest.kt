@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.poll.impl.create
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.poll.impl.PollConstants
-import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import kotlinx.collections.immutable.toImmutableList
 import org.junit.Test
+import tech.orbitweb.orbitx.features.poll.impl.PollConstants
+import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 
 class PollFormStateTest {
     @Test

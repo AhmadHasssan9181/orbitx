@@ -20,6 +20,11 @@ import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.Interaction
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.knockrequests.api.KnockRequestPermissions
 import tech.orbitweb.orbitx.features.knockrequests.api.knockRequestPermissions
 import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomEvent
@@ -55,11 +60,6 @@ import tech.orbitweb.orbitx.libraries.push.api.notifications.NotificationCleaner
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analyticsproviders.api.trackers.captureInteraction
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class RoomDetailsPresenter(

@@ -17,12 +17,12 @@ import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
-import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
-import tech.orbitweb.orbitx.libraries.designsystem.utils.CommonDrawables
-import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
+import tech.orbitweb.orbitx.libraries.designsystem.utils.CommonDrawables
+import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import timber.log.Timber
 import kotlin.time.Duration.Companion.minutes
 

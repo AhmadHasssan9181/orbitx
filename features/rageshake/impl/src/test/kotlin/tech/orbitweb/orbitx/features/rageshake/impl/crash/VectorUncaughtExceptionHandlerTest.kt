@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.rageshake.impl.crash
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
-import tech.orbitweb.orbitx.libraries.preferences.test.FakePreferenceDataStoreFactory
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
+import tech.orbitweb.orbitx.libraries.preferences.test.FakePreferenceDataStoreFactory
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class VectorUncaughtExceptionHandlerTest : RobolectricTest() {
     @Test

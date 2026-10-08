@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.verification
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationServiceListener
@@ -15,9 +18,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationFlowSt
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.VerificationRequest
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 
 class FakeSessionVerificationService(
     initialSessionVerifiedStatus: SessionVerifiedStatus = SessionVerifiedStatus.Unknown,

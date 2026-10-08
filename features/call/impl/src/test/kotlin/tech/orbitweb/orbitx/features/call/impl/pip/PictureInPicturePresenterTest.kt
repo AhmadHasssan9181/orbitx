@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.call.impl.pip
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import tech.orbitweb.orbitx.tests.testutils.test
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
+import tech.orbitweb.orbitx.tests.testutils.test
 
 class PictureInPicturePresenterTest {
     @Test

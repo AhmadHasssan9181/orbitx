@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline.postprocessor
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.virtual.VirtualTimelineItem
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
-import org.junit.Test
 
 class LoadingIndicatorsPostProcessorTest {
     @Test

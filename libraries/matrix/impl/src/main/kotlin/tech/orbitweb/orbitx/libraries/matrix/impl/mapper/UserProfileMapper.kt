@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.mapper
 
+import org.matrix.rustcomponents.sdk.UserProfile
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import org.matrix.rustcomponents.sdk.UserProfile
 
 fun UserProfile.map() = MatrixUser(
     userId = UserId(userId),

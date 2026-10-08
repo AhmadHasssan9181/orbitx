@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.draft
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.draft.ComposerDraft
 import tech.orbitweb.orbitx.libraries.matrix.api.room.draft.ComposerDraftType
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_THREAD_ID
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class VolatileComposerDraftStoreTest {
     private val roomId = A_ROOM_ID

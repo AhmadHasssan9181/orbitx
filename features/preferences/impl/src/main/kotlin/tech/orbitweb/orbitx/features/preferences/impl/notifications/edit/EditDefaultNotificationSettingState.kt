@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.notifications.edit
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
-import kotlinx.collections.immutable.ImmutableList
 
 data class EditDefaultNotificationSettingState(
     val isOneToOne: Boolean,

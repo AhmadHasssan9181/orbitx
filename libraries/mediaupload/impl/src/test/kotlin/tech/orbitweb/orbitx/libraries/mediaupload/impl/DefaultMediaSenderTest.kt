@@ -9,6 +9,12 @@ package tech.orbitweb.orbitx.libraries.mediaupload.impl
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.advanceTimeBy
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.media.FileInfo
@@ -25,12 +31,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.test.FakeMediaPreProcessor
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.StandardTestDispatcher
-import kotlinx.coroutines.test.advanceTimeBy
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import java.io.File
 
 class DefaultMediaSenderTest : RobolectricTest() {

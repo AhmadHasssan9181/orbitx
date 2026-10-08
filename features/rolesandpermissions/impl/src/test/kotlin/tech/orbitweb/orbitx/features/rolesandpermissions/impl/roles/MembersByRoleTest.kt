@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.rolesandpermissions.impl.roles
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_6
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_7
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomMember
 import tech.orbitweb.orbitx.libraries.matrix.ui.room.PowerLevelRoomMemberComparator
-import kotlinx.collections.immutable.persistentListOf
-import org.junit.Test
 
 class MembersByRoleTest {
     @Test

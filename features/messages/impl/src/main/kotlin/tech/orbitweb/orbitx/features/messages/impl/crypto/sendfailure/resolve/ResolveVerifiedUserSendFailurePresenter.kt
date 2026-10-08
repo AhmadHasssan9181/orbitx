@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.VerifiedUserSendFailure
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.VerifiedUserSendFailureFactory
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -22,7 +23,6 @@ import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.architecture.runUpdatingState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.LocalEventSendState
-import kotlinx.coroutines.launch
 
 @Inject
 class ResolveVerifiedUserSendFailurePresenter(

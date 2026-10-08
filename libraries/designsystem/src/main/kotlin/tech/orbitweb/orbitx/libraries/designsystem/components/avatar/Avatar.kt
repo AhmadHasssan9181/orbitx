@@ -17,13 +17,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.internal.RoomAvatar
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.internal.SpaceAvatar
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.internal.UserAvatar
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementThemedPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewGroup
 import tech.orbitweb.orbitx.libraries.designsystem.utils.CommonDrawables
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun Avatar(

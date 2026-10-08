@@ -22,6 +22,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.core.net.toUri
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.roomdetailsedit.api.RoomDetailsEditPermissions
 import tech.orbitweb.orbitx.features.roomdetailsedit.api.roomDetailsEditPermissions
 import tech.orbitweb.orbitx.libraries.androidutils.file.TemporaryUriDeleter
@@ -38,9 +41,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfigPro
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaPreProcessor
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsEvent
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsPresenter
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @Inject

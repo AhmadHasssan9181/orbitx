@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.timeline.model.event
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
-import kotlinx.collections.immutable.ImmutableList
 import kotlin.time.Duration
 
 data class TimelineItemVoiceContent(

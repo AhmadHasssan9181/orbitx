@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.features.location.impl.share
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.location.impl.common.ui.LocationConstraintsDialogState
 import tech.orbitweb.orbitx.features.location.impl.common.userlocation.UserLocationState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class ShareLocationState(
     val customMapStyleUrl: AsyncData<String?>,

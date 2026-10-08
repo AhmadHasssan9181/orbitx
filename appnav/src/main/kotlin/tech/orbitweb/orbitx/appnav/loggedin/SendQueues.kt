@@ -10,17 +10,17 @@ package tech.orbitweb.orbitx.appnav.loggedin
 import androidx.annotation.VisibleForTesting
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
-import tech.orbitweb.orbitx.libraries.di.SessionScope
-import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import tech.orbitweb.orbitx.features.networkmonitor.api.NetworkStatus
+import tech.orbitweb.orbitx.libraries.di.SessionScope
+import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncState
 import timber.log.Timber
 
 @VisibleForTesting

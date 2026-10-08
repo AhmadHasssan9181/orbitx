@@ -20,6 +20,9 @@ import com.bumble.appyx.navmodel.backstack.operation.newRoot
 import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.DefaultPinCodeManagerCallback
 import tech.orbitweb.orbitx.features.lockscreen.impl.pin.PinCodeManager
@@ -30,9 +33,6 @@ import tech.orbitweb.orbitx.libraries.architecture.BaseFlowNode
 import tech.orbitweb.orbitx.libraries.architecture.createNode
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.ui.common.nodes.emptyNode
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

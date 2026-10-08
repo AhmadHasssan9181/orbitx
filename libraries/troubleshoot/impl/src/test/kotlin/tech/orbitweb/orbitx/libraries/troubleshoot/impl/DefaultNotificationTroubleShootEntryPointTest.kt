@@ -10,12 +10,12 @@ package tech.orbitweb.orbitx.libraries.troubleshoot.impl
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.NotificationTroubleShootEntryPoint
 import tech.orbitweb.orbitx.services.analytics.test.FakeScreenTracker
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultNotificationTroubleShootEntryPointTest {
     @get:Rule

@@ -8,16 +8,16 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemReactions
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.recentemojis.test.FakeEmojibaseProvider
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class CustomReactionPresenterTest {
     @get:Rule

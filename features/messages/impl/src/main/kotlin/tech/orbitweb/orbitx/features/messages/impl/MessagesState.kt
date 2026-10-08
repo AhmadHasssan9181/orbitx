@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.features.messages.impl
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerState
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListState
 import tech.orbitweb.orbitx.features.messages.impl.crypto.identity.IdentityChangeState
@@ -26,7 +27,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessag
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.identity.IdentityState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.tombstone.SuccessorRoom
-import kotlinx.collections.immutable.ImmutableList
 
 data class MessagesState(
     val roomId: RoomId,

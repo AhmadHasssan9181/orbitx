@@ -37,6 +37,13 @@ import com.bumble.appyx.navmodel.backstack.operation.replace
 import com.bumble.appyx.navmodel.backstack.operation.singleTop
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeout
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.appnav.loggedin.LoggedInNode
 import tech.orbitweb.orbitx.appnav.loggedin.MediaPreviewConfigMigration
@@ -96,13 +103,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransacti
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.api.watchers.AnalyticsRoomListStateWatcher
 import tech.orbitweb.orbitx.services.appnavstate.api.AppNavigationStateService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withTimeout
-import kotlinx.parcelize.Parcelize
 import timber.log.Timber
 import java.time.Duration
 import java.time.Instant

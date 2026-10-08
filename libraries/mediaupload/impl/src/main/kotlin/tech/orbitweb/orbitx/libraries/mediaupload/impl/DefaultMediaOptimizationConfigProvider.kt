@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.mediaupload.impl
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.first
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
@@ -15,7 +16,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfig
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfigProvider
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
-import kotlinx.coroutines.flow.first
 
 @ContributesBinding(SessionScope::class)
 class DefaultMediaOptimizationConfigProvider(

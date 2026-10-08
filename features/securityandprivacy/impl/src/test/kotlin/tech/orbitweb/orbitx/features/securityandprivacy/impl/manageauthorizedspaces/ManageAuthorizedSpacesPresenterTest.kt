@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.securityandprivacy.impl.manageauthorizedspaces
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
-import tech.orbitweb.orbitx.tests.testutils.test
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.persistentSetOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
+import tech.orbitweb.orbitx.tests.testutils.test
 
 class ManageAuthorizedSpacesPresenterTest {
     @Test

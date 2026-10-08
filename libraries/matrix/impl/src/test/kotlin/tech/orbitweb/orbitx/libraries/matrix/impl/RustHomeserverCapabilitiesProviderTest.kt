@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiHomeserverCapabilities
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiHomeserverCapabilities
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 
 class RustHomeserverCapabilitiesProviderTest {
     @Test

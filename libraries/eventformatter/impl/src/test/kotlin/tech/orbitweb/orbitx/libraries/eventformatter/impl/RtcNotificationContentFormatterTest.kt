@@ -9,6 +9,10 @@ package tech.orbitweb.orbitx.libraries.eventformatter.impl
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
+import org.junit.Before
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.CallNotifyContent
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
@@ -16,10 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 import tech.orbitweb.orbitx.services.toolbox.impl.strings.AndroidStringProvider
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Before
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
-import org.robolectric.annotation.Config
 
 @Suppress("LargeClass")
 class RtcNotificationContentFormatterTest : RobolectricTest() {

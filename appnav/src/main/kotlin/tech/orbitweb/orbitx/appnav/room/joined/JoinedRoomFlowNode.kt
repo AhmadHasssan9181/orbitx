@@ -26,6 +26,11 @@ import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.operation.newRoot
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.onEach
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.appnav.room.RoomNavigationTarget
 import tech.orbitweb.orbitx.libraries.architecture.BackstackView
@@ -44,11 +49,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransacti
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction.NotificationToMessage
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction.OpenRoom
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(SessionScope::class)
 @AssistedInject

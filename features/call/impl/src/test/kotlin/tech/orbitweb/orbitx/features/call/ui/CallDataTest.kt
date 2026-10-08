@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.call.ui
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
-import org.junit.Test
 
 class CallDataTest {
     @Test

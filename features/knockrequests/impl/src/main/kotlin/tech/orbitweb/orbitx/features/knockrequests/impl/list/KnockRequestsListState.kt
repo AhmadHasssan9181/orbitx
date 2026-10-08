@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.knockrequests.impl.list
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.knockrequests.api.KnockRequestPermissions
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.KnockRequestPresentable
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import kotlinx.collections.immutable.ImmutableList
 
 data class KnockRequestsListState(
     val knockRequests: AsyncData<ImmutableList<KnockRequestPresentable>>,

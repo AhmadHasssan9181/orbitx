@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.di
 import dev.zacsweers.metro.BindingContainer
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.di.annotations.RoomCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.room.BaseRoom
-import kotlinx.coroutines.CoroutineScope
 
 @BindingContainer
 @ContributesTo(RoomScope::class)

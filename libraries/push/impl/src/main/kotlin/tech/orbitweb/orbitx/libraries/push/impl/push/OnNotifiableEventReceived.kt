@@ -9,12 +9,12 @@ package tech.orbitweb.orbitx.libraries.push.impl.push
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.DefaultNotificationDrawerManager
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.model.NotifiableEvent
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.model.NotifiableRingingCallEvent
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 interface OnNotifiableEventReceived {
     fun onNotifiableEventsReceived(notifiableEvents: List<NotifiableEvent>)

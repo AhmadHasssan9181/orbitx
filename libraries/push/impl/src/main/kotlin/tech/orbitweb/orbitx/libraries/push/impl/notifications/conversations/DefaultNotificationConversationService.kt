@@ -16,6 +16,10 @@ import androidx.core.graphics.drawable.IconCompat
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import tech.orbitweb.orbitx.features.lockscreen.api.LockScreenService
 import tech.orbitweb.orbitx.libraries.core.coroutine.withPreviousValue
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
@@ -35,10 +39,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.notifications.shortcut.filterByS
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionListener
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.observer.SessionObserver
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 import timber.log.Timber
 
 @SingleIn(AppScope::class)

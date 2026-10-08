@@ -16,3 +16,5 @@ data class ElementClassicSession(
     val roomKeysVersion: String?,
     val doesContainBackupKey: Boolean,
 )
+
+typealias OrbitClassicSession = ElementClassicSession

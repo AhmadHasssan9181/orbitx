@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.ui.model
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableMap
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.RoomPowerLevels
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
@@ -15,8 +17,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.libraries.matrix.test.room.defaultRoomPowerLevelValues
-import kotlinx.collections.immutable.toImmutableMap
-import org.junit.Test
 
 class RoomInfoExtensionTest {
     @Test

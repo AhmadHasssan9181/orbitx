@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.loginpassword
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
 import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProviderDataSource
@@ -22,9 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.auth.FakeMatrixAuthenticationS
 import tech.orbitweb.orbitx.libraries.matrix.test.auth.aMatrixHomeServerDetails
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class LoginPasswordPresenterTest {
     @get:Rule

@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.auth.qrlogin
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import org.matrix.rustcomponents.sdk.QrCodeData
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.MatrixQrCodeLoginData
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.MatrixQrCodeLoginDataFactory
-import org.matrix.rustcomponents.sdk.QrCodeData
 
 @ContributesBinding(AppScope::class)
 class RustQrCodeLoginDataFactory : MatrixQrCodeLoginDataFactory {

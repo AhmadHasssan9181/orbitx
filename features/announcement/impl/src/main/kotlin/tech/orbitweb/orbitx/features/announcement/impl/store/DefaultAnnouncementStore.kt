@@ -11,10 +11,10 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.features.announcement.api.Announcement
-import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import tech.orbitweb.orbitx.features.announcement.api.Announcement
+import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 
 private val spaceAnnouncementKey = intPreferencesKey("spaceAnnouncement")
 private val newNotificationSoundKey = intPreferencesKey("newNotificationSound")

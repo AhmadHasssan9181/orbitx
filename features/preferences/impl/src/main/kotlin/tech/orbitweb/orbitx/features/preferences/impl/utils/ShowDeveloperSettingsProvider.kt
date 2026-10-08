@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.preferences.impl.utils
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
-import tech.orbitweb.orbitx.libraries.core.meta.BuildType
-import tech.orbitweb.orbitx.libraries.ui.utils.MultipleTapToUnlock
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
+import tech.orbitweb.orbitx.libraries.core.meta.BuildType
+import tech.orbitweb.orbitx.libraries.ui.utils.MultipleTapToUnlock
 
 @Inject
 class ShowDeveloperSettingsProvider(

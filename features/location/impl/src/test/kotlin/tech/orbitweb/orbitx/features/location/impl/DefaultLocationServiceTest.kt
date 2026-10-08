@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.location.impl
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.location.api.BuildConfig
 import org.junit.Test
+import tech.orbitweb.orbitx.features.location.api.BuildConfig
 
 class DefaultLocationServiceTest {
     @Test

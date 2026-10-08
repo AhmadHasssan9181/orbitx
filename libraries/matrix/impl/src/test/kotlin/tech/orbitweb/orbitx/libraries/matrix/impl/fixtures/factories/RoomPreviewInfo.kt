@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
-import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import org.matrix.rustcomponents.sdk.JoinRule
 import org.matrix.rustcomponents.sdk.Membership
 import org.matrix.rustcomponents.sdk.RoomPreviewInfo
 import org.matrix.rustcomponents.sdk.RoomType
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
+import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 
 internal fun aRustRoomPreviewInfo(
     canonicalAlias: String? = A_ROOM_ALIAS.value,

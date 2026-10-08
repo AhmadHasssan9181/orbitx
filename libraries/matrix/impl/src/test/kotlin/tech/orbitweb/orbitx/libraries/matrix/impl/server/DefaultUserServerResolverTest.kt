@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.server
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 
 class DefaultUserServerResolverTest {
     @Test

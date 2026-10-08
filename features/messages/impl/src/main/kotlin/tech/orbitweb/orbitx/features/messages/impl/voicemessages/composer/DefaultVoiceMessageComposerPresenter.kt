@@ -25,6 +25,10 @@ import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
 import dev.zacsweers.metro.ContributesBinding
 import im.vector.app.features.analytics.plan.Composer
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.messages.api.MessageComposerContext
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerEvent
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerPresenter
@@ -46,10 +50,6 @@ import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageException
 import tech.orbitweb.orbitx.libraries.voicerecorder.api.VoiceRecorder
 import tech.orbitweb.orbitx.libraries.voicerecorder.api.VoiceRecorderState
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.io.File
 import kotlin.time.Duration

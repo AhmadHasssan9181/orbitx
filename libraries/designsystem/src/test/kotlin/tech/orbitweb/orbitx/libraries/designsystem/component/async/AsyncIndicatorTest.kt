@@ -16,10 +16,6 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.designsystem.components.async.AsyncIndicatorItem
-import tech.orbitweb.orbitx.libraries.designsystem.components.async.AsyncIndicatorState
-import tech.orbitweb.orbitx.libraries.designsystem.components.async.hasEntered
-import tech.orbitweb.orbitx.libraries.designsystem.components.async.hasExited
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -28,6 +24,10 @@ import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.designsystem.components.async.AsyncIndicatorItem
+import tech.orbitweb.orbitx.libraries.designsystem.components.async.AsyncIndicatorState
+import tech.orbitweb.orbitx.libraries.designsystem.components.async.hasEntered
+import tech.orbitweb.orbitx.libraries.designsystem.components.async.hasExited
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class AsyncIndicatorTest {

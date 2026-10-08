@@ -9,15 +9,6 @@ package tech.orbitweb.orbitx.features.messages.impl.pinned
 
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.features.messages.api.pinned.PinnedEventsTimelineProvider
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.core.coroutine.mapState
-import tech.orbitweb.orbitx.libraries.di.RoomScope
-import tech.orbitweb.orbitx.libraries.matrix.api.room.CreateTimelineParams
-import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
-import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,6 +18,15 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.withContext
+import tech.orbitweb.orbitx.features.messages.api.pinned.PinnedEventsTimelineProvider
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.core.coroutine.mapState
+import tech.orbitweb.orbitx.libraries.di.RoomScope
+import tech.orbitweb.orbitx.libraries.matrix.api.room.CreateTimelineParams
+import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
+import tech.orbitweb.orbitx.libraries.matrix.api.sync.SyncService
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 
 @SingleIn(RoomScope::class)
 @ContributesBinding(RoomScope::class)

@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.features.messages.impl.link
 
 import com.google.common.truth.Truth.assertThat
+import io.element.android.wysiwyg.link.Link
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import tech.orbitweb.orbitx.tests.testutils.test
-import io.element.android.wysiwyg.link.Link
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 val aLink = Link(url = "url", text = "text")
 

@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.root
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutState
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessage
 import tech.orbitweb.orbitx.libraries.matrix.api.core.DeviceId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class PreferencesRootState(
     val myUser: MatrixUser,

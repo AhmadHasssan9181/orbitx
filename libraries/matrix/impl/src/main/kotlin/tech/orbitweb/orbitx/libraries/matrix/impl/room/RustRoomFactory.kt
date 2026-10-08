@@ -7,6 +7,18 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
+import org.matrix.rustcomponents.sdk.DateDividerMode
+import org.matrix.rustcomponents.sdk.Membership
+import org.matrix.rustcomponents.sdk.Room
+import org.matrix.rustcomponents.sdk.RoomInfo
+import org.matrix.rustcomponents.sdk.TimelineConfiguration
+import org.matrix.rustcomponents.sdk.TimelineFilter
+import org.matrix.rustcomponents.sdk.TimelineFocus
 import tech.orbitweb.orbitx.appconfig.TimelineConfig
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlagService
@@ -28,18 +40,6 @@ import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.api.recordTransaction
 import tech.orbitweb.orbitx.services.analyticsproviders.api.recordChildTransaction
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
-import kotlinx.coroutines.withContext
-import org.matrix.rustcomponents.sdk.DateDividerMode
-import org.matrix.rustcomponents.sdk.Membership
-import org.matrix.rustcomponents.sdk.Room
-import org.matrix.rustcomponents.sdk.RoomInfo
-import org.matrix.rustcomponents.sdk.TimelineConfiguration
-import org.matrix.rustcomponents.sdk.TimelineFilter
-import org.matrix.rustcomponents.sdk.TimelineFocus
 import timber.log.Timber
 import uniffi.matrix_sdk_base.EncryptionState
 import uniffi.matrix_sdk_ui.TimelineReadReceiptTracking

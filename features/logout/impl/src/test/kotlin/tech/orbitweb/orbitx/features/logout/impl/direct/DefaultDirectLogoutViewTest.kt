@@ -13,6 +13,8 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Ignore
+import org.junit.Test
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutEvents
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutState
 import tech.orbitweb.orbitx.features.logout.api.direct.aDirectLogoutState
@@ -22,8 +24,6 @@ import tech.orbitweb.orbitx.tests.testutils.EventsRecorder
 import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.pressBackKey
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Ignore
-import org.junit.Test
 
 class DefaultDirectLogoutViewTest : RobolectricTest() {
     @Test

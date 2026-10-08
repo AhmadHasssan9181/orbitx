@@ -7,13 +7,6 @@
 
 package tech.orbitweb.orbitx.services.analytics.impl.watchers
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.SendQueueUpdate
-import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.A_TRANSACTION_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
-import tech.orbitweb.orbitx.services.analytics.api.NoopAnalyticsTransaction
-import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import io.mockk.mockk
 import io.mockk.verify
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -21,6 +14,13 @@ import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.room.SendQueueUpdate
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.A_TRANSACTION_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
+import tech.orbitweb.orbitx.services.analytics.api.NoopAnalyticsTransaction
+import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DefaultAnalyticsSendMessageWatcherTest {

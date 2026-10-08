@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.appnav.room
 
 import android.os.Parcelable
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
-import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
+import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 
 sealed interface RoomNavigationTarget : Parcelable {
     @Parcelize

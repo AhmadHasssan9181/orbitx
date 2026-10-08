@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.rolesandpermissions.impl.roles
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.rolesandpermissions.api.ChangeRoomMemberRolesListType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
-import org.junit.Test
 
 class ChangeRolesNodeTest {
     @Test

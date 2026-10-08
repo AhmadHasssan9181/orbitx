@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.pinned.list
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemAction
 import org.junit.Test
+import tech.orbitweb.orbitx.features.messages.impl.actionlist.model.TimelineItemAction
 
 class PinnedMessagesListTimelineActionPostProcessorTest {
     @Test

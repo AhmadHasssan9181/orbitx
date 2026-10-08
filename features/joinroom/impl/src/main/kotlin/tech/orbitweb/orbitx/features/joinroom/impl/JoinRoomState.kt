@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.joinroom.impl
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.invite.api.InviteData
 import tech.orbitweb.orbitx.features.invite.api.acceptdecline.AcceptDeclineInviteState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -20,7 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.InviteSender
-import kotlinx.collections.immutable.ImmutableList
 
 internal const val MAX_KNOCK_MESSAGE_LENGTH = 500
 

@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline
 
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.di.SessionScope
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 
 interface MarkAsFullyRead {

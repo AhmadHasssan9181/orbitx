@@ -13,6 +13,8 @@ import app.cash.sqldelight.coroutines.asFlow
 import app.cash.sqldelight.coroutines.mapToList
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatter
 import tech.orbitweb.orbitx.libraries.dateformatter.api.DateFormatterMode
@@ -25,8 +27,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.PushDatabase
 import tech.orbitweb.orbitx.libraries.push.impl.store.DefaultPushDataStore.Companion.BATTERY_OPTIMIZATION_BANNER_STATE_DISMISSED
 import tech.orbitweb.orbitx.libraries.push.impl.store.DefaultPushDataStore.Companion.BATTERY_OPTIMIZATION_BANNER_STATE_INIT
 import tech.orbitweb.orbitx.libraries.push.impl.store.DefaultPushDataStore.Companion.BATTERY_OPTIMIZATION_BANNER_STATE_SHOW
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 @ContributesBinding(AppScope::class)
 class DefaultPushDataStore(

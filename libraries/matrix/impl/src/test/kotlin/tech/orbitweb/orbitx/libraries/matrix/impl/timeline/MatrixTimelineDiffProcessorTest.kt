@@ -8,6 +8,12 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.TimelineDiff
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MatrixTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiTimelineItem
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.EventTimelineItemMapper
@@ -16,12 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.virtual.VirtualT
 import tech.orbitweb.orbitx.libraries.matrix.test.A_UNIQUE_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_UNIQUE_ID_2
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.anEventTimelineItem
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.TimelineDiff
 
 class MatrixTimelineDiffProcessorTest {
     private val timelineItems = MutableStateFlow<List<MatrixTimelineItem>>(emptyList())

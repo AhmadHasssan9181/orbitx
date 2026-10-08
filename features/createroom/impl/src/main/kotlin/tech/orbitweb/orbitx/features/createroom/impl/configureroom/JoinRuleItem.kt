@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.createroom.impl.configureroom
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.AllowRule
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
-import kotlinx.collections.immutable.persistentListOf
 
 /**
  * Join rule items to display in UI.

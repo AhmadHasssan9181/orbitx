@@ -10,13 +10,13 @@ package tech.orbitweb.orbitx.features.analytics.impl
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.appconfig.AnalyticsConfig
 import tech.orbitweb.orbitx.features.analytics.api.AnalyticsOptInEvents
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @Inject
 class AnalyticsOptInPresenter(

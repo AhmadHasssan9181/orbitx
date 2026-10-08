@@ -13,9 +13,9 @@ import android.net.Uri
 import android.provider.Settings
 import androidx.core.net.toUri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class NotificationSoundPickerTest : RobolectricTest() {
     @Test

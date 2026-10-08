@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.securebackup.impl.root
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EXCEPTION
-import org.junit.Test
 
 class SecureBackupRootStateTest {
     @Test

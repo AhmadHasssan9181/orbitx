@@ -9,21 +9,6 @@ package tech.orbitweb.orbitx.features.home.impl.datasource
 
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
-import tech.orbitweb.orbitx.libraries.androidutils.diff.DiffCacheUpdater
-import tech.orbitweb.orbitx.libraries.androidutils.diff.MutableListDiffCache
-import tech.orbitweb.orbitx.libraries.androidutils.system.DateTimeObserver
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.di.SessionScope
-import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
-import tech.orbitweb.orbitx.libraries.matrix.api.notificationsettings.NotificationSettingsService
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.updateVisibleRange
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.coroutines.CoroutineScope
@@ -41,6 +26,21 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
+import tech.orbitweb.orbitx.libraries.androidutils.diff.DiffCacheUpdater
+import tech.orbitweb.orbitx.libraries.androidutils.diff.MutableListDiffCache
+import tech.orbitweb.orbitx.libraries.androidutils.system.DateTimeObserver
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.di.SessionScope
+import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
+import tech.orbitweb.orbitx.libraries.matrix.api.notificationsettings.NotificationSettingsService
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListService
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.updateVisibleRange
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import kotlin.time.Duration.Companion.seconds
 
 private const val PAGE_SIZE = 20

@@ -32,10 +32,8 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.movableContentOf
 import androidx.compose.runtime.remember
-import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.captionOrNull
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -62,6 +60,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.constraintlayout.compose.ConstrainScope
 import androidx.constraintlayout.compose.ConstraintLayout
+import io.element.android.wysiwyg.link.Link
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent
@@ -78,11 +79,12 @@ import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItemRe
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItemThreadInfo
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.bubble.BubbleState
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemAttachmentsContent
+import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemAudioContent
+import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemEventContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemGalleryContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemImageContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemLocationContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemPollContent
-import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemAudioContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemStickerContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemTextBasedContent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemTextContent
@@ -137,9 +139,6 @@ import tech.orbitweb.orbitx.libraries.ui.strings.CommonPlurals
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.libraries.ui.utils.a11y.isTalkbackActive
 import tech.orbitweb.orbitx.libraries.ui.utils.text.detect
-import io.element.android.wysiwyg.link.Link
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.launch
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
@@ -175,14 +174,7 @@ fun TimelineItemEventRow(
     eventSink: (TimelineEvent.TimelineItemEvent) -> Unit,
     modifier: Modifier = Modifier,
     eventContentView: @Composable (Modifier, (ContentAvoidingLayoutData) -> Unit) -> Unit = { contentModifier, onContentLayoutChange ->
-        val isViewOnce = when (val c = event.content) {
-            is TimelineItemImageContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-            is TimelineItemVideoContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-            is TimelineItemAudioContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-            is TimelineItemVoiceContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-            is TimelineItemTextBasedContent -> c.body.startsWith("🔒 View-Once Message")
-            else -> false
-        }
+        val isViewOnce = event.content.isViewOnceContent()
         // Only pass down a custom clickable lambda if the content can be clicked separately. For view-once, always pass onEventClick to content view.
         val onContentClick = if (isViewOnce) {
             onEventClick
@@ -207,19 +199,10 @@ fun TimelineItemEventRow(
         )
     },
 ) {
-
-
     val coroutineScope = rememberCoroutineScope()
     val interactionSource = remember { MutableInteractionSource() }
 
-    val isViewOnceRow = when (val c = event.content) {
-        is TimelineItemImageContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-        is TimelineItemVideoContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-        is TimelineItemAudioContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-        is TimelineItemVoiceContent -> c.caption?.contains("View-Once", ignoreCase = true) == true || c.filename.contains("orbit_vo_", ignoreCase = true) || c.filename.contains("viewonce", ignoreCase = true) || c.filename.contains("orbit_view_once_", ignoreCase = true) || c.filename.endsWith(".ephemeral", ignoreCase = true)
-        is TimelineItemTextBasedContent -> c.body.startsWith("🔒 View-Once Message")
-        else -> false
-    }
+    val isViewOnceRow = event.content.isViewOnceContent()
 
     val onContentClick = if (event.mustBeProtected()) {
         // In this case, let the content handle the click
@@ -1128,4 +1111,21 @@ internal fun ThreadSummaryViewPreview() {
             onClick = {},
         )
     }
+}
+
+private fun TimelineItemEventContent.isViewOnceContent(): Boolean = when (this) {
+    is TimelineItemImageContent -> isViewOnceMedia(caption, filename)
+    is TimelineItemVideoContent -> isViewOnceMedia(caption, filename)
+    is TimelineItemAudioContent -> isViewOnceMedia(caption, filename)
+    is TimelineItemVoiceContent -> isViewOnceMedia(caption, filename)
+    is TimelineItemTextBasedContent -> body.startsWith("🔒 View-Once Message")
+    else -> false
+}
+
+private fun isViewOnceMedia(caption: String?, filename: String): Boolean {
+    return caption?.contains("View-Once", ignoreCase = true) == true ||
+        filename.contains("orbit_view_once_", ignoreCase = true) ||
+        filename.contains("orbit_vo_", ignoreCase = true) ||
+        filename.contains("viewonce", ignoreCase = true) ||
+        filename.endsWith(".ephemeral", ignoreCase = true)
 }

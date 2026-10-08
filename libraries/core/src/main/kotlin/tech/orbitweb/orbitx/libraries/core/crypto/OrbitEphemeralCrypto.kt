@@ -20,8 +20,8 @@ object OrbitEphemeralCrypto {
     // Dynamic multi-stage obfuscated seed builder - no static plaintext string in dex constant pool
     private val MASTER_SEED: ByteArray by lazy {
         val part1 = byteArrayOf(0x4f, 0x52, 0x42, 0x49, 0x54, 0x5f, 0x53, 0x45, 0x43, 0x55, 0x52, 0x45) // ORBIT_SECURE
-        val part2 = byteArrayOf(0x5f, 0x45, 0x50, 0x48, 0x45, 0x4d, 0x45, 0x52, 0x41, 0x4c)             // _EPHEMERAL
-        val part3 = byteArrayOf(0x5f, 0x53, 0x41, 0x4c, 0x54, 0x5f, 0x32, 0x30, 0x32, 0x36)             // _SALT_2026
+        val part2 = byteArrayOf(0x5f, 0x45, 0x50, 0x48, 0x45, 0x4d, 0x45, 0x52, 0x41, 0x4c) // _EPHEMERAL
+        val part3 = byteArrayOf(0x5f, 0x53, 0x41, 0x4c, 0x54, 0x5f, 0x32, 0x30, 0x32, 0x36) // _SALT_2026
         val part4 = byteArrayOf(0x5f, 0x40, 0x21, 0x78, 0x23, 0x39, 0x5f, 0x6f, 0x72, 0x62, 0x69, 0x74) // _@!x#9_orbit
         val combined = ByteArray(part1.size + part2.size + part3.size + part4.size)
         System.arraycopy(part1, 0, combined, 0, part1.size)
@@ -30,7 +30,7 @@ object OrbitEphemeralCrypto {
         System.arraycopy(part4, 0, combined, part1.size + part2.size + part3.size, part4.size)
         // Bitwise rotation transform for runtime dynamic entropy
         for (i in combined.indices) {
-            combined[i] = ((combined[i].toInt() xor (0x5A xor (i and 0x0F))) and 0xFF).toByte()
+            combined[i] = (combined[i].toInt() xor (0x5A xor (i and 0x0F)) and 0xFF).toByte()
         }
         val digest = java.security.MessageDigest.getInstance("SHA-512")
         digest.digest(combined)
@@ -49,10 +49,38 @@ object OrbitEphemeralCrypto {
     }
 
     private val CIPHER_KEY_V1 = byteArrayOf(
-        0x5F, 0x4F, 0x52, 0x42, 0x49, 0x54, 0x5F, 0x56,
-        0x49, 0x45, 0x57, 0x5F, 0x4F, 0x4E, 0x43, 0x45,
-        0x5F, 0x53, 0x45, 0x43, 0x52, 0x45, 0x54, 0x5F,
-        0x32, 0x30, 0x32, 0x36, 0x5F, 0x21, 0x23, 0x2A
+        0x5F,
+        0x4F,
+        0x52,
+        0x42,
+        0x49,
+        0x54,
+        0x5F,
+        0x56,
+        0x49,
+        0x45,
+        0x57,
+        0x5F,
+        0x4F,
+        0x4E,
+        0x43,
+        0x45,
+        0x5F,
+        0x53,
+        0x45,
+        0x43,
+        0x52,
+        0x45,
+        0x54,
+        0x5F,
+        0x32,
+        0x30,
+        0x32,
+        0x36,
+        0x5F,
+        0x21,
+        0x23,
+        0x2A
     )
 
     fun isEphemeralEncrypted(file: File): Boolean {
@@ -109,7 +137,7 @@ object OrbitEphemeralCrypto {
                     output.write(iv)
                     output.write(wrappedKey)
                     javax.crypto.CipherOutputStream(output, payloadCipher).use { cipherOut ->
-                        input.copyTo(cipherOut, bufferSize = 32768)
+                        input.copyTo(cipherOut, bufferSize = 32_768)
                     }
                 }
             }
@@ -150,7 +178,7 @@ object OrbitEphemeralCrypto {
 
                     FileOutputStream(outputFile).use { output ->
                         javax.crypto.CipherInputStream(input, payloadCipher).use { cipherIn ->
-                            cipherIn.copyTo(output, bufferSize = 32768)
+                            cipherIn.copyTo(output, bufferSize = 32_768)
                         }
                     }
                     true
@@ -158,7 +186,7 @@ object OrbitEphemeralCrypto {
                     // Fallback backwards compatibility for V1 XOR
                     input.channel.position(HEADER_BYTES_V1.size.toLong())
                     FileOutputStream(outputFile).use { output ->
-                        val buffer = ByteArray(32768)
+                        val buffer = ByteArray(32_768)
                         var bytesRead: Int
                         var keyIndex = 0
                         while (input.read(buffer).also { bytesRead = it } != -1) {
@@ -293,7 +321,7 @@ object OrbitEphemeralTracker {
                 if (file.name.startsWith("orbit_view_once_") || file.name.startsWith("orbit_vo_") || file.name.contains("viewonce", ignoreCase = true)) {
                     // Secure wipe before delete
                     try {
-                        val wipeSize = file.length().coerceAtMost(65536).toInt()
+                        val wipeSize = file.length().coerceAtMost(65_536).toInt()
                         FileOutputStream(file).use { out ->
                             out.write(ByteArray(wipeSize))
                             out.flush()
@@ -315,7 +343,7 @@ object OrbitEphemeralTracker {
                 voiceDir.listFiles()?.forEach { file ->
                     if (file.name.endsWith("_decrypted.ogg") || file.name.contains("ephemeral") || file.name.contains("orbit_vo_")) {
                         try {
-                            val wipeSize = file.length().coerceAtMost(65536).toInt()
+                            val wipeSize = file.length().coerceAtMost(65_536).toInt()
                             FileOutputStream(file).use { out ->
                                 out.write(ByteArray(wipeSize))
                                 out.flush()
@@ -330,4 +358,3 @@ object OrbitEphemeralTracker {
         }
     }
 }
-

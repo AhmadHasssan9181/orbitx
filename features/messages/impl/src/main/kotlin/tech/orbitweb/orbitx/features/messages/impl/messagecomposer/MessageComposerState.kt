@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.messages.impl.messagecomposer
 
 import androidx.compose.runtime.Stable
+import io.element.android.wysiwyg.display.TextDisplay
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.ResolvedSuggestion
 import tech.orbitweb.orbitx.libraries.textcomposer.model.MessageComposerMode
 import tech.orbitweb.orbitx.libraries.textcomposer.model.TextEditorState
-import io.element.android.wysiwyg.display.TextDisplay
-import kotlinx.collections.immutable.ImmutableList
 
 @Stable
 data class MessageComposerState(
@@ -30,4 +30,3 @@ data class MessageComposerState(
     val isViewOnce: Boolean,
     val eventSink: (MessageComposerEvent) -> Unit,
 )
-

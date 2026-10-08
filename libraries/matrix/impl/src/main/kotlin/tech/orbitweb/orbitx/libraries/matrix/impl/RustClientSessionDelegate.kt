@@ -7,6 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import org.matrix.rustcomponents.sdk.ClientDelegate
+import org.matrix.rustcomponents.sdk.ClientSessionDelegate
+import org.matrix.rustcomponents.sdk.Session
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.matrix.impl.core.SdkBackgroundTaskError
@@ -15,13 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.impl.paths.getSessionPaths
 import tech.orbitweb.orbitx.libraries.matrix.impl.util.anonymizedTokens
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
-import org.matrix.rustcomponents.sdk.ClientDelegate
-import org.matrix.rustcomponents.sdk.ClientSessionDelegate
-import org.matrix.rustcomponents.sdk.Session
 import timber.log.Timber
 import uniffi.matrix_sdk_common.BackgroundTaskFailureReason
 import java.lang.ref.WeakReference

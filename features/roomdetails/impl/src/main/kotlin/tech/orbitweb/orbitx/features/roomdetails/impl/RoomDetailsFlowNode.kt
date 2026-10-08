@@ -22,6 +22,10 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.Interaction
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.appconfig.LearnMoreConfig
 import tech.orbitweb.orbitx.features.call.api.CallData
@@ -62,10 +66,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaGalleryEntryPoint
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaViewerEntryPoint
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analyticsproviders.api.trackers.captureInteraction
-import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlinx.parcelize.Parcelize
 
 @ContributesNode(RoomScope::class)
 @AssistedInject

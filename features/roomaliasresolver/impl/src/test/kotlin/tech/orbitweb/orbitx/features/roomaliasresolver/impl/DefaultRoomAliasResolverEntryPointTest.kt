@@ -10,13 +10,13 @@ package tech.orbitweb.orbitx.features.roomaliasresolver.impl
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.roomaliasesolver.api.RoomAliasResolverEntryPoint
 import tech.orbitweb.orbitx.libraries.matrix.api.room.alias.ResolvedRoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultRoomAliasResolverEntryPointTest {
     @get:Rule

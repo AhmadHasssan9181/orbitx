@@ -7,8 +7,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.ReceiptType
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.ReceiptType
 import org.matrix.rustcomponents.sdk.ReceiptType as RustReceiptType
 
 class ReceiptTypeMapperKtTest {

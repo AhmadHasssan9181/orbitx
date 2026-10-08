@@ -8,15 +8,15 @@
 package tech.orbitweb.orbitx.features.home.impl.filters
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.home.impl.filters.selection.DefaultFilterSelectionStrategy
-import tech.orbitweb.orbitx.features.home.impl.filters.selection.FilterSelectionState
-import tech.orbitweb.orbitx.tests.testutils.awaitLastSequentialItem
-import tech.orbitweb.orbitx.tests.testutils.test
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.features.home.impl.filters.selection.DefaultFilterSelectionStrategy
+import tech.orbitweb.orbitx.features.home.impl.filters.selection.FilterSelectionState
+import tech.orbitweb.orbitx.tests.testutils.awaitLastSequentialItem
+import tech.orbitweb.orbitx.tests.testutils.test
 
 class RoomListFiltersPresenterTest {
     @Test

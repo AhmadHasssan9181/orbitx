@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.util
 
-import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
 import kotlinx.coroutines.channels.ProducerScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import org.matrix.rustcomponents.sdk.TaskHandle
+import tech.orbitweb.orbitx.libraries.core.data.tryOrNull
 
 internal fun <T> mxCallbackFlow(block: suspend ProducerScope<T>.() -> TaskHandle) =
     callbackFlow {

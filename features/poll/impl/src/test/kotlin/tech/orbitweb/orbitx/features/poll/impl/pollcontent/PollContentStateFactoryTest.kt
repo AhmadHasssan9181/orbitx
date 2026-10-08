@@ -8,6 +8,14 @@
 package tech.orbitweb.orbitx.features.poll.impl.pollcontent
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.collections.immutable.toImmutableMap
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollAnswerItem
 import tech.orbitweb.orbitx.features.poll.api.pollcontent.PollContentState
 import tech.orbitweb.orbitx.features.poll.impl.model.DefaultPollContentStateFactory
@@ -29,14 +37,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_8
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_9
 import tech.orbitweb.orbitx.libraries.matrix.test.FakeMatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.test.timeline.anEventTimelineItem
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentMapOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toImmutableMap
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class PollContentStateFactoryTest {
     private val factory = DefaultPollContentStateFactory(FakeMatrixClient())

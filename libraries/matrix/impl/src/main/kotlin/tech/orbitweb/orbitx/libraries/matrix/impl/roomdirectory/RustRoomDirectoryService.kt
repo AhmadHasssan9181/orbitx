@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import org.matrix.rustcomponents.sdk.Client
+import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryService
 
 class RustRoomDirectoryService(
     private val client: Client,

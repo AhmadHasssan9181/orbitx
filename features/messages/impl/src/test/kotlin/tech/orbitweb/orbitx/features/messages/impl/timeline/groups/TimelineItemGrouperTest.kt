@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline.groups
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
 import tech.orbitweb.orbitx.features.messages.impl.fixtures.aMessageEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemDebugInfo
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemReactions
@@ -23,8 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.core.FakeSendHandle
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply.aProfileDetailsReady
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
 
 class TimelineItemGrouperTest {
     private val sut = TimelineItemGrouper()

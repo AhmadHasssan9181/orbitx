@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.test.timeline
 
 import androidx.compose.runtime.Composable
-import tech.orbitweb.orbitx.features.messages.api.timeline.HtmlConverterProvider
 import io.element.android.wysiwyg.utils.HtmlConverter
 import org.jsoup.nodes.Document
+import tech.orbitweb.orbitx.features.messages.api.timeline.HtmlConverterProvider
 
 class FakeHtmlConverterProvider(
     private val transform: (String) -> CharSequence = { it },

@@ -17,16 +17,16 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
 import tech.orbitweb.orbitx.features.roomdirectory.impl.root.model.RoomDirectoryListState
 import tech.orbitweb.orbitx.features.roomdirectory.impl.root.model.toFeatureModel
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryList
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDirectoryService
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
 
 private const val SEARCH_BATCH_SIZE = 20
 

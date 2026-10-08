@@ -11,6 +11,8 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.deactivation.test.FakeAccountDeactivationEntryPoint
 import tech.orbitweb.orbitx.features.licenses.test.FakeOpenSourceLicensesEntryPoint
 import tech.orbitweb.orbitx.features.lockscreen.test.FakeLockScreenEntryPoint
@@ -22,8 +24,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.test.FakeNotificationTroubleS
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.FakePushHistoryEntryPoint
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 
 class DefaultPreferencesEntryPointTest {
     @get:Rule

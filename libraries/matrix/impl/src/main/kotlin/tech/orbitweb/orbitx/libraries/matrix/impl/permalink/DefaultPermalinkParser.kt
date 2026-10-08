@@ -10,6 +10,9 @@ package tech.orbitweb.orbitx.libraries.matrix.impl.permalink
 import androidx.core.net.toUri
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.collections.immutable.toImmutableList
+import org.matrix.rustcomponents.sdk.MatrixId
+import org.matrix.rustcomponents.sdk.parseMatrixEntityFrom
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
@@ -19,9 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.MatrixToConverter
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkParser
-import kotlinx.collections.immutable.toImmutableList
-import org.matrix.rustcomponents.sdk.MatrixId
-import org.matrix.rustcomponents.sdk.parseMatrixEntityFrom
 
 /**
  * This class turns a uri to a [PermalinkData].

@@ -13,6 +13,10 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.Person
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import io.mockk.every
+import io.mockk.mockk
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
@@ -30,10 +34,6 @@ import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import io.mockk.every
-import io.mockk.mockk
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultOnRedactedEventReceivedTest : RobolectricTest() {
     private val fakePerson = Person.Builder().setName(A_USER_NAME).setKey(A_USER_ID.value).build()

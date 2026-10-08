@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.services.analytics.impl.watchers
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction.ColdStart
-import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction.ColdStart
+import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DefaultAnalyticsColdStartWatcherTest {

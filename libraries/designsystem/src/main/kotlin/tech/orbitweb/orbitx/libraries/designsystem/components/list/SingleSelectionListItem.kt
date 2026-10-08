@@ -17,6 +17,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.designsystem.components.dialogs.ListOption
 import tech.orbitweb.orbitx.libraries.designsystem.components.dialogs.SingleSelectionDialog
 import tech.orbitweb.orbitx.libraries.designsystem.components.dialogs.listOptionOf
@@ -24,9 +27,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementThemedPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewGroup
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.ListItem
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import kotlin.time.Duration.Companion.seconds
 
 @Composable

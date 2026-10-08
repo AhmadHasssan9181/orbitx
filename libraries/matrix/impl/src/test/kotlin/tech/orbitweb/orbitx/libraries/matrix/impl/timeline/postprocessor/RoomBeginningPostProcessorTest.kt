@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.timeline.postprocessor
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
-import org.junit.Test
 
 class RoomBeginningPostProcessorTest {
     @Test

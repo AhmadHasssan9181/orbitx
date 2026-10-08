@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.home.impl.roomlist
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableSet
 import tech.orbitweb.orbitx.features.home.impl.filters.RoomListFiltersState
 import tech.orbitweb.orbitx.features.home.impl.model.RoomListRoomSummary
 import tech.orbitweb.orbitx.features.home.impl.search.RoomListSearchState
@@ -17,8 +19,6 @@ import tech.orbitweb.orbitx.features.leaveroom.api.LeaveRoomState
 import tech.orbitweb.orbitx.libraries.fullscreenintent.api.FullScreenIntentPermissionsState
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.push.api.battery.BatteryOptimizationState
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableSet
 
 data class RoomListState(
     val contextMenu: ContextMenu,

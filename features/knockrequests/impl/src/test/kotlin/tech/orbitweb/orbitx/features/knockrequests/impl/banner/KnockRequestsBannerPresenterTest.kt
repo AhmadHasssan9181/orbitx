@@ -8,6 +8,13 @@
 package tech.orbitweb.orbitx.features.knockrequests.impl.banner
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.knockrequests.api.KnockRequestPermissions
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.KnockRequestsService
 import tech.orbitweb.orbitx.libraries.matrix.api.room.knock.KnockRequest
@@ -18,13 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.knock.FakeKnockRequest
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 @OptIn(ExperimentalCoroutinesApi::class) class KnockRequestsBannerPresenterTest {
     @Test

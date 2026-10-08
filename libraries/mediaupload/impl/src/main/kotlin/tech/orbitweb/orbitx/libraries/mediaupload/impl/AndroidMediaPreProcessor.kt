@@ -14,6 +14,10 @@ import android.net.Uri
 import androidx.exifinterface.media.ExifInterface
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import kotlinx.coroutines.flow.filterIsInstance
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.libraries.androidutils.file.TemporaryUriDeleter
 import tech.orbitweb.orbitx.libraries.androidutils.file.createTmpFile
 import tech.orbitweb.orbitx.libraries.androidutils.file.getFileName
@@ -37,10 +41,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfig
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaPreProcessor
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
-import kotlinx.coroutines.flow.filterIsInstance
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 import java.io.File
 import java.io.InputStream

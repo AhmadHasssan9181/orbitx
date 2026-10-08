@@ -10,9 +10,9 @@ package tech.orbitweb.orbitx.libraries.recentemojis.test
 import io.element.android.emojibasebindings.Emoji
 import io.element.android.emojibasebindings.EmojibaseCategory
 import io.element.android.emojibasebindings.EmojibaseStore
-import tech.orbitweb.orbitx.libraries.recentemojis.api.EmojibaseProvider
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toPersistentMap
+import tech.orbitweb.orbitx.libraries.recentemojis.api.EmojibaseProvider
 
 class FakeEmojibaseProvider(
     val emojis: Map<EmojibaseCategory, ImmutableList<Emoji>> = mapOf(),

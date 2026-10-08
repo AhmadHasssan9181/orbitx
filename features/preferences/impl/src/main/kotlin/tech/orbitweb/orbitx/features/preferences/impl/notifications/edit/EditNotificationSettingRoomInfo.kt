@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.notifications.edit
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
-import kotlinx.collections.immutable.ImmutableList
 
 data class EditNotificationSettingRoomInfo(
     val roomId: RoomId,

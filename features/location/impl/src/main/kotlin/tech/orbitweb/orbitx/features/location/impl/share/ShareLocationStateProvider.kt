@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.features.location.impl.share
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.features.location.impl.common.ui.LocationConstraintsDialogState
 import tech.orbitweb.orbitx.features.location.impl.common.userlocation.UserLocationState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.persistentListOf
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes
 

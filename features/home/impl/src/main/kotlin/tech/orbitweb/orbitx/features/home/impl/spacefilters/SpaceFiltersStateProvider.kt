@@ -9,11 +9,11 @@ package tech.orbitweb.orbitx.features.home.impl.spacefilters
 
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 import tech.orbitweb.orbitx.libraries.previewutils.room.aSpaceRoom
-import kotlinx.collections.immutable.toImmutableList
 
 class SpaceFiltersStateProvider : PreviewParameterProvider<SpaceFiltersState> {
     override val values: Sequence<SpaceFiltersState>

@@ -14,10 +14,10 @@ import android.content.IntentFilter
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.libraries.androidutils.system.DateTimeObserver.Event
-import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
+import tech.orbitweb.orbitx.libraries.androidutils.system.DateTimeObserver.Event
+import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import java.time.Instant
 
 interface DateTimeObserver {

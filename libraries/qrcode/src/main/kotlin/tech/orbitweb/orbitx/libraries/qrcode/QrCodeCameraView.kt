@@ -35,10 +35,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import tech.orbitweb.orbitx.compound.theme.ElementTheme
-import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
+import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import timber.log.Timber
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine

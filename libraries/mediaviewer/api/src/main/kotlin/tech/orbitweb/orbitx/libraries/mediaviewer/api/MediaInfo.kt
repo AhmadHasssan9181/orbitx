@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.api
 
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
-import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class GalleryInfo(

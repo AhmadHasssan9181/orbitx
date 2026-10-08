@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.libraries.dateformatter.impl
 
 import android.os.Build
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import org.junit.Test
 import org.robolectric.annotation.Config
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import java.util.Locale
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.milliseconds

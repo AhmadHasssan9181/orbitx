@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.preferences.test
 
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStore
 import tech.orbitweb.orbitx.libraries.preferences.api.store.SessionPreferencesStoreFactory
@@ -14,7 +15,6 @@ import tech.orbitweb.orbitx.tests.testutils.lambda.LambdaOneParamRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.LambdaTwoParamsRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.CoroutineScope
 
 class FakeSessionPreferencesStoreFactory(
     val getLambda: LambdaTwoParamsRecorder<SessionId, CoroutineScope, SessionPreferencesStore> = lambdaRecorder { _, _ -> lambdaError() },

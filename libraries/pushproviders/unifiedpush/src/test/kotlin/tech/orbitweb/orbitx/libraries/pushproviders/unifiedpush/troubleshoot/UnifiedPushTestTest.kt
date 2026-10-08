@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.troubleshoot
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
 import tech.orbitweb.orbitx.libraries.pushproviders.unifiedpush.UnifiedPushConfig
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
@@ -15,9 +18,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.TestFilterData
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.FakeNotificationTroubleshootNavigator
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.runAndTestState
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class UnifiedPushTestTest {
     @Test

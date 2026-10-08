@@ -11,6 +11,11 @@ import android.media.AudioFormat
 import android.media.MediaRecorder
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import io.mockk.mockk
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.BeforeClass
+import org.junit.Test
 import tech.orbitweb.orbitx.appconfig.VoiceMessageConfig
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.voicerecorder.api.VoiceRecorderState
@@ -24,11 +29,6 @@ import tech.orbitweb.orbitx.libraries.voicerecorder.test.FakeEncoder
 import tech.orbitweb.orbitx.libraries.voicerecorder.test.FakeFileSystem
 import tech.orbitweb.orbitx.libraries.voicerecorder.test.FakeVoiceFileManager
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import io.mockk.mockk
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.BeforeClass
-import org.junit.Test
 import java.io.File
 import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.Duration.Companion.minutes

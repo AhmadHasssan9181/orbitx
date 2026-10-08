@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.space.impl.leave
 
-import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
-import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
+import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 
 data class LeaveSpaceState(
     val spaceName: String?,

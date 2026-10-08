@@ -11,6 +11,9 @@ import android.net.NetworkCapabilities
 import androidx.work.OneTimeWorkRequest
 import androidx.work.hasKeyWithValueOfType
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.networkmonitor.test.FakeNetworkMonitor
 import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import tech.orbitweb.orbitx.libraries.featureflag.test.FakeFeatureFlagService
@@ -21,9 +24,6 @@ import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerWorkerType
 import tech.orbitweb.orbitx.libraries.workmanager.api.workManagerTag
 import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 @Config(sdk = [33])
 class DefaultSyncPendingNotificationsRequestBuilderTest : RobolectricTest() {

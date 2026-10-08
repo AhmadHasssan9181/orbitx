@@ -12,14 +12,14 @@ import android.content.Context
 import android.content.Intent
 import androidx.core.content.IntentCompat
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.impl.di.CallBindings
 import tech.orbitweb.orbitx.features.call.impl.notifications.CallNotificationData
 import tech.orbitweb.orbitx.features.call.impl.utils.ActiveCallManager
 import tech.orbitweb.orbitx.libraries.architecture.bindings
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 /**
  * Broadcast receiver to decline the incoming call.

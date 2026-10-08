@@ -71,7 +71,14 @@ fun ElementThemeApp(
             when (theme) {
                 Theme.System -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                 Theme.Light -> AppCompatDelegate.MODE_NIGHT_NO
-                Theme.Dark, Theme.Black, Theme.Ocean, Theme.Forest, Theme.Sunset, Theme.Cyberpunk, Theme.Graphite, Theme.Slate -> AppCompatDelegate.MODE_NIGHT_YES
+                Theme.Dark,
+                Theme.Black,
+                Theme.Ocean,
+                Theme.Forest,
+                Theme.Sunset,
+                Theme.Cyberpunk,
+                Theme.Graphite,
+                Theme.Slate -> AppCompatDelegate.MODE_NIGHT_YES
             }
         )
     }
@@ -86,3 +93,20 @@ fun ElementThemeApp(
         )
     }
 }
+
+@Composable
+fun OrbitThemeApp(
+    appPreferencesStore: AppPreferencesStore,
+    featureFlagService: FeatureFlagService,
+    compoundLight: SemanticColors,
+    compoundDark: SemanticColors,
+    buildMeta: BuildMeta,
+    content: @Composable () -> Unit,
+) = ElementThemeApp(
+    appPreferencesStore = appPreferencesStore,
+    featureFlagService = featureFlagService,
+    compoundLight = compoundLight,
+    compoundDark = compoundDark,
+    buildMeta = buildMeta,
+    content = content,
+)

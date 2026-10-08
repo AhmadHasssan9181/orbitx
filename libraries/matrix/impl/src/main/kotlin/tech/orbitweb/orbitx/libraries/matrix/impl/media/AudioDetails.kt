@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.media
 
-import tech.orbitweb.orbitx.libraries.matrix.api.media.AudioDetails
 import kotlinx.collections.immutable.toImmutableList
+import tech.orbitweb.orbitx.libraries.matrix.api.media.AudioDetails
 import kotlin.time.toJavaDuration
 import kotlin.time.toKotlinDuration
 import org.matrix.rustcomponents.sdk.UnstableAudioDetailsContent as RustAudioDetails

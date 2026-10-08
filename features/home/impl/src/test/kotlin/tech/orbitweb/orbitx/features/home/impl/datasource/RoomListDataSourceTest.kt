@@ -9,6 +9,10 @@ package tech.orbitweb.orbitx.features.home.impl.datasource
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.home.impl.FakeDateTimeObserver
 import tech.orbitweb.orbitx.libraries.androidutils.system.DateTimeObserver
 import tech.orbitweb.orbitx.libraries.dateformatter.test.FakeDateFormatter
@@ -22,10 +26,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeDynamicRoomList
 import tech.orbitweb.orbitx.libraries.matrix.test.roomlist.FakeRoomListService
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import java.time.Instant
 
 class RoomListDataSourceTest {

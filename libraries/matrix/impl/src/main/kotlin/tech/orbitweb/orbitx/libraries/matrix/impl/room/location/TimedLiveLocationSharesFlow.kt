@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.location
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LiveLocationShare
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LiveLocationShare
 
 /**
  * Makes sure to filter and emit live location based on the endTimestamp.

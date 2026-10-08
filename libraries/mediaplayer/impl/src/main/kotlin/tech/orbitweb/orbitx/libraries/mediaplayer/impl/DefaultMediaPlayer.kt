@@ -12,11 +12,6 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
-import tech.orbitweb.orbitx.libraries.audio.api.AudioFocus
-import tech.orbitweb.orbitx.libraries.audio.api.AudioFocusRequester
-import tech.orbitweb.orbitx.libraries.di.RoomScope
-import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
-import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
@@ -28,6 +23,11 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.timeout
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import tech.orbitweb.orbitx.libraries.audio.api.AudioFocus
+import tech.orbitweb.orbitx.libraries.audio.api.AudioFocusRequester
+import tech.orbitweb.orbitx.libraries.di.RoomScope
+import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
+import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
 import kotlin.time.Duration.Companion.seconds
 
 /**

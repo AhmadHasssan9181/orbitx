@@ -9,6 +9,8 @@ package tech.orbitweb.orbitx.libraries.textcomposer.impl.mentions
 
 import android.net.Uri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.permalink.PermalinkData
@@ -17,8 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.permalink.FakePermalinkParser
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionType
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Rule
-import org.junit.Test
 
 class IntentionalMentionSpanProviderTest : RobolectricTest() {
     @JvmField @Rule

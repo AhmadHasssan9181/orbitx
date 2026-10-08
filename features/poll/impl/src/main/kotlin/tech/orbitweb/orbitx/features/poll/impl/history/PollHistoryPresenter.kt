@@ -18,6 +18,9 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.poll.api.actions.EndPollAction
 import tech.orbitweb.orbitx.features.poll.api.actions.SendPollResponseAction
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryFilter
@@ -27,9 +30,6 @@ import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.di.annotations.SessionCoroutineScope
 import tech.orbitweb.orbitx.libraries.matrix.api.room.JoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.launch
 
 @Inject
 class PollHistoryPresenter(

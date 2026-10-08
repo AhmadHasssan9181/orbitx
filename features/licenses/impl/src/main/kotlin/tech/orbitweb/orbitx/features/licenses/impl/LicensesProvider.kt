@@ -10,13 +10,13 @@ package tech.orbitweb.orbitx.features.licenses.impl
 import android.content.Context
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.features.licenses.impl.model.DependencyLicenseItem
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.decodeFromStream
+import tech.orbitweb.orbitx.features.licenses.impl.model.DependencyLicenseItem
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 
 interface LicensesProvider {
     suspend fun provides(): List<DependencyLicenseItem>

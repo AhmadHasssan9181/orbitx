@@ -7,7 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.wellknown.api
 
-data class ElementWellKnown(
+data class OrbitWellKnown(
     val registrationHelperUrl: String?,
     val enforceElementPro: Boolean?,
     val rageshakeUrl: String?,
@@ -16,3 +16,6 @@ data class ElementWellKnown(
     val identityProviderAppScheme: String?,
     val customRecoveryPassphrase: CustomRecoveryPassphrase?,
 )
+
+typealias ElementWellKnown = OrbitWellKnown
+

@@ -10,8 +10,8 @@ package tech.orbitweb.orbitx.services.appnavstate.impl
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.ProcessLifecycleOwner
-import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.services.appnavstate.api.AppForegroundStateService
 
 class DefaultAppForegroundStateService : AppForegroundStateService {
     override val isInForeground = MutableStateFlow(false)

@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.textcomposer.impl.mentions
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
@@ -19,8 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.ui.messages.RoomMemberProfilesCache
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.RoomNamesCache
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.DefaultMentionSpanFormatter
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionType
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class MentionSpanFormatterTest {
     private val roomMemberProfilesCache = RoomMemberProfilesCache()

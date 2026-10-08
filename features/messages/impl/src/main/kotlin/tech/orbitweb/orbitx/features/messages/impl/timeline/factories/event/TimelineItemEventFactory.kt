@@ -10,6 +10,8 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline.factories.event
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.factories.TimelineItemsFactoryConfig
 import tech.orbitweb.orbitx.features.messages.impl.timeline.groups.canBeDisplayedInBubbleBlock
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.AggregatedReaction
@@ -34,8 +36,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.EventThreadInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.getAvatarUrl
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.getDisambiguatedDisplayName
 import tech.orbitweb.orbitx.libraries.matrix.ui.messages.reply.map
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
 
 @AssistedInject
 class TimelineItemEventFactory(

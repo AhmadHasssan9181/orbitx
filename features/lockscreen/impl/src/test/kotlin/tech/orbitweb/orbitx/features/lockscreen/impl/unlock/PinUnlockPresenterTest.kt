@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.lockscreen.impl.unlock
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.FakeBiometricAuthenticatorManager
 import tech.orbitweb.orbitx.features.lockscreen.impl.fixtures.aPinCodeManager
@@ -23,9 +26,6 @@ import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class PinUnlockPresenterTest {
     private val halfCompletePin = "12"

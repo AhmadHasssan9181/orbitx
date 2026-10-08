@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.features.createroom.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import org.junit.Test
 import tech.orbitweb.orbitx.features.createroom.impl.configureroom.JoinRuleItem
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.AllowRule
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
-import kotlinx.collections.immutable.persistentListOf
-import org.junit.Test
 
 class JoinRuleItemTest {
     @Test

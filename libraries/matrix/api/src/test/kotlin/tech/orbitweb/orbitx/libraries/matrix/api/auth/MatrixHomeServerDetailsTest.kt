@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.auth
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.test.auth.aMatrixHomeServerDetails
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.test.auth.aMatrixHomeServerDetails
 
 class MatrixHomeServerDetailsTest {
     @Test

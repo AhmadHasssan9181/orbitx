@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.linknewdevice
 
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopHandler
-import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopStep
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopHandler
+import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkDesktopStep
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 
 class FakeLinkDesktopHandler(
     private val handleScannedQrCodeResult: (ByteArray) -> Unit = { lambdaError() },

@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.troubleshoot.impl.history
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.push.api.history.PushHistoryItem
-import kotlinx.collections.immutable.toImmutableList
 
 open class PushHistoryStateProvider : PreviewParameterProvider<PushHistoryState> {
     override val values: Sequence<PushHistoryState>

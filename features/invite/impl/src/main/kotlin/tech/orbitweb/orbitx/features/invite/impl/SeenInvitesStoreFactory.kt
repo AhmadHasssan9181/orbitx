@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.invite.impl
 
+import kotlinx.coroutines.CoroutineScope
 import tech.orbitweb.orbitx.features.invite.api.SeenInvitesStore
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import kotlinx.coroutines.CoroutineScope
 
 interface SeenInvitesStoreFactory {
     fun getOrCreate(

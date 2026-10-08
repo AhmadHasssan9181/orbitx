@@ -9,9 +9,9 @@ package tech.orbitweb.orbitx.features.lockscreen.impl
 
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.unlock.activity.PinUnlockActivity
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class DefaultLockScreenEntryPointIntentTest : RobolectricTest() {
     @Test

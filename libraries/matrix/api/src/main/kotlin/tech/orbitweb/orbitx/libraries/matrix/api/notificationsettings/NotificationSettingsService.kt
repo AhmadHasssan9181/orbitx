@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.notificationsettings
 
+import kotlinx.coroutines.flow.SharedFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationSettings
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationSettingsState
-import kotlinx.coroutines.flow.SharedFlow
 
 interface NotificationSettingsService {
     /**

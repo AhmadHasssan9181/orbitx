@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.androidutils.filesize.FakeFileSizeFormatter
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.dateformatter.test.FakeDateFormatter
@@ -54,9 +57,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.timeline.item.event.aRoomMembe
 import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaInfo
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
 import tech.orbitweb.orbitx.libraries.mediaviewer.test.util.FileExtensionExtractorWithoutValidation
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
 import kotlin.time.Duration.Companion.seconds
 
 @Suppress("LargeClass")

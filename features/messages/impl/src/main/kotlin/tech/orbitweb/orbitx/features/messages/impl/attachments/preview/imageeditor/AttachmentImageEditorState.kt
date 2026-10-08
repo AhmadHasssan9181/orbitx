@@ -109,7 +109,7 @@ data class AttachmentImageEdits(
                 sticker.copy(
                     x = sticker.y,
                     y = 1f - sticker.x,
-                    rotationDegrees = (sticker.rotationDegrees - 90f)
+                    rotationDegrees = sticker.rotationDegrees - 90f
                 )
             }
         )

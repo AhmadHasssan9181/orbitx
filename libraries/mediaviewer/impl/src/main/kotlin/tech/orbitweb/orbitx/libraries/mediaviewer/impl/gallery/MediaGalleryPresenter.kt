@@ -19,6 +19,7 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.androidutils.R
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
@@ -43,7 +44,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.mediaInfo
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.mediaPermissions
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.mediaSource
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class MediaGalleryPresenter(

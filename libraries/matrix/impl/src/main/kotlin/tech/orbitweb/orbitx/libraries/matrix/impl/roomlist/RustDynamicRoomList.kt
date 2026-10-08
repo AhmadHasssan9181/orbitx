@@ -7,15 +7,15 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
-import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import org.matrix.rustcomponents.sdk.RoomListDynamicEntriesController
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.DynamicRoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomList
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomListFilter
+import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 
 private const val DEFAULT_ADD_PAGES_COUNT = 3
 

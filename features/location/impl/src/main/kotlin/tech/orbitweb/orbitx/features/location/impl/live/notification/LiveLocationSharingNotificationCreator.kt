@@ -17,6 +17,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import dev.zacsweers.metro.Inject
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
+import tech.orbitweb.orbitx.libraries.designsystem.utils.CommonDrawables
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 
@@ -34,7 +35,7 @@ class LiveLocationSharingNotificationCreator(
             ensureChannelExists()
         }
         return NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_menu_mylocation)
+            .setSmallIcon(CommonDrawables.ic_notification)
             .setContentTitle(context.getString(CommonStrings.live_location_sharing_foreground_service_title_android, buildMeta.applicationName))
             .setContentText(context.getString(CommonStrings.live_location_sharing_foreground_service_message_android))
             .setOngoing(true)

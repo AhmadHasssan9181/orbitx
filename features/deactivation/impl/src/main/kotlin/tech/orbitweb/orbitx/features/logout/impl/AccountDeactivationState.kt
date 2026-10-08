@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.logout.impl
 
 import android.os.Parcelable
-import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 
 data class AccountDeactivationState(
     val deactivateFormState: DeactivateFormState,

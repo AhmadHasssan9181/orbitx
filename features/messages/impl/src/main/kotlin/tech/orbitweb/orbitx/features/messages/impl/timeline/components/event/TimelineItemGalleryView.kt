@@ -39,6 +39,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import io.element.android.wysiwyg.compose.EditorStyledText
+import io.element.android.wysiwyg.link.Link
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.layout.ContentAvoidingLayout
@@ -52,9 +55,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.bgSubtleTertiary
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Icon
 import tech.orbitweb.orbitx.libraries.textcomposer.ElementRichTextEditorStyle
 import tech.orbitweb.orbitx.libraries.ui.utils.time.formatShort
-import io.element.android.wysiwyg.compose.EditorStyledText
-import io.element.android.wysiwyg.link.Link
-import kotlinx.collections.immutable.ImmutableList
 
 private const val MAX_TILES = 5
 private val GALLERY_WIDTH = 264.dp

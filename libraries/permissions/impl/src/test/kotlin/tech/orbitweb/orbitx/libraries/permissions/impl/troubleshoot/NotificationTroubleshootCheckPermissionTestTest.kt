@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.permissions.impl.troubleshoot
 
 import android.os.Build
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.permissions.impl.action.FakePermissionActions
 import tech.orbitweb.orbitx.libraries.permissions.test.FakePermissionStateProvider
 import tech.orbitweb.orbitx.libraries.troubleshoot.api.test.NotificationTroubleshootTestState
@@ -16,9 +19,6 @@ import tech.orbitweb.orbitx.libraries.troubleshoot.test.FakeNotificationTroubles
 import tech.orbitweb.orbitx.libraries.troubleshoot.test.runAndTestState
 import tech.orbitweb.orbitx.services.toolbox.test.sdk.FakeBuildVersionSdkIntProvider
 import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class NotificationTroubleshootCheckPermissionTestTest {
     @Test

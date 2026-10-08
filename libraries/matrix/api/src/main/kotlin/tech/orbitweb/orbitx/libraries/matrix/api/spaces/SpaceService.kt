@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.spaces
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import kotlinx.coroutines.flow.SharedFlow
+import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 
 interface SpaceService {
     val topLevelSpacesFlow: SharedFlow<List<SpaceRoom>>

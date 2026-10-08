@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.libraries.designsystem.components.avatar.internal
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarData
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.AvatarType
 import tech.orbitweb.orbitx.libraries.designsystem.components.avatar.avatarShape
-import kotlinx.collections.immutable.toImmutableList
 
 @Composable
 internal fun RoomAvatar(

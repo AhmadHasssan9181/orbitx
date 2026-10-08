@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.network
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.androidutils.json.JsonProvider
-import tech.orbitweb.orbitx.libraries.core.uri.ensureTrailingSlash
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
+import tech.orbitweb.orbitx.libraries.androidutils.json.JsonProvider
+import tech.orbitweb.orbitx.libraries.core.uri.ensureTrailingSlash
 
 @Inject
 class RetrofitFactory(

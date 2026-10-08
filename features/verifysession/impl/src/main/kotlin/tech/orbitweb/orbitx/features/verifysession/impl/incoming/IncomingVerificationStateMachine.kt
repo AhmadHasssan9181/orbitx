@@ -11,11 +11,11 @@ package tech.orbitweb.orbitx.features.verifysession.impl.incoming
 
 import com.freeletics.flowredux.dsl.FlowReduxStateMachine
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import tech.orbitweb.orbitx.features.verifysession.impl.util.andLogStateChange
 import tech.orbitweb.orbitx.features.verifysession.impl.util.logReceivedEvents
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationData
 import tech.orbitweb.orbitx.libraries.matrix.api.verification.SessionVerificationService
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import com.freeletics.flowredux.dsl.State as MachineState
 
 @Inject

@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.matrix.api.timeline
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.ThreadId
@@ -25,9 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.location.AssetType
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.EventOrTransactionId
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.InReplyTo
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.toEventOrTransactionId
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.parcelize.Parcelize
 import java.io.File
 
 interface Timeline : AutoCloseable {

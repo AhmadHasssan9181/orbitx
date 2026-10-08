@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.features.messages.impl
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentSetOf
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.VoiceMessageComposerState
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.aVoiceMessageComposerState
 import tech.orbitweb.orbitx.features.messages.api.timeline.voicemessages.composer.aVoiceMessagePreviewState
@@ -52,9 +55,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
 import tech.orbitweb.orbitx.libraries.textcomposer.model.MessageComposerMode
 import tech.orbitweb.orbitx.libraries.textcomposer.model.aTextEditorStateMarkdown
 import tech.orbitweb.orbitx.libraries.textcomposer.model.aTextEditorStateRich
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentSetOf
 
 open class MessagesStateProvider : PreviewParameterProvider<MessagesState> {
     override val values: Sequence<MessagesState>

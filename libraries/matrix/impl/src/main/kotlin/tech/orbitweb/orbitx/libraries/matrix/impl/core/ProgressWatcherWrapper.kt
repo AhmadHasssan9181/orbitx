@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.core
 
-import tech.orbitweb.orbitx.libraries.matrix.api.core.ProgressCallback
 import org.matrix.rustcomponents.sdk.ProgressWatcher
 import org.matrix.rustcomponents.sdk.TransmissionProgress
+import tech.orbitweb.orbitx.libraries.matrix.api.core.ProgressCallback
 
 internal class ProgressWatcherWrapper(private val progressCallback: ProgressCallback) : ProgressWatcher {
     override fun transmissionProgress(progress: TransmissionProgress) {

@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
-import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
+import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
+import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import timber.log.Timber
 
 @Inject

@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.preferences.api.store
 
+import kotlinx.coroutines.flow.Flow
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaPreviewValue
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.LogLevel
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TraceLogPack
-import kotlinx.coroutines.flow.Flow
 
 interface AppPreferencesStore {
     suspend fun setDeveloperModeEnabled(enabled: Boolean)

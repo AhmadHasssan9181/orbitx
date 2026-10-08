@@ -10,15 +10,15 @@ package tech.orbitweb.orbitx.libraries.sessionstorage.impl
 import app.cash.sqldelight.driver.jdbc.sqlite.JdbcSqliteDriver
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.matrix.session.SessionData
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.LoggedInState
-import tech.orbitweb.orbitx.libraries.sessionstorage.api.LoginType
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.matrix.session.SessionData
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.LoggedInState
+import tech.orbitweb.orbitx.libraries.sessionstorage.api.LoginType
 
 class DatabaseSessionStoreTest {
     private lateinit var database: SessionDatabase

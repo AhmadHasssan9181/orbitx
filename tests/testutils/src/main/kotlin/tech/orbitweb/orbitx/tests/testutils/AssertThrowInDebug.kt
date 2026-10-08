@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.tests.testutils
 
-import tech.orbitweb.orbitx.libraries.androidutils.metadata.isInDebug
 import org.junit.Assert.assertThrows
+import tech.orbitweb.orbitx.libraries.androidutils.metadata.isInDebug
 
 /**
  * Assert that the lambda throws only on debug mode.

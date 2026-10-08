@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.messages.impl.messagecomposer
 
-import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions.RoomAliasSuggestion
-import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions.RoomAliasSuggestionsDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions.RoomAliasSuggestion
+import tech.orbitweb.orbitx.features.messages.impl.messagecomposer.suggestions.RoomAliasSuggestionsDataSource
 
 class FakeRoomAliasSuggestionsDataSource(
     initialData: List<RoomAliasSuggestion> = emptyList()

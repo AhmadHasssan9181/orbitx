@@ -13,6 +13,8 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.AndroidComposeUiTest
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import kotlinx.collections.immutable.persistentListOf
+import org.junit.Test
 import tech.orbitweb.orbitx.features.knockrequests.impl.R
 import tech.orbitweb.orbitx.features.knockrequests.impl.data.aKnockRequestPresentable
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.tests.testutils.clickOn
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.collections.immutable.persistentListOf
-import org.junit.Test
 
 class KnockRequestsListViewTest : RobolectricTest() {
     @Test

@@ -7,8 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiMediaSource
-import tech.orbitweb.orbitx.libraries.matrix.test.A_MESSAGE
 import org.matrix.rustcomponents.sdk.AudioInfo
 import org.matrix.rustcomponents.sdk.AudioMessageContent
 import org.matrix.rustcomponents.sdk.FileInfo
@@ -27,6 +25,8 @@ import org.matrix.rustcomponents.sdk.UnstableAudioDetailsContent
 import org.matrix.rustcomponents.sdk.UnstableVoiceContent
 import org.matrix.rustcomponents.sdk.VideoInfo
 import org.matrix.rustcomponents.sdk.VideoMessageContent
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiMediaSource
+import tech.orbitweb.orbitx.libraries.matrix.test.A_MESSAGE
 
 internal fun aRustTimelineEventContentMessageLike(
     content: MessageLikeEventContent = aRustMessageLikeEventContentRoomMessage(),

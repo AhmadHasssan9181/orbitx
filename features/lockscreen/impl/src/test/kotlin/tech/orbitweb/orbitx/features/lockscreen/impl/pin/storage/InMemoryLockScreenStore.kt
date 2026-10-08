@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.lockscreen.impl.pin.storage
 
-import tech.orbitweb.orbitx.features.lockscreen.impl.storage.LockScreenStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import tech.orbitweb.orbitx.features.lockscreen.impl.storage.LockScreenStore
 
 private const val DEFAULT_REMAINING_ATTEMPTS = 3
 

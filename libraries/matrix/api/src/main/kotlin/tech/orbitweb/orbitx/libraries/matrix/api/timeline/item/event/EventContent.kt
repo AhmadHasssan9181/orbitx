@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableMap
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.media.ImageInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
@@ -17,8 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.poll.PollKind
 import tech.orbitweb.orbitx.libraries.matrix.api.room.location.AssetType
 import tech.orbitweb.orbitx.libraries.matrix.api.room.location.LiveLocationInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.EventThreadInfo
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
 
 @Immutable
 sealed interface EventContent

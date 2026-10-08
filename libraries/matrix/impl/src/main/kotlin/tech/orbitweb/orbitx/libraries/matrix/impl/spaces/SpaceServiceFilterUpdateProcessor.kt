@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.spaces
 
-import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import org.matrix.rustcomponents.sdk.SpaceFilterUpdate
+import tech.orbitweb.orbitx.libraries.matrix.api.spaces.SpaceServiceFilter
 import timber.log.Timber
 
 internal class SpaceServiceFilterUpdateProcessor(

@@ -13,9 +13,9 @@ import app.cash.sqldelight.db.QueryResult
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.db.SqlSchema
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
+import net.zetetic.database.sqlcipher.SupportOpenHelperFactory
 import tech.orbitweb.orbitx.libraries.androidutils.crypto.ClientSecret
 import tech.orbitweb.orbitx.libraries.encrypteddb.passphrase.DatabaseSecretProvider
-import net.zetetic.database.sqlcipher.SupportOpenHelperFactory
 
 /**
  * Creates an encrypted version of the [SqlDriver] using SQLCipher's [SupportOpenHelperFactory].

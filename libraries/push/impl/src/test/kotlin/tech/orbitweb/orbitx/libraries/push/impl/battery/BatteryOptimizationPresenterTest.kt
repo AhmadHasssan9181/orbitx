@@ -9,6 +9,9 @@ package tech.orbitweb.orbitx.libraries.push.impl.battery
 
 import androidx.lifecycle.Lifecycle
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.push.api.battery.BatteryOptimizationEvents
 import tech.orbitweb.orbitx.libraries.push.impl.push.FakeMutableBatteryOptimizationStore
 import tech.orbitweb.orbitx.libraries.push.impl.push.MutableBatteryOptimizationStore
@@ -18,9 +21,6 @@ import tech.orbitweb.orbitx.tests.testutils.FakeLifecycleOwner
 import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.testWithLifecycleOwner
-import kotlinx.coroutines.test.runTest
-import org.junit.Rule
-import org.junit.Test
 
 class BatteryOptimizationPresenterTest {
     @get:Rule

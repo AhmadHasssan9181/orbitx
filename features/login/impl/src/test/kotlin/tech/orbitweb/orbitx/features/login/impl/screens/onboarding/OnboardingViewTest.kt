@@ -18,6 +18,7 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
 import com.google.testing.junit.testparameterinjector.KotlinTestParameters.namedTestValues
 import com.google.testing.junit.testparameterinjector.TestParameter
+import org.junit.Test
 import tech.orbitweb.orbitx.features.login.impl.R
 import tech.orbitweb.orbitx.features.login.impl.login.LoginMode
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
@@ -32,7 +33,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.pressBack
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTestParameter
-import org.junit.Test
 
 class OnboardingViewTest : RobolectricTestParameter() {
     @Test

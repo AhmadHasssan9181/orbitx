@@ -19,9 +19,9 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.LocalTextStyle
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -37,6 +37,8 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.compose.AsyncImagePainter
+import io.element.android.wysiwyg.compose.EditorStyledText
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.ATimelineItemEventRow
@@ -55,8 +57,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
 import tech.orbitweb.orbitx.libraries.textcomposer.ElementRichTextEditorStyle
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.libraries.ui.utils.a11y.isTalkbackActive
-import io.element.android.wysiwyg.compose.EditorStyledText
-import io.element.android.wysiwyg.link.Link
 
 private const val TALL_IMAGE_RATIO_DIVISOR = 3
 @Composable
@@ -86,9 +86,21 @@ fun TimelineItemImageView(
             mediaType = "Photo",
             isMine = isMine,
             onContentClick = if (isMine) {
-                { android.widget.Toast.makeText(context, "You sent this as a view-once photo. It cannot be reopened.", android.widget.Toast.LENGTH_SHORT).show() }
+                {
+                    android.widget.Toast.makeText(
+                        context,
+                        "You sent this as a view-once photo. It cannot be reopened.",
+                        android.widget.Toast.LENGTH_SHORT,
+                    ).show()
+                }
             } else if (isDestroyed) {
-                { android.widget.Toast.makeText(context, "This photo has already been viewed and destroyed", android.widget.Toast.LENGTH_SHORT).show() }
+                {
+                    android.widget.Toast.makeText(
+                        context,
+                        "This photo has already been viewed and destroyed",
+                        android.widget.Toast.LENGTH_SHORT,
+                    ).show()
+                }
             } else {
                 onContentClick
             },

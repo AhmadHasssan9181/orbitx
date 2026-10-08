@@ -7,6 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.push.impl.notifications
 
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
@@ -18,10 +22,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.notification.aNotificationData
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.fake.FakeNotificationDataFactory
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.fixtures.aNotifiableMessageEvent
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultOnMissedCallNotificationHandlerTest {
     @OptIn(ExperimentalCoroutinesApi::class)

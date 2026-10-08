@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.UserEventPermissions
 import tech.orbitweb.orbitx.features.messages.impl.actionlist.ActionListState
 import tech.orbitweb.orbitx.features.messages.impl.link.LinkState
@@ -19,7 +20,6 @@ import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
 import tech.orbitweb.orbitx.features.messages.impl.timeline.protection.TimelineProtectionState
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonPlurals
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.ImmutableList
 
 @Immutable
 sealed interface PinnedMessagesListState {

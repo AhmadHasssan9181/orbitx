@@ -7,14 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
+import org.matrix.rustcomponents.sdk.Room
+import org.matrix.rustcomponents.sdk.use
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.LatestEventValue
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 import tech.orbitweb.orbitx.libraries.matrix.impl.room.RoomInfoMapper
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.TimelineEventContentMapper
 import tech.orbitweb.orbitx.libraries.matrix.impl.timeline.item.event.map
-import org.matrix.rustcomponents.sdk.Room
-import org.matrix.rustcomponents.sdk.use
 import uniffi.matrix_sdk_ui.LatestEventValueLocalState
 import org.matrix.rustcomponents.sdk.LatestEventValue as RustLatestEventValue
 

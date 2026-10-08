@@ -8,12 +8,6 @@
 package tech.orbitweb.orbitx.libraries.sessionstorage.impl.observer
 
 import app.cash.sqldelight.driver.jdbc.sqlite.JdbcSqliteDriver
-import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
-import tech.orbitweb.orbitx.libraries.sessionstorage.impl.DatabaseSessionStore
-import tech.orbitweb.orbitx.libraries.sessionstorage.impl.SessionDatabase
-import tech.orbitweb.orbitx.libraries.sessionstorage.impl.aDbSessionData
-import tech.orbitweb.orbitx.libraries.sessionstorage.impl.toApiModel
-import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
@@ -21,6 +15,12 @@ import kotlinx.coroutines.test.runCurrent
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
+import tech.orbitweb.orbitx.libraries.sessionstorage.impl.DatabaseSessionStore
+import tech.orbitweb.orbitx.libraries.sessionstorage.impl.SessionDatabase
+import tech.orbitweb.orbitx.libraries.sessionstorage.impl.aDbSessionData
+import tech.orbitweb.orbitx.libraries.sessionstorage.impl.toApiModel
+import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class DefaultSessionObserverTest {

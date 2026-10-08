@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
-import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import org.matrix.rustcomponents.sdk.RoomInfo
+import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 
 /**
  * Extract the heroes from the room info.

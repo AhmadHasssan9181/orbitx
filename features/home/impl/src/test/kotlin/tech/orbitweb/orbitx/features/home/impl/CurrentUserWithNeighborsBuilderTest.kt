@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.home.impl
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_2
@@ -15,7 +16,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.ui.components.aMatrixUser
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionData
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
-import org.junit.Test
 
 class CurrentUserWithNeighborsBuilderTest {
     @Test

@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.location.impl.common.actions
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.location.api.Location
 import org.junit.Test
+import tech.orbitweb.orbitx.features.location.api.Location
 import java.net.URLEncoder
 import java.util.Locale
 

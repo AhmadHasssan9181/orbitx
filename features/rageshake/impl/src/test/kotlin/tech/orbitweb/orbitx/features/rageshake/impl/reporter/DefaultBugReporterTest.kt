@@ -8,6 +8,20 @@
 package tech.orbitweb.orbitx.features.rageshake.impl.reporter
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runCurrent
+import kotlinx.coroutines.test.runTest
+import okhttp3.MultipartReader
+import okhttp3.OkHttpClient
+import okhttp3.mockwebserver.MockResponse
+import okhttp3.mockwebserver.MockWebServer
+import okhttp3.mockwebserver.RecordedRequest
+import okio.buffer
+import okio.source
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
 import tech.orbitweb.orbitx.appconfig.RageshakeConfig
 import tech.orbitweb.orbitx.features.rageshake.api.reporter.BugReporterListener
 import tech.orbitweb.orbitx.features.rageshake.impl.crash.CrashDataStore
@@ -33,20 +47,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runCurrent
-import kotlinx.coroutines.test.runTest
-import okhttp3.MultipartReader
-import okhttp3.OkHttpClient
-import okhttp3.mockwebserver.MockResponse
-import okhttp3.mockwebserver.MockWebServer
-import okhttp3.mockwebserver.RecordedRequest
-import okio.buffer
-import okio.source
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
 
 class DefaultBugReporterTest : RobolectricTest() {
     @Test

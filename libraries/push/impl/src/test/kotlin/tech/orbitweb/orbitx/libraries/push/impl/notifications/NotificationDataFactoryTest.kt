@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.push.impl.notifications
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.notifications.fixtures.aNotifiab
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.fixtures.aSimpleNotifiableEvent
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.fixtures.anInviteNotifiableEvent
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 private val MY_AVATAR_URL: String? = null
 

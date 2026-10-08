@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.services.analyticsproviders.sentry
 
-import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransaction
 import io.sentry.ISpan
 import io.sentry.ITransaction
 import io.sentry.Sentry
 import io.sentry.SentryInstantDate
+import tech.orbitweb.orbitx.services.analyticsproviders.api.AnalyticsTransaction
 import timber.log.Timber
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.nanoseconds

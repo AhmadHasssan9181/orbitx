@@ -8,6 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.impl.core.SdkBackgroundTaskError
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustSession
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionStore
@@ -15,9 +18,6 @@ import tech.orbitweb.orbitx.libraries.sessionstorage.test.InMemorySessionStore
 import tech.orbitweb.orbitx.libraries.sessionstorage.test.aSessionData
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import uniffi.matrix_sdk_common.BackgroundTaskFailureReason
 
 class RustClientSessionDelegateTest {

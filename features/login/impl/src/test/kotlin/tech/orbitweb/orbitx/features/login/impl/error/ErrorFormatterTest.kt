@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.login.impl.error
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.login.impl.R
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.AuthenticationException
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import org.junit.Test
 
 class ErrorFormatterTest {
     // region loginError

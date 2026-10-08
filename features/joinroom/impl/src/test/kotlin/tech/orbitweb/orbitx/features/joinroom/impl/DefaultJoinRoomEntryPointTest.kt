@@ -12,14 +12,14 @@ import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.testing.junit4.util.MainDispatcherRule
 import com.google.common.truth.Truth.assertThat
 import im.vector.app.features.analytics.plan.JoinedRoom
+import org.junit.Rule
+import org.junit.Test
 import tech.orbitweb.orbitx.features.invite.test.declineandblock.FakeDeclineInviteAndBlockEntryPoint
 import tech.orbitweb.orbitx.features.joinroom.api.JoinRoomEntryPoint
 import tech.orbitweb.orbitx.libraries.matrix.api.core.toRoomIdOrAlias
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
-import org.junit.Rule
-import org.junit.Test
 import java.util.Optional
 
 class DefaultJoinRoomEntryPointTest {

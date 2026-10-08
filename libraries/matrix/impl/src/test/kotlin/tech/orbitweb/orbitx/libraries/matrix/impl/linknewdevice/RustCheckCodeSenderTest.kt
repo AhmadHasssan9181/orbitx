@@ -8,12 +8,12 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.linknewdevice
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiCheckCodeSender
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import tech.orbitweb.orbitx.tests.testutils.lambda.value
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiCheckCodeSender
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
+import tech.orbitweb.orbitx.tests.testutils.lambda.value
 
 class RustCheckCodeSenderTest {
     @Test

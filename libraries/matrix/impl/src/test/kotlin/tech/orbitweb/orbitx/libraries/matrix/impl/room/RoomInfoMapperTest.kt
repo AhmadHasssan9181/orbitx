@@ -8,6 +8,13 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.room
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.collections.immutable.toImmutableList
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.Membership
+import org.matrix.rustcomponents.sdk.RtcCallIntent
+import org.matrix.rustcomponents.sdk.RtcCallIntentConsensus
 import tech.orbitweb.orbitx.libraries.matrix.api.notification.CallIntent
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CallIntentConsensus
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
@@ -30,13 +37,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID_6
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomMember
 import tech.orbitweb.orbitx.libraries.matrix.test.room.defaultRoomPowerLevelValues
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentMapOf
-import kotlinx.collections.immutable.toImmutableList
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.Membership
-import org.matrix.rustcomponents.sdk.RtcCallIntent
-import org.matrix.rustcomponents.sdk.RtcCallIntentConsensus
 import uniffi.matrix_sdk_base.EncryptionState
 import org.matrix.rustcomponents.sdk.JoinRule as RustJoinRule
 import org.matrix.rustcomponents.sdk.RoomHistoryVisibility as RustRoomHistoryVisibility

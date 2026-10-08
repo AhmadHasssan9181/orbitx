@@ -9,6 +9,7 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline.components.event
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import io.element.android.wysiwyg.link.Link
 import tech.orbitweb.orbitx.features.messages.impl.timeline.TimelineEvent
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.layout.ContentAvoidingLayoutData
 import tech.orbitweb.orbitx.features.messages.impl.timeline.di.LocalTimelineItemPresenterFactories
@@ -34,7 +35,6 @@ import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.Timeline
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.ensureActiveLiveLocation
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.voiceplayer.api.VoiceMessageState
-import io.element.android.wysiwyg.link.Link
 
 @Composable
 fun TimelineItemEventContentView(

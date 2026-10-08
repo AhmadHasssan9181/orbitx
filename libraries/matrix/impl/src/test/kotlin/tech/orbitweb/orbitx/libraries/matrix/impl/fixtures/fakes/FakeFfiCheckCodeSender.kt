@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes
 
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import org.matrix.rustcomponents.sdk.CheckCodeSender
 import org.matrix.rustcomponents.sdk.NoHandle
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 
 class FakeFfiCheckCodeSender(
     private val sendResult: (UByte) -> Unit = { _ -> lambdaError() }

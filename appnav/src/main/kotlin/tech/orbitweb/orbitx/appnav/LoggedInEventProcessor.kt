@@ -8,17 +8,17 @@
 package tech.orbitweb.orbitx.appnav
 
 import dev.zacsweers.metro.Inject
-import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarDispatcher
-import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessage
-import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipObserver
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MembershipChange
-import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarDispatcher
+import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessage
+import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipObserver
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.item.event.MembershipChange
+import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 
 @Inject
 class LoggedInEventProcessor(

@@ -10,14 +10,14 @@ package tech.orbitweb.orbitx.libraries.voiceplayer.impl
 import app.cash.turbine.TurbineTestContext
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.mediaplayer.api.MediaPlayer
 import tech.orbitweb.orbitx.libraries.mediaplayer.test.FakeMediaPlayer
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultVoiceMessagePlayerTest {
     @Test

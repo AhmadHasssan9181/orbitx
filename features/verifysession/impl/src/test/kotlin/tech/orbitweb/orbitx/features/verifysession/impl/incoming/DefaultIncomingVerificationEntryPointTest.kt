@@ -10,12 +10,12 @@ package tech.orbitweb.orbitx.features.verifysession.impl.incoming
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.bumble.appyx.core.modality.BuildContext
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.verifysession.api.IncomingVerificationEntryPoint
-import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
-import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
+import tech.orbitweb.orbitx.features.verifysession.api.IncomingVerificationEntryPoint
+import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
+import tech.orbitweb.orbitx.tests.testutils.node.TestParentNode
 
 class DefaultIncomingVerificationEntryPointTest {
     @get:Rule

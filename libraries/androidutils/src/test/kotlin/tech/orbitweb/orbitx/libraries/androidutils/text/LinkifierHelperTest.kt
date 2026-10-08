@@ -14,13 +14,13 @@ import androidx.core.text.getSpans
 import androidx.core.text.inSpans
 import androidx.core.text.toSpannable
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import org.junit.Rule
 import org.junit.Test
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 import org.robolectric.shadow.api.Shadow.newInstanceOf
+import tech.orbitweb.orbitx.tests.testutils.WarmUpRule
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class LinkifierHelperTest : RobolectricTest() {
     @get:Rule

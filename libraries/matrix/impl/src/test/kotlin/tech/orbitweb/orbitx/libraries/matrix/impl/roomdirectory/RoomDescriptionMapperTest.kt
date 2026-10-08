@@ -8,13 +8,13 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.PublicRoomJoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDescription
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories.aRustRoomDescription
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ALIAS
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.roomdirectory.aRoomDescription
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.PublicRoomJoinRule
 
 class RoomDescriptionMapperTest {
     @Test

@@ -15,6 +15,8 @@ import androidx.compose.runtime.LaunchedEffect
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionStateProvider
@@ -22,8 +24,6 @@ import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsEvent
 import tech.orbitweb.orbitx.libraries.permissions.api.PermissionsPresenter
 import tech.orbitweb.orbitx.libraries.permissions.noop.NoopPermissionsPresenter
 import tech.orbitweb.orbitx.services.toolbox.api.sdk.BuildVersionSdkIntProvider
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 
 @AssistedInject
 class NotificationsOptInPresenter(

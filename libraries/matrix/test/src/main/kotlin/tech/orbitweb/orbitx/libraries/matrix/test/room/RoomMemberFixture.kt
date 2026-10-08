@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.room
 
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMembershipState
-import kotlinx.collections.immutable.persistentListOf
 
 fun aRoomMember(
     userId: UserId = UserId("@alice:server.org"),

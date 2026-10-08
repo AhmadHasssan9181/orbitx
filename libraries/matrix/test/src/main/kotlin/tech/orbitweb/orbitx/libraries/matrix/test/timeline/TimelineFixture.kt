@@ -7,6 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.timeline
 
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.ImmutableMap
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.persistentMapOf
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.TransactionId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
@@ -36,10 +40,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_NAME
 import tech.orbitweb.orbitx.libraries.matrix.test.core.FakeSendHandle
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.ImmutableMap
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.persistentMapOf
 
 fun anEventTimelineItem(
     eventId: EventId = AN_EVENT_ID,

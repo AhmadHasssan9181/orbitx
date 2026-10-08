@@ -7,14 +7,14 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.api.room.recent
 
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.CurrentUserMembership
 import tech.orbitweb.orbitx.libraries.matrix.api.room.toMatrixUser
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 
 data class RecentDirectRoom(
     val roomId: RoomId,

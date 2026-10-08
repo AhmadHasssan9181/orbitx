@@ -12,11 +12,11 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.libraries.core.bool.orFalse
-import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.runBlocking
+import tech.orbitweb.orbitx.libraries.core.bool.orFalse
+import tech.orbitweb.orbitx.libraries.preferences.api.store.PreferenceDataStoreFactory
 
 private val appHasCrashedKey = booleanPreferencesKey("appHasCrashed")
 private val crashDataKey = stringPreferencesKey("crashData")

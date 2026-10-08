@@ -18,6 +18,8 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.test.v2.runAndroidComposeUiTest
+import org.junit.Test
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.features.home.impl.HomeView
 import tech.orbitweb.orbitx.features.home.impl.R
 import tech.orbitweb.orbitx.features.home.impl.aHomeState
@@ -34,8 +36,6 @@ import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnce
 import tech.orbitweb.orbitx.tests.testutils.ensureCalledOnceWithParam
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.setSafeContent
-import org.junit.Test
-import org.robolectric.annotation.Config
 
 class RoomListViewTest : RobolectricTest() {
     @Config(qualifiers = "h1024dp")

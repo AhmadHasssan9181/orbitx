@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.call.ui
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.call.impl.ui.CallScreenBackPressAction
 import tech.orbitweb.orbitx.features.call.impl.ui.CallScreenBackPressPolicy
-import org.junit.Test
 
 class CallScreenBackPressPolicyTest {
     @Test

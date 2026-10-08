@@ -7,6 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.room
 
+import kotlinx.collections.immutable.persistentMapOf
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
@@ -26,8 +28,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_NAME
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_RAW_NAME
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_TOPIC
-import kotlinx.collections.immutable.persistentMapOf
-import kotlinx.collections.immutable.toImmutableList
 
 fun aRoomInfo(
     id: RoomId = A_ROOM_ID,

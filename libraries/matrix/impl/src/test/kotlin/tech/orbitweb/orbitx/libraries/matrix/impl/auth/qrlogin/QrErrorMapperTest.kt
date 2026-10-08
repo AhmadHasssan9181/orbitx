@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth.qrlogin
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeDecodeException
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrLoginException
-import org.junit.Test
 import org.matrix.rustcomponents.sdk.HumanQrLoginException as RustHumanQrLoginException
 import org.matrix.rustcomponents.sdk.QrCodeDecodeException as RustQrCodeDecodeException
 

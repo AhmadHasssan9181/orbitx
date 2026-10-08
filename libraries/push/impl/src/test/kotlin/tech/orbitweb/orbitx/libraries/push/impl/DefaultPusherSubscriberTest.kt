@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.libraries.push.impl
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.appconfig.PushConfig
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
 import tech.orbitweb.orbitx.libraries.matrix.api.pusher.SetHttpPusherData
@@ -24,8 +26,6 @@ import tech.orbitweb.orbitx.libraries.pushstore.test.userpushstore.FakeUserPushS
 import tech.orbitweb.orbitx.libraries.pushstore.test.userpushstore.clientsecret.FakePushClientSecret
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.lambda.value
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DefaultPusherSubscriberTest {
     @Test

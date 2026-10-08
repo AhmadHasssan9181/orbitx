@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.space.impl.addroom
 
 import androidx.compose.foundation.text.input.TextFieldState
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
 import tech.orbitweb.orbitx.libraries.matrix.ui.model.SelectRoomInfo
-import kotlinx.collections.immutable.ImmutableList
 
 data class AddRoomToSpaceState(
     val searchQuery: TextFieldState,

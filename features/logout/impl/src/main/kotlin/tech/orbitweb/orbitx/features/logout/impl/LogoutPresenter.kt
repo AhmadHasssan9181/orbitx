@@ -17,6 +17,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
@@ -27,9 +30,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupUploadState
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.EncryptionService
 import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerScheduler
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @Inject
 class LogoutPresenter(

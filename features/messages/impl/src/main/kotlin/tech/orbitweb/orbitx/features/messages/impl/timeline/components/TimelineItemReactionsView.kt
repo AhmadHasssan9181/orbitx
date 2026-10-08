@@ -20,6 +20,7 @@ import androidx.compose.ui.semantics.hideFromAccessibility
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.R
 import tech.orbitweb.orbitx.features.messages.impl.timeline.aTimelineItemReactions
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.AggregatedReaction
@@ -28,7 +29,6 @@ import tech.orbitweb.orbitx.libraries.architecture.coverage.ExcludeFromCoverage
 import tech.orbitweb.orbitx.libraries.designsystem.icons.CompoundDrawables
 import tech.orbitweb.orbitx.libraries.designsystem.preview.ElementPreview
 import tech.orbitweb.orbitx.libraries.designsystem.preview.PreviewsDayNight
-import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun TimelineItemReactionsView(

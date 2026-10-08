@@ -8,6 +8,8 @@
 package tech.orbitweb.orbitx.features.startchat.impl.joinbyaddress
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.startchat.StartChatNavigator
 import tech.orbitweb.orbitx.features.startchat.impl.FakeStartChatNavigator
 import tech.orbitweb.orbitx.libraries.matrix.api.MatrixClient
@@ -18,8 +20,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.alias.FakeRoomAliasHelper
 import tech.orbitweb.orbitx.tests.testutils.lambda.assert
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 import java.util.Optional
 
 class JoinBaseRoomByAddressPresenterTest {

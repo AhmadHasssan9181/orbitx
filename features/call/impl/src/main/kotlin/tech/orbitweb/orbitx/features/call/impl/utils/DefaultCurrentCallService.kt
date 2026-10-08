@@ -10,9 +10,9 @@ package tech.orbitweb.orbitx.features.call.impl.utils
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.features.call.api.CurrentCall
 import tech.orbitweb.orbitx.features.call.api.CurrentCallService
-import kotlinx.coroutines.flow.MutableStateFlow
 
 @SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)

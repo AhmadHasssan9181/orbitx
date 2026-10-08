@@ -10,6 +10,10 @@
 package tech.orbitweb.orbitx.features.lockscreen.impl.device
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.BiometricAuthenticator
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.FakeBiometricAuthenticator
 import tech.orbitweb.orbitx.features.lockscreen.impl.biometric.FakeBiometricAuthenticatorManager
@@ -19,10 +23,6 @@ import tech.orbitweb.orbitx.features.lockscreen.impl.unlock.PinUnlockHelper
 import tech.orbitweb.orbitx.features.lockscreen.test.FakeDeviceUnlockEntryPointCallback
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
 import tech.orbitweb.orbitx.tests.testutils.test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class DeviceUnlockPresenterTest {
     @Test

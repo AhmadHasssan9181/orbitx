@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.libraries.mediaupload.test
 
 import android.net.Uri
+import kotlinx.coroutines.CompletableDeferred
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.matrix.api.media.AudioInfo
 import tech.orbitweb.orbitx.libraries.matrix.api.media.FileInfo
@@ -17,7 +18,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaOptimizationConfig
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaPreProcessor
 import tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.CompletableDeferred
 import java.io.File
 import kotlin.time.Duration.Companion.seconds
 

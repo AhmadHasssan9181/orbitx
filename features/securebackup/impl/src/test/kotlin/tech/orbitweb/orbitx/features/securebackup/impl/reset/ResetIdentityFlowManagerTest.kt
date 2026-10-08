@@ -9,17 +9,17 @@ package tech.orbitweb.orbitx.features.securebackup.impl.reset
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.BackupState
 import tech.orbitweb.orbitx.libraries.matrix.api.encryption.IdentityResetHandle
 import tech.orbitweb.orbitx.libraries.matrix.test.encryption.FakeEncryptionService
 import tech.orbitweb.orbitx.libraries.matrix.test.encryption.FakeIdentityPasswordResetHandle
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class ResetIdentityFlowManagerTest {
     @Test

@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.notifications
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.fullscreenintent.api.FullScreenIntentPermissionsState
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomNotificationMode
 import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
-import kotlinx.collections.immutable.ImmutableList
 
 data class NotificationSettingsState(
     val matrixSettings: MatrixSettings,

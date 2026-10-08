@@ -9,8 +9,8 @@ package tech.orbitweb.orbitx.libraries.matrix.api.verification
 
 import android.os.Parcelable
 import androidx.compose.runtime.Immutable
-import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.matrix.api.core.UserId
 
 @Immutable
 sealed interface VerificationRequest : Parcelable {

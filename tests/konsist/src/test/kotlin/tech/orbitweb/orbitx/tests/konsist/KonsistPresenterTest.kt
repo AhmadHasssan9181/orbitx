@@ -11,8 +11,8 @@ import com.lemonappdev.konsist.api.Konsist
 import com.lemonappdev.konsist.api.ext.list.constructors
 import com.lemonappdev.konsist.api.ext.list.withAllParentsOf
 import com.lemonappdev.konsist.api.verify.assertTrue
-import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.architecture.Presenter
 
 class KonsistPresenterTest {
     @Test

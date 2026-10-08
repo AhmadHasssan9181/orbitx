@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.features.login.impl.qrcode
 
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.MatrixQrCodeLoginData
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeLoginStep
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaRecorder
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeQrCodeLoginManager(
     var authenticateResult: (MatrixQrCodeLoginData) -> Result<SessionId> =

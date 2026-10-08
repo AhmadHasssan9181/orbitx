@@ -35,6 +35,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
@@ -139,8 +141,8 @@ fun AttachmentImageEditorView(
     var currentToolMode by remember { mutableStateOf(EditorToolMode.Crop) }
     var imageSize by remember(state.localMedia.uri) { mutableStateOf(IntSize.Zero) }
     var selectedAspectRatio by remember { mutableStateOf(CropAspectRatio.Free) }
-    var selectedColorHex by remember { mutableStateOf(0xFFFF2D55L) }
-    var selectedStrokeWidth by remember { mutableStateOf(8f) }
+    var selectedColorHex by remember { mutableLongStateOf(0xFFFF2D55L) }
+    var selectedStrokeWidth by remember { mutableFloatStateOf(8f) }
     var selectedStickerId by remember { mutableStateOf<String?>(null) }
 
     val canUndo = state.edits.drawStrokes.isNotEmpty() || state.edits.stickers.isNotEmpty()
@@ -247,8 +249,8 @@ fun AttachmentImageEditorView(
                     onUpdateSticker = onUpdateSticker,
                     onRemoveSticker = onRemoveSticker,
                     onCropRectChange = onCropRectChange,
-                    onImageSizeChanged = { imageSize = it },
-                    onDragStarted = { selectedAspectRatio = CropAspectRatio.Free },
+                    onImageSizeChange = { imageSize = it },
+                    onDragStart = { selectedAspectRatio = CropAspectRatio.Free },
                 )
             }
 
@@ -256,7 +258,7 @@ fun AttachmentImageEditorView(
                 EditorToolMode.Crop -> {
                     AspectRatioSelectorRow(
                         selectedAspectRatio = selectedAspectRatio,
-                        onAspectRatioSelected = { ratio ->
+                        onAspectRatioSelect = { ratio ->
                             selectedAspectRatio = ratio
                             val newCrop = NormalizedCropRect.forAspectRatio(
                                 ratio = ratio.ratio,
@@ -271,22 +273,22 @@ fun AttachmentImageEditorView(
                 EditorToolMode.Filter -> {
                     FilterSelectorRow(
                         selectedFilter = state.edits.filter,
-                        onFilterSelected = onFilterChange,
+                        onFilterSelect = onFilterChange,
                     )
                 }
                 EditorToolMode.Draw -> {
                     DrawPaletteRow(
                         selectedColorHex = selectedColorHex,
                         selectedStrokeWidth = selectedStrokeWidth,
-                        onColorSelected = { selectedColorHex = it },
-                        onStrokeWidthSelected = { selectedStrokeWidth = it },
+                        onColorSelect = { selectedColorHex = it },
+                        onStrokeWidthSelect = { selectedStrokeWidth = it },
                         onClearAll = onClearDrawStrokes,
                         hasStrokes = state.edits.drawStrokes.isNotEmpty(),
                     )
                 }
                 EditorToolMode.Sticker -> {
                     StickerPickerRow(
-                        onStickerSelected = { emoji ->
+                        onStickerSelect = { emoji ->
                             val newSticker = StickerItem(
                                 text = emoji,
                                 x = 0.5f,
@@ -393,8 +395,8 @@ private fun BoxScope.CropEditorCanvas(
     onUpdateSticker: (StickerItem) -> Unit,
     onRemoveSticker: (String) -> Unit,
     onCropRectChange: (NormalizedCropRect) -> Unit,
-    onImageSizeChanged: (IntSize) -> Unit = {},
-    onDragStarted: () -> Unit = {},
+    onImageSizeChange: (IntSize) -> Unit = {},
+    onDragStart: () -> Unit = {},
 ) {
     var imageSize by remember(state.localMedia.uri) { mutableStateOf(IntSize.Zero) }
     val rotationQuarterTurns = state.edits.normalizedRotationQuarterTurns
@@ -483,7 +485,7 @@ private fun BoxScope.CropEditorCanvas(
                                 height = painterState.result.image.height,
                             )
                             imageSize = size
-                            onImageSizeChanged(size)
+                            onImageSizeChange(size)
                         }
                     }
                 )
@@ -503,7 +505,7 @@ private fun BoxScope.CropEditorCanvas(
                         val pt = stroke.points[i]
                         path.lineTo(pt.x * canvasW, pt.y * canvasH)
                     }
-                    val strokeWidthPx = (stroke.strokeWidth / 360f) * canvasW
+                    val strokeWidthPx = stroke.strokeWidth / 360f * canvasW
                     drawPath(
                         path = path,
                         color = Color(stroke.colorHex),
@@ -523,7 +525,7 @@ private fun BoxScope.CropEditorCanvas(
                         val pt = inProgressStrokePoints[i]
                         path.lineTo(pt.x * canvasW, pt.y * canvasH)
                     }
-                    val strokeWidthPx = (selectedStrokeWidth / 360f) * canvasW
+                    val strokeWidthPx = selectedStrokeWidth / 360f * canvasW
                     drawPath(
                         path = path,
                         color = Color(selectedColorHex),
@@ -616,7 +618,7 @@ private fun BoxScope.CropEditorCanvas(
                     .pointerInput(Unit) {
                         detectDragGestures(
                             onDragStart = { offset ->
-                                onDragStarted()
+                                onDragStart()
                                 dragTarget = detectDragTarget(
                                     touchPoint = offset,
                                     imageOffset = imageRect.topLeft,
@@ -677,7 +679,7 @@ private fun StickerOverlayView(
 
     Box(
         modifier = Modifier
-            .offset(x = xDp - (24.dp * sticker.scale), y = yDp - (24.dp * sticker.scale))
+            .offset(x = xDp - 24.dp * sticker.scale, y = yDp - 24.dp * sticker.scale)
             .graphicsLayer {
                 rotationZ = sticker.rotationDegrees
             }
@@ -757,8 +759,8 @@ private fun StickerOverlayView(
 private fun DrawPaletteRow(
     selectedColorHex: Long,
     selectedStrokeWidth: Float,
-    onColorSelected: (Long) -> Unit,
-    onStrokeWidthSelected: (Float) -> Unit,
+    onColorSelect: (Long) -> Unit,
+    onStrokeWidthSelect: (Float) -> Unit,
     onClearAll: () -> Unit,
     hasStrokes: Boolean,
     modifier: Modifier = Modifier,
@@ -805,7 +807,7 @@ private fun DrawPaletteRow(
                             color = if (isSelected) Color(0xFFC4B5FD) else Color(0x66FFFFFF),
                             shape = CircleShape,
                         )
-                        .clickable { onColorSelected(colorHex) }
+                        .clickable { onColorSelect(colorHex) }
                 )
             }
         }
@@ -829,7 +831,7 @@ private fun DrawPaletteRow(
                                 color = if (isSelected) Color(0xFFC4B5FD) else Color(0xFF2E2B45),
                                 shape = RoundedCornerShape(12.dp),
                             )
-                            .clickable { onStrokeWidthSelected(width) }
+                            .clickable { onStrokeWidthSelect(width) }
                             .padding(horizontal = 12.dp, vertical = 4.dp)
                     ) {
                         Text(
@@ -853,16 +855,61 @@ private fun DrawPaletteRow(
 }
 
 private val emojiStickers = listOf(
-    "😀", "😂", "🤣", "😍", "🥰", "😎", "🤩", "🥳", "😜", "🤫",
-    "🤔", "😴", "🤯", "😇", "🤠", "🤖", "👻", "🔥", "✨", "💯",
-    "❤️", "💖", "💔", "🎉", "🎊", "👍", "👎", "👏", "🙌", "🤝",
-    "✌️", "🤞", "💪", "🐶", "🐱", "🐼", "🦊", "🦁", "🦄", "🍕",
-    "🍔", "🍦", "🍩", "🎂", "🚗", "🚀", "👑", "🎯", "⭐", "💡"
+    "😀",
+    "😂",
+    "🤣",
+    "😍",
+    "🥰",
+    "😎",
+    "🤩",
+    "🥳",
+    "😜",
+    "🤫",
+    "🤔",
+    "😴",
+    "🤯",
+    "😇",
+    "🤠",
+    "🤖",
+    "👻",
+    "🔥",
+    "✨",
+    "💯",
+    "❤️",
+    "💖",
+    "💔",
+    "🎉",
+    "🎊",
+    "👍",
+    "👎",
+    "👏",
+    "🙌",
+    "🤝",
+    "✌️",
+    "🤞",
+    "💪",
+    "🐶",
+    "🐱",
+    "🐼",
+    "🦊",
+    "🦁",
+    "🦄",
+    "🍕",
+    "🍔",
+    "🍦",
+    "🍩",
+    "🎂",
+    "🚗",
+    "🚀",
+    "👑",
+    "🎯",
+    "⭐",
+    "💡"
 )
 
 @Composable
 private fun StickerPickerRow(
-    onStickerSelected: (String) -> Unit,
+    onStickerSelect: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -891,7 +938,7 @@ private fun StickerPickerRow(
                         .clip(RoundedCornerShape(12.dp))
                         .background(Color(0xFF1F1D2B))
                         .border(1.dp, Color(0xFF2E2B45), RoundedCornerShape(12.dp))
-                        .clickable { onStickerSelected(emoji) },
+                        .clickable { onStickerSelect(emoji) },
                     contentAlignment = Alignment.Center,
                 ) {
                     Text(
@@ -1215,7 +1262,7 @@ internal fun AttachmentImageEditorViewPreview(
 @Composable
 private fun AspectRatioSelectorRow(
     selectedAspectRatio: CropAspectRatio,
-    onAspectRatioSelected: (CropAspectRatio) -> Unit,
+    onAspectRatioSelect: (CropAspectRatio) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -1247,7 +1294,7 @@ private fun AspectRatioSelectorRow(
                         color = if (isSelected) Color(0xFFC4B5FD) else Color(0xFF2E2B45),
                         shape = RoundedCornerShape(16.dp)
                     )
-                    .clickable { onAspectRatioSelected(ratio) }
+                    .clickable { onAspectRatioSelect(ratio) }
                     .padding(horizontal = 14.dp, vertical = 6.dp),
                 contentAlignment = Alignment.Center,
             ) {
@@ -1266,7 +1313,7 @@ private fun AspectRatioSelectorRow(
 @Composable
 private fun FilterSelectorRow(
     selectedFilter: ImageFilter,
-    onFilterSelected: (ImageFilter) -> Unit,
+    onFilterSelect: (ImageFilter) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -1298,7 +1345,7 @@ private fun FilterSelectorRow(
                         color = if (isSelected) Color(0xFFC4B5FD) else Color(0xFF2E2B45),
                         shape = RoundedCornerShape(16.dp)
                     )
-                    .clickable { onFilterSelected(filter) }
+                    .clickable { onFilterSelect(filter) }
                     .padding(horizontal = 14.dp, vertical = 6.dp),
                 contentAlignment = Alignment.Center,
             ) {
@@ -1319,10 +1366,26 @@ private fun ImageFilter.toComposeColorFilter(): ColorFilter? = when (this) {
     ImageFilter.Vivid -> ColorFilter.colorMatrix(
         ColorMatrix(
             floatArrayOf(
-                1.3f, 0f, 0f, 0f, 0f,
-                0f, 1.3f, 0f, 0f, 0f,
-                0f, 0f, 1.3f, 0f, 0f,
-                0f, 0f, 0f, 1f, 0f
+                1.3f,
+                0f,
+                0f,
+                0f,
+                0f,
+                0f,
+                1.3f,
+                0f,
+                0f,
+                0f,
+                0f,
+                0f,
+                1.3f,
+                0f,
+                0f,
+                0f,
+                0f,
+                0f,
+                1f,
+                0f
             )
         )
     )
@@ -1330,30 +1393,78 @@ private fun ImageFilter.toComposeColorFilter(): ColorFilter? = when (this) {
     ImageFilter.Warm -> ColorFilter.colorMatrix(
         ColorMatrix(
             floatArrayOf(
-                1.15f, 0f, 0f, 0f, 15f,
-                0f, 1.05f, 0f, 0f, 5f,
-                0f, 0f, 0.85f, 0f, -10f,
-                0f, 0f, 0f, 1f, 0f
+                1.15f,
+                0f,
+                0f,
+                0f,
+                15f,
+                0f,
+                1.05f,
+                0f,
+                0f,
+                5f,
+                0f,
+                0f,
+                0.85f,
+                0f,
+                -10f,
+                0f,
+                0f,
+                0f,
+                1f,
+                0f
             )
         )
     )
     ImageFilter.Cool -> ColorFilter.colorMatrix(
         ColorMatrix(
             floatArrayOf(
-                0.85f, 0f, 0f, 0f, -10f,
-                0f, 1.0f, 0f, 0f, 0f,
-                0f, 0f, 1.2f, 0f, 15f,
-                0f, 0f, 0f, 1f, 0f
+                0.85f,
+                0f,
+                0f,
+                0f,
+                -10f,
+                0f,
+                1.0f,
+                0f,
+                0f,
+                0f,
+                0f,
+                0f,
+                1.2f,
+                0f,
+                15f,
+                0f,
+                0f,
+                0f,
+                1f,
+                0f
             )
         )
     )
     ImageFilter.Vintage -> ColorFilter.colorMatrix(
         ColorMatrix(
             floatArrayOf(
-                0.9f, 0.1f, 0.1f, 0f, 25f,
-                0.1f, 0.8f, 0.1f, 0f, 15f,
-                0.1f, 0.1f, 0.6f, 0f, -10f,
-                0f, 0f, 0f, 1f, 0f
+                0.9f,
+                0.1f,
+                0.1f,
+                0f,
+                25f,
+                0.1f,
+                0.8f,
+                0.1f,
+                0f,
+                15f,
+                0.1f,
+                0.1f,
+                0.6f,
+                0f,
+                -10f,
+                0f,
+                0f,
+                0f,
+                1f,
+                0f
             )
         )
     )

@@ -10,6 +10,7 @@ package tech.orbitweb.orbitx.features.login.impl.screens.changeaccountprovider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import dev.zacsweers.metro.Inject
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.appconfig.AuthenticationConfig
 import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
 import tech.orbitweb.orbitx.features.enterprise.api.canConnectToAnyHomeserver
@@ -17,7 +18,6 @@ import tech.orbitweb.orbitx.features.login.impl.accountprovider.AccountProvider
 import tech.orbitweb.orbitx.features.login.impl.changeserver.ChangeServerState
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.uri.ensureProtocol
-import kotlinx.collections.immutable.toImmutableList
 
 @Inject
 class ChangeAccountProviderPresenter(

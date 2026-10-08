@@ -9,13 +9,13 @@ package tech.orbitweb.orbitx.libraries.wellknown.impl
 
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import retrofit2.HttpException
 import tech.orbitweb.orbitx.libraries.core.extensions.runCatchingExceptions
 import tech.orbitweb.orbitx.libraries.core.uri.ensureProtocol
 import tech.orbitweb.orbitx.libraries.network.RetrofitFactory
 import tech.orbitweb.orbitx.libraries.wellknown.api.ElementWellKnown
 import tech.orbitweb.orbitx.libraries.wellknown.api.WellknownRetriever
 import tech.orbitweb.orbitx.libraries.wellknown.api.WellknownRetrieverResult
-import retrofit2.HttpException
 import timber.log.Timber
 import java.net.HttpURLConnection
 

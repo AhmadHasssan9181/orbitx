@@ -7,9 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.util
 
-import tech.orbitweb.orbitx.libraries.matrix.api.room.IntentionalMention
-import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MsgType
-import tech.orbitweb.orbitx.libraries.matrix.impl.room.map
 import org.matrix.rustcomponents.sdk.MessageContent
 import org.matrix.rustcomponents.sdk.MessageType
 import org.matrix.rustcomponents.sdk.RoomMessageEventContentWithoutRelation
@@ -19,6 +16,9 @@ import org.matrix.rustcomponents.sdk.messageEventContentFromHtml
 import org.matrix.rustcomponents.sdk.messageEventContentFromHtmlAsEmote
 import org.matrix.rustcomponents.sdk.messageEventContentFromMarkdown
 import org.matrix.rustcomponents.sdk.messageEventContentFromMarkdownAsEmote
+import tech.orbitweb.orbitx.libraries.matrix.api.room.IntentionalMention
+import tech.orbitweb.orbitx.libraries.matrix.api.timeline.MsgType
+import tech.orbitweb.orbitx.libraries.matrix.impl.room.map
 
 /**
  * Creates a [RoomMessageEventContentWithoutRelation] from a body, an html body and a list of mentions.

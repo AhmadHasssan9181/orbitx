@@ -12,6 +12,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.core.net.toUri
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
 import tech.orbitweb.orbitx.features.login.api.LoginParams
 import tech.orbitweb.orbitx.features.login.test.FakeLoginIntentResolver
 import tech.orbitweb.orbitx.features.share.api.ShareIntentData
@@ -29,8 +31,6 @@ import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
 import tech.orbitweb.orbitx.libraries.oauth.test.FakeOAuthIntentResolver
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
 
 class IntentResolverTest : RobolectricTest() {
     @Test

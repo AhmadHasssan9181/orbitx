@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.poll.impl.history
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryFilter
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryItem
 import tech.orbitweb.orbitx.features.poll.impl.history.model.PollHistoryItems
-import kotlinx.collections.immutable.ImmutableList
 
 data class PollHistoryState(
     val isLoading: Boolean,

@@ -7,9 +7,6 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.factories
 
-import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiLazyTimelineItemProvider
-import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
-import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import org.matrix.rustcomponents.sdk.EventOrTransactionId
 import org.matrix.rustcomponents.sdk.EventSendState
 import org.matrix.rustcomponents.sdk.EventTimelineItem
@@ -17,6 +14,9 @@ import org.matrix.rustcomponents.sdk.LazyTimelineItemProvider
 import org.matrix.rustcomponents.sdk.ProfileDetails
 import org.matrix.rustcomponents.sdk.Receipt
 import org.matrix.rustcomponents.sdk.TimelineItemContent
+import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiLazyTimelineItemProvider
+import tech.orbitweb.orbitx.libraries.matrix.test.AN_EVENT_ID
+import tech.orbitweb.orbitx.libraries.matrix.test.A_USER_ID
 import uniffi.matrix_sdk_ui.EventItemOrigin
 
 internal fun aRustEventTimelineItem(

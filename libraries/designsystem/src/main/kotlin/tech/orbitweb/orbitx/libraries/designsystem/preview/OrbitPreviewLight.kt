@@ -13,16 +13,28 @@ import tech.orbitweb.orbitx.compound.theme.Theme
 import tech.orbitweb.orbitx.libraries.designsystem.utils.CommonDrawables
 
 @Composable
-fun ElementPreviewLight(
+fun OrbitPreviewLight(
     showBackground: Boolean = true,
     @DrawableRes
     drawableFallbackForImages: Int = CommonDrawables.sample_background,
     content: @Composable () -> Unit,
 ) {
-    ElementPreview(
+    OrbitPreview(
         theme = Theme.Light,
         showBackground = showBackground,
         drawableFallbackForImages = drawableFallbackForImages,
         content = content,
     )
 }
+
+@Composable
+fun ElementPreviewLight(
+    showBackground: Boolean = true,
+    @DrawableRes
+    drawableFallbackForImages: Int = CommonDrawables.sample_background,
+    content: @Composable () -> Unit,
+) = OrbitPreviewLight(
+    showBackground = showBackground,
+    drawableFallbackForImages = drawableFallbackForImages,
+    content = content,
+)

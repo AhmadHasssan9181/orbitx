@@ -15,9 +15,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalInspectionMode
-import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import io.element.android.emojibasebindings.Emoji
 import io.element.android.emojibasebindings.EmojibaseStore
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
+import tech.orbitweb.orbitx.compound.tokens.generated.CompoundIcons
 import tech.orbitweb.orbitx.features.messages.impl.R
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction.icon
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.customreaction.title
@@ -25,10 +29,6 @@ import tech.orbitweb.orbitx.libraries.architecture.Presenter
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.IconSource
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.SearchBarResultState
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
 import kotlin.time.Duration.Companion.milliseconds
 
 class EmojiPickerPresenter(

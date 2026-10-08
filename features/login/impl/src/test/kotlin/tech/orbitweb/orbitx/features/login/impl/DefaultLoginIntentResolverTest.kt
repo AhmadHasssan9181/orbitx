@@ -8,9 +8,9 @@
 package tech.orbitweb.orbitx.features.login.impl
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.login.api.LoginParams
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import org.junit.Test
 
 class DefaultLoginIntentResolverTest : RobolectricTest() {
     @Test

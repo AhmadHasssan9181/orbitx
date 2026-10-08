@@ -11,6 +11,11 @@ import com.bumble.appyx.core.modality.AncestryInfo
 import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.utils.customisations.NodeCustomisationDirectoryImpl
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.login.impl.di.FakeQrCodeLoginGraph
 import tech.orbitweb.orbitx.features.login.impl.screens.qrcode.confirmation.QrCodeConfirmationStep
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
@@ -22,11 +27,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.auth.qrlogin.FakeMatrixQrCodeL
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import tech.orbitweb.orbitx.tests.testutils.testCoroutineDispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.advanceUntilIdle
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class QrCodeLoginFlowNodeTest : RobolectricTest() {
     @Test

@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.features.call.test
 
+import kotlinx.coroutines.flow.MutableStateFlow
 import tech.orbitweb.orbitx.features.call.api.CurrentCall
 import tech.orbitweb.orbitx.features.call.api.CurrentCallService
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class FakeCurrentCallService(
     override val currentCall: MutableStateFlow<CurrentCall> = MutableStateFlow(CurrentCall.None),

@@ -12,9 +12,9 @@ import com.bumble.appyx.navmodel.backstack.BackStack
 import com.bumble.appyx.navmodel.backstack.BackStackElement
 import com.bumble.appyx.navmodel.backstack.BackStackElements
 import com.bumble.appyx.navmodel.backstack.activeElement
-import tech.orbitweb.orbitx.libraries.architecture.overlay.Overlay
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.RawValue
+import tech.orbitweb.orbitx.libraries.architecture.overlay.Overlay
 
 @Parcelize
 data class Show<T : Any>(

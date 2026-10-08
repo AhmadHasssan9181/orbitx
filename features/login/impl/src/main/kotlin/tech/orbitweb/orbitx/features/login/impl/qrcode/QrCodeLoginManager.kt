@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.login.impl.qrcode
 
+import kotlinx.coroutines.flow.StateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.MatrixQrCodeLoginData
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.qrlogin.QrCodeLoginStep
 import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
-import kotlinx.coroutines.flow.StateFlow
 
 /**
  * Helper to handle the QR code login flow after the QR code data has been provided.

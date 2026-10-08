@@ -13,14 +13,6 @@ import androidx.core.app.NotificationChannelCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.net.toUri
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
-import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
-import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
-import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
-import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
-import tech.orbitweb.orbitx.libraries.preferences.test.InMemoryAppPreferencesStore
-import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
-import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.slot
@@ -29,6 +21,14 @@ import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
+import tech.orbitweb.orbitx.features.enterprise.api.EnterpriseService
+import tech.orbitweb.orbitx.features.enterprise.test.FakeEnterpriseService
+import tech.orbitweb.orbitx.libraries.matrix.test.A_SESSION_ID
+import tech.orbitweb.orbitx.libraries.preferences.api.store.AppPreferencesStore
+import tech.orbitweb.orbitx.libraries.preferences.api.store.NotificationSound
+import tech.orbitweb.orbitx.libraries.preferences.test.InMemoryAppPreferencesStore
+import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
+import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
 
 class NotificationChannelsTest : RobolectricTest() {
     @Test

@@ -16,6 +16,7 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -25,6 +26,13 @@ import androidx.compose.runtime.snapshotFlow
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import tech.orbitweb.orbitx.features.messages.impl.attachments.Attachment
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.AttachmentImageEditor
 import tech.orbitweb.orbitx.features.messages.impl.attachments.preview.imageeditor.AttachmentImageEditorState
@@ -53,13 +61,6 @@ import tech.orbitweb.orbitx.libraries.mediaupload.api.allFiles
 import tech.orbitweb.orbitx.libraries.preferences.api.store.VideoCompressionPreset
 import tech.orbitweb.orbitx.libraries.textcomposer.model.TextEditorState
 import tech.orbitweb.orbitx.libraries.textcomposer.model.rememberMarkdownTextEditorState
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import timber.log.Timber
 import java.io.File
 
@@ -112,9 +113,9 @@ class AttachmentsPreviewPresenter(
         var isViewOnce by remember { mutableStateOf(false) }
         var isVideoMuted by remember { mutableStateOf(false) }
         var isTrimmingVideo by remember { mutableStateOf(false) }
-        var videoTrimStartMs by remember { mutableStateOf(0L) }
-        var videoTrimEndMs by remember { mutableStateOf(0L) }
-        var videoDurationMs by remember { mutableStateOf(0L) }
+        var videoTrimStartMs by remember { mutableLongStateOf(0L) }
+        var videoTrimEndMs by remember { mutableLongStateOf(0L) }
+        var videoDurationMs by remember { mutableLongStateOf(0L) }
 
         val markdownTextEditorState = rememberMarkdownTextEditorState(initialText = null, initialFocus = false)
         val textEditorState by rememberUpdatedState(
@@ -138,7 +139,6 @@ class AttachmentsPreviewPresenter(
                 attachmentsAndEdits.map { it.attachment }.toImmutableList()
             }
         }
-
 
         var preprocessMediaJob by remember { mutableStateOf<Job?>(null) }
 
@@ -279,7 +279,7 @@ class AttachmentsPreviewPresenter(
                         val editedTempFilesToDelete = editedTempFiles
                         editedTempFiles = emptyMap()
 
-                        val isVideoTrimmed = videoTrimStartMs > 0L || (videoDurationMs > 0L && videoTrimEndMs < videoDurationMs)
+                        val isVideoTrimmed = videoTrimStartMs > 0L || videoDurationMs > 0L && videoTrimEndMs < videoDurationMs
                         val processedUploadInfos = if (isVideoTrimmed || isVideoMuted) {
                             allMediaUploadInfos.map { info ->
                                 if (info is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.Video) {
@@ -309,11 +309,21 @@ class AttachmentsPreviewPresenter(
                                 val encryptedFile = java.io.File.createTempFile("orbit_view_once_", ".bin", info.file.parentFile)
                                 if (tech.orbitweb.orbitx.libraries.core.crypto.OrbitEphemeralCrypto.encryptFile(info.file, encryptedFile)) {
                                     when (info) {
-                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.Image -> info.copy(file = encryptedFile, thumbnailFile = null)
-                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.Video -> info.copy(file = encryptedFile, thumbnailFile = null)
-                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.Audio -> info.copy(file = encryptedFile)
-                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.VoiceMessage -> info.copy(file = encryptedFile)
-                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.AnyFile -> info.copy(file = encryptedFile)
+                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.Image -> {
+                                            info.copy(file = encryptedFile, thumbnailFile = null)
+                                        }
+                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.Video -> {
+                                            info.copy(file = encryptedFile, thumbnailFile = null)
+                                        }
+                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.Audio -> {
+                                            info.copy(file = encryptedFile)
+                                        }
+                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.VoiceMessage -> {
+                                            info.copy(file = encryptedFile)
+                                        }
+                                        is tech.orbitweb.orbitx.libraries.mediaupload.api.MediaUploadInfo.AnyFile -> {
+                                            info.copy(file = encryptedFile)
+                                        }
                                     }
                                 } else {
                                     info
@@ -728,7 +738,10 @@ private fun extractVideoDurationFromUri(context: Context?, uri: Uri): Long {
     } catch (_: Exception) {
         0L
     } finally {
-        try { retriever.release() } catch (_: Exception) {}
+        try {
+            retriever.release()
+        } catch (_: Exception) {
+            }
     }
 }
 
@@ -744,7 +757,7 @@ private fun trimAndProcessVideo(
     return try {
         extractor = android.media.MediaExtractor().apply { setDataSource(inputFile.path) }
         val startUs = (startMs * 1000L).coerceAtLeast(0L)
-        val endUs = if (endMs > 0L) (endMs * 1000L) else Long.MAX_VALUE
+        val endUs = if (endMs > 0L) endMs * 1000L else Long.MAX_VALUE
 
         muxer = android.media.MediaMuxer(outputFile.path, android.media.MediaMuxer.OutputFormat.MUXER_OUTPUT_MPEG_4)
         val trackMap = mutableMapOf<Int, Int>()
@@ -789,27 +802,29 @@ private fun trimAndProcessVideo(
 
         while (!reachedEnd) {
             val trackIndex = extractor.sampleTrackIndex
-            if (trackIndex < 0) break
-            val muxerTrack = trackMap[trackIndex]
-            val sampleTime = extractor.sampleTime
-
-            if (sampleTime > endUs && trackIndex == videoTrackIndex) {
+            if (trackIndex < 0) {
                 reachedEnd = true
-                break
-            }
+            } else {
+                val muxerTrack = trackMap[trackIndex]
+                val sampleTime = extractor.sampleTime
 
-            if (muxerTrack != null && sampleTime <= endUs) {
-                val sampleSize = extractor.readSampleData(buffer, 0)
-                if (sampleSize > 0) {
-                    val firstPts = firstPtsMap.getOrPut(trackIndex) { sampleTime }
-                    bufferInfo.offset = 0
-                    bufferInfo.size = sampleSize
-                    bufferInfo.presentationTimeUs = (sampleTime - firstPts).coerceAtLeast(0L)
-                    bufferInfo.flags = extractor.sampleFlags
-                    muxer.writeSampleData(muxerTrack, buffer, bufferInfo)
+                if (sampleTime > endUs && trackIndex == videoTrackIndex) {
+                    reachedEnd = true
+                } else {
+                    if (muxerTrack != null && sampleTime <= endUs) {
+                        val sampleSize = extractor.readSampleData(buffer, 0)
+                        if (sampleSize > 0) {
+                            val firstPts = firstPtsMap.getOrPut(trackIndex) { sampleTime }
+                            bufferInfo.offset = 0
+                            bufferInfo.size = sampleSize
+                            bufferInfo.presentationTimeUs = (sampleTime - firstPts).coerceAtLeast(0L)
+                            bufferInfo.flags = extractor.sampleFlags
+                            muxer.writeSampleData(muxerTrack, buffer, bufferInfo)
+                        }
+                    }
+                    extractor.advance()
                 }
             }
-            extractor.advance()
         }
 
         muxer.stop()
@@ -817,12 +832,13 @@ private fun trimAndProcessVideo(
     } catch (_: Exception) {
         false
     } finally {
-        try { muxer?.release() } catch (_: Exception) {}
-        try { extractor?.release() } catch (_: Exception) {}
+        try {
+            muxer?.release()
+        } catch (_: Exception) {
+            }
+        try {
+            extractor?.release()
+        } catch (_: Exception) {
+            }
     }
 }
-
-private fun stripAudioFromVideo(inputFile: java.io.File, outputFile: java.io.File): Boolean {
-    return trimAndProcessVideo(inputFile, outputFile, 0L, 0L, muteAudio = true)
-}
-

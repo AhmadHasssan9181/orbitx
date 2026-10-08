@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomdirectory
 
+import org.matrix.rustcomponents.sdk.PublicRoomJoinRule
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomAlias
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.roomdirectory.RoomDescription
-import org.matrix.rustcomponents.sdk.PublicRoomJoinRule
 import org.matrix.rustcomponents.sdk.RoomDescription as RustRoomDescription
 
 class RoomDescriptionMapper {

@@ -25,6 +25,13 @@ import com.bumble.appyx.navmodel.backstack.operation.push
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedInject
 import im.vector.app.features.analytics.plan.Interaction
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.annotations.ContributesNode
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.api.ElementCallEntryPoint
@@ -98,13 +105,6 @@ import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanTheme
 import tech.orbitweb.orbitx.libraries.textcomposer.mentions.MentionSpanUpdater
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
 import tech.orbitweb.orbitx.services.analyticsproviders.api.trackers.captureInteraction
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import kotlinx.parcelize.Parcelize
 import kotlin.time.Duration.Companion.milliseconds
 
 @ContributesNode(RoomScope::class)
@@ -879,7 +879,8 @@ class MessagesFlowNode(
         galleryItemIndex: Int,
         canUseOverlay: Boolean,
     ): Boolean {
-        val isViewOnce = (event.content as? tech.orbitweb.orbitx.features.messages.impl.timeline.model.event.TimelineItemGalleryContent)?.caption?.contains("View-Once", ignoreCase = true) == true
+        val galleryContent = event.content as? TimelineItemGalleryContent
+        val isViewOnce = galleryContent?.caption?.contains("View-Once", ignoreCase = true) == true
         if (isViewOnce) {
             if (event.isMine) {
                 return false

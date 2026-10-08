@@ -8,10 +8,10 @@
 package tech.orbitweb.orbitx.features.login.impl.screens.chooseaccountprovider
 
 import com.google.common.truth.Truth.assertThat
+import org.junit.Test
 import tech.orbitweb.orbitx.features.login.impl.accountprovider.anAccountProvider
 import tech.orbitweb.orbitx.features.login.impl.login.LoginMode
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import org.junit.Test
 
 class ChooseAccountProviderStateTest {
     @Test

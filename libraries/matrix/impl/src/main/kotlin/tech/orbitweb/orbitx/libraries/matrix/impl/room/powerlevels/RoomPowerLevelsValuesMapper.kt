@@ -7,9 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.room.powerlevels
 
+import org.matrix.rustcomponents.sdk.PowerLevel
 import tech.orbitweb.orbitx.libraries.matrix.api.room.RoomMember
 import tech.orbitweb.orbitx.libraries.matrix.api.room.powerlevels.RoomPowerLevelsValues
-import org.matrix.rustcomponents.sdk.PowerLevel
 import org.matrix.rustcomponents.sdk.RoomPowerLevelsValues as RustRoomPowerLevelsValues
 
 object RoomPowerLevelsValuesMapper {

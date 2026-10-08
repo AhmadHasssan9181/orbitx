@@ -7,12 +7,12 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.preferences.impl.developer.tracing.LogLevelItem
 import tech.orbitweb.orbitx.features.rageshake.api.preferences.RageshakePreferencesState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.featureflag.ui.model.FeatureUiModel
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TraceLogPack
-import kotlinx.collections.immutable.ImmutableList
 
 data class AppDeveloperSettingsState(
     val features: ImmutableList<FeatureUiModel>,

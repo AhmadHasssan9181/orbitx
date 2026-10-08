@@ -12,6 +12,8 @@ import com.bumble.appyx.core.modality.BuildContext
 import com.bumble.appyx.navmodel.backstack.activeElement
 import com.bumble.appyx.utils.customisations.NodeCustomisationDirectoryImpl
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
 import tech.orbitweb.orbitx.features.securityandprivacy.api.SecurityAndPrivacyEntryPoint
 import tech.orbitweb.orbitx.libraries.matrix.api.room.history.RoomHistoryVisibility
 import tech.orbitweb.orbitx.libraries.matrix.api.room.join.JoinRule
@@ -19,8 +21,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeBaseRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.room.FakeJoinedRoom
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomInfo
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
 
 class SecurityAndPrivacyFlowNodeTest : RobolectricTest() {
     @Test

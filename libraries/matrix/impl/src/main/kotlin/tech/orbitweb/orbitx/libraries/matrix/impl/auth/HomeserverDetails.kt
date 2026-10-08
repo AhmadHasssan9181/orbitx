@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.auth
 
-import tech.orbitweb.orbitx.libraries.matrix.api.auth.MatrixHomeServerDetails
 import org.matrix.rustcomponents.sdk.HomeserverLoginDetails
+import tech.orbitweb.orbitx.libraries.matrix.api.auth.MatrixHomeServerDetails
 
 fun HomeserverLoginDetails.map(): MatrixHomeServerDetails = use {
     MatrixHomeServerDetails(

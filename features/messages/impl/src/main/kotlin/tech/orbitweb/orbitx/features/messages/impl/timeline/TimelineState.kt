@@ -8,6 +8,7 @@
 package tech.orbitweb.orbitx.features.messages.impl.timeline
 
 import androidx.compose.runtime.Immutable
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.crypto.sendfailure.resolve.ResolveVerifiedUserSendFailureState
 import tech.orbitweb.orbitx.features.messages.impl.timeline.components.MessageShieldData
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.NewEventState
@@ -18,7 +19,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
 import tech.orbitweb.orbitx.libraries.matrix.api.room.tombstone.PredecessorRoom
 import tech.orbitweb.orbitx.libraries.matrix.api.timeline.Timeline
-import kotlinx.collections.immutable.ImmutableList
 import kotlin.time.Duration
 
 data class TimelineState(

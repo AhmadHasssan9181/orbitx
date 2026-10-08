@@ -19,12 +19,12 @@ import com.bumble.appyx.core.navigation.model.permanent.PermanentNavModel
 import com.bumble.appyx.core.node.Node
 import com.bumble.appyx.core.node.ParentNode
 import com.bumble.appyx.core.plugin.Plugin
+import kotlinx.coroutines.launch
+import kotlinx.parcelize.Parcelize
 import tech.orbitweb.orbitx.appnav.RootFlowNode
 import tech.orbitweb.orbitx.libraries.architecture.createNode
 import tech.orbitweb.orbitx.libraries.di.DependencyInjectionGraphOwner
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
-import kotlinx.coroutines.launch
-import kotlinx.parcelize.Parcelize
 
 class MainNode(
     buildContext: BuildContext,

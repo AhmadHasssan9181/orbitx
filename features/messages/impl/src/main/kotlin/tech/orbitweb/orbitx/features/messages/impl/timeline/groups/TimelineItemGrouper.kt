@@ -10,10 +10,10 @@ package tech.orbitweb.orbitx.features.messages.impl.timeline.groups
 import androidx.annotation.VisibleForTesting
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
+import kotlinx.collections.immutable.toImmutableList
 import tech.orbitweb.orbitx.features.messages.impl.timeline.model.TimelineItem
 import tech.orbitweb.orbitx.libraries.di.RoomScope
 import tech.orbitweb.orbitx.libraries.matrix.api.core.UniqueId
-import kotlinx.collections.immutable.toImmutableList
 
 @SingleIn(RoomScope::class)
 @Inject

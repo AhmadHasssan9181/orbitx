@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.features.rageshake.impl.bugreport
 
 import android.os.Parcelable
-import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 
 data class BugReportState(
     val formState: BugReportFormState,

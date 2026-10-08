@@ -8,8 +8,8 @@
 package tech.orbitweb.orbitx.libraries.mediaviewer.api
 
 import android.os.Parcelable
-import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 import kotlinx.parcelize.Parcelize
+import tech.orbitweb.orbitx.libraries.matrix.api.media.MediaSource
 
 @Parcelize
 data class GalleryItemData(

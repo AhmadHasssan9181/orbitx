@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.features.home.impl
 
+import kotlinx.collections.immutable.ImmutableList
 import tech.orbitweb.orbitx.features.home.impl.roomlist.RoomListState
 import tech.orbitweb.orbitx.features.home.impl.spacefilters.SpaceFiltersState
 import tech.orbitweb.orbitx.features.home.impl.spaces.HomeSpacesState
 import tech.orbitweb.orbitx.features.logout.api.direct.DirectLogoutState
 import tech.orbitweb.orbitx.libraries.designsystem.utils.snackbar.SnackbarMessage
 import tech.orbitweb.orbitx.libraries.matrix.api.user.MatrixUser
-import kotlinx.collections.immutable.ImmutableList
 
 data class HomeState(
     /**

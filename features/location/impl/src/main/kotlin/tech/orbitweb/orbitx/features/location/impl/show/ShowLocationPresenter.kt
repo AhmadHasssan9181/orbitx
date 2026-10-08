@@ -21,6 +21,10 @@ import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Assisted
 import dev.zacsweers.metro.AssistedFactory
 import dev.zacsweers.metro.AssistedInject
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.location.api.Location
 import tech.orbitweb.orbitx.features.location.api.ShowLocationMode
 import tech.orbitweb.orbitx.features.location.api.live.ActiveLiveLocationShareManager
@@ -51,10 +55,6 @@ import tech.orbitweb.orbitx.libraries.matrix.api.room.getBestName
 import tech.orbitweb.orbitx.libraries.matrix.api.room.joinedRoomMembers
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 import tech.orbitweb.orbitx.services.toolbox.api.strings.StringProvider
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.launch
 
 @AssistedInject class ShowLocationPresenter(
     @Assisted private val mode: ShowLocationMode,

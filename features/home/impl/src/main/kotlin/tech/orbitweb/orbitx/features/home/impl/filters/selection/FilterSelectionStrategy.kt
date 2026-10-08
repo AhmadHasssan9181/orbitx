@@ -7,8 +7,8 @@
 
 package tech.orbitweb.orbitx.features.home.impl.filters.selection
 
-import tech.orbitweb.orbitx.features.home.impl.filters.RoomListFilter
 import kotlinx.coroutines.flow.StateFlow
+import tech.orbitweb.orbitx.features.home.impl.filters.RoomListFilter
 
 interface FilterSelectionStrategy {
     val filterSelectionStates: StateFlow<Set<FilterSelectionState>>

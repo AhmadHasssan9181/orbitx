@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.PopupPositionProvider
 
-object ElementTooltipDefaults {
+object OrbitTooltipDefaults {
     /**
      * Creates a [PopupPositionProvider] that allows adding padding between the edge of the
      * window and the tooltip.
@@ -80,3 +80,5 @@ object ElementTooltipDefaults {
         }
     }
 }
+
+typealias ElementTooltipDefaults = OrbitTooltipDefaults

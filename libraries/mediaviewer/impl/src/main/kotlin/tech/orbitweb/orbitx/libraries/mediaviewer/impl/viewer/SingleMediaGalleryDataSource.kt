@@ -7,6 +7,9 @@
 
 package tech.orbitweb.orbitx.libraries.mediaviewer.impl.viewer
 
+import kotlinx.collections.immutable.persistentListOf
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.flowOf
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes
 import tech.orbitweb.orbitx.libraries.core.mimetype.MimeTypes.isMimeTypeAudio
@@ -20,9 +23,6 @@ import tech.orbitweb.orbitx.libraries.mediaviewer.api.MediaViewerEntryPoint
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.datasource.MediaGalleryDataSource
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.GroupedMediaItems
 import tech.orbitweb.orbitx.libraries.mediaviewer.impl.model.MediaItem
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.flowOf
 
 class SingleMediaGalleryDataSource(
     private val data: GroupedMediaItems,

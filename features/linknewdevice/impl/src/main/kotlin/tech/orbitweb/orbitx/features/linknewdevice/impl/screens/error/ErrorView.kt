@@ -24,6 +24,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import kotlinx.collections.immutable.persistentListOf
 import tech.orbitweb.orbitx.compound.theme.ElementTheme
 import tech.orbitweb.orbitx.features.linknewdevice.impl.R
 import tech.orbitweb.orbitx.libraries.designsystem.atomic.organisms.NumberedListOrganism
@@ -36,7 +37,6 @@ import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Button
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.OutlinedButton
 import tech.orbitweb.orbitx.libraries.designsystem.theme.components.Text
 import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
-import kotlinx.collections.immutable.persistentListOf
 
 @Composable
 fun ErrorView(

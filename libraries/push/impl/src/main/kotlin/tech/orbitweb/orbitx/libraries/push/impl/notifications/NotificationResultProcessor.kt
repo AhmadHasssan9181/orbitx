@@ -10,6 +10,13 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.call.api.CallData
 import tech.orbitweb.orbitx.features.call.api.ElementCallEntryPoint
 import tech.orbitweb.orbitx.libraries.di.annotations.AppCoroutineScope
@@ -31,13 +38,6 @@ import tech.orbitweb.orbitx.libraries.push.impl.push.MutableBatteryOptimizationS
 import tech.orbitweb.orbitx.libraries.push.impl.push.OnNotifiableEventReceived
 import tech.orbitweb.orbitx.libraries.push.impl.push.OnRedactedEventReceived
 import tech.orbitweb.orbitx.libraries.pushstore.api.UserPushStoreFactory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import timber.log.Timber
 
 private const val TAG = "NotifResultProcessor"

@@ -10,10 +10,6 @@ package tech.orbitweb.orbitx.features.location.impl.common.ui
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
-import tech.orbitweb.orbitx.compound.theme.ElementTheme
-import tech.orbitweb.orbitx.features.location.api.Location
-import tech.orbitweb.orbitx.libraries.designsystem.components.PinVariant
-import tech.orbitweb.orbitx.libraries.designsystem.components.rememberLocationPinBitmap
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.serialization.json.JsonPrimitive
 import org.maplibre.compose.expressions.dsl.and
@@ -36,6 +32,10 @@ import org.maplibre.spatialk.geojson.FeatureCollection
 import org.maplibre.spatialk.geojson.Point
 import org.maplibre.spatialk.geojson.Position
 import org.maplibre.spatialk.geojson.toJson
+import tech.orbitweb.orbitx.compound.theme.ElementTheme
+import tech.orbitweb.orbitx.features.location.api.Location
+import tech.orbitweb.orbitx.libraries.designsystem.components.PinVariant
+import tech.orbitweb.orbitx.libraries.designsystem.components.rememberLocationPinBitmap
 
 private const val LOCATION_MARKER_ID = "LOCATION_MARKER_ID"
 

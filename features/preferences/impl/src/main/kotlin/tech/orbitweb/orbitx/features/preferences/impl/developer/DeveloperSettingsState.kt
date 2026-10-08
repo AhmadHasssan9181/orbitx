@@ -7,10 +7,10 @@
 
 package tech.orbitweb.orbitx.features.preferences.impl.developer
 
+import kotlinx.collections.immutable.ImmutableMap
 import tech.orbitweb.orbitx.features.preferences.impl.developer.appsettings.AppDeveloperSettingsState
 import tech.orbitweb.orbitx.libraries.architecture.AsyncAction
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
-import kotlinx.collections.immutable.ImmutableMap
 
 data class DeveloperSettingsState(
     val appDeveloperSettingsState: AppDeveloperSettingsState,

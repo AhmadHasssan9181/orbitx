@@ -15,9 +15,9 @@ import coil3.gif.GifDecoder
 import coil3.network.okhttp.OkHttpNetworkFetcherFactory
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
+import okhttp3.OkHttpClient
 import tech.orbitweb.orbitx.libraries.di.annotations.ApplicationContext
 import tech.orbitweb.orbitx.libraries.matrix.api.media.MatrixMediaLoader
-import okhttp3.OkHttpClient
 
 interface ImageLoaderFactory {
     fun newImageLoader(): ImageLoader

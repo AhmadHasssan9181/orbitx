@@ -7,13 +7,13 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.test.linknewdevice
 
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileHandler
 import tech.orbitweb.orbitx.libraries.matrix.api.linknewdevice.LinkMobileStep
 import tech.orbitweb.orbitx.tests.testutils.lambda.lambdaError
 import tech.orbitweb.orbitx.tests.testutils.simulateLongTask
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 
 class FakeLinkMobileHandler(
     private val startResult: () -> Unit = { lambdaError() },

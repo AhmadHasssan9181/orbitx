@@ -9,6 +9,10 @@ package tech.orbitweb.orbitx.libraries.push.impl.notifications
 
 import android.content.Context
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.robolectric.RuntimeEnvironment
+import org.robolectric.annotation.Config
 import tech.orbitweb.orbitx.libraries.featureflag.test.FakeFeatureFlagService
 import tech.orbitweb.orbitx.libraries.matrix.api.core.EventId
 import tech.orbitweb.orbitx.libraries.matrix.api.exception.NotificationResolverException
@@ -59,10 +63,6 @@ import tech.orbitweb.orbitx.services.toolbox.impl.strings.AndroidStringProvider
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.A_FAKE_TIMESTAMP
 import tech.orbitweb.orbitx.services.toolbox.test.systemclock.FakeSystemClock
 import tech.orbitweb.orbitx.tests.testutils.robolectric.RobolectricTest
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.robolectric.RuntimeEnvironment
-import org.robolectric.annotation.Config
 
 @Suppress("LargeClass")
 class DefaultNotifiableEventResolverTest : RobolectricTest() {

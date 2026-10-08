@@ -8,11 +8,11 @@
 package tech.orbitweb.orbitx.libraries.oauth.impl
 
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.libraries.oauth.api.OAuthAction
 
 class DefaultOAuthActionFlowTest {
     @Test

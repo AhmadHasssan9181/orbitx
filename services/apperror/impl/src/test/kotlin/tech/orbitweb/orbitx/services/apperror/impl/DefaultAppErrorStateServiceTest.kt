@@ -9,10 +9,10 @@ package tech.orbitweb.orbitx.services.apperror.impl
 
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
-import tech.orbitweb.orbitx.services.apperror.api.AppErrorState
-import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
+import tech.orbitweb.orbitx.services.apperror.api.AppErrorState
+import tech.orbitweb.orbitx.services.toolbox.test.strings.FakeStringProvider
 
 internal class DefaultAppErrorStateServiceTest {
     @Test

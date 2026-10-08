@@ -8,6 +8,13 @@
 package tech.orbitweb.orbitx.libraries.matrix.impl.roomlist
 
 import com.google.common.truth.Truth.assertThat
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.runTest
+import org.junit.Test
+import org.matrix.rustcomponents.sdk.LatestEventValue
+import org.matrix.rustcomponents.sdk.RoomListEntriesUpdate
 import tech.orbitweb.orbitx.libraries.matrix.api.core.RoomId
 import tech.orbitweb.orbitx.libraries.matrix.api.roomlist.RoomSummary
 import tech.orbitweb.orbitx.libraries.matrix.impl.fixtures.fakes.FakeFfiRoom
@@ -18,13 +25,6 @@ import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_3
 import tech.orbitweb.orbitx.libraries.matrix.test.A_ROOM_ID_4
 import tech.orbitweb.orbitx.libraries.matrix.test.room.aRoomSummary
 import tech.orbitweb.orbitx.services.analytics.test.FakeAnalyticsService
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.test.StandardTestDispatcher
-import kotlinx.coroutines.test.TestScope
-import kotlinx.coroutines.test.runTest
-import org.junit.Test
-import org.matrix.rustcomponents.sdk.LatestEventValue
-import org.matrix.rustcomponents.sdk.RoomListEntriesUpdate
 
 class RoomSummaryListProcessorTest {
     private val summaries = MutableStateFlow<List<RoomSummary>>(emptyList())

@@ -7,11 +7,11 @@
 
 package tech.orbitweb.orbitx.libraries.matrix.impl.mapper
 
+import org.matrix.rustcomponents.sdk.Session
 import tech.orbitweb.orbitx.libraries.matrix.api.auth.external.ExternalSession
 import tech.orbitweb.orbitx.libraries.matrix.api.paths.SessionPaths
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.LoginType
 import tech.orbitweb.orbitx.libraries.sessionstorage.api.SessionData
-import org.matrix.rustcomponents.sdk.Session
 import java.util.Date
 
 internal fun Session.toSessionData(

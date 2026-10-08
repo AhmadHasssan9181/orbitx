@@ -16,14 +16,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import dev.zacsweers.metro.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import tech.orbitweb.orbitx.features.login.impl.changeserver.ChangeServerState
 import tech.orbitweb.orbitx.features.login.impl.resolver.HomeserverData
 import tech.orbitweb.orbitx.features.login.impl.resolver.HomeserverResolver
 import tech.orbitweb.orbitx.libraries.architecture.AsyncData
 import tech.orbitweb.orbitx.libraries.architecture.Presenter
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @Inject
 class SearchAccountProviderPresenter(
