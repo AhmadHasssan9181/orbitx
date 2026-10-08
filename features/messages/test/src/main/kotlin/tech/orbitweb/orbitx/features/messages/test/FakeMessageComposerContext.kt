@@ -11,5 +11,6 @@ import tech.orbitweb.orbitx.features.messages.api.MessageComposerContext
 import tech.orbitweb.orbitx.libraries.textcomposer.model.MessageComposerMode
 
 class FakeMessageComposerContext(
-    override var composerMode: MessageComposerMode = MessageComposerMode.Normal
+    override var composerMode: MessageComposerMode = MessageComposerMode.Normal,
+    override var isViewOnce: Boolean = false,
 ) : MessageComposerContext
