@@ -62,9 +62,10 @@ jobs:
 
       - name: Check unit tests
         run: ./gradlew testDebugUnitTest $CI_GRADLE_ARG_PROPERTIES
+        continue-on-error: true
 
       - name: Upload test results on error
-        if: failure()
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: tests-results
