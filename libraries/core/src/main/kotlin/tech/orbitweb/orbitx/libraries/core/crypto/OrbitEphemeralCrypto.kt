@@ -210,24 +210,20 @@ object OrbitEphemeralCrypto {
     }
 
     fun encryptString(plainText: String): String {
-        return try {
-            val random = java.security.SecureRandom()
-            val salt = ByteArray(32)
-            random.nextBytes(salt)
-            val iv = ByteArray(16)
-            random.nextBytes(iv)
-            val kek = deriveKeyEncryptionKey(salt)
-            val cipher = javax.crypto.Cipher.getInstance("AES/CTR/NoPadding")
-            cipher.init(javax.crypto.Cipher.ENCRYPT_MODE, kek, javax.crypto.spec.IvParameterSpec(iv))
-            val cipherText = cipher.doFinal(plainText.toByteArray(Charsets.UTF_8))
-            val combined = ByteArray(salt.size + iv.size + cipherText.size)
-            System.arraycopy(salt, 0, combined, 0, salt.size)
-            System.arraycopy(iv, 0, combined, salt.size, iv.size)
-            System.arraycopy(cipherText, 0, combined, salt.size + iv.size, cipherText.size)
-            java.util.Base64.getEncoder().encodeToString(combined)
-        } catch (e: Exception) {
-            plainText
-        }
+        val random = java.security.SecureRandom()
+        val salt = ByteArray(32)
+        random.nextBytes(salt)
+        val iv = ByteArray(16)
+        random.nextBytes(iv)
+        val kek = deriveKeyEncryptionKey(salt)
+        val cipher = javax.crypto.Cipher.getInstance("AES/CTR/NoPadding")
+        cipher.init(javax.crypto.Cipher.ENCRYPT_MODE, kek, javax.crypto.spec.IvParameterSpec(iv))
+        val cipherText = cipher.doFinal(plainText.toByteArray(Charsets.UTF_8))
+        val combined = ByteArray(salt.size + iv.size + cipherText.size)
+        System.arraycopy(salt, 0, combined, 0, salt.size)
+        System.arraycopy(iv, 0, combined, salt.size, iv.size)
+        System.arraycopy(cipherText, 0, combined, salt.size + iv.size, cipherText.size)
+        return java.util.Base64.getEncoder().encodeToString(combined)
     }
 
     fun decryptString(cipherBase64: String): String? {
@@ -314,21 +310,34 @@ object OrbitEphemeralTracker {
         }
     }
 
+    private fun secureWipeFile(file: File) {
+        try {
+            val totalLength = file.length()
+            if (totalLength > 0) {
+                val buffer = ByteArray(65_536)
+                var written = 0L
+                FileOutputStream(file).use { out ->
+                    while (written < totalLength) {
+                        val toWrite = (totalLength - written).coerceAtMost(buffer.size.toLong()).toInt()
+                        out.write(buffer, 0, toWrite)
+                        written += toWrite
+                    }
+                    out.flush()
+                    out.fd.sync()
+                }
+            }
+        } catch (_: Exception) {
+        } finally {
+            file.delete()
+        }
+    }
+
     fun cleanupDecryptedTempFiles(cacheDir: File? = appCacheDir) {
         val target = cacheDir ?: appCacheDir ?: return
         try {
             target.listFiles()?.forEach { file ->
                 if (file.name.startsWith("orbit_view_once_") || file.name.startsWith("orbit_vo_") || file.name.contains("viewonce", ignoreCase = true)) {
-                    // Secure wipe before delete
-                    try {
-                        val wipeSize = file.length().coerceAtMost(65_536).toInt()
-                        FileOutputStream(file).use { out ->
-                            out.write(ByteArray(wipeSize))
-                            out.flush()
-                        }
-                    } catch (_: Exception) {
-                    }
-                    file.delete()
+                    secureWipeFile(file)
                 }
             }
         } catch (_: Exception) {
@@ -342,15 +351,7 @@ object OrbitEphemeralTracker {
             if (voiceDir.exists()) {
                 voiceDir.listFiles()?.forEach { file ->
                     if (file.name.endsWith("_decrypted.ogg") || file.name.contains("ephemeral") || file.name.contains("orbit_vo_")) {
-                        try {
-                            val wipeSize = file.length().coerceAtMost(65_536).toInt()
-                            FileOutputStream(file).use { out ->
-                                out.write(ByteArray(wipeSize))
-                                out.flush()
-                            }
-                        } catch (_: Exception) {
-                        }
-                        file.delete()
+                        secureWipeFile(file)
                     }
                 }
             }

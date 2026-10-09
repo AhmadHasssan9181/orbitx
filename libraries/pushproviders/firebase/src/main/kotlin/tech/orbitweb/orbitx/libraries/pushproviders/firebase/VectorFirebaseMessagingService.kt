@@ -35,6 +35,15 @@ class VectorFirebaseMessagingService : FirebaseMessagingService() {
         bindings<VectorFirebaseMessagingServiceBindings>().inject(this)
     }
 
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+
+        Timber.tag(loggerTag.value).w("New Firebase token received")
+        coroutineScope.launch {
+            firebaseNewInstallationIdHandler.handle(token)
+        }
+    }
+
     override fun onRegistered(installationId: String) {
         super.onRegistered(installationId)
 

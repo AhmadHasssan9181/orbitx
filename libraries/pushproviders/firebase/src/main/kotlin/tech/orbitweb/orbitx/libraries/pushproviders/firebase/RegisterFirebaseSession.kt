@@ -10,7 +10,7 @@ package tech.orbitweb.orbitx.libraries.pushproviders.firebase
 import com.google.firebase.messaging.FirebaseMessaging
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
-import tech.orbitweb.orbitx.libraries.pushproviders.firebase.util.runFirebaseTask
+import tech.orbitweb.orbitx.libraries.pushproviders.firebase.util.runFirebaseTaskWithResult
 import timber.log.Timber
 
 fun interface RegisterFirebaseSession {
@@ -23,13 +23,17 @@ fun interface RegisterFirebaseSession {
 @ContributesBinding(AppScope::class)
 class DefaultRegisterFirebaseSession(
     private val isPlayServiceAvailable: IsPlayServiceAvailable,
+    private val firebaseNewInstallationIdHandler: FirebaseNewInstallationIdHandler,
 ) : RegisterFirebaseSession {
     override suspend operator fun invoke(): Result<Unit> {
         // 'app should always check the device for a compatible Google Play services APK before accessing Google Play services features'
         isPlayServiceAvailable.checkAvailableOrThrow()
-        return runFirebaseTask { FirebaseMessaging.getInstance().register() }
+        return runFirebaseTaskWithResult { FirebaseMessaging.getInstance().token }
+            .onSuccess { token ->
+                Timber.d("Retrieved Firebase token during registration: $token")
+                firebaseNewInstallationIdHandler.handle(token)
+            }
             .onFailure { Timber.e(it, "## registerFirebaseMessaging() : failed") }
-            // Change return type from Void! to Unit
             .map {}
     }
 }

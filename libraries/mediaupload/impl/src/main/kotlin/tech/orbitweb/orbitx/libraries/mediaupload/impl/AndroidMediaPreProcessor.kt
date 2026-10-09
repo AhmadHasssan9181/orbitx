@@ -180,7 +180,8 @@ class AndroidMediaPreProcessor(
     private fun MediaUploadInfo.postProcess(uri: Uri): MediaUploadInfo {
         Timber.d("Finished processing, post-processing ${uri.path.orEmpty().hash()}")
         val name = context.getFileName(uri) ?: return this
-        val renamedFile = File(context.cacheDir, name)
+        val targetDir = File(baseTmpFileDir, "named").apply { mkdirs() }
+        val renamedFile = File(targetDir, name)
         if (file.absolutePath != renamedFile.absolutePath) {
             file.safeRenameTo(renamedFile)
         }

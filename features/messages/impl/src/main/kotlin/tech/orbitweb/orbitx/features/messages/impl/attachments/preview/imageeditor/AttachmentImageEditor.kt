@@ -191,11 +191,15 @@ private fun Context.copyUriToTempFile(uri: Uri): File? {
             }
         }
         if (!success) {
-            contentResolver.openInputStream(uri)?.use { input ->
-                tempFile.outputStream().use { output ->
-                    input.copyTo(output)
+            try {
+                contentResolver.openInputStream(uri)?.use { input ->
+                    tempFile.outputStream().use { output ->
+                        input.copyTo(output)
+                    }
+                    success = true
                 }
-                success = true
+            } catch (e: Throwable) {
+                android.util.Log.w("OrbitImageEditor", "openInputStream failed for $uri", e)
             }
         }
         if (!success || tempFile.length() == 0L) {
@@ -205,6 +209,25 @@ private fun Context.copyUriToTempFile(uri: Uri): File? {
                 if (direct.exists() && direct.canRead()) {
                     direct.copyTo(tempFile, overwrite = true)
                     success = true
+                }
+            }
+            if (!success || tempFile.length() == 0L) {
+                val segments = uri.pathSegments
+                if (segments != null && segments.isNotEmpty()) {
+                    val fileName = segments.last()
+                    val candidates = listOf(
+                        File(File(filesDir, "camera_captures"), fileName),
+                        File(File(cacheDir, "camera_captures"), fileName),
+                        File(cacheDir, fileName),
+                        File(filesDir, fileName),
+                    )
+                    for (candidate in candidates) {
+                        if (candidate.exists() && candidate.canRead() && candidate.length() > 0L) {
+                            candidate.copyTo(tempFile, overwrite = true)
+                            success = true
+                            break
+                        }
+                    }
                 }
             }
         }
@@ -312,7 +335,7 @@ private fun Bitmap.applyEdits(edits: AttachmentImageEdits): Bitmap {
     }
 
     for (sticker in edits.stickers) {
-        val baseSize = bmpWidth * 0.16f * sticker.scale
+        val baseSize = bmpWidth * 0.14f * sticker.scale
         textPaint.textSize = baseSize
         val xPx = sticker.x * bmpWidth
         val yPx = sticker.y * bmpHeight

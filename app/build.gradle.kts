@@ -86,14 +86,33 @@ android {
             storeFile = file("./signature/debug.keystore")
             storePassword = "android"
         }
+        val releaseStorePath = System.getenv("ORBITX_RELEASE_KEYSTORE")
+            ?: project.findProperty("signing.orbitx.release.storeFile") as? String
+        if (releaseStorePath != null && file(releaseStorePath).exists()) {
+            register("release") {
+                keyAlias = System.getenv("ORBITX_RELEASE_KEYALIAS")
+                    ?: project.findProperty("signing.orbitx.release.keyAlias") as? String ?: "orbitx"
+                keyPassword = System.getenv("ORBITX_RELEASE_KEYPASSWORD")
+                    ?: project.findProperty("signing.orbitx.release.keyPassword") as? String ?: ""
+                storeFile = file(releaseStorePath)
+                storePassword = System.getenv("ORBITX_RELEASE_STOREPASSWORD")
+                    ?: project.findProperty("signing.orbitx.release.storePassword") as? String ?: ""
+            }
+        }
         register("nightly") {
-            keyAlias = System.getenv("ELEMENT_ANDROID_NIGHTLY_KEYID")
-                ?: project.property("signing.element.nightly.keyId") as? String?
-            keyPassword = System.getenv("ELEMENT_ANDROID_NIGHTLY_KEYPASSWORD")
-                ?: project.property("signing.element.nightly.keyPassword") as? String?
+            keyAlias = System.getenv("ORBITX_NIGHTLY_KEYID")
+                ?: System.getenv("ELEMENT_ANDROID_NIGHTLY_KEYID")
+                ?: project.findProperty("signing.orbitx.nightly.keyId") as? String
+                ?: project.findProperty("signing.element.nightly.keyId") as? String
+            keyPassword = System.getenv("ORBITX_NIGHTLY_KEYPASSWORD")
+                ?: System.getenv("ELEMENT_ANDROID_NIGHTLY_KEYPASSWORD")
+                ?: project.findProperty("signing.orbitx.nightly.keyPassword") as? String
+                ?: project.findProperty("signing.element.nightly.keyPassword") as? String
             storeFile = file("./signature/nightly.keystore")
-            storePassword = System.getenv("ELEMENT_ANDROID_NIGHTLY_STOREPASSWORD")
-                ?: project.property("signing.element.nightly.storePassword") as? String?
+            storePassword = System.getenv("ORBITX_NIGHTLY_STOREPASSWORD")
+                ?: System.getenv("ELEMENT_ANDROID_NIGHTLY_STOREPASSWORD")
+                ?: project.findProperty("signing.orbitx.nightly.storePassword") as? String
+                ?: project.findProperty("signing.element.nightly.storePassword") as? String
         }
     }
 
@@ -121,7 +140,7 @@ android {
                 "login_redirect_scheme",
                 oAuthRedirectSchemeBase,
             )
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
 
             optimization {
                 enable = true
@@ -178,9 +197,9 @@ android {
                 // This should not be required, but if I do not add the appId, I get this error:
                 // "App Distribution halted because it had a problem uploading the APK: [404] Requested entity was not found."
                 appId = if (isEnterpriseBuild) {
-                    "1:912726360885:android:3f7e1fe644d99d5a00427c"
+                    "1:979019276934:android:190308231eb5b3d669e707"
                 } else {
-                    "1:912726360885:android:e17435e0beb0303000427c"
+                    "1:979019276934:android:190308231eb5b3d669e707"
                 }
             }
         }
@@ -312,6 +331,8 @@ licensee {
     allow("BSD-2-Clause")
     allow("BSD-3-Clause")
     allow("EPL-1.0")
+    allow("MPL-2.0")
+    allow("GPL-3.0")
     allowUrl("https://opensource.org/license/bsd-3-clause")
     allowUrl("https://opensource.org/licenses/MIT")
     allowUrl("https://developer.android.com/studio/terms.html")
@@ -319,6 +340,7 @@ licensee {
     allowUrl("https://jsoup.org/license")
     allowUrl("https://asm.ow2.io/license.html")
     allowUrl("https://www.gnu.org/licenses/agpl-3.0.txt")
+    allowUrl("https://www.mozilla.org/en-US/MPL/2.0/")
     allowUrl("https://github.com/mhssn95/compose-color-picker/blob/main/LICENSE")
     ignoreDependencies("com.github.matrix-org", "matrix-analytics-events")
     // Ignore dependency that are not third-party licenses to us.

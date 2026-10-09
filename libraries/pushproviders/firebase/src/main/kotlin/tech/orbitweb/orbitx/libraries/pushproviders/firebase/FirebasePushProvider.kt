@@ -7,6 +7,7 @@
 
 package tech.orbitweb.orbitx.libraries.pushproviders.firebase
 
+import com.google.firebase.messaging.FirebaseMessaging
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoSet
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
@@ -16,6 +17,7 @@ import tech.orbitweb.orbitx.libraries.pushproviders.api.Config
 import tech.orbitweb.orbitx.libraries.pushproviders.api.Distributor
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PushProvider
 import tech.orbitweb.orbitx.libraries.pushproviders.api.PusherSubscriber
+import tech.orbitweb.orbitx.libraries.pushproviders.firebase.util.runFirebaseTaskWithResult
 import timber.log.Timber
 
 private val loggerTag = LoggerTag("FirebasePushProvider", LoggerTag.PushLoggerTag)
@@ -39,17 +41,30 @@ class FirebasePushProvider(
     }
 
     override suspend fun registerWith(matrixClient: MatrixClient, distributor: Distributor): Result<Unit> {
-        val pushKey = firebaseStore.getInstallationId() ?: return Result.failure<Unit>(
-            IllegalStateException(
-                "Unable to register pusher, Firebase token is not known."
-            )
-        ).also {
-            Timber.tag(loggerTag.value).w("Unable to register pusher, Firebase token is not known.")
+        Timber.tag(loggerTag.value).d("Fetching fresh Firebase token from FirebaseMessaging...")
+        val tokenResult = runFirebaseTaskWithResult { FirebaseMessaging.getInstance().token }
+        var pushKey = tokenResult.getOrNull()
+        if (!pushKey.isNullOrBlank()) {
+            Timber.tag(loggerTag.value).i("Fetched Firebase token successfully: $pushKey")
+            firebaseStore.storeInstallationId(pushKey)
+        } else {
+            Timber.tag(loggerTag.value).w(tokenResult.exceptionOrNull(), "Failed to retrieve fresh Firebase token directly, falling back to cached")
+            pushKey = firebaseStore.getInstallationId()
         }
+
+        if (pushKey.isNullOrBlank()) {
+            return Result.failure<Unit>(
+                IllegalStateException("Unable to register pusher, Firebase token is not known.")
+            ).also {
+                Timber.tag(loggerTag.value).w("Unable to register pusher, Firebase token is not known.")
+            }
+        }
+        val gateway = firebaseGatewayProvider.getFirebaseGateway()
+        Timber.tag(loggerTag.value).i("Registering pusher with gateway=$gateway, pushKey=$pushKey")
         return pusherSubscriber.registerPusher(
             matrixClient = matrixClient,
             pushKey = pushKey,
-            gateway = firebaseGatewayProvider.getFirebaseGateway(),
+            gateway = gateway,
         )
     }
 

@@ -7,9 +7,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- To be able to install APK from the application -->
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-
     <application
         android:name=".OrbitApplication"
         android:allowBackup="false"
@@ -73,9 +70,6 @@
                 <data
                     android:host="open"
                     android:scheme="orbit" />
-                <data
-                    android:host="open"
-                    android:scheme="elementx" />
             </intent-filter>
             <!--
               OAuth redirection
@@ -137,7 +131,6 @@
 
                 <data android:scheme="orbit" />
                 <data android:scheme="orbitx" />
-                <data android:scheme="element" />
                 <data android:host="user" />
                 <data android:host="room" />
             </intent-filter>

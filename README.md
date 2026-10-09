@@ -12,14 +12,14 @@
 ## Highlights & Features
 
 - **Decentralized & Sovereign:** Connect to your own homeserver (`https://orbitweb.tech` or any self-hosted Matrix server) with 100% data ownership.
-- **End-to-End Encryption (E2EE):** Military-grade cryptographic privacy powered by the audited Matrix Rust SDK (Olm & Megolm double ratchets).
-- **Ephemeral View-Once Media:** Send photos, videos, and voice messages with WhatsApp-style view-once self-destruction. Envelope AES-256-CTR encryption with PBKDF2 key derivation, runtime screen capture protection (`FLAG_SECURE`), event redaction, and disk cache overwriting.
+- **End-to-End Encryption (E2EE):** Strong, audited cryptographic privacy powered by the Matrix Rust SDK (Olm & Megolm double ratchets).
+- **Ephemeral View-Once Media:** Send photos, videos, and voice messages with view-once self-destruction. Envelope encryption with iterated HMAC-SHA256 key derivation, runtime screen capture protection (`FLAG_SECURE`), event redaction, and local cache shredding.
 - **Built-in Media Editing Suite:**
   - **Photo Editor:** Precision cropping with aspect ratio presets (`Free`, `1:1`, `4:5`, `16:9`, `9:16`), 90° rotation, horizontal/vertical flipping, and cosmic color matrix filters (`Vivid`, `Mono`, `Warm`, `Cool`, `Vintage`).
   - **Video Editor:** Direct native audio stripping (`stripAudioFromVideo`), compression presets, and video preview controls.
   - **Voice Notes & Audio:** Waveform recording and interactive scrubber, playback speed controls (`1.0x`, `1.5x`, `2.0x`), and ephemeral audio self-destruction.
-- **Zero External Telemetry:** All third-party analytics trackers (PostHog, Sentry, telemetry gateways) are completely disabled. No analytics servers are contacted.
-- **Cosmic UI Design System:** Stunning dark mode with rich violet/indigo palettes, glassmorphism cards, micro-interactions, and custom typography.
+- **Zero Third-Party Tracking:** Analytics trackers and telemetry services are disabled.
+- **Cosmic UI Design System:** Modern dark mode with rich violet/indigo palettes, glassmorphism cards, micro-interactions, and custom typography.
 - **Cross-Platform Matrix Federation:** Interoperate seamlessly with other federated Matrix clients across Web, Desktop, and iOS.
 
 ---
@@ -68,10 +68,20 @@ OrbitX Android follows modern Android architecture principles:
 ---
 
 ## Privacy & Security
-
-- **Zero Third-Party Telemetry:** OrbitX does not transmit telemetry, analytics, crashes, or diagnostics to external tracking services.
+ 
+- **Zero Third-Party Telemetry:** OrbitX does not transmit telemetry, analytics, or diagnostics to external tracking services.
 - **Local Key Storage:** Cryptographic session keys are stored locally in Android EncryptedSharedPreferences and hardware-backed Android KeyStore.
-- **No Proprietary Server Reliance:** Complete decoupling from proprietary push or identity servers.
+- **Decentralized Infrastructure:** Works against any federated Matrix homeserver.
+ 
+---
+ 
+## Open Source Credits & Provenance
+
+OrbitX Android is free software licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+- **Upstream Project:** Derived from [Element X Android](https://github.com/element-hq/element-x-android), Copyright (c) 2025 Element Creations Ltd. and Copyright 2022 New Vector Ltd.
+- **Embedded Libraries (MPL-2.0):** Uses unmodified libraries published by Element including `element-call-embedded`, `wysiwyg`, `emojibase-bindings`, and `opusencoder`.
+- **Database Encryption:** SQLCipher is Copyright (c) ZETETIC LLC, used under its BSD-style license.
+- See [AGPL-CREDITS.md](AGPL-CREDITS.md) for full attribution and details.
 
 ---
 
@@ -85,6 +95,6 @@ OrbitX Android follows modern Android architecture principles:
 
 ## Copyright & License
 
-Copyright (c) 2026 Orbit Team.
-
-This software is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0) or commercial licensing terms from Orbit Team.
+Copyright (c) 2026 Orbit Team.  
+SPDX-License-Identifier: AGPL-3.0-only  
+Please see [LICENSE](LICENSE) and [AGPL-CREDITS.md](AGPL-CREDITS.md) for complete license text.

@@ -67,27 +67,32 @@ class LoggedInPresenter(
         val pusherRegistrationState = remember<MutableState<AsyncData<Unit>>> { mutableStateOf(AsyncData.Uninitialized) }
         LaunchedEffect(Unit) { preloadAccountManagementUrl() }
         LaunchedEffect(Unit) {
+            Timber.tag(pusherTag.value).d("Ensure pusher is registered on logged in launch")
+            pushService.ensurePusherIsRegistered(matrixClient).fold(
+                onSuccess = {
+                    Timber.tag(pusherTag.value).d("Pusher registered")
+                    pusherRegistrationState.value = AsyncData.Success(Unit)
+                },
+                onFailure = {
+                    Timber.tag(pusherTag.value).e(it, "Failed to register pusher")
+                    pusherRegistrationState.value = AsyncData.Failure(it)
+                },
+            )
+        }
+        LaunchedEffect(Unit) {
             sessionVerificationService.sessionVerifiedStatus
                 .onEach { sessionVerifiedStatus ->
-                    when (sessionVerifiedStatus) {
-                        SessionVerifiedStatus.Unknown -> Unit
-                        SessionVerifiedStatus.Verified -> {
-                            Timber.tag(pusherTag.value).d("Ensure pusher is registered")
-                            pushService.ensurePusherIsRegistered(matrixClient).fold(
-                                onSuccess = {
-                                    Timber.tag(pusherTag.value).d("Pusher registered")
-                                    pusherRegistrationState.value = AsyncData.Success(Unit)
-                                },
-                                onFailure = {
-                                    Timber.tag(pusherTag.value).e(it, "Failed to register pusher")
-                                    pusherRegistrationState.value = AsyncData.Failure(it)
-                                },
-                            )
-                        }
-                        SessionVerifiedStatus.NotVerified -> {
-                            pusherRegistrationState.value = AsyncData.Failure(PusherRegistrationFailure.AccountNotVerified())
-                        }
-                    }
+                    Timber.tag(pusherTag.value).d("Ensure pusher is registered (status $sessionVerifiedStatus)")
+                    pushService.ensurePusherIsRegistered(matrixClient).fold(
+                        onSuccess = {
+                            Timber.tag(pusherTag.value).d("Pusher registered")
+                            pusherRegistrationState.value = AsyncData.Success(Unit)
+                        },
+                        onFailure = {
+                            Timber.tag(pusherTag.value).e(it, "Failed to register pusher")
+                            pusherRegistrationState.value = AsyncData.Failure(it)
+                        },
+                    )
                 }
                 .launchIn(this)
         }

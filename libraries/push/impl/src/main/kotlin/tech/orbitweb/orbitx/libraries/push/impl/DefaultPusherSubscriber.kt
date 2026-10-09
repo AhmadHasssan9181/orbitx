@@ -48,15 +48,16 @@ class DefaultPusherSubscriber(
             Timber.tag(loggerTag.value)
                 .d("Unnecessary to register again the same pusher, but do it in case the pusher has been removed from the server")
         }
+        val pusherData = createHttpPusher(pushKey, gateway, matrixClient.sessionId)
+        Timber.tag(loggerTag.value).i("Registering pusher with Matrix server: pushKey=$pushKey, gateway=${pusherData.url}, appId=${pusherData.appId}")
         return matrixClient.pushersService
-            .setHttpPusher(
-                createHttpPusher(pushKey, gateway, matrixClient.sessionId)
-            )
+            .setHttpPusher(pusherData)
             .onSuccess {
+                Timber.tag(loggerTag.value).i("Matrix server successfully registered pusher: pushKey=$pushKey, appId=${pusherData.appId}")
                 userDataStore.setCurrentRegisteredPushKey(pushKey)
             }
             .mapFailure { throwable ->
-                Timber.tag(loggerTag.value).e(throwable, "Unable to register the pusher")
+                Timber.tag(loggerTag.value).e(throwable, "Unable to register the pusher on Matrix server: pushKey=$pushKey")
                 if (throwable is ClientException) {
                     // It should always be the case.
                     RegistrationFailure(throwable, isRegisteringAgain = isRegisteringAgain)
@@ -73,7 +74,7 @@ class DefaultPusherSubscriber(
     ): SetHttpPusherData =
         SetHttpPusherData(
             pushKey = pushKey,
-            appId = PushConfig.PUSHER_APP_ID,
+            appId = if (gateway.contains("matrix.org")) "io.element.android.x" else PushConfig.PUSHER_APP_ID,
             // TODO + abs(activeSessionHolder.getActiveSession().myUserId.hashCode())
             profileTag = DEFAULT_PUSHER_FILE_TAG + "_",
             // TODO localeProvider.current().language
@@ -103,7 +104,7 @@ class DefaultPusherSubscriber(
             .unsetHttpPusher(
                 unsetHttpPusherData = UnsetHttpPusherData(
                     pushKey = pushKey,
-                    appId = PushConfig.PUSHER_APP_ID
+                    appId = if (gateway.contains("matrix.org")) "io.element.android.x" else PushConfig.PUSHER_APP_ID
                 )
             )
             .onSuccess {

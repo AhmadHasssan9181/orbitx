@@ -12,6 +12,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.gestures.detectTransformGestures
@@ -560,6 +562,7 @@ private fun BoxScope.CropEditorCanvas(
                         onSelect = { onSelectSticker(sticker.id) },
                         onUpdate = onUpdateSticker,
                         onRemove = { onRemoveSticker(sticker.id) },
+                        modifier = Modifier.align(Alignment.TopStart),
                     )
                 }
             }
@@ -682,14 +685,22 @@ private fun StickerOverlayView(
     onSelect: () -> Unit,
     onUpdate: (StickerItem) -> Unit,
     onRemove: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val currentSticker by rememberUpdatedState(sticker)
     val canvasW = canvasSize.width.takeIf { it > 0f } ?: 1f
     val canvasH = canvasSize.height.takeIf { it > 0f } ?: 1f
     var stickerLayoutSize by remember { mutableStateOf(IntSize.Zero) }
 
+    val density = LocalDensity.current
+    val stickerFontSize = remember(canvasW, currentSticker.scale, density) {
+        with(density) {
+            (canvasW * 0.14f * currentSticker.scale).coerceAtLeast(24f).toSp()
+        }
+    }
+
     Box(
-        modifier = Modifier
+        modifier = modifier
             .onSizeChanged { stickerLayoutSize = it }
             .offset {
                 IntOffset(
@@ -701,24 +712,26 @@ private fun StickerOverlayView(
                 rotationZ = currentSticker.rotationDegrees
             }
             .pointerInput(sticker.id) {
-                detectTapGestures(
-                    onTap = { onSelect() }
-                )
+                awaitEachGesture {
+                    awaitFirstDown(requireUnconsumed = false)
+                    onSelect()
+                }
             }
             .pointerInput(sticker.id, canvasW, canvasH) {
                 detectTransformGestures(panZoomLock = false) { _, pan, zoom, rotation ->
                     onSelect()
                     val current = currentSticker
-                    val newX = ((current.x * canvasW + pan.x) / canvasW).coerceIn(0.02f, 0.98f)
-                    val newY = ((current.y * canvasH + pan.y) / canvasH).coerceIn(0.02f, 0.98f)
+                    val newX = ((current.x * canvasW + pan.x) / canvasW).coerceIn(0.01f, 0.99f)
+                    val newY = ((current.y * canvasH + pan.y) / canvasH).coerceIn(0.01f, 0.99f)
                     val newScale = (current.scale * zoom).coerceIn(0.5f, 4.0f)
-                    val newRotation = (current.rotationDegrees + rotation) % 360f
+                    val newRotation = (current.rotationDegrees + rotation)
+                    val normalizedRotation = (newRotation % 360f + 360f) % 360f
                     onUpdate(
                         current.copy(
                             x = newX,
                             y = newY,
                             scale = newScale,
-                            rotationDegrees = newRotation,
+                            rotationDegrees = normalizedRotation,
                         )
                     )
                 }
@@ -727,22 +740,22 @@ private fun StickerOverlayView(
                 if (isSelected) {
                     Modifier
                         .border(1.5.dp, Color(0xFFA78BFA), RoundedCornerShape(8.dp))
-                        .padding(4.dp)
+                        .padding(horizontal = 8.dp, vertical = 6.dp)
                 } else {
-                    Modifier.padding(4.dp)
+                    Modifier.padding(horizontal = 8.dp, vertical = 6.dp)
                 }
             )
     ) {
         Text(
             text = sticker.text,
-            style = ElementTheme.typography.fontBodyLgRegular.copy(fontSize = (34 * sticker.scale).sp),
+            style = ElementTheme.typography.fontBodyLgRegular.copy(fontSize = stickerFontSize),
         )
         if (isSelected) {
             // Delete button at top right
             Box(
                 modifier = Modifier
                     .align(Alignment.TopEnd)
-                    .offset(x = 10.dp, y = (-10).dp)
+                    .offset(x = 12.dp, y = (-12).dp)
                     .size(28.dp)
                     .clip(CircleShape)
                     .background(Color(0xFFEF4444))
@@ -755,11 +768,43 @@ private fun StickerOverlayView(
                     style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 16.sp, fontWeight = FontWeight.Bold),
                 )
             }
+            // Rotate button at bottom left
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .offset(x = (-12).dp, y = 12.dp)
+                    .size(28.dp)
+                    .clip(CircleShape)
+                    .background(Color(0xFF06B6D4))
+                    .pointerInput(sticker.id) {
+                        detectDragGestures(
+                            onDrag = { change, dragAmount ->
+                                change.consume()
+                                val current = currentSticker
+                                val rotDelta = (dragAmount.x - dragAmount.y) * 2f
+                                val newRotation = (current.rotationDegrees + rotDelta % 360f + 360f) % 360f
+                                onUpdate(current.copy(rotationDegrees = newRotation))
+                            }
+                        )
+                    }
+                    .clickable {
+                        val current = currentSticker
+                        val nextRotation = ((current.rotationDegrees + 45f).toInt() % 360).toFloat()
+                        onUpdate(current.copy(rotationDegrees = nextRotation))
+                    },
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    text = "↻",
+                    color = Color.White,
+                    style = ElementTheme.typography.fontBodySmMedium.copy(fontSize = 15.sp, fontWeight = FontWeight.Bold),
+                )
+            }
             // Scale toggle button at bottom right
             Box(
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
-                    .offset(x = 10.dp, y = 10.dp)
+                    .offset(x = 12.dp, y = 12.dp)
                     .size(28.dp)
                     .clip(CircleShape)
                     .background(Color(0xFF8B5CF6))

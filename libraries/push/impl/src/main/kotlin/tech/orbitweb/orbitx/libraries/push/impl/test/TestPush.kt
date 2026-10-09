@@ -27,7 +27,7 @@ class DefaultTestPush(
         pushGatewayNotifyRequest.execute(
             PushGatewayNotifyRequest.Params(
                 url = config.url,
-                appId = PushConfig.PUSHER_APP_ID,
+                appId = if (config.url.contains("matrix.org")) "io.element.android.x" else PushConfig.PUSHER_APP_ID,
                 pushKey = config.pushKey,
                 eventId = TEST_EVENT_ID,
                 roomId = TEST_ROOM_ID,

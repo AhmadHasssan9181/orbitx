@@ -144,7 +144,7 @@ class DefaultPickerProvider(
         return if (LocalInspectionMode.current) {
             NoOpPickerLauncher { onResult(null) }
         } else {
-            val tmpFile = remember { getTemporaryFile("photo_${System.currentTimeMillis()}_${(1000..9999).random()}.jpg") }
+            val tmpFile = remember { getCameraFile("photo_${System.currentTimeMillis()}_${(1000..9999).random()}.jpg") }
             val tmpFileUri = remember(tmpFile) { getTemporaryUri(tmpFile) }
             rememberPickerLauncher(type = PickerType.Camera.Photo(tmpFileUri)) { success ->
                 onResult(if (success) tmpFileUri else null)
@@ -161,13 +161,20 @@ class DefaultPickerProvider(
         return if (LocalInspectionMode.current) {
             NoOpPickerLauncher { onResult(null) }
         } else {
-            val tmpFile = remember { getTemporaryFile("video_${System.currentTimeMillis()}_${(1000..9999).random()}.mp4") }
+            val tmpFile = remember { getCameraFile("video_${System.currentTimeMillis()}_${(1000..9999).random()}.mp4") }
             val tmpFileUri = remember(tmpFile) { getTemporaryUri(tmpFile) }
             rememberPickerLauncher(type = PickerType.Camera.Video(tmpFileUri)) { success ->
                 // Execute callback
                 onResult(if (success) tmpFileUri else null)
             }
         }
+    }
+
+    private fun getCameraFile(
+        filename: String,
+    ): File {
+        val dir = File(context.filesDir, "camera_captures").apply { mkdirs() }
+        return File(dir, filename)
     }
 
     private fun getTemporaryFile(

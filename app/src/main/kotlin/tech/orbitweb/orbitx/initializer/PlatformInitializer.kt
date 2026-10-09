@@ -19,7 +19,7 @@ import tech.orbitweb.orbitx.libraries.featureflag.api.FeatureFlags
 import tech.orbitweb.orbitx.libraries.matrix.api.tracing.TracingConfiguration
 import timber.log.Timber
 
-private const val ELEMENT_X_TARGET = "elementx"
+private const val ORBITX_TARGET = "orbitx"
 
 class PlatformInitializer : Initializer<Unit> {
     override fun create(context: Context) {
@@ -27,7 +27,12 @@ class PlatformInitializer : Initializer<Unit> {
         val tracingService = appBindings.tracingService()
         val platformService = appBindings.platformService()
         val bugReporter = appBindings.bugReporter()
-        Timber.plant(tracingService.createTimberTree(ELEMENT_X_TARGET))
+        Timber.plant(tracingService.createTimberTree(ORBITX_TARGET))
+        Timber.plant(object : Timber.Tree() {
+            override fun log(priority: Int, tag: String?, message: String, t: Throwable?) {
+                android.util.Log.println(priority, tag ?: "OrbitX", message + (t?.let { "\n" + android.util.Log.getStackTraceString(it) } ?: ""))
+            }
+        })
         val preferencesStore = appBindings.preferencesStore()
         val featureFlagService = appBindings.featureFlagService()
         val logLevel = runBlocking { preferencesStore.getTracingLogLevelFlow().first() }
@@ -35,7 +40,7 @@ class PlatformInitializer : Initializer<Unit> {
             writesToLogcat = runBlocking { featureFlagService.isFeatureEnabled(FeatureFlags.PrintLogsToLogcat) },
             writesToFilesConfiguration = bugReporter.createWriteToFilesConfiguration(),
             logLevel = logLevel,
-            extraTargets = listOf(ELEMENT_X_TARGET),
+            extraTargets = listOf(ORBITX_TARGET),
             traceLogPacks = runBlocking { preferencesStore.getTracingLogPacksFlow().first() },
             sdkSentryDsn = appBindings.sentrySdkDsn()?.value?.takeIf { it.isNotBlank() },
         )

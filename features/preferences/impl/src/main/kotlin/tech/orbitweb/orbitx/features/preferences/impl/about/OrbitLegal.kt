@@ -16,12 +16,14 @@ import tech.orbitweb.orbitx.libraries.ui.strings.CommonStrings
 private const val COPYRIGHT_URL = BuildConfig.URL_COPYRIGHT
 private const val USE_POLICY_URL = BuildConfig.URL_ACCEPTABLE_USE
 private const val PRIVACY_URL = BuildConfig.URL_PRIVACY
+private const val CREDITS_URL = BuildConfig.URL_CREDITS
 
 sealed class OrbitLegal(
     @StringRes val titleRes: Int,
     val url: String,
 ) {
     data object Copyright : OrbitLegal(CommonStrings.common_copyright, COPYRIGHT_URL)
+    data object Credits : OrbitLegal(CommonStrings.common_credits, CREDITS_URL)
     data object AcceptableUsePolicy : OrbitLegal(CommonStrings.common_acceptable_use_policy, USE_POLICY_URL)
     data object PrivacyPolicy : OrbitLegal(CommonStrings.common_privacy_policy, PRIVACY_URL)
 }
@@ -31,6 +33,7 @@ typealias ElementLegal = OrbitLegal
 fun getAllLegals(): ImmutableList<OrbitLegal> {
     return persistentListOf(
         OrbitLegal.Copyright,
+        OrbitLegal.Credits,
         OrbitLegal.AcceptableUsePolicy,
         OrbitLegal.PrivacyPolicy,
     )

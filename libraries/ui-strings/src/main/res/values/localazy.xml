@@ -228,6 +228,7 @@
   <string name="common_chat_backup">"Chat backup"</string>
   <string name="common_copied_to_clipboard">"Copied to clipboard"</string>
   <string name="common_copyright">"Copyright"</string>
+  <string name="common_credits">"Credits &amp; Attributions"</string>
   <string name="common_creating_room">"Creating room…"</string>
   <string name="common_creating_space">"Creating space…"</string>
   <string name="common_current_user_canceled_knock">"Request canceled"</string>

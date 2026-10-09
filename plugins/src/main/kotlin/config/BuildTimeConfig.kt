@@ -10,9 +10,9 @@ package config
 object BuildTimeConfig {
     const val APPLICATION_ID = "tech.orbitweb.orbitx"
     const val APPLICATION_NAME = "Orbit"
-    const val GOOGLE_APP_ID_RELEASE = "1:912726360885:android:d097de99a4c23d2700427c"
-    const val GOOGLE_APP_ID_DEBUG = "1:912726360885:android:def0a4e454042e9b00427c"
-    const val GOOGLE_APP_ID_NIGHTLY = "1:912726360885:android:e17435e0beb0303000427c"
+    const val GOOGLE_APP_ID_RELEASE = "1:979019276934:android:190308231eb5b3d669e707"
+    const val GOOGLE_APP_ID_DEBUG = "1:979019276934:android:190308231eb5b3d669e707"
+    const val GOOGLE_APP_ID_NIGHTLY = "1:979019276934:android:190308231eb5b3d669e707"
 
     val METADATA_HOST_REVERSED: String? = "tech.orbitweb.orbitx"
     val URL_WEBSITE: String? = "https://orbitweb.tech"
@@ -21,6 +21,7 @@ object BuildTimeConfig {
     val URL_ACCEPTABLE_USE: String? = "https://orbitweb.tech/terms"
     val URL_PRIVACY: String? = "https://orbitweb.tech/privacy"
     val URL_POLICY: String? = "https://orbitweb.tech/privacy"
+    val URL_CREDITS: String? = "https://orbitweb.tech/credits"
     val SERVICES_MAPTILER_BASE_URL: String? = null
     val SERVICES_MAPTILER_APIKEY: String? = null
     val SERVICES_MAPTILER_LIGHT_MAPID: String? = null

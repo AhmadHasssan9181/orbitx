@@ -7,5 +7,5 @@
 
 package tech.orbitweb.orbitx.libraries.deeplink.impl
 
-internal const val SCHEME = "elementx"
+internal const val SCHEME = "orbitx"
 internal const val HOST = "open"

@@ -40,6 +40,10 @@ android {
             name = "URL_PRIVACY",
             value = BuildTimeConfig.URL_PRIVACY ?: "https://orbitweb.tech/privacy",
         )
+        buildConfigFieldStr(
+            name = "URL_CREDITS",
+            value = BuildTimeConfig.URL_CREDITS ?: "https://orbitweb.tech/credits",
+        )
     }
 }
 

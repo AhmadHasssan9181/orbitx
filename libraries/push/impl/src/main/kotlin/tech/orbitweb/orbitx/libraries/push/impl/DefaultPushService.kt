@@ -90,8 +90,7 @@ class DefaultPushService(
     override suspend fun ensurePusherIsRegistered(matrixClient: MatrixClient): Result<Unit> {
         val verificationStatus = matrixClient.sessionVerificationService.sessionVerifiedStatus.first()
         if (verificationStatus != SessionVerifiedStatus.Verified) {
-            return Result.failure<Unit>(PusherRegistrationFailure.AccountNotVerified())
-                .also { Timber.w("Account is not verified") }
+            Timber.w("Account is not verified yet, but proceeding to ensure pusher is registered for notifications")
         }
         Timber.d("Ensure pusher is registered")
         val currentPushProvider = getCurrentPushProvider(matrixClient.sessionId)

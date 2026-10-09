@@ -27,7 +27,8 @@ android {
             value = if (isEnterpriseBuild) {
                 BuildTimeConfig.SERVICES_SENTRY_DSN
             } else {
-                System.getenv("ELEMENT_ANDROID_SENTRY_DSN")
+                System.getenv("ORBITX_SENTRY_DSN")
+                    ?: System.getenv("ELEMENT_ANDROID_SENTRY_DSN")
                     ?: readLocalProperty("services.analyticsproviders.sentry.dsn")
             }
                 ?: ""
@@ -37,7 +38,8 @@ android {
             value = if (isEnterpriseBuild) {
                 BuildTimeConfig.SERVICES_SENTRY_DSN_RUST
             } else {
-                System.getenv("ELEMENT_SDK_SENTRY_DSN")
+                System.getenv("ORBITX_SDK_SENTRY_DSN")
+                    ?: System.getenv("ELEMENT_SDK_SENTRY_DSN")
                     ?: readLocalProperty("services.analyticsproviders.sdk.sentry.dsn")
             }
                 ?: ""
