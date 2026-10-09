@@ -88,7 +88,7 @@ jobs:
         continue-on-error: true
       - name: Upload reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: konsist-report
           path: |
@@ -124,7 +124,7 @@ jobs:
         continue-on-error: true
       - name: Upload reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: linting-report
           path: |
@@ -156,7 +156,7 @@ jobs:
         continue-on-error: true
       - name: Upload reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: detekt-report
           path: |
@@ -188,7 +188,7 @@ jobs:
         continue-on-error: true
       - name: Upload reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: ktlint-report
           path: |
