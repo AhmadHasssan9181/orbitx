@@ -1,26 +1,17 @@
-Freedom to communicate on your own terms
+Freedom to communicate on your own terms.
 
-For individuals and communities - private communication between family, friends, hobby groups, clubs, etc.
+Orbit gives you fast, secure, and private messaging and video calls built on Matrix, the open standard for decentralized real-time communication.
 
-ORBIT Chat gives you fast, secure and private instant messaging and video calls built on Matrix, the open standard for real-time communication. This is a free and open-source app.
+Stay connected with friends, family, and communities:
+• End-to-end encrypted messaging with zero trackers or data mining
+• High-definition 1:1 and group voice & video calling
+• Rich messaging: emoji reactions, replies, polls, pinned messages, voice notes, and media editing
+• Ephemeral view-once media and secure file sharing
+• Public communities and private spaces for your teams and clubs
+• Universal interoperability across the Matrix open ecosystem
+• Seamless multi-device synchronization
 
-Stay in touch with friends, family and communities with:
- • Real time messaging & video calls
- • Public rooms for open group communication
- • Private rooms for closed group communication
- • Rich messaging features: emoji reactions, replies, polls, pinned messages and more.
- • Video calling while browsing messages.
- • Interoperability with other Matrix-based apps such as FluffyChat, Cinny and many more.
+Privacy First & True Ownership
+Choose where your data lives — use matrix.org, another public server, or host your own server on your custom domain. You have complete ownership of your conversations.
 
-<b>Privacy-first<b>
-Unlike some other messengers from Big Tech companies, we don’t mine your data or monitor your communications.
-
-<b>Own your conversations</b>
-Choose where to host your data - from any public server (the largest free server is matrix.org, but there are plenty of others to choose from) to creating your own personal server and hosting it on your own domain. This ability to choose a server is a large part of what differentiates us from other real time communication apps. However you host, you have ownership; it’s your data. You’re not the product. You’re in control.
-
-<b>Communicate in real time, all the time</b>
-Use ORBIT Chat everywhere. Stay in touch wherever you are with fully synchronised message history across all your devices.
-
-The application requires the android.permission.REQUEST_INSTALL_PACKAGES permission to enable the installation of applications received as attachments, ensuring seamless and convenient access to new software within the app.
-
-The application requires the USE_FULL_SCREEN_INTENT permission to ensure our users can effectively receive call notifications even when their devices are locked.
+The application uses the USE_FULL_SCREEN_INTENT permission to ensure you receive incoming call notifications when your device screen is locked.
