@@ -15,14 +15,17 @@ import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeoutOrNull
 import tech.orbitweb.orbitx.libraries.core.coroutine.CoroutineDispatchers
 import tech.orbitweb.orbitx.libraries.core.log.logger.LoggerTag
 import tech.orbitweb.orbitx.libraries.core.meta.BuildMeta
+import tech.orbitweb.orbitx.libraries.matrix.api.core.SessionId
 import tech.orbitweb.orbitx.libraries.push.impl.db.PushRequest
 import tech.orbitweb.orbitx.libraries.push.impl.history.PushHistoryService
 import tech.orbitweb.orbitx.libraries.push.impl.history.onDiagnosticPush
 import tech.orbitweb.orbitx.libraries.push.impl.history.onInvalidPushReceived
 import tech.orbitweb.orbitx.libraries.push.impl.history.onUnableToRetrieveSession
+import tech.orbitweb.orbitx.libraries.push.impl.notifications.NotifiableEventResolver
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.NotificationResultProcessor
 import tech.orbitweb.orbitx.libraries.push.impl.test.DefaultTestPush
 import tech.orbitweb.orbitx.libraries.push.impl.troubleshoot.DiagnosticPushHandler
@@ -35,8 +38,10 @@ import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerRequestType
 import tech.orbitweb.orbitx.libraries.workmanager.api.WorkManagerScheduler
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsLongRunningTransaction
 import tech.orbitweb.orbitx.services.analytics.api.AnalyticsService
+import tech.orbitweb.orbitx.services.analytics.api.finishLongRunningTransaction
 import tech.orbitweb.orbitx.services.toolbox.api.systemclock.SystemClock
 import timber.log.Timber
+import kotlin.time.Duration.Companion.seconds
 
 private val loggerTag = LoggerTag("PushHandler", LoggerTag.PushLoggerTag)
 
@@ -53,8 +58,9 @@ class DefaultPushHandler(
     private val systemClock: SystemClock,
     private val workManagerScheduler: WorkManagerScheduler,
     private val syncPendingNotificationsRequestFactory: SyncPendingNotificationsRequestBuilder.Factory,
-    resultProcessor: NotificationResultProcessor,
+    private val resultProcessor: NotificationResultProcessor,
     private val dispatchers: CoroutineDispatchers,
+    private val eventResolver: NotifiableEventResolver,
 ) : PushHandler {
     init {
         resultProcessor.start()
@@ -144,14 +150,45 @@ class DefaultPushHandler(
             Timber.d("Queueing notification finished")
 
             if (!workManagerScheduler.hasPendingWork(userId, WorkManagerRequestType.NOTIFICATION_SYNC)) {
-                Timber.d("No pending worker for push notifications found")
+                Timber.d("No pending worker for push notifications found, submitting fallback WorkManager request")
                 workManagerScheduler.submit(syncPendingNotificationsRequestFactory.create(userId))
             }
+
+            // Fast fetch: immediately resolve notification in the active process without waiting for WorkManager
+            fastResolveNotification(userId, pushRequest)
 
             return true
         } catch (e: Exception) {
             Timber.tag(loggerTag.value).e(e, "## handleInternal() failed")
             return false
+        }
+    }
+
+    private suspend fun fastResolveNotification(sessionId: SessionId, pushRequest: PushRequest) {
+        try {
+            Timber.tag(loggerTag.value).d("Fast fetch: starting immediate resolution for event ${pushRequest.eventId}")
+            val results = withTimeoutOrNull(4.seconds) {
+                eventResolver.resolveEvents(sessionId, listOf(pushRequest)).getOrNull()
+            }
+
+            if (!results.isNullOrEmpty()) {
+                val singleResult = results[pushRequest]
+                if (singleResult != null && singleResult.isSuccess) {
+                    Timber.tag(loggerTag.value).d("Fast fetch: event resolved successfully! Emitting notification immediately.")
+                    resultProcessor.emit(results)
+                    pushHistoryService.insertOrUpdatePushRequest(
+                        pushRequest.copy(status = PushRequestStatus.SUCCESS.value)
+                    )
+                    analyticsService.finishLongRunningTransaction(AnalyticsLongRunningTransaction.PushToWorkManager(pushRequest.eventId))
+                    analyticsService.finishLongRunningTransaction(AnalyticsLongRunningTransaction.PushToNotification(pushRequest.eventId))
+                } else {
+                    Timber.tag(loggerTag.value).d("Fast fetch: event resolution not immediate success, WorkManager fallback will process.")
+                }
+            } else {
+                Timber.tag(loggerTag.value).d("Fast fetch: timed out or empty, WorkManager fallback will process.")
+            }
+        } catch (e: Exception) {
+            Timber.tag(loggerTag.value).w(e, "Fast fetch failed, WorkManager fallback will handle it")
         }
     }
 }

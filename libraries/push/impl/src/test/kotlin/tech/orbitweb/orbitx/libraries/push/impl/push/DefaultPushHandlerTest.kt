@@ -29,7 +29,9 @@ import tech.orbitweb.orbitx.libraries.matrix.test.core.aBuildMeta
 import tech.orbitweb.orbitx.libraries.push.impl.db.PushRequest
 import tech.orbitweb.orbitx.libraries.push.impl.history.FakePushHistoryService
 import tech.orbitweb.orbitx.libraries.push.impl.history.PushHistoryService
+import tech.orbitweb.orbitx.libraries.push.impl.notifications.FakeNotifiableEventResolver
 import tech.orbitweb.orbitx.libraries.push.impl.notifications.FakeNotificationResultProcessor
+import tech.orbitweb.orbitx.libraries.push.impl.notifications.NotifiableEventResolver
 import tech.orbitweb.orbitx.libraries.push.impl.test.DefaultTestPush
 import tech.orbitweb.orbitx.libraries.push.impl.troubleshoot.DiagnosticPushHandler
 import tech.orbitweb.orbitx.libraries.push.impl.workmanager.FakeSyncPendingNotificationsRequestBuilder
@@ -230,6 +232,7 @@ class DefaultPushHandlerTest {
             stop = {},
         ),
         dispatchers: CoroutineDispatchers = testCoroutineDispatchers(),
+        eventResolver: NotifiableEventResolver = FakeNotifiableEventResolver { _, _ -> Result.success(emptyMap()) },
     ): DefaultPushHandler {
         return DefaultPushHandler(
             incrementPushDataStore = object : IncrementPushDataStore {
@@ -246,11 +249,12 @@ class DefaultPushHandlerTest {
             analyticsService = analyticsService,
             systemClock = systemClock,
             workManagerScheduler = workManagerScheduler,
-            resultProcessor = resultProcessor,
             syncPendingNotificationsRequestFactory = SyncPendingNotificationsRequestBuilder.Factory {
                 FakeSyncPendingNotificationsRequestBuilder()
             },
+            resultProcessor = resultProcessor,
             dispatchers = dispatchers,
+            eventResolver = eventResolver,
         )
     }
 }
