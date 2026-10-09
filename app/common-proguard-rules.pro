@@ -77,3 +77,7 @@
 
 # Rustls Platform Verifier
 -keep, includedescriptorclasses class org.rustls.platformverifier.** { *; }
+
+# Workaround for R8 optimizer crash on NestedScrollView
+-keep class androidx.core.widget.NestedScrollView { *; }
+-dontwarn androidx.core.widget.NestedScrollView
