@@ -1,0 +1,4 @@
+OrbitX 26.10.0:
+• Sovereign, high-performance Matrix messaging client
+• End-to-end encryption with Rust cryptographic engine
+• Modernized media editor, stickers, camera attachments, and push notifications
